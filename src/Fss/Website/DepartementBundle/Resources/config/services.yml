@@ -1,0 +1,4 @@
+services:
+#    fss_website_departement.example:
+#        class: Fss\Website\DepartementBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

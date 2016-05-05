@@ -1,0 +1,72 @@
+<div class="fade modal text-center" id="addfiliere">
+				  <div class="modal-dialog">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						
+					  </div>
+					  <div class="modal-body">
+						<div id="container" class="container-fluid text-center">
+              <div class="col-sm-10 col-md-offset-1" >
+                <!-- PAGE TITLE -->
+                
+                  <h4>
+                    <span ></span> </h4>
+                
+               
+				
+                <!-- FORM -->
+                <form class="addfiliereform"  method="POST">
+				
+                  <!-- Nom Filiere -->
+                  <div class="fil-form-group">
+                    <label> Nom </label>
+                    <input type="text" name="nomfiliere" class="form-control" placeholder="Nom de la filiere">
+                    <span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Description de la  Filiere -->
+                  <div class="fil-form-group">
+                    <label> Déscription </label>
+                    <input type="text" name="descfiliere" class="form-control" placeholder="Description de la  Filiere">
+                    <span class="help-block"></span>
+                  </div>
+                 
+				  <!-- Departements -->
+                  <div class="fil-form-group">
+                    <label> Départements </label>
+                    <select id="fildepselect">
+						{%for dep in alldepartement %}
+						<option value="{{dep.id}}">{{dep.departement}}</option>
+						{% endfor %}
+					</select>
+                    <span class="help-block"></span>
+                  </div>
+				  
+				   <!-- SHOW ERROR/SUCCESS MESSAGES -->
+				<div class="fil-form-group"> 
+					<span class="messages-block"></span>
+				</div>
+				  
+                  <span class="ajax_wait" align="center">
+                    <!--don't delete this span class="ajax_wait"-->
+                  </span>
+				  
+				  <input type="text" name="addfiltag" value="addfil" hidden>
+				  <input type="text" name="addfiliere_url" value="{{ path('pedagogie_addfiliere') }}" hidden>
+				  
+                  <div class="modal-footer">
+						<a class="btn btn-default" data-dismiss="modal">Close</a>
+						<!-- SUBMIT BUTTON -->
+                  <button type="submit" class="btn btn-success "><i class="fa fa-plus"></i> Enregistrer </button>
+					
+					  </div>
+                  
+                </form>
+              </div>
+			  </div>
+					  </div>
+					  
+					</div>
+				  </div>
+				</div>

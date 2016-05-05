@@ -1,0 +1,132 @@
+<div class="fade modal text-center" id="addenseignant">
+				  <div class="modal-dialog">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						
+					  </div>
+					  <div class="modal-body">
+						<div id="container" class="container-fluid text-center">
+              <div class="col-sm-10 col-md-offset-1" >
+                <!-- PAGE TITLE -->
+                
+                  <h4>
+                    <span ></span> </h4>
+					
+					<!-- SHOW ERROR/SUCCESS MESSAGES -->
+				
+                <div class="ens-form-group"> 
+					<span class="messages-block"></span>
+				</div>
+                
+                <!-- FORM -->
+                <form id="addenseignantform" class="form-horizontal ens-form-group" role="form"  method="POST" >
+                 
+					<!-- Family Name -->
+                  <div id="ens_username-group" class="form-group ens-form-group">
+                    <label> Nom </label>
+                    <input type="text" name="ens_famname" class="form-control" placeholder=" "> 
+                    <span class="help-block"></span>
+                  </div>
+				
+				<!-- Surname -->
+                  <div id="ens_username-group" class="form-group ens-form-group">
+                    <label> Prénom </label>
+                    <input type="text" name="ens_surname" class="form-control" placeholder=" "> 
+                    <span class="help-block"></span>
+                  </div>
+				
+				<!-- Username -->
+                  <div id="ens_username-group" class="form-group ens-form-group">
+                    <label> Username </label>
+                    <input type="text" name="ens_username" class="form-control" placeholder=" "> 
+                    <span class="help-block"></span>
+                  </div>
+				  
+                  <!-- E-mail -->
+                  <div id="ens_email-group" class="form-group ens-form-group">
+                    <label> E-mail </label>
+                    <input type="email" name="ens_email" class="form-control" placeholder="">
+                    <span class="help-block"></span>
+                  </div>
+				  
+                  <!-- Departements -->
+                  <div class="form-group ens-form-group">
+                    <label> Départements </label>
+                    <select id="ensdepselect" class="form-control" onchange="ensLoadDiscipline(this.value,'ensdisselect')">
+						{%for dep in alldepartement %}
+						<option value="{{ dep.id }}">{{ dep.departement}}</option>
+						{% endfor %}
+					</select>
+                    <span class="help-block"></span>
+                  </div>
+				  
+				  
+                  <!-- Disciplines -->
+                  <div class="form-group ens-form-group">
+                    <label> Disciplines </label>
+                    <select id="ensdisselect" class="form-control" onchange="ensLoadMatiere(this.value,'ensmatselect')">
+						{%for dis in alldiscipline %}
+						<option value="{{ dis.id }}">{{ dis.discipline }}</option>
+						{% endfor %}
+					</select>
+                    <span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Matiere -->
+                  <div class="form-group ens-form-group">
+                    <label> Matiere </label>
+                    <select id="ensmatselect" class="form-control" >
+						{%for mat in allmatiere %}
+						<option value="{{ mat.id }}">{{ mat.matiere }}</option>
+						{% endfor %}
+					</select>
+                    <span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Situations -->
+                  <div class="form-group ens-form-group">
+                    <label> Situation </label>
+                    <select id="enssitselect" class="form-control" >
+						{%for sit in allsituation %}
+						<option value="{{ sit.id }}">{{ sit.situations }}</option>
+						{% endfor %}
+					</select>
+                    <span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Grade -->
+                  <div class="form-group ens-form-group">
+                    <label> Grade </label>
+                    <select id="ensgrdselect" class="form-control">
+						{%for grd in allgrade %}
+						<option value="{{ grd.code }}">{{ grd.grades }}</option>
+						{% endfor %}
+					</select>
+                    <span class="help-block"></span>
+                  </div>
+				  
+				  
+                  <span class="ajax_wait" align="center">
+                    <!--don't delete this span class="ajax_wait"-->
+                  </span>
+				  
+				  <input type="text" name="addenstag" value="addens" hidden>
+				  <input type="text" name="getdepdis_url" value="{{ path('pedagogie_getdepdisciplines') }}" hidden>
+				  <input type="text" name="ensregister_url" value="{{ path('pedagogie_addenseignant') }}" hidden>
+				  
+                  <div class="modal-footer">
+						<a class="btn btn-default" data-dismiss="modal">Close</a>
+						<!-- SUBMIT BUTTON -->
+                  <button type="submit" class="btn btn-success "><i class="fa fa-save"></i> Enregistrer </button>
+					
+					  </div>
+                  
+                </form>
+              </div>
+			  </div>
+					  </div>
+					  
+					</div>
+				  </div>
+				</div>

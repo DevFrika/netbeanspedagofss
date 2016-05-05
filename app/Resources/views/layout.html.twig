@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	{% block stylesheets %}
+		
+		<!-- Frameworks CSS -->
+		<link rel="stylesheet" href="{{ asset('includes/css/bootstrap.css') }}" type="text/css" />
+		<link rel="stylesheet" href="{{ asset('includes/css/w3.css') }}" type="text/css" />
+		
+		<!-- Custom CSS -->
+		<!-- <link href="{{ asset('includes/css/freelancer.css') }}" rel="stylesheet">-->
+		<link rel="stylesheet" href="{{ asset('includes/css/style.css') }}" type="text/css" /> 
+        <!-- <link rel="stylesheet" href="{{ asset('includes/css/pm.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('includes/css/menu.css') }}" type="text/css" /> -->
+		
+		<!-- Custom Fonts -->
+                <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+                <link rel="stylesheet" href="{{ asset('includes/css/font-awesome.min.css') }}" type="text/css" />
+		<!-- <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">-->
+		<!-- <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">-->
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	{% endblock %}
+   
+    <title> {% block title %} Pedago {% endblock %} </title>
+	
+  </head>
+  
+  <body data-spy="scroll" style="padding-top:40px;width:100%;height:100%;">
+  
+	<div id="sitecontent" class="section w3-white">
+  
+		<div id="row_modal" class="row" style="margin-left:1%;width:98%;">
+			<div id="modalfss">
+			{% block modals %}
+			{% include "::layout_loginmodal.html.twig" %}
+			{% include "::layout_signinmodal.html.twig" %}
+			{% endblock %}
+			</div>
+		</div>		
+	
+		<div id="row_header" class="row w3-top" style="margin-left:1%;width:98%;">
+			<div id="headerfss" class="navbar navbar-fixed-top w3-theme w3-left-align w3-light-grey" style="z-index:50;height:70px;margin-bottom:1px;margin-top:1px;width:100%;" role="navigation">
+
+			  <div class="container w3-right" style="z-index:50;">
+					  <div class="navbar-header" style="z-index:50;">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+						  <span class="sr-only">Toggle navigation</span>
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						</button>
+						
+					  </div>
+
+			  
+				<!--     
+				  <div class="logo"><a href="{{ path('homepage') }}"><img src="{{ asset('includes/images/logo.png') }}" alt="logo" border="0"></a></div>
+				  <div id="banner"><img src="{{ asset('includes/images/header.jpg') }}" alt="PM"></div>
+				-->
+			 
+			  <div class="collapse navbar-collapse" id="navbar-ex-collapse" style="z-index:50;"> 
+			 
+				<ul class=" nav navbar-nav nav-pills">
+				<li class="" style="height:90px;"> 
+						<a href="{{ path('homepage') }}" class="w3-btn w3-blue w3-round w3-ripple btn btn-default navbar-btn"> {{ lang['MENU_HOME'] }} <i class="glyphicon glyphicon-home"></i></a>
+					</li>
+						<li> <span class="qmdivider qmdividery"></span></li>
+						  
+				<li class="w3-dropdown-hover" style="height:90px;">
+						<a href="{{ path('departement_homepage') }}" class="w3-btn w3-blue w3-round w3-ripple btn btn-default navbar-btn"> {{ lang['MENU_DEPARTEMENTS'] }} <i class="glyphicon glyphicon-education"></i> </a>
+						<div id="Demo" class="w3-dropdown-content w3-animate-zoom">
+							{% for dep in alldepartement %} 
+						  <a href="{{ path('departement_dep',{'id': dep.id })}}" > {{ dep.departement }} </a>
+							{% endfor %}
+						</div>  
+							
+				</li>
+						<li> <span class="qmdivider qmdividery"></span></li>
+				<li class="" style="height:90px;">
+						<a href="{{ path('pedagogie_pedagogie_homepage') }}" class="w3-btn w3-blue w3-round w3-ripple btn btn-default navbar-btn"> {{ lang['MENU_PEDAGOGIE'] }}<i class="glyphicon glyphicon-book"></i></a>
+					</li>
+						<li> <span class="qmdivider qmdividery"></span></li>
+						   
+						  {% if session_id is defined and session_id != null %}
+					<li class="" style="height:90px;">
+						<a class="w3-btn w3-blue  w3-round w3-ripple btn btn-default navbar-btn" href="User">  Mon Espace <span class="caret"></span> </a>
+					</li>
+						<li> <span class="qmdivider qmdividery"></span></li>
+				<li class="" style="height:90px;">
+						<a href="{{ path('user_logout') }}" class="w3-btn w3-blue  w3-round w3-ripple btn btn-default navbar-btn"> Se Déconnecter <i class="glyphicon glyphicon-log-out"></i></a>
+					</li>
+					   
+						<li> <span class="qmdivider qmdividery"></span></li>
+						  {% else %}
+						  
+						  {% block buttonlogin %}
+				<li class="" >
+						<a class="w3-btn w3-blue  w3-round w3-ripple btn btn-default navbar-btn" role="button" data-target="#connexion-modal" data-toggle="modal">Se Connecter 	<i class="glyphicon glyphicon-log-in"></i></a>
+					</li>
+						<li> <span class="qmdivider qmdividery"></span></li>
+						  {% endblock %}
+						  
+						  {% block buttonsignin %}
+					<li class="" style="height:90px;">
+						<a class="w3-btn w3-blue w3-round w3-ripple btn btn-default navbar-btn" role="button" data-target="#inscription-modal" data-toggle="modal"> S'Inscrire 	<i class="glyphicon glyphicon-user"></i></a>
+					</li>
+						<li> <span class="qmdivider qmdividery"></span></li>
+						  {% endblock %}
+						
+						   {% endif %}
+						   
+					<li>		  
+							<div class="w3-dropdown-hover pull-right navbar-btn page-scroll">
+							  <button class="w3-btn w3-blue"> {{ lang['LNG'] }} </button>
+							  <div id="Demo" class="w3-dropdown-content w3-animate-zoom">
+								<a href="{{ path('homepage',{'fss_lang':'fr'}) }}">Français <img src="{{ asset('languages/fr.png') }}" alt="Francais" ></a>
+								<a href="{{ path('homepage',{'fss_lang':'en'}) }}">English <img src="{{ asset('languages/en.png') }}" alt="Anglais" ></a>
+							  </div>
+							</div>
+					</li>          
+						  <li> <span class="qmdivider qmdividery"></span></li>
+				</ul>
+			  
+			 </div>
+			 
+				<div id="flashnews">
+					
+			  </div>
+			  
+			  
+
+			  
+					</div>
+					
+					 <!--
+					<div class="btn-group btn-group-sm-1 pull-right" role="group" aria-label="user-button" id="userbutton" >
+				 <div class="input-group " id="facsearchzone">
+					<input type="text" class="form-control" placeholder="Chercher ...">
+					<span class="input-group-btn">
+					  <button class="btn btn-default" type="button">Go !</button>
+					</span>
+				  </div>
+				</div>
+			-->
+				<div id="usermessages" class="col-xs-3 w3-section row col-xs-offset-4" style="display:none;z-index:990;margin-bottom:10px;" >
+				{% block usermessages %}
+						   
+				
+				{% endblock %}	
+				</div>
+				
+				
+			  </div>
+		</div>
+	
+		<div id="row_body" class="row w3-clear" style="margin-left:1%;width:98%;clear:both;margin-top:-3%;margin-bottom:20%;">
+			<div class="section container-fluid w3-white" style="clear:both;width:100%;">
+			{% block body %}
+			
+			
+				<!-- Loader -->
+				<div class="row" id="loadermodal" style="z-index:9999;display:none;position:fixed;top:13%;clear:both">
+					<div class="col-md-12" style="z-index:9999;">
+			
+						<div id="fssloader" style="margin-top:15px;"> </div>
+						<div id="loadertext" class="text-info"> </div>
+					</div>
+				</div>
+				
+				
+					
+						
+							<div id="submenu" class="row container-fluid w3-light-grey" style="margin-left:0%;width:100%;margin-bottom:2px;margin-top:2px;clear:both;">
+							{% block submenu %}
+							
+							
+								<div class="col-xs-2 w3-container menubtn">
+									<a href="#" class="tablink " onclick="openMenu(event, 'emploilayout')">
+									  <div class="w3-container w3-teal w3-padding-hor-1">
+										<div class="w3-left"><i class="glyphicon glyphicon-calendar w3-xlarge"></i></div>
+										<div class="w3-right">
+										  <h3>??</h3>
+										</div>
+										<div class="w3-clear"></div>
+										<h4> Emploi du temps </h4>
+									  </div>
+									 </a>
+								</div>
+							
+						
+							{% endblock %}
+							</div>
+						
+					
+				
+				
+				
+						
+							<div id="bodycontent" class="row container-fluid w3-white" style="margin-left:0%;width:100%;clear:both;height:100%;">
+							{% block bodycontent %}
+							
+						
+							{% endblock %}
+							</div>
+				
+			{% endblock %}
+			</div>
+		</div>
+	
+	
+		<div id="row_footer" class="row" style="margin-left:1%;width:98%;position:relative;bottom:0;clear:both;margin-bottom:0;">
+			<footer class="col-lg-12 container-fluid w3-light-blue w3-bottom " style="height:10%;">
+			{% block footer %}
+	
+	
+			  <div class="container">
+				<div class="row">
+				  <div class="col-sm-5">
+							<span id="copyright">
+								Copyright &copy; 2016 <a href="#">Faculté des Sciences de Sfax </a>
+							</span>
+				  </div>
+				  <div class="col-sm-5">
+					<p class="text-info text-right">
+					  <br>
+					  <br>
+					</p>
+					<div class="row">
+					  <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
+						<a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+						<a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+						<a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+						<a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-md-12 hidden-xs text-right">
+						<a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+						<a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+						<a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+						<a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+		  
+			
+			
+	
+			{% endblock %}
+			</footer>
+		</div>
+	
+	</div>
+	
+	{% block javascripts %}
+		{# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+		
+		<!-- Frameworks JavaScript -->
+		<script type="text/javascript" src="{{ asset('includes/js/jquery.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('includes/js/bootstrap.min.js') }}"></script>
+		
+		<!-- Plugin JavaScript -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+		<script src="{{ asset('includes/js/classie.js') }}"></script>
+		<script src="{{ asset('includes/js/cbpAnimatedHeader.js') }}"></script>
+
+		<!-- Contact Form JavaScript -->
+		<script src="{{ asset('includes/js/jqBootstrapValidation.js') }}"></script>
+		<script src="{{ asset('includes/js/contact_me.js') }}"></script>
+
+		<!-- Custom Theme JavaScript -->
+		<script src="{{ asset('includes/js/freelancer.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('includes/js/magic.js') }}"></script>
+		
+	{% endblock %}
+	
+  </body>
+  
+ 
+</html>

@@ -1,0 +1,213 @@
+{% extends "::layout.html.twig" %}
+{% block title %}
+Pedagogie - Normal
+{% endblock %}
+
+{% block modals %}
+
+	{{ parent() }}
+
+
+{% if alldepartement is not null %}
+
+	{% for dep in alldepartement  %}
+				{% include "PedagogiePedagogieBundle::normal/departement/modaldepartementlayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+
+{% if alldiscipline is not null %}
+
+	{% for dis in alldiscipline  %}
+				{% include "PedagogiePedagogieBundle::normal/discipline/modaldisciplinelayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+
+{% if allemploi is not null %}
+
+	{% for emp in allemploi  %}
+				{% include "PedagogiePedagogieBundle::normal/emploi/modalemploilayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+{% if allmatiere is not null %}
+
+	{% for mat in allmatiere  %}
+				{% include "PedagogiePedagogieBundle::normal/matiere/modalmatierelayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+{% include "PedagogiePedagogieBundle::normal/groupe/addgroupelayout.html.twig" %}
+
+{% if allgroupe is not null %}
+
+	{% for grp in allgroupe  %}
+				{% include "PedagogiePedagogieBundle::normal/groupe/modalgroupelayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+
+
+{% if allfiliere is not null %}
+
+	{% for fil in allfiliere  %}
+				{% include "PedagogiePedagogieBundle::normal/filiere/modalfilierelayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+  
+  
+  {% endblock %}
+
+
+    {% block submenu %}
+	
+        <div class="col-xs-2 w3-container menubtn w3-section">
+            <a href="#" class="tablink " onclick="openMenu(event, 'emploilayout')">
+              <div class="w3-container w3-teal w3-padding-hor-1">
+                <div class="w3-left"><i class="glyphicon glyphicon-calendar w3-xlarge"></i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Emploi du temps </h4>
+              </div>
+             </a>
+        </div>
+        
+    
+        
+        <div class="col-xs-2 w3-container menubtn w3-section">
+            <a href="#" class="tablink" onclick="openMenu(event, 'departementlayout')">
+              <div class="w3-container w3-teal w3-padding-hor-10">
+                <div class="w3-left"><i class="glyphicon glyphicon-education w3-xlarge"></i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Départements </h4>
+              </div>
+            </a>
+        </div>
+        
+        
+        
+        <div class="col-xs-2 w3-container menubtn w3-section">
+            <a href="#" class="tablink" onclick="openMenu(event, 'filierelayout')">
+              <div class="w3-container w3-blue w3-padding-hor-10">
+                <div class="w3-left"><i class="material-icons w3-xlarge">class</i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Filieres </h4>
+              </div>
+            </a>
+        </div>
+        
+        <div class="col-xs-2 w3-container menubtn w3-section">
+            <a href="#" class="tablink" onclick="openMenu(event, 'classelayout')">
+              <div class="w3-container w3-blue w3-padding-hor-10">
+                <div class="w3-left"><i class="glyphicon glyphicon-list-alt w3-xlarge"></i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Classes </h4>
+              </div>
+            </a>
+        </div>
+        
+        <div class="col-xs-2 w3-container menubtn w3-section">
+            <a href="#" class="tablink" onclick="openMenu(event, 'groupelayout')">
+              <div class="w3-container w3-cyan w3-padding-hor-10">
+                <div class="w3-left"><i class="fa fa-group w3-xlarge"></i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Groupes </h4>
+              </div>
+            </a>
+        </div>
+        
+		
+        <div class="col-xs-2 w3-container menubtn w3-section">
+            <a href="#" class="tablink" onclick="openMenu(event, 'matierelayout')">
+              <div class="w3-container w3-cyan w3-padding-hor-10">
+                <div class="w3-left"><i class="glyphicon glyphicon-user w3-xlarge"></i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Enseignants </h4>
+              </div>
+            </a>
+        </div>
+        
+        <div class="col-xs-2 w3-container menubtn w3-section">
+            <a href="#" class="tablink" onclick="openMenu(event, 'disciplinelayout')">
+              <div class="w3-container w3-khaki w3-padding-hor-10">
+                <div class="w3-left"><i class="material-icons w3-xlarge">library_books</i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Disciplines </h4>
+              </div>
+            </a>
+        </div>
+       
+        
+        
+		
+		<div class="col-xs-2 w3-container menubtn w3-section">
+            <a href="#" class="tablink" onclick="openMenu(event, 'matierelayout')">
+              <div class="w3-container w3-khaki w3-padding-hor-10">
+                <div class="w3-left"><i class="fa fa-list-alt w3-xlarge"></i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Matieres </h4>
+              </div>
+            </a>
+        </div>
+		
+        
+        
+    
+	
+	{% endblock %}
+	
+	{% block bodycontent %}
+		
+		{% include "PedagogiePedagogieBundle::normal/emploi/emploilayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::normal/departement/departementlayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::normal/filiere/filierelayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::normal/groupe/groupelayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::normal/discipline/disciplinelayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::normal/matiere/matierelayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::normal/modif/modiflayout.html.twig" %}
+	
+	{% endblock %}
+    
+
+
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('includes/js/pedagogie.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/filierehandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/departementhandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/emploihandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/groupehandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/matierehandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/disciplinehandle.js') }}"></script>
+{% endblock %}

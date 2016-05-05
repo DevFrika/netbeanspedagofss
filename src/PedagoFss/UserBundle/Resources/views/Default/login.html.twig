@@ -1,0 +1,15 @@
+{% extends "::layout.html.twig" %}
+{% block body %}
+
+{% block modals %}
+{% include "::layout_signinmodal.html.twig" %}
+{% endblock %}
+
+{% block buttonlogin %}
+{% endblock %}
+
+<h2>Connexion </h2>
+
+{% include "::layout_loginform.html.twig" %}
+
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends "::layout.html.twig" %}
+{% block title %}
+Pedagogie - Admin
+{% endblock %}
+
+
+    {% block submenu %}
+        <div class="col-xs-2 w3-container menubtn">
+            <a href="#" class="tablink " onclick="openMenu(event, 'emploilayout')">
+              <div class="w3-container w3-teal w3-padding-hor-1">
+                <div class="w3-left"><i class="glyphicon glyphicon-calendar w3-xlarge"></i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Emploi du temps </h4>
+              </div>
+             </a>
+        </div>
+        
+    
+        
+        <div class="col-xs-2 w3-container menubtn">
+            <a href="#" class="tablink" onclick="openMenu(event, 'departementlayout')">
+              <div class="w3-container w3-red w3-padding-hor-10">
+                <div class="w3-left"><i class="glyphicon glyphicon-education w3-xlarge"></i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Départements </h4>
+              </div>
+            </a>
+        </div>
+        
+        
+        
+        <div class="col-xs-2 w3-container menubtn">
+            <a href="#" class="tablink" onclick="openMenu(event, 'filierelayout')">
+              <div class="w3-container w3-blue w3-padding-hor-10">
+                <div class="w3-left"><i class="material-icons w3-xlarge">class</i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Filieres </h4>
+              </div>
+            </a>
+        </div>
+        
+        
+        
+        <div class="col-xs-2 w3-container menubtn">
+            <a href="#" class="tablink" onclick="openMenu(event, 'groupelayout')">
+              <div class="w3-container w3-blue-grey w3-padding-hor-10">
+                <div class="w3-left"><i class="fa fa-group w3-xlarge"></i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Groupes </h4>
+              </div>
+            </a>
+        </div>
+        
+        
+        <div class="col-xs-2 w3-container menubtn">
+            <a href="#" class="tablink" onclick="openMenu(event, 'disciplinelayout')">
+              <div class="w3-container w3-light-blue w3-padding-hor-10">
+                <div class="w3-left"><i class="material-icons w3-xlarge">library_books</i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Disciplines </h4>
+              </div>
+            </a>
+        </div>
+       
+        
+        
+        <div class="col-xs-2 w3-container menubtn">
+            <a href="#" class="tablink" onclick="openMenu(event, 'matierelayout')">
+              <div class="w3-container w3-dark-grey w3-padding-hor-10">
+                <div class="w3-left"><i class="fa fa-list-alt w3-xlarge"></i></div>
+                <div class="w3-right">
+                  <h3>??</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Matieres </h4>
+              </div>
+            </a>
+        </div>
+        
+        
+    
+	
+	{% endblock %}
+	
+	{% block bodycontent %}
+		
+		{% include "PedagogiePedagogieBundle::admin/emploi/emploilayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/departement/departementlayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/filiere/filierelayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/groupe/groupelayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/discipline/disciplinelayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/matiere/matierelayout.html.twig" %}
+	
+	{% endblock %}
+    
+
+
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('includes/js/pedagogie.js') }}"></script>
+{% endblock %}

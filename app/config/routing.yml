@@ -1,0 +1,19 @@
+fss_website_departement:
+    resource: "@FssWebsiteDepartementBundle/Resources/config/routing.yml"
+    prefix:   /
+
+pedagogie_pedagogie:
+    resource: "@PedagogiePedagogieBundle/Resources/config/routing.yml"
+    prefix:   /
+
+pedago_fss_user:
+    resource: "@PedagoFssUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+test:
+    resource: "@TestBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

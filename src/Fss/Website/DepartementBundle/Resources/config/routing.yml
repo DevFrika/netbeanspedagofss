@@ -1,0 +1,9 @@
+departement_homepage:
+    path:     /Departement
+    defaults: { _controller: FssWebsiteDepartementBundle:Default:index }
+departement_dep:
+    path:     /Departement/{id}
+    defaults: { _controller: FssWebsiteDepartementBundle:Default:indexdep  }
+    requirements:
+        id: \d*
+

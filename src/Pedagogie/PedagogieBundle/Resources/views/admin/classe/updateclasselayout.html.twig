@@ -1,0 +1,89 @@
+<div id="updatecls{{ cls.id }}" class="tabs w3-container w3-section w3-animate-left ">
+		<header class="w3-container" style="padding-top:22px">
+			<div class="w3-left">
+				<a href="#" onclick="closeMenu(event, 'classelayout')"  class="w3-btn btn btn-info tablink"><i class="glyphicon glyphicon-menu-left"></i> Retour </a>
+			</div>
+				<h3 class="text-center"><b><i class="material-icons">class</i> Classe - {{ cls.classe }} </b></h3>
+		</header>
+		
+
+		<div class="w3-clear"></div>
+		
+		<div class="container-fluid text-center">
+              <div class="col-lg-10 col-md-offset-1" >
+                <!-- PAGE TITLE -->
+                
+                  <h4>
+                    <span ></span> </h4>
+					
+				
+               
+                <!-- FORM -->
+                <form name="formclsupd{{ cls.id }}" class="form-horizontal cls-form-group" role="form" method="POST" onsubmit="updateClasse(event,'formclsupd{{ cls.id }}','{{ cls.id }}')" >
+				
+                  <!-- Departements -->
+                  <div class="form-group cls-form-group">
+                    <label> Département de la classe  </label>
+                    <select id="updclsdepselect{{ cls.id }}" class="form-control" onchange="clsLoadFiliere(this.value,'updfilclsselect{{ cls.id}}')" >
+						<option value="{{ cls.departement.id }}">{{ cls.departement.departement }}</option>
+						{%for dep in alldepartement %}
+							{% if cls.departement.id != dep.id %}
+							<option value="{{ dep.departement }}">{{ dep.departement}}</option>
+							{% endif %}
+						{% endfor %}
+					</select>
+                    <span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Filieres -->
+                  <div class="form-group cls-form-group">
+                    <label> Filieres </label>
+                    <select id="updclsfilselect{{ cls.id }}" class="form-control">
+						<option value="{{ cls.filiere.id }}">{{ cls.filiere.filiere }}</option>
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Nom de la  Classe -->
+                  <div class="form-group cls-form-group">
+                    <label> Nom de la Classe  </label>
+                    <input type="text" name="updnomclasse" class="form-control" placeholder="Nom de la Classe" value="{{ cls.classe }}">
+                    <span class="help-block"></span>
+                  </div>
+                 
+                
+				  
+				  <!-- Annnée Classes -->
+                  <div class="form-group cls-form-group">
+                    <label> Annnée </label>
+                    <select id="updclsanselect{{ cls.id }}" class="form-control">
+						<option value="1">1 er Année </option>
+						<option value="2">2 em Année </option>
+						<option value="3">3 em Année </option>
+					</select>
+					<span class="help-block"></span>
+                  </div>
+
+				  
+                	<!-- SHOW ERROR/SUCCESS MESSAGES -->
+				
+                <div class="form-group cls-form-group"> 
+					<span class="messages-block"></span>
+				</div>
+				  
+				  <input type="text" name="getfil_url" value="{{ path('pedagogie_getdepfilieres') }}" hidden>
+				  <input type="text" name="updclstag" value="updatecls" hidden>
+				  <input type="text" name="oldclsname" value="{{ cls.classe }}" hidden>
+				   <input type="text" name="delclasse_url" value="{{ path('pedagogie_deleteclasse') }}" hidden>
+				  <input type="text" name="updateclasse_url" value="{{ path('pedagogie_updateclasse') }}" hidden>
+                  <!-- SUBMIT BUTTON -->
+                  <button type="submit" class="btn btn-success btn-lg btn-block">
+                    Enregistrer Les modifications <i class="glyphicon glyphicon-save"></i> </button>
+					
+                </form>
+              </div>
+			  </div>
+				
+		
+	
+	</div>

@@ -1,0 +1,88 @@
+<div id="updategrp{{ grp.id }}" class="w3-container tabs w3-animate-zoom">
+
+		<header class="w3-container" style="padding-top:22px">
+			<div class="w3-left">
+				<a href="#" onclick="closeMenu(event, 'groupelayout')"  class="w3-btn btn btn-info tablink"><i class="glyphicon glyphicon-menu-left"></i> Retour </a>
+			</div>
+				<h3 class="text-center"><b><i class="material-icons">class</i> groupe - {{ grp.groupe }} </b></h3>
+				{% if session_id is defined and session_id != null and typeuser == "admin" %}
+			
+				{% endif %}
+		</header>
+		
+
+		<div class="w3-clear"></div>
+		
+		<div class="container-fluid text-center">
+		
+              <div class="col-sm-10 col-md-offset-1" >
+                <!-- PAGE TITLE -->
+                
+                  <h4>
+                    <span ></span> </h4>
+					
+               
+                <!-- FORM -->
+                <form name="updgrpform{{ grp.id }}"  method="POST" onsubmit="updateGroupe(event,'updgrpform{{ grp.id }}','{{ grp.id }}')" >
+                 
+				 <div class="form-group grp-form-group">
+                    <label> Département du groupe </label>
+                    <select id="updgrpdepselect{{ grp.id }}" class="form-control" onchange="grpLoadFiliere(this.value,'updfilgrpselect{{ grp.id }}')">
+						<option value="{{ grp.departement.id }}">{{ grp.departement.departement}}</option>
+						{%for dep in alldepartement %}
+							{% if grp.departement.id != dep.id %}
+							<option value="{{ dep.id }}">{{ dep.departement}}</option>
+							{% endif %}
+						{% endfor %}
+					</select>
+                    <span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Filieres -->
+                  <div class="form-group grp-form-group">
+                    <label> Filieres du groupe </label>
+                    <select id="updgrpfilselect{{ grp.id }}" class="form-control" onchange="grpLoadClasse(this.value,'updclsgrpselect{{ grp.id }}')">
+						<option value="{{ grp.filiere.id }}">{{ grp.filiere.filiere }}</option>
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Classes -->
+                  <div class="form-group grp-form-group">
+                    <label> Classe du groupe </label>
+                    <select id="updgrpclsselect{{ grp.id }}" class="form-control">
+						<option value="{{ grp.classe.id }}">{{ grp.classe.classe }}</option>
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				
+                  <!-- Nom -->
+                  <div class="form-group grp-form-group">
+                    <label> Nom du Groupe </label>
+                    <input type="text" name="updnomgroupe" class="form-control" placeholder="Nom du groupe" value="{{ grp.groupe }}">
+                    <span class="help-block"></span>
+                  </div>
+				
+				
+			<!-- SHOW ERROR/SUCCESS MESSAGES -->
+				
+                <div class="form-group grp-form-group"> 
+					<span class="messages-block"></span>
+				</div>
+				
+				  <input type="text" name="updgrptag" value="updategrp" hidden>
+				  <input type="text" name="oldgrpname" value="{{ grp.groupe }}" hidden>
+				  <input type="text" name="getfil_url" value="{{ path('pedagogie_getdepfilieres') }}" hidden>
+				  <input type="text" name="getcls_url" value="{{ path('pedagogie_getfilclasses') }}" hidden>
+				  <input type="text" name="updategroupe_url" value="{{ path('pedagogie_updategroupe') }}" hidden>
+                  <!-- SUBMIT BUTTON -->
+                  <button type="submit" class="btn btn-success btn-lg btn-block">
+                    Enregistrer <i class="glyphicon glyphicon-save"></i> </button>
+                </form>
+				
+              </div>
+			  </div>
+				
+		
+	
+	</div>

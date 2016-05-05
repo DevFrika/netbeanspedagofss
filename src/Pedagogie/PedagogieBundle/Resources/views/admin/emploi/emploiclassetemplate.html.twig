@@ -1,0 +1,124 @@
+﻿{% for cls in allclasse %}
+	{% for emp in cls.emplois %}
+		<div class="section">
+			  <div class="container">
+				<div class="row">
+				  <div class="col-md-10">
+					<table class="table table-bordered table-condensed table-hover table-striped">
+					  <thead>
+						<tr>
+						  <th>Jour | Heure</th>
+						  <th>08H</th>
+						  <th>09H</th>
+						  <th>10H</th>
+						  <th>11H</th>
+						  <th>12H</th>
+						  <th>13H</th>
+						  <th>14H</th>
+						  <th>15H</th>
+						  <th>16H</th>
+						  <th>17H</th>
+						  <th>18H</th>
+						</tr>
+					  </thead>
+					  <tbody>
+					  {% for jour in emp.jours %}
+						<tr>
+						  <td> Lundi </td>
+						  <td> {%if jour.id == 1 %} {{ emp.matiere.matiere }} {% endif %} </td>
+						  <td></td>
+						  <td></td>
+						   <td></td>
+						  <td></td>
+						  <td></td>
+						   <td></td>
+						  <td></td>
+						  <td></td>
+						   <td></td>
+						  <td></td>
+						  
+						</tr>
+						<tr>
+						  <td>Mardi</td>
+						  <td> {%if jour.id == 2 %} {{ emp.matiere.matiere }} {% endif %} </td>
+						  <td></td>
+						  <td></td> 
+						  <td></td>
+						  <td></td>
+						  <td></td>
+						   <td></td>
+						  <td></td>
+						  <td></td>
+						   <td></td>
+						  <td></td>
+						  
+						</tr>
+						<tr>
+						  <td>Mercredi</td>
+						  <td> {%if jour.id == 3 %} {{ emp.matiere.matiere }} {% endif %} </td>
+						  <td></td>
+						  <td></td> 
+						  <td></td>
+						  <td></td>
+						  <td></td>
+						   <td></td>
+						  <td></td>
+						  <td></td>
+						   <td></td>
+						  <td></td>
+						  
+						</tr>
+						<tr>
+						  <td>Jeudi</td>
+						  <td> {%if jour.id == 4 %} {{ emp.matiere.matiere }} {% endif %} </td>
+						  <td></td>
+						  <td></td> 
+						  <td></td>
+						  <td></td>
+						  <td></td>
+						   <td></td>
+						  <td></td>
+						  <td></td>
+						   <td></td>
+						  <td></td>
+						  
+						</tr>
+						<tr>
+						  <td>Vendredi</td>
+						 <td> {%if jour.id == 5 %} {{ emp.matiere.matiere }} {% endif %} </td>
+						  <td></td>
+						  <td></td> 
+						  <td></td>
+						  <td></td>
+						  <td></td>
+						   <td></td>
+						  <td></td>
+						  <td></td>
+						   <td></td>
+						  <td></td>
+						  
+						</tr>
+						<tr>
+						  <td>Samedi</td>
+						  <td> {%if jour.id == 6%} {{ emp.matiere.matiere }} {% endif %} </td>
+						  <td></td>
+						  <td></td> 
+						  <td></td>
+						  <td></td>
+						  <td></td>
+						   <td></td>
+						  <td></td>
+						  <td></td>
+						   <td></td>
+						  <td></td>
+						  
+						</tr>
+						{% endfor %}
+					  </tbody>
+					</table>
+				  </div>
+				</div>
+			  </div>
+			</div>
+	{% endfor %}		
+{% endfor %}

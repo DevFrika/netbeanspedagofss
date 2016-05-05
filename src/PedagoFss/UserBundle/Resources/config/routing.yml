@@ -1,0 +1,13 @@
+user_homepage:
+    path:     /User
+    defaults: { _controller: PedagoFssUserBundle:Default:index }
+user_login:
+    path:     /User/login
+    defaults: { _controller: PedagoFssUserBundle:Login:login }
+user_signin:
+    path:     /User/signin
+    defaults: { _controller: PedagoFssUserBundle:Signin:signin }
+user_logout:
+    path:     /User/logout
+    defaults: { _controller: PedagoFssUserBundle:Default:logout }
+    

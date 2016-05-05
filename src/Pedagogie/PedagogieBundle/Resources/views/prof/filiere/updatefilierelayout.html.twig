@@ -1,0 +1,56 @@
+<div id="updatefil{{ fil.filiere }}" class="tabs w3-container w3-section w3-animate-left">
+		<header class="w3-container" style="padding-top:22px">
+			<div class="w3-left">
+				<a href="#" onclick="closeMenu(event, 'filierelayout')"  class="w3-btn btn btn-info tablink"><i class="glyphicon glyphicon-menu-left"></i> Retour </a>
+			</div>
+				<h3 class="text-center"><b><i class="material-icons">class</i> Filiere - {{ fil.filiere }} </b></h3>
+				
+		</header>
+		
+
+		<div class="w3-clear"></div>
+		
+		<div class="container-fluid text-center">
+              <div class="col-sm-10 col-md-offset-1" >
+                <!-- PAGE TITLE -->
+                
+                  <h4>
+                    <span ></span> </h4>
+					
+					<!-- SHOW ERROR/SUCCESS MESSAGES -->
+				
+                <div class="fil-form-group"> 
+					<span class="messages-block"></span>
+				</div>
+               
+                <!-- FORM -->
+                <form name="form{{ fil.filiere }}"  method="POST" onsubmit="updateFiliere(event,'form{{ fil.filiere }}')" >
+                  <!-- Nom -->
+                  <div class="fil-form-groupp">
+                    <label> Nom </label>
+                    <input type="text" name="updnomfiliere" class="form-control" value="{{ fil.filiere }}">
+                    <span class="help-block"></span>
+                  </div>
+                  <!-- Password -->
+                  <div class="fil-form-group">
+                    <label> Departement </label>
+                    <input type="text" name="upddepfiliere" class="form-control" value="{{ fil.departement.departement }}">
+					
+                    <span class="help-block"></span>
+                  </div>
+                  <span class="ajax_wait" align="center">
+                    <!--don't delete this span class="ajax_wait"-->
+                  </span>
+				  <input type="text" name="updfiltag" value="updatefil" hidden>
+				  <input type="text" name="oldfilname" value="{{ fil.filiere }}" hidden>
+				  <input type="text" name="updatefiliere_url" value="{{ path('pedagogie_updatefiliere') }}" hidden>
+                  <!-- SUBMIT BUTTON -->
+                  <button type="submit" class="btn btn-success btn-lg btn-block">
+                    Enregistrer <i class="glyphicon glyphicon-save"></i> </button>
+                </form>
+              </div>
+			  </div>
+				
+		
+	
+	</div>

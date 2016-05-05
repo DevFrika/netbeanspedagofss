@@ -1,0 +1,17 @@
+<div class="fade modal text-center" id="del{{ mod.module }}">
+				  <div class="modal-dialog">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						
+					  </div>
+					  <div class="modal-body">
+						<p> Voulez vous reelment supprimer ce Module {{ mod.module  }}  </p>
+					  </div>
+					  <div class="modal-footer">
+						<a class="btn btn-default" data-dismiss="modal">Fermer</a>
+						<a class="btn btn-primary w3-red" onclick="deleteModule(event, '{{ mod.module  }}','#del{{ mod.module  }}')"><i class="fa fa-trash"></i>Supprimer</a>
+					  </div>
+					</div>
+				  </div>
+				</div>

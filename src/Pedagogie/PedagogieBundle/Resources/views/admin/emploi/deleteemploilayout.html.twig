@@ -1,0 +1,17 @@
+<div class="fade modal text-center" id="delemp{{ emp.id }}">
+				  <div class="modal-dialog">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						
+					  </div>
+					  <div class="modal-body">
+						<p> Voulez vous reelment supprimer cette emploi {{ emp.id }}  </p>
+					  </div>
+					  <div class="modal-footer">
+						<a class="btn btn-default" data-dismiss="modal">Fermer</a>
+						<a class="btn btn-primary w3-red" onclick="deleteEmploi(event, '{{ emp.id }}','#delemp{{ emp.id }}')"><i class="fa fa-trash"></i>Supprimer</a>
+					  </div>
+					</div>
+				  </div>
+				</div>

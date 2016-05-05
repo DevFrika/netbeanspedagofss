@@ -1,0 +1,58 @@
+<div id="updateveu{{ veu.voeux }}" class="w3-container tabs w3-animate-zoom">
+		<header class="w3-container" style="padding-top:22px">
+			<div class="w3-left">
+				<a href="#" onclick="closeMenu(event, 'voeuxlayout')"  class="w3-btn btn btn-info tablink"><i class="glyphicon glyphicon-menu-left"></i> Retour </a>
+			</div>
+				<h3 class="text-center"><b><i class="material-icons">class</i> voeux - {{ veu.voeux }} </b></h3>
+				{% if session_id is defined and session_id != null and typeuser == "admin" %}
+			
+				{% endif %}
+		</header>
+		
+
+		<div class="w3-clear"></div>
+		
+		<div class="container-fluid text-center">
+              <div class="col-sm-10 col-md-offset-1" >
+                <!-- PAGE TITLE -->
+                
+                  <h4>
+                    <span ></span> </h4>
+					
+					<!-- SHOW ERROR/SUCCESS MESSAGES -->
+				
+                <div class="veu-form-group"> 
+					<span class="messages-block"></span>
+				</div>
+               
+                <!-- FORM -->
+                <form name="form{{ veu.voeux }}"  method="POST" onsubmit="updateVoeux(event,'form{{ veu.voeux }}')" >
+                  <!-- Nom -->
+                  <div class="veu-form-group">
+                    <label> Nom </label>
+                    <input type="text" name="updnomvoeux" class="form-control" value="{{ veu.voeux }}">
+                    <span class="help-block"></span>
+                  </div>
+                  <!-- Password -->
+                  <div class="veu-form-group">
+                    <label> Departement </label>
+                    <input type="text" name="upddepvoeux" class="form-control" value="{{ veu.departement.departement }}">
+					
+                    <span class="help-block"></span>
+                  </div>
+                  <span class="ajax_wait" align="center">
+                    <!--don't delete this span class="ajax_wait"-->
+                  </span>
+				  <input type="text" name="updveutag" value="updateveu" hidden>
+				  <input type="text" name="oldveuname" value="{{ veu.voeux }}" hidden>
+				  <input type="text" name="updatevoeux_url" value="{{ path('pedagogie_updatevoeux') }}" hidden>
+                  <!-- SUBMIT BUTTON -->
+                  <button type="submit" class="btn btn-success btn-lg btn-block">
+                    Enregistrer <i class="glyphicon glyphicon-save"></i> </button>
+                </form>
+              </div>
+			  </div>
+				
+		
+	
+	</div>

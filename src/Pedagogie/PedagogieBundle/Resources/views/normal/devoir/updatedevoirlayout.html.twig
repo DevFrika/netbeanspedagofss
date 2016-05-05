@@ -1,0 +1,190 @@
+<div id="updatedev{{ dev.devoir }}" class="w3-container tabs w3-animate-zoom">
+		<header class="w3-container" style="padding-top:22px">
+			<div class="w3-left">
+				<a href="#" onclick="closeMenu(event, 'devoirlayout')"  class="w3-btn btn btn-info tablink"><i class="glyphicon glyphicon-menu-left"></i> Retour </a>
+			</div>
+				<h3 class="text-center"><b><i class="material-icons">class</i> devoir - {{ dev.devoir }} </b></h3>
+				
+		</header>
+		
+
+		<div class="w3-clear"></div>
+		
+		<div class="container-fluid text-center">
+              <div class="col-sm-10 col-md-offset-1" >
+                <!-- PAGE TITLE -->
+                
+                  <h4>
+                    <span ></span> </h4>
+					
+					<!-- SHOW ERROR/SUCCESS MESSAGES -->
+				
+                <div class="dev-form-group"> 
+					<span class="messages-block"></span>
+				</div>
+               
+                <!-- FORM -->
+                <form name="form{{ dev.devoir }}"  method="POST" onsubmit="updateDevoir(event,'form{{ dev.devoir }}')" >
+				
+                  <!-- Departements -->
+                  <div class="dev-form-group">
+                    <label> Départements </label>
+                    <select id="depselect" onchange="loadFiliere(this.value,'filselect')">
+						{%for dep in alldepartement %}
+						<option value="{{ dep.departement }}">{{ dep.departement}}</option>
+						{% endfor %}
+					</select>
+                    <span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Filieres -->
+                  <div class="dev-form-group">
+                    <label> Filieres </label>
+                    <select id="filselect" onchange="loadClasse(this.value,'clsselect')">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Classes -->
+                  <div class="dev-form-group">
+                    <label> Classes </label>
+                    <select id="clsselect" onchange="loadGroupe(this.value,'grpselect')">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Groupes -->
+                  <div class="dev-form-group">
+                    <label> Groupes </label>
+                    <select id="grpselect" onchange="loadDiscipline(this.value,'disselect')">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Disciplines -->
+                  <div class="dev-form-group">
+                    <label> Disciplines </label>
+                    <select id="disselect" onchange="loadMatiere(this.value,'matselect')">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  
+				  <!-- Matieres -->
+                  <div class="dev-form-group">
+                    <label> Matieres </label>
+                    <select id="matselect" onchange="loadEnseignant(this.value,'ensselect')">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Enseignant -->
+				  <div class="dev-form-group">
+                    <label> Enseignants </label>
+                    <select id="ensselect" >
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Salles -->
+				  <div class="dev-form-group">
+                    <label> Salles </label>
+                    <select id="salselect" >
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Heure Debut -->
+                  <div class="dev-form-group">
+                    <label> Heure Debut </label>
+                    <select id="hdebselect">
+						<option value="08">08H</option>
+						<option value="09">09H</option>
+						<option value="10">10H</option>
+						<option value="11">11H</option>
+						<option value="12">12H</option>
+						<option value="13">13H</option>
+						<option value="14">14H</option>
+						<option value="15">15H</option>
+						<option value="16">16H</option>
+						<option value="17">17H</option>
+						<option value="18">18H</option>
+					</select>
+					<select id="mindebselect">
+						<option value="00">00M</option>
+						<option value="05">05M</option>
+						<option value="10">10M</option>
+						<option value="15">15M</option>
+						<option value="20">20M</option>
+						<option value="25">25M</option>
+						<option value="30">30M</option>
+						<option value="35">35M</option>
+						<option value="40">40M</option>
+						<option value="45">45M</option>
+						<option value="50">50M</option>
+						<option value="55">55M</option>
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Heure Fin -->
+                  <div class="dev-form-group">
+                    <label> Heure Fin </label>
+                    <select id="hfinselect">
+						<option value="08">08H</option>
+						<option value="09">09H</option>
+						<option value="10">10H</option>
+						<option value="11">11H</option>
+						<option value="12">12H</option>
+						<option value="13">13H</option>
+						<option value="14">14H</option>
+						<option value="15">15H</option>
+						<option value="16">16H</option>
+						<option value="17">17H</option>
+						<option value="18">18H</option>
+					</select>
+					<select id="minfinselect">
+						<option value="00">00M</option>
+						<option value="05">05M</option>
+						<option value="10">10M</option>
+						<option value="15">15M</option>
+						<option value="20">20M</option>
+						<option value="25">25M</option>
+						<option value="30">30M</option>
+						<option value="35">35M</option>
+						<option value="40">40M</option>
+						<option value="45">45M</option>
+						<option value="50">50M</option>
+						<option value="55">55M</option>
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  
+				  
+                  <span class="ajax_wait" align="center">
+                    <!--don't delete this span class="ajax_wait"-->
+                  </span>
+				  
+				  <input type="text" name="upddevtag" value="updatedev" hidden>
+				  <input type="text" name="olddevname" value="{{ dev.devoir }}" hidden>
+				   <input type="text" name="deldevoir_url" value="{{ path('pedagogie_deletedevoir') }}" hidden>
+				  <input type="text" name="updatedevoir_url" value="{{ path('pedagogie_updatedevoir') }}" hidden>
+                  <!-- SUBMIT BUTTON -->
+                  <button type="submit" class="btn btn-success btn-lg btn-block">
+                    Enregistrer Les modifications <i class="glyphicon glyphicon-save"></i> </button>
+					
+                </form>
+              </div>
+			  </div>
+				
+		
+	
+	</div>

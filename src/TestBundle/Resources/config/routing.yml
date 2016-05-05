@@ -1,0 +1,7 @@
+test_homepage:
+    path:     /TestBundle/{name}
+    defaults: { _controller: TestBundle:Default:index, name: 'World' }
+    
+HelloTheWorld:
+    path:     /hello-world
+    defaults: { _controller: TestBundle:MyApp:index }

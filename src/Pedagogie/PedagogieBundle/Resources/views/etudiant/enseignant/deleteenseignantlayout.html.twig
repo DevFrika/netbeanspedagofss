@@ -1,0 +1,17 @@
+<div class="fade modal text-center" id="delens{{ ens.enseignant }}">
+				  <div class="modal-dialog">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-ensmiss="modal" aria-hidden="true">×</button>
+						
+					  </div>
+					  <div class="modal-body">
+						<p> Voulez vous reelment supprimer cette enseignant {{ ens.enseignant }}  </p>
+					  </div>
+					  <div class="modal-footer">
+						<a class="btn btn-default" data-ensmiss="modal">Fermer</a>
+						<a class="btn btn-primary w3-red" onclick="deleteEnseignant(event, '{{ ens.enseignant }}','#delens{{ ens.enseignant }}')"><i class="fa fa-trash"></i>Supprimer</a>
+					  </div>
+					</div>
+				  </div>
+				</div>

@@ -1,0 +1,81 @@
+<div class="fade modal text-center" id="addgroupe">
+				  <div class="modal-dialog">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						
+					  </div>
+					  <div class="modal-body">
+						<div id="container" class="container-fluid text-center">
+              <div class="col-sm-10 col-md-offset-1" >
+                <!-- PAGE TITLE -->
+                
+                  <h4>
+                    <span ></span> </h4>
+               
+                <!-- FORM -->
+                <form class="addgroupeform"  method="POST">
+				
+				<div class="form-group grp-form-group">
+                    <label> Département du groupe </label>
+                    <select id="addgrpdepselect" class="form-control" onchange="grpLoadFiliere(this.value,'addgrpfilselect')">
+						{%for dep in alldepartement %}
+						<option value="{{ dep.departement }}">{{ dep.departement}}</option>
+						{% endfor %}
+					</select>
+                    <span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Filieres -->
+                  <div class="form-group grp-form-group">
+                    <label> Filieres du groupe </label>
+                    <select id="addgrpfilselect" class="form-control" onchange="grpLoadClasse(this.value,'addgrpclsselect')">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Classes -->
+                  <div class="form-group grp-form-group">
+                    <label> Classe du groupe </label>
+                    <select id="addgrpclsselect" class="form-control">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				
+                  <!-- Nom -->
+                  <div class="form-group grp-form-group">
+                    <label> Nom du Groupe </label>
+                    <input type="text" name="addnomgroupe" class="form-control" placeholder="Nom du groupe">
+                    <span class="help-block"></span>
+                  </div>
+				  
+				 
+				  
+               <!-- SHOW ERROR/SUCCESS MESSAGES -->
+				
+                <div class="form-group grp-form-group"> 
+					<span class="messages-block"></span>
+				</div>
+				
+				
+				  <input type="text" name="addgrptag" value="addgrp" hidden>
+				  <input type="text" name="addgroupe_url" value="{{ path('pedagogie_addgroupe') }}" hidden>
+				  <input type="text" name="getfil_url" value="{{ path('pedagogie_getdepfilieres') }}" hidden>
+				  <input type="text" name="getcls_url" value="{{ path('pedagogie_getfilclasses') }}" hidden>
+                  <div class="modal-footer">
+						<a class="btn btn-default" data-dismiss="modal">Close</a>
+						<!-- SUBMIT BUTTON -->
+                  <button type="submit" class="btn btn-success "><i class="fa fa-plus"></i> Enregistrer </button>
+					
+					  </div>
+                  
+                </form>
+              </div>
+			  </div>
+					  </div>
+					  
+					</div>
+				  </div>
+				</div>

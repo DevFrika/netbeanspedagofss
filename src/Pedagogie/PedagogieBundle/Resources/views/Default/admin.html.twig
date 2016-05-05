@@ -1,0 +1,304 @@
+{% extends "::layout.html.twig" %}
+{% block title %}
+Pedagogie - Admin
+{% endblock %}
+
+{% block modals %}
+
+{% include "PedagogiePedagogieBundle::admin/emploi/addemploilayout.html.twig" %}
+
+{% if allemploi is not null %}
+
+	{% for emp in allemploi  %}
+				{% include "PedagogiePedagogieBundle::admin/emploi/modalemploilayout.html.twig" %}
+				{% include "PedagogiePedagogieBundle::admin/emploi/deleteemploilayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+
+{% include "PedagogiePedagogieBundle::admin/departement/adddepartementlayout.html.twig" %}
+
+{% if alldepartement is not null %}
+
+	{% for dep in alldepartement  %}
+				{% include "PedagogiePedagogieBundle::admin/departement/modaldepartementlayout.html.twig" %}
+				{% include "PedagogiePedagogieBundle::admin/departement/deletedepartementlayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+{% include "PedagogiePedagogieBundle::admin/filiere/addfilierelayout.html.twig" %}
+
+{% if allfiliere is not null %}
+
+	{% for fil in allfiliere  %}
+				{% include "PedagogiePedagogieBundle::admin/filiere/modalfilierelayout.html.twig" %}
+				{% include "PedagogiePedagogieBundle::admin/filiere/deletefilierelayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+{% include "PedagogiePedagogieBundle::admin/discipline/adddisciplinelayout.html.twig" %}
+
+{% if alldiscipline is not null %}
+
+	{% for dis in alldiscipline  %}
+				{% include "PedagogiePedagogieBundle::admin/discipline/modaldisciplinelayout.html.twig" %}
+				{% include "PedagogiePedagogieBundle::admin/discipline/deletedisciplinelayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+
+
+{% include "PedagogiePedagogieBundle::admin/matiere/addmatierelayout.html.twig" %}
+
+{% if allmatiere is not null %}
+
+	{% for mat in allmatiere  %}
+				{% include "PedagogiePedagogieBundle::admin/matiere/modalmatierelayout.html.twig" %}
+				{% include "PedagogiePedagogieBundle::admin/matiere/deletematierelayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+{% include "PedagogiePedagogieBundle::admin/classe/addclasselayout.html.twig" %}
+
+{% if allclasse is not null %}
+
+	{% for cls in allclasse  %}
+				{% include "PedagogiePedagogieBundle::admin/classe/modalclasselayout.html.twig" %}
+				{% include "PedagogiePedagogieBundle::admin/classe/deleteclasselayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+
+{% include "PedagogiePedagogieBundle::admin/groupe/addgroupelayout.html.twig" %}
+
+{% if allgroupe is not null %}
+
+	{% for grp in allgroupe  %}
+				{% include "PedagogiePedagogieBundle::admin/groupe/modalgroupelayout.html.twig" %}
+				{% include "PedagogiePedagogieBundle::admin/groupe/deletegroupelayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+
+{% include "PedagogiePedagogieBundle::admin/voeux/addvoeuxlayout.html.twig" %}
+
+{% if allvoeux is not null %}
+
+	{% for veu in allvoeux  %}
+				{% include "PedagogiePedagogieBundle::admin/voeux/modalvoeuxlayout.html.twig" %}
+				{% include "PedagogiePedagogieBundle::admin/voeux/deletevoeuxlayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+{% include "PedagogiePedagogieBundle::admin/devoir/adddevoirlayout.html.twig" %}
+
+{% if alldevoir is not null %}
+
+	{% for dev in alldevoir  %}
+				{% include "PedagogiePedagogieBundle::admin/devoir/modaldevoirlayout.html.twig" %}
+				{% include "PedagogiePedagogieBundle::admin/devoir/deletedevoirlayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+
+{% include "PedagogiePedagogieBundle::admin/enseignant/addenseignantlayout.html.twig" %}
+
+{% if allenseignant is not null %}
+
+	{% for ens in allenseignant  %}
+				{% include "PedagogiePedagogieBundle::admin/enseignant/modalenseignantlayout.html.twig" %}
+				{% include "PedagogiePedagogieBundle::admin/enseignant/deleteenseignantlayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+
+  
+  
+  {% endblock %}
+
+
+    {% block submenu %}
+	
+        <div class="row">
+			<div class="col-xs-2">
+				<a href="#" class="tablink " onclick="openMenu(event, 'emploilayout')">
+				  <div class="w3-round w3-section w3-container w3-blue w3-hover-white w3-padding-hor-1">
+					<div class="w3-left"><i class="glyphicon glyphicon-calendar w3-xlarge"></i></div>
+					<div class="w3-clear"></div>
+					<h4> Emploi du temps </h4>
+				  </div>
+				 </a>
+			</div>
+			
+		
+			
+			<div class="col-xs-2">
+				<a href="#" class="tablink" onclick="openMenu(event, 'departementlayout')">
+				  <div class="w3-round w3-section w3-container w3-blue w3-hover-white w3-padding-hor-10">
+					<div class="w3-left"><i class="glyphicon glyphicon-education w3-xlarge"></i></div>
+					<div class="w3-clear"></div>
+					<h4> Départements </h4>
+				  </div>
+				</a>
+			</div>
+			
+			
+			
+			<div class="col-xs-2 ">
+				<a href="#" class="tablink" onclick="openMenu(event, 'filierelayout')">
+				  <div class="w3-round w3-section w3-container w3-blue w3-hover-teal w3-padding-hor-10">
+					<div class="w3-left"><i class="material-icons w3-xlarge">class</i></div>
+					<div class="w3-clear"></div>
+					<h4> Filieres </h4>
+				  </div>
+				</a>
+			</div>
+			
+			<div class="col-xs-2 ">
+				<a href="#" class="tablink" onclick="openMenu(event, 'classelayout')">
+				  <div class="w3-round w3-section w3-container w3-blue w3-hover-teal w3-padding-hor-10">
+					<div class="w3-left"><i class="glyphicon glyphicon-list-alt w3-xlarge"></i></div>
+					<div class="w3-clear"></div>
+					<h4> Classes </h4>
+				  </div>
+				</a>
+			</div>
+			
+			<div class="col-xs-2">
+				<a href="#" class="tablink" onclick="openMenu(event, 'groupelayout')">
+				  <div class="w3-round w3-section w3-container w3-blue w3-hover-cyan w3-padding-hor-10">
+					<div class="w3-left"><i class="fa fa-group w3-xlarge"></i></div>
+					<div class="w3-clear"></div>
+					<h4> Groupes </h4>
+				  </div>
+				</a>
+			</div>
+			
+			
+			<div class="col-xs-2 ">
+				<a href="#" class="tablink" onclick="openMenu(event, 'enseignantlayout')">
+				  <div class="w3-round w3-section w3-container w3-blue w3-hover-cyan w3-padding-hor-10">
+					<div class="w3-left"><i class="glyphicon glyphicon-user w3-xlarge"></i></div>
+					<div class="w3-clear"></div>
+					<h4> Enseignants </h4>
+				  </div>
+				</a>
+			</div>
+			
+		</div>
+			
+		<div class="row">
+			
+			<div class="col-xs-2 ">
+				<a href="#" class="tablink" onclick="openMenu(event, 'disciplinelayout')">
+				  <div class="w3-round w3-section w3-container w3-blue w3-hover-khaki w3-padding-hor-10">
+					<div class="w3-left"><i class="material-icons w3-xlarge">library_books</i></div>
+					<div class="w3-clear"></div>
+					<h4> Disciplines </h4>
+				  </div>
+				</a>
+			</div>
+			
+			<div class="col-xs-2 ">
+				<a href="#" class="tablink" onclick="openMenu(event, 'matierelayout')">
+				  <div class="w3-round w3-section w3-container w3-blue w3-hover-khaki w3-padding-hor-10">
+					<div class="w3-left"><i class="fa fa-list-alt w3-xlarge"></i></div>
+					<div class="w3-clear"></div>
+					<h4> Matieres </h4>
+				  </div>
+				</a>
+			</div>
+			
+			<div class="col-xs-2 ">
+				<a href="#" class="tablink" onclick="openMenu(event, 'voeuxlayout')">
+				  <div class="w3-round w3-section w3-container w3-blue w3-hover-aqua w3-padding-hor-10">
+					<div class="w3-left"><i class="glyphicon glyphicon-star w3-xlarge"></i></div>
+					<div class="w3-clear"></div>
+					<h4> Voeux </h4>
+				  </div>
+				</a>
+			</div>
+			
+			<div class="col-xs-2">
+				<a href="#" class="tablink" onclick="openMenu(event, 'devoirlayout')">
+				  <div class="w3-round w3-section w3-container w3-blue w3-hover-aqua w3-padding-hor-10">
+					<div class="w3-left"><i class="glyphicon glyphicon-book w3-xlarge"></i><i class="glyphicon glyphicon-text-background w3-xlarge"></i></div>
+					<div class="w3-clear"></div>
+					<h4> Devoirs </h4>
+				  </div>
+				</a>
+			</div>
+			
+			<div class="col-xs-2">
+				<a href="#" class="tablink" onclick="openMenu(event, 'lieuxlayout')">
+				  <div class="w3-round w3-section w3-container w3-blue w3-hover-red w3-padding-hor-10">
+					<div class="w3-left"><i class="glyphicon glyphicon-book w3-xlarge"></i><i class="glyphicon glyphicon-text-background w3-xlarge"></i></div>
+					<div class="w3-clear"></div>
+					<h4> Lieux </h4>
+				  </div>
+				</a>
+			</div>
+		
+		
+		
+		
+			<div class="col-xs-2">
+				<a href="#" class="tablink" onclick="openMenu(event, 'sallelayout')">
+				  <div class="w3-round w3-section w3-container w3-blue w3-hover-red w3-padding-hor-10">
+					<div class="w3-left"><i class="glyphicon glyphicon-book w3-xlarge"></i><i class="glyphicon glyphicon-text-background w3-xlarge"></i></div>
+					<div class="w3-clear"></div>
+					<h4> Salles  </h4>
+				  </div>
+				</a>
+			</div>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+	{% endblock %}
+	
+	{% block bodycontent %}
+		
+		{% include "PedagogiePedagogieBundle::admin/emploi/emploilayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/departement/departementlayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/filiere/filierelayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/classe/classelayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/groupe/groupelayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/enseignant/enseignantlayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/discipline/disciplinelayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/matiere/matierelayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/voeux/voeuxlayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/devoir/devoirlayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/modif/modiflayout.html.twig" %}
+	
+	{% endblock %}
+    
+
+
+{% block javascripts %}
+	{{ parent() }}
+	
+	<script type="text/javascript" src="{{ asset('includes/js/pedagogie.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/emploihandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/departementhandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/filierehandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/classehandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/groupehandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/enseignanthandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/disciplinehandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/matierehandle.js') }}"></script>
+{% endblock %}

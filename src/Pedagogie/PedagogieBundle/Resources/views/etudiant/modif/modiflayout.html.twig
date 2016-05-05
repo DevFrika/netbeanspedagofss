@@ -1,0 +1,150 @@
+<div class="section w3-clear" style="margin-top:-25%;margin-left:1%;clear:both;">
+	<div class="w3-row">
+		<div id="modiflayout" class="w3-container tabs w3-animate-zoom" style="height:80%">
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<header class="w3-container w3-blue w3-padding back-button">
+						<a href="#" onclick="closeMenu(event, 'bodycontent')"  class="w3-btn btn w3-white tablink w3-left"><i class="glyphicon glyphicon-menu-left"></i> Retour </a>
+					
+				</header>
+			
+			</div>
+		</div>
+
+		<div class="row">
+		
+			<div class="col-md-12">
+			
+				<!-- Overlay effect when opening sidenav on small screens -->
+				<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu"></div>
+
+
+				<!-- !PAGE CONTENT! -->
+				<div class="w3-main" style="margin-left:200px;margin-top:23px;">
+
+					<!-- Header -->
+
+				   <div class="w3-container pull-left" style="margin-left:110px">
+						
+						<div id="modifdepartement" class="tabs w3-container w3-section w3-animate-left">
+						
+							{% if alldepartement is not null %}
+							
+								{% for dep in alldepartement  %}
+								
+									{% include "PedagogiePedagogieBundle::admin/departement/updatedepartementlayout.html.twig" %}
+									
+								{% endfor %}
+								
+							{% endif %}
+						</div>
+						
+						<div id="modifmatiere" class="tabs w3-container w3-section w3-animate-left">
+						
+							{% if allmatiere is not null %}
+							
+								{% for mat in allmatiere  %}
+								
+									{% include "PedagogiePedagogieBundle::admin/matiere/updatematierelayout.html.twig" %}
+									
+								{% endfor %}
+								
+							{% endif %}
+						</div>
+						
+						<div id="modiffiliere" class="tabs w3-container w3-section w3-animate-left">
+						
+							{% if allfiliere is not null %}
+							
+								{% for fil in allfiliere  %}
+								
+									{% include "PedagogiePedagogieBundle::admin/filiere/updatefilierelayout.html.twig" %}
+									
+								{% endfor %}
+								
+							{% endif %}
+						</div>
+						
+						<div id="modifemploi" class="tabs w3-container w3-section w3-animate-left">
+						
+							{% if allemploi is not null %}
+							
+								{% for emp in allemploi  %}
+								
+									{% include "PedagogiePedagogieBundle::admin/emploi/updateemploilayout.html.twig" %}
+									
+								{% endfor %}
+								
+							{% endif %}
+						</div>
+						
+						<div id="modifgroupe" class="tabs w3-container w3-section w3-animate-left">
+						
+							{% if allgroupe is not null %}
+							
+								{% for grp in allgroupe  %}
+								
+									{% include "PedagogiePedagogieBundle::admin/groupe/updategroupelayout.html.twig" %}
+									
+								{% endfor %}
+								
+							{% endif %}
+						</div>
+						
+						<div id="modifdiscipline" class="tabs w3-container w3-section w3-animate-left">
+						
+							{% if alldiscipline is not null %}
+							
+								{% for dis in alldiscipline  %}
+								
+									{% include "PedagogiePedagogieBundle::admin/discipline/updatedisciplinelayout.html.twig" %}
+									
+								{% endfor %}
+								
+							{% endif %}
+						</div>
+						
+						<div id="modifvoeux" class="tabs w3-container w3-section w3-animate-left">
+						
+							{% if allvoeux is not null %}
+							
+								{% for veu in allvoeux  %}
+								
+									{% include "PedagogiePedagogieBundle::admin/voeux/updatevoeuxlayout.html.twig" %}
+									
+								{% endfor %}
+								
+							{% endif %}
+						</div>
+						
+						<div id="modifdevoir" class="tabs w3-container w3-section w3-animate-left">
+						
+							{% if alldevoir is not null %}
+							
+								{% for dev in alldevoir  %}
+								
+									{% include "PedagogiePedagogieBundle::admin/devoir/updatedevoirlayout.html.twig" %}
+									
+								{% endfor %}
+								
+							{% endif %}
+						</div>
+						
+						
+						
+						
+						
+						  
+					</div>
+				  <!-- End page content -->
+				</div>
+
+
+
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
