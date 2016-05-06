@@ -1,0 +1,9 @@
+﻿Nature d'enseignement ( 15aine ou semaine )
+Matiere Principale/Transversale/Optionnel || Niveau de la filiere || Charge Horaire 
+
+Disciplines / Classes
+Matieres / Classes
+
+Notion de 15aine et de semestre 
+
+Notion de mutex 
