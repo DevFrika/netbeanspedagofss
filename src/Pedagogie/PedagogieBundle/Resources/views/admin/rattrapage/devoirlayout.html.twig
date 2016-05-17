@@ -18,19 +18,18 @@
 					<nav class="w3-card-2 w3-animate-left w3-white" style="width:300px;position:static;">
 						<div class="w3-container w3-row">
 							<div class="w3-col s4">
-								<h3 class="text-center"><b> <i class="glyphicon glyphicon-calendar w3-xlarge"></i> Devoirs </b></h3><br>
+								<h3 class="text-center"><b> <i class="glyphicon glyphicon-calendar w3-xlarge"></i> devoirs </b></h3><br>
 							</div>
 						</div>
 					  
 						<ul class="nav nav-pills nav-stacked">
 							<li><a href="#" class="tablinkw3-padding-hor-16 w3-hide-large w3-dark-grey w3-hover-black tablink" onclick="w3_close()" title="close menu"><i class="fa fa-remove"></i>  Close Menu</a></li>
-							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listedevoirfil','devoirlayout')"><i class="fa fa-users"></i> Liste des Devoirs par Filiere </a></li>
-							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listedevoirgrp','devoirlayout')"><i class="fa fa-users"></i> Liste des Devoirs par Groupe </a></li>
-							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listedevoirsal','devoirlayout')"><i class="fa fa-users"></i> Liste des Devoirs par Salle </a></li>
-							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listedevoirens','devoirlayout')"><i class="fa fa-users"></i> Liste des Devoirs par Enseignant </a></li>
-							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listedevoirdep','devoirlayout')"><i class="fa fa-users"></i> Liste des Devoirs  par Departements </a></li>
-							<li><a href="#" class="tablink" onclick="openSubTab(event, 'designhelp','devoirlayout')"><i class="fa fa-users"></i> Help Design </a></li>
-							<li><a href="#" class="w3-padding w3-blue tablink" onclick="OpenEmpModal(event,'{{ session_id }}')" ><i class="glyphicon glyphicon-plus"></i> Ajouter un nouveau devoir </a></li>
+							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listedevoirfil','devoirlayout')"><i class="fa fa-users"></i> Liste des devoirs par Filiere </a></li>
+							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listedevoirgrp','devoirlayout')"><i class="fa fa-users"></i> Liste des devoirs par Groupe </a></li>
+							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listedevoirsal','devoirlayout')"><i class="fa fa-users"></i> Liste des devoirs par Salle </a></li>
+							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listedevoirens','devoirlayout')"><i class="fa fa-users"></i> Liste des devoirs par Enseignant </a></li>
+							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listedevoirdep','devoirlayout')"><i class="fa fa-users"></i> Liste des devoirs </a></li>
+							<li><a href="#" class="w3-padding w3-blue tablink" onclick="OpendevModal(event,'{{ session_id }}')" ><i class="glyphicon glyphicon-plus"></i> Ajouter un nouveau devoir </a></li>
 							<!-- <li><a href="#" class="w3-padding w3-blue tablink" data-toggle="modal" data-target="#adddevoir" ><i class="glyphicon glyphicon-plus"></i> Ajouter un nouveau devoir </a></li> -->
 						</ul>
 					 
@@ -51,7 +50,7 @@
 							<div id="devoirinfo" class="w3-container w3-section userinfo w3-animate-left">
 							
 								
-							  <h1> Info Devoirs </h1>
+							  <h1> Info devoirs </h1>
 							  
 			
 							</div>
@@ -72,7 +71,8 @@
 															</div>
 															<div class="col-md-8">
 															
-																<a class="btn btn-primary" onclick="LoadDevFil('{{ fil.id }}')" > <i class="fa fa-eye"></i> Consulter </a>
+																<a class="btn btn-primary" onclick="LoaddevFil('{{ fil.id }}','graphique')" > <i class="fa fa-eye"></i> Consulter devoir Graphique </a>
+																<a class="btn btn-primary" onclick="LoaddevFil('{{ fil.id }}','liste')" > <i class="fa fa-eye"></i> Consulter devoir Liste </a>
 																
 															</div>
 														</div>
@@ -84,7 +84,7 @@
 								</div>
 									
 								{% else %}
-								  <h1> Pas de devoir pour les filieres </h1>
+								  <h1> Pas d'devoir pour les filieres </h1>
 								{% endif %}
 						
 						
@@ -100,13 +100,14 @@
 										
 												{% if grp.devoirs is not null and grp.devoirs.count > 0 %}
 												
-														<div class="fssdevgrp{{ grp.id }} col-md-4">
+														<div class="fssdevgrp{{ grp.id }} col-md-6">
 															<div class="col-md-4">
 																<h3>{{ grp.groupe }}</h3>
 															</div>
 															<div class="col-md-8">
 															
-																<a class="btn btn-primary" onclick="LoadDEVGrp('{{ grp.id }}')" > <i class="fa fa-eye"></i> Consulter </a>
+																<a class="btn btn-primary" onclick="LoaddevGrp('{{ grp.id }}','graphique')" > <i class="fa fa-eye"></i> Consulter devoir Graphique </a>
+																<a class="btn btn-primary" onclick="LoaddevGrp('{{ grp.id }}','liste')" > <i class="fa fa-eye"></i> Consulter devoir Liste </a>
 																
 															</div>
 														</div>
@@ -118,14 +119,14 @@
 								</div>
 									
 								{% else %}
-								  <h1> Pas de devoir pour les groupes </h1>
+								  <h1> Pas d'devoir pour les groupes </h1>
 								{% endif %}
 						
 						
 							</div>
 							
 							
-							 <div id="listeDevoirsal" class="tabs w3-container w3-section w3-animate-left">
+							 <div id="listedevoirsal" class="tabs w3-container w3-section w3-animate-left">
 							
 								{% if alldevoir is not null %}
 						
@@ -137,13 +138,14 @@
 												
 													
 							
-														<div class="fssdevsal{{ salle.id }} col-md-4">
+														<div class="fssdevsal{{ salle.id }} col-md-6">
 															<div class="col-md-4">
 																<h3>{{ salle.salle }}</h3>
 															</div>
 															<div class="col-md-8">
 															
-																<a class="btn btn-primary" onclick="LoadDevSal('{{ salle.id }}')" > <i class="fa fa-eye"></i> Consulter </a>
+																<a class="btn btn-primary" onclick="LoaddevSal('{{ salle.id }}','graphique')" > <i class="fa fa-eye"></i> Consulter devoir Graphique </a>
+																<a class="btn btn-primary" onclick="LoaddevSal('{{ salle.id }}','liste')" > <i class="fa fa-eye"></i> Consulter devoir Liste </a>
 																
 															</div>
 														</div>
@@ -177,7 +179,8 @@
 															</div>
 															<div class="col-md-8">
 															
-																<a class="btn btn-primary" onclick="LoadDevEns('{{ ens.id }}')" > <i class="fa fa-eye"></i> Consulter </a>
+																<a class="btn btn-primary" onclick="LoaddevEns('{{ ens.id }}','graphique')" > <i class="fa fa-eye"></i> Consulter devoir Graphique </a>
+																<a class="btn btn-primary" onclick="LoaddevEns('{{ ens.id }}','liste')" > <i class="fa fa-eye"></i> Consulter devoir Liste </a>
 																
 															</div>
 														</div>
@@ -202,24 +205,52 @@
 								<div class="section">
 									<div class="container">
 										
-										{% for dev in alldevoir  %}
-							
-											<div class="fssemp{{ dev.id }} col-md-8">
-											  <div class="col-md-4">
-												<img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive">
-											  </div>
-											  <div class="col-md-8">
-												<h3>{{ dev.id }}</h3>
+										{% for dep in alldepartement  %}
+										
+										<div class="row">
+										
+											<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#depdevcol{{ dep.id }}" aria-expanded="false" aria-controls="depdevcol{{ dep.id }}">
+												Liste devoir {{ dep.departement }}
+											</button>
 											
-													<a class="btn btn-primary" data-toggle="modal" data-target="#dev{{ dev.id }}" > <i class="fa fa-eye"></i> Consulter </a>
-													<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updatedev{{ dev.id }}','modifdevoir','devoirlayout')"><i class="fa fa-pencil"></i>Modifier</a>
-													<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#deldev{{ dev.id }}" ><i class="fa fa-trash"></i>Supprimer</a>
+											<div class="collapse" id="depdevcol{{ dep.id }}">
+											
+											<table>
+												<thead>
+													<tr>
+														<th>Filiere</th>
+														<th>Groupe</th>
+														<th>Matiere</th>
+														<th>Action</th>
+													</tr>
+												</thead>
+												<tbody>
+											{% for dev in dep.devoirs  %}
+											
+												<tr class="fssdev{{ dev.id }}">
 												
-											  </div>
+													<td>{{ dev.filieres.filiere }}</td>
+													<td>{{ dev.groupes.groupe }}</td>
+													<td>{{ dev.matiere.matiere }}</td>
+													<td>												
+															<a class="btn btn-primary" data-toggle="modal" data-target="#dev{{ dev.id }}" > <i class="fa fa-eye"></i> Consulter </a>
+															<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updatedev{{ dev.id }}','modifdevoir','devoirlayout')"><i class="fa fa-pencil"></i>Modifier</a>
+															<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#deldev{{ dev.id }}" ><i class="fa fa-trash"></i>Supprimer</a>
+													</td>
+												</tr>
+											{%endfor%}
+												</tbody>
+											</table>
+											
 											</div>
 											
+										</div>
+										
+										<br>
+										<div class="w3-clear"></div>
+											
 										{%endfor%}
-
+										
 									</div>
 								</div>
 									
@@ -231,47 +262,6 @@
 							</div>
 							
 							
-							
-								<div id="designhelp" class="tabs w3-container w3-section w3-animate-left">
-								
-									<header class="w3-container w3-blue">
-											<a href="#" onclick="closeMenu(event, 'mainmenu')"  class="w3-btn btn btn-info tablink"><i class="glyphicon glyphicon-menu-left"></i> Retour </a>
-									</header>
-									
-									  <div class="w3-container">
-										<h5>Recent Users</h5>
-										<ul class="w3-ul w3-card-4 w3-white">
-										 
-										  <li class="w3-padding-hor-16">
-											<span onclick="this.parentElement.style.display='none'" class="w3-closebtn w3-padding w3-margin-right w3-medium">x</span>
-											<img src="img_avatar6.png" class="w3-left w3-circle w3-margin-right" style="width:35px">
-											<span class="w3-xlarge">Jane</span><br>
-										  </li>
-										</ul>
-									  </div>
-								  <hr>
-
-									  <div class="w3-container">
-										<h5>Recent Comments</h5>
-										
-										<div class="w3-row">
-										  <div class="w3-col s2 text-center">
-											<img class="w3-circle w3-image" src="img_avatar1.png" style="width:96px;height:96px">
-										  </div>
-										  <div class="w3-col s10 w3-container">
-											<h4>Bo <span class="w3-opacity w3-medium">Sep 28, 2014, 10:15 PM</span></h4>
-											<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
-										  </div>
-										</div>
-									  </div>
-								  
-								  
-								
-								  
-								   
-								</div>
-							
-							  
 						</div>
 						<!-- End page content -->
 					</div>

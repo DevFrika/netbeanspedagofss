@@ -212,11 +212,13 @@ class Matiere
     {
         $this->filieres[] = $filieres;
 		$filieres->addMatiere($this);
+		/*
 		$allclasses = $filieres->getClasses();
 		foreach( $allclasses as $cls )
 		{				
 			$this->addClass($cls);				
 		}
+		*/
         return $this;
     }
 
@@ -283,11 +285,13 @@ class Matiere
     {
         $this->classes[] = $classes;
 		$classes->addMatiere($this);
+		/*
 		$allgroupes =  $classes->getGroupes() ;
 		foreach( $allgroupes as $grp )
 		{				
 			$this->addGroupe($grp);				
 		}
+		*/
         return $this;
     }
 

@@ -8,7 +8,7 @@
 			</div>
 			
 			<div class="modal-body">
-				<div  class="container-fluid text-center">
+				<div id="containeraddvoeux" class="container-fluid text-center">
 					<div class="col-sm-10 col-md-offset-1" >
             
 						<!-- FORM -->
@@ -63,7 +63,7 @@
 										   <!-- Année de debut -->
 										  <div class="form-group veu-form-group col-xs-3">
 											<label> Année de debut </label>
-											<select id="yearselect" class="form-control"> 
+											<select id="addveuyearselect" class="form-control"> 
 												<option value="{{ date().format('Y') }}">{{ date().format('Y') }}</option>
 												<option value="{{ date().modify("+1 years").format('Y') }}">{{ date().modify("+1 years").format('Y') }}</option>  
 												<option value="{{ date().modify("+2 years").format('Y') }}">{{ date().modify("+2 years").format('Y') }}</option>  
@@ -77,7 +77,7 @@
 										   <!-- Semestre -->
 										  <div class="form-group veu-form-group col-xs-3">
 											<label> Semestre </label>
-											<select id="smtselect" class="form-control">
+											<select id="addveusmtselect" class="form-control">
 												{%for smt in allsemestre %}
 												<option value="{{ smt.code }}">{{ smt.semestre }}</option>
 												{% endfor %}
@@ -186,7 +186,7 @@
 										   <!-- Periodicite -->
 										  <div class="form-group veu-form-group col-xs-3">
 											<label> Periode </label>
-											<select id="prdselect" class="form-control">
+											<select id="addveuprdselect" class="form-control">
 												{%for prd in allperiode %}
 												<option value="{{ prd.id }}">{{ prd.periode }}</option>
 												{% endfor %}
@@ -237,7 +237,7 @@
 										  <!-- Natures -->
 										  <div class="form-group veu-form-group col-xs-3">
 											<label> Nature </label>
-											<select id="natselect" class="form-control" >
+											<select id="addveunatselect" class="form-control" >
 												{%for nat in allnature %}
 												<option value="{{ nat.id }}">{{ nat.description }}</option>
 												{% endfor %}

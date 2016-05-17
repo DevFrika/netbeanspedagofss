@@ -3,7 +3,8 @@
 
 	
     
-	var redirecturl = 'http://localhost/netbeanspedagofss/web/app_dev.php/User';
+	var redirecturl = 'http://pfefss.azurewebsites.net/web/app.php/User';
+	//var redirecturl = 'http://localhost/netbeanspedagofss/web/app_dev.php/User';
 	
 	var reloadtime = 1000 ;
 	var cookietime = 24*60*60*1000;
@@ -48,10 +49,7 @@
 	$('#connexionform').submit(function(event) {
 		
 		 var loginurl = $('input[name=login_url]').val();
-		 
-		$(".ajax_spinner").remove();
-		$(".ajax_wait").remove();
-
+		
 
 	   
 	  // remove the past errors
@@ -98,7 +96,7 @@
 			}
 
 			if (data.errors.password) {
-			  $('#password-group').addClass('alert alert-danger alert-dismissable has-error');
+			  $('#password-group').addClass('alert alert-success alert-dismissable has-error');
 			  $('#password-group .help-block').html(data.errors.password);
 			}
 			
@@ -160,10 +158,7 @@
 		 
 		 var sigininurl = $('input[name=register_url]').val();
 		 
-		$(".ajax_spinner").remove();
-		$(".ajax_wait").remove();
 
-	   
 	   
 	  // remove the past errors
 	  $('#reg_username-group').removeClass('has-error alert alert-success alert-danger alert-dismissable');
@@ -207,8 +202,7 @@
 		  // add the error message to the help block under the input
 		  if ( ! data.success) {
 			  
-			  $(".ajax_spinner").remove();
-			  $(".ajax_wait").remove();
+			  
 			 
 			if (data.errors.username) {
 			  $('#reg_username-group').addClass('alert alert-danger alert-dismissable has-error');
@@ -275,7 +269,6 @@
 
 function w3_open() {
   document.getElementById("main").style.marginLeft = "20%";
-  
   document.getElementsByClassName("w3-sidenav")[0].style.width = "20%";
   document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
   document.getElementsByClassName("w3-overlay")[0].style.display = "block";
@@ -293,8 +286,8 @@ function w3_open() {
 }
 
 function w3_close() {
+	
   document.getElementById("main").style.marginLeft = "0%";
- 
   document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
   document.getElementsByClassName("w3-overlay")[0].style.display = "none";
   document.getElementsByClassName("w3-opennav")[0].style.display = "inline-block";

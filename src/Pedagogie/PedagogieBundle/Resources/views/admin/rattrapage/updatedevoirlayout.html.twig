@@ -1,5 +1,5 @@
 <div id="updatedev{{ dev.id }}" class="w3-container tabs w3-animate-zoom">
-		<header class="w3-container" style="pupding-top:22px">
+		<header class="w3-container" style="padding-top:22px">
 			<div class="w3-left">
 				<a href="#" onclick="closeMenu(event, 'devoirlayout')"  class="w3-btn btn btn-info tablink"><i class="glyphicon glyphicon-menu-left"></i> Retour </a>
 			</div>
@@ -14,46 +14,14 @@
               <div class="col-sm-10 col-md-offset-1" >
                 <!-- PAGE TITLE -->
                 
-                  <h4>
-                    <span ></span> </h4>
-					
-					<!-- SHOW ERROR/SUCCESS MESSAGES -->
-				
-                <div class="form-group dev-form-group"> 
-					<span class="messages-block"></span>
-				</div>
                
                 <!-- FORM -->
-                <form name="upddevform{{ dev.id }}" class="form-horizontal" method="POST" onsubmit="updatedevoir(event,'upddevform{{ dev.id }}')" >
+                <form name="upddevform{{ dev.id }}" class="form-horizontal" method="POST" onsubmit="updateDevoir(event,'upddevform{{ dev.id }}')" >
 				
-                   <!-- Matieres -->
-                  <div class="form-group dev-form-group">
-                    <label> Matieres </label>
-                    <select id="upddevmatselect" class="form-control" >
-					
-						{%for mat in allmatiere %}
-						<option value="{{ mat.id }}">{{ mat.matiere }}</option>
-						{% endfor %}
-						
-					</select>
-					<span class="help-block"></span>
-                  </div>
-				  
-				  <!-- Natures -->
-				  <div class="form-group emp-form-group">
-                    <label> Nature </label>
-                    <select id="upddevnatselect" class="form-control" >
-						{%for nat in allnature %}
-						<option value="{{ nat.id }}"> Devoir de {{ nat.description }}</option>
-						{% endfor %}
-					</select>
-					<span class="help-block"></span>
-                  </div>
-				  
                   <!-- Departements -->
                   <div class="form-group dev-form-group">
                     <label> Départements </label>
-                    <select id="upddevdepselect" class="form-control" onchange="devLoadFiliere(this.value,'upddevfilselect')">
+                    <select id="depselect" onchange="devLoadFiliere(this.value,'filselect')" class="form-control">
 						{%for dep in alldepartement %}
 						<option value="{{ dep.id }}">{{ dep.departement}}</option>
 						{% endfor %}
@@ -64,7 +32,7 @@
 				  <!-- Filieres -->
                   <div class="form-group dev-form-group">
                     <label> Filieres </label>
-                    <select id="upddevfilselect" class="form-control" onchange="devLoadClasse(this.value,'upddevclsselect')">
+                    <select id="filselect" onchange="devLoadClasse(this.value,'clsselect')" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
@@ -73,7 +41,7 @@
 				  <!-- Classes -->
                   <div class="form-group dev-form-group">
                     <label> Classes </label>
-                    <select id="upddevclsselect" class="form-control" onchange="devLoadGroupe(this.value,'upddevgrpselect')">
+                    <select id="clsselect" onchange="devLoadGroupe(this.value,'grpselect')" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
@@ -82,21 +50,36 @@
 				  <!-- Groupes -->
                   <div class="form-group dev-form-group">
                     <label> Groupes </label>
-                    <select id="updempgrpselect" class="form-control" >
+                    <select id="grpselect" onchange="devLoadDiscipline(this.value,'disselect')" class="form-control">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Disciplines -->
+                  <div class="form-group dev-form-group">
+                    <label> Disciplines </label>
+                    <select id="disselect" onchange="devLoadMatiere(this.value,'matselect')" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  
+				  <!-- Matieres -->
+                  <div class="form-group dev-form-group">
+                    <label> Matieres </label>
+                    <select id="matselect" onchange="devLoadEnseignant(this.value,'ensselect')" class="form-control">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
 				  
-				   <!-- Lieux -->
+				  <!-- Enseignant -->
 				  <div class="form-group dev-form-group">
-                    <label> Lieux </label>
-                    <select id="upddevlieuxselect" class="form-control" onchange="empLoadSalle(this.value,'upddevsalselect')">
-						{%for lix in alllieux %}
-						<option value="{{ lix.code }}">{{ lix.lieux }}</option>
-						{% endfor %}
+                    <label> Enseignants </label>
+                    <select id="ensselect" class="form-control">
+						
 					</select>
 					<span class="help-block"></span>
                   </div>
@@ -104,33 +87,16 @@
 				  <!-- Salles -->
 				  <div class="form-group dev-form-group">
                     <label> Salles </label>
-                    <select id="updempsalselect" class="form-control" >
-						{%for sal in allsalle %}
-						<option value="{{ sal.id }}">{{ sal.salle }}</option>
-						{% endfor %}
-					</select>
-					<span class="help-block"></span>
-                  </div>
-				  
-				   <!-- Jours -->
-				  <div class="form-group dev-form-group">
-                    <label> Jours </label>
-                    <select id="upddevjourselect" class="form-control" >
-						<option value="1">Lundi</option>
-						<option value="2">Mardi</option>
-						<option value="3">Mercredi</option>
-						<option value="4">Jeudi</option>
-						<option value="5">Vendredi</option>
-						<option value="6">Samedi</option>
-						<option value="7">Dimanche</option>
+                    <select id="salselect" class="form-control">
+						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Heure Debut -->
-                  <div class=" form-group dev-form-group">
+                  <div class="form-group dev-form-group">
                     <label> Heure Debut </label>
-                    <select id="upddevhdebselect" class="form-control">
+                    <select id="hdebselect" class="form-control">
 						<option value="08">08H</option>
 						<option value="09">09H</option>
 						<option value="10">10H</option>
@@ -143,14 +109,19 @@
 						<option value="17">17H</option>
 						<option value="18">18H</option>
 					</select>
-					<select id="upddevmindebselect" class="form-control">
+					<select id="mindebselect" class="form-control">
 						<option value="00">00M</option>
-						
+						<option value="05">05M</option>
+						<option value="10">10M</option>
 						<option value="15">15M</option>
-						
+						<option value="20">20M</option>
+						<option value="25">25M</option>
 						<option value="30">30M</option>
-						
+						<option value="35">35M</option>
+						<option value="40">40M</option>
 						<option value="45">45M</option>
+						<option value="50">50M</option>
+						<option value="55">55M</option>
 					</select>
 					<span class="help-block"></span>
                   </div>
@@ -158,7 +129,7 @@
 				  <!-- Heure Fin -->
                   <div class="form-group dev-form-group">
                     <label> Heure Fin </label>
-                    <select id="upddevhfinselect" class="form-control">
+                    <select id="hfinselect" class="form-control">
 						<option value="08">08H</option>
 						<option value="09">09H</option>
 						<option value="10">10H</option>
@@ -171,33 +142,34 @@
 						<option value="17">17H</option>
 						<option value="18">18H</option>
 					</select>
-					<select id="upddevminfinselect" class="form-control">
+					<select id="minfinselect" class="form-control">
 						<option value="00">00M</option>
-						
+						<option value="05">05M</option>
+						<option value="10">10M</option>
 						<option value="15">15M</option>
-						
+						<option value="20">20M</option>
+						<option value="25">25M</option>
 						<option value="30">30M</option>
-						
+						<option value="35">35M</option>
+						<option value="40">40M</option>
 						<option value="45">45M</option>
-						
+						<option value="50">50M</option>
+						<option value="55">55M</option>
 					</select>
 					<span class="help-block"></span>
                   </div>
-				     
-				  <!-- SHOW ERROR/SUCCESS MESSAGES -->
-				  <div class="dev-form-group"> 
-						<span class="messages-block"></span>
-					</div>
-					
-					<div class="w3-clear"></div>
 				  
-                  <span class="ajax_wait" align="center">
-                    <!--don't delete this span class="ajax_wait"-->
-                  </span>
 				  
+				  
+                  <!-- SHOW ERROR/SUCCESS MESSAGES -->
+				
+                <div class="form-group dev-form-group"> 
+					<span class="messages-block"></span>
+				</div>
 				  
 				  <input type="text" name="upddevtag" value="updatedev" hidden>
 				  <input type="text" name="olddevname" value="{{ dev.id }}" hidden>
+				   <input type="text" name="deldevoir_url" value="{{ path('pedagogie_deletedevoir') }}" hidden>
 				  <input type="text" name="updatedevoir_url" value="{{ path('pedagogie_updatedevoir') }}" hidden>
                   <!-- SUBMIT BUTTON -->
                   <button type="submit" class="btn btn-success btn-lg btn-block">

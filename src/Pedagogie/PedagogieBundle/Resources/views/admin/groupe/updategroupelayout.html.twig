@@ -5,9 +5,7 @@
 				<a href="#" onclick="closeMenu(event, 'groupelayout')"  class="w3-btn btn btn-info tablink"><i class="glyphicon glyphicon-menu-left"></i> Retour </a>
 			</div>
 				<h3 class="text-center"><b><i class="material-icons">class</i> groupe - {{ grp.groupe }} </b></h3>
-				{% if session_id is defined and session_id != null and typeuser == "admin" %}
-			
-				{% endif %}
+				
 		</header>
 		
 
@@ -18,10 +16,7 @@
               <div class="col-sm-10 col-md-offset-1" >
                 <!-- PAGE TITLE -->
                 
-                  <h4>
-                    <span ></span> </h4>
-					
-               
+                  
                 <!-- FORM -->
                 <form name="updgrpform{{ grp.id }}"  method="POST" onsubmit="updateGroupe(event,'updgrpform{{ grp.id }}','{{ grp.id }}')" >
                  

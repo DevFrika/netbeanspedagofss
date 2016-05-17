@@ -44,11 +44,12 @@
 			</div>
 		</div>		
 	
-		<div id="row_header" class="row w3-top" style="margin-left:1%;width:98%;">
-			<div id="headerfss" class="navbar navbar-fixed-top w3-theme w3-left-align w3-grey" style="z-index:50;height:70px;margin-bottom:1px;margin-top:1px;width:100%;" role="navigation">
+		<div id="row_header" class="row w3-top" style="margin-left:1%;width:98%;z-index:99;">
+		
+			<div id="headerfss" class="navbar navbar-fixed-top w3-theme w3-left-align w3-grey" style="z-index:99;height:70px;margin-bottom:1px;margin-top:1px;width:100%;" role="navigation">
 
-			  <div class="container w3-right" style="z-index:50;">
-					  <div class="navbar-header" style="z-index:50;">
+			  <div class="container w3-right" style="z-index:99;">
+					  <div class="navbar-header" style="z-index:99;">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse" style="z-index:50;">
 						  <span class="sr-only">Toggle navigation</span>
 						  <span class="icon-bar"></span>
@@ -64,7 +65,7 @@
 				  <div id="banner"><img src="{{ asset('includes/images/header.jpg') }}" alt="PM"></div>
 				-->
 			 
-			  <div class="collapse navbar-collapse" id="navbar-ex-collapse" style="z-index:50;"> 
+			  <div class="collapse navbar-collapse" id="navbar-ex-collapse" style="z-index:99;"> 
 			 
 				<ul class=" nav navbar-nav nav-pills">
 				<li class="" style="height:90px;"> 
@@ -74,7 +75,7 @@
 						  
 				<li class="w3-dropdown-hover" style="height:90px;">
 						<a href="{{ path('departement_homepage') }}" class="w3-btn w3-blue w3-round w3-ripple btn btn-default navbar-btn"> {{ lang['MENU_DEPARTEMENTS'] }} <i class="glyphicon glyphicon-education"></i> </a>
-						<div id="Demo" class="w3-dropdown-content w3-animate-zoom">
+						<div  class="w3-dropdown-content w3-animate-zoom">
 							{% for dep in alldepartement %} 
 						  <a href="{{ path('departement_dep',{'id': dep.id })}}" > {{ dep.departement }} </a>
 							{% endfor %}
@@ -118,7 +119,7 @@
 					<li>		  
 							<div class="w3-dropdown-hover pull-right navbar-btn page-scroll">
 							  <button class="w3-btn w3-blue"> {{ lang['LNG'] }} </button>
-							  <div id="Demo" class="w3-dropdown-content w3-animate-zoom">
+							  <div class="w3-dropdown-content w3-animate-zoom">
 								<a href="{{ path('homepage',{'fss_lang':'fr'}) }}">Français <img src="{{ asset('languages/fr.png') }}" alt="Francais" ></a>
 								<a href="{{ path('homepage',{'fss_lang':'en'}) }}">English <img src="{{ asset('languages/en.png') }}" alt="Anglais" ></a>
 							  </div>
@@ -133,26 +134,15 @@
 			  
 			 </div>
 			 
-			<div id="flashnews">
-					
-			 </div>
+			
 			  
 			  
 
 			  
 					</div>
 					
-					 <!--
-					<div class="btn-group btn-group-sm-1 pull-right" role="group" aria-label="user-button" id="userbutton" >
-				 <div class="input-group " id="facsearchzone">
-					<input type="text" class="form-control" placeholder="Chercher ...">
-					<span class="input-group-btn">
-					  <button class="btn btn-default" type="button">Go !</button>
-					</span>
-				  </div>
-				</div>
-			-->
-				<div id="usermessages" class="col-xs-3 w3-section row col-xs-offset-4" style="display:none;z-index:990;margin-bottom:10px;" >
+				
+				<div id="usermessages" class="col-xs-3 w3-section row col-xs-offset-4" style="display:none;z-index:99;margin-bottom:10px;" >
 				{% block usermessages %}
 						   
 				

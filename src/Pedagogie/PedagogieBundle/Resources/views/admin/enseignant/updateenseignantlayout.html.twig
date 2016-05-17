@@ -13,14 +13,9 @@
               <div class="col-lg-10 col-md-offset-1" >
                 <!-- PAGE TITLE -->
                 
-                  <h4>
-                    <span ></span> </h4>
+                  
 					
-					<!-- SHOW ERROR/SUCCESS MESSAGES -->
 				
-                <div class=" form-groupens-form-group"> 
-					<span class="messages-block"></span>
-				</div>
                
                 <!-- FORM -->
                 <form class="form-horizontal ens-form-group" name="form{{ ens.enseignant }}"  method="POST" onsubmit="updateEnseignant(event,'form{{ ens.enseignant }}','{{ ens.id }}')" role="form">
@@ -96,9 +91,11 @@
                   </div>
 				  
 				  
-                  <span class="ajax_wait" align="center">
-                    <!--don't delete this span class="ajax_wait"-->
-                  </span>
+                	<!-- SHOW ERROR/SUCCESS MESSAGES -->
+				
+                <div class=" form-groupens-form-group"> 
+					<span class="messages-block"></span>
+				</div>
 				  
 				 
 				  <input type="text" name="updenstag" value="updateens" hidden>
