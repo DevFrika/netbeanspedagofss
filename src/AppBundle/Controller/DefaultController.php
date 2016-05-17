@@ -21,9 +21,7 @@ class DefaultController extends Controller
 	private $alldevoir ;
 	private $allvoeux ;
 	
-    /**
-     * @Route("/", name="homepage")
-     */
+    
     public function indexAction(Request $request)
     {
 		/* replace this example code with whatever you need
