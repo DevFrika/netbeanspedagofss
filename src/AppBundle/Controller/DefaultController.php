@@ -32,8 +32,6 @@ class DefaultController extends Controller
         ));
 		*/
 		
-		//session_start();
-		//include("/includes/script/files/config.php");
 		include("common.php");
 		$request = $this->getRequest();
 		$session_id = $request->cookies->get('session_id');

@@ -464,17 +464,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         if (0 === strpos($pathinfo, '/User')) {
             // user_homepage
             if ($pathinfo === '/User') {
-                return array (  '_controller' => 'PedagoFssUserBundle:Default:index',  '_route' => 'user_homepage',);
+                return array (  '_controller' => 'PedagoFss\\UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'user_homepage',);
             }
 
             // user_login
             if ($pathinfo === '/User/login') {
-                return array (  '_controller' => 'PedagoFssUserBundle:Login:login',  '_route' => 'user_login',);
+                return array (  '_controller' => 'PedagoFss\\UserBundle\\Controller\\LoginController::loginAction',  '_route' => 'user_login',);
             }
 
             // user_signin
             if ($pathinfo === '/User/signin') {
-                return array (  '_controller' => 'PedagoFssUserBundle:Signin:signin',  '_route' => 'user_signin',);
+                return array (  '_controller' => 'PedagoFss\\UserBundle\\Controller\\SigninController::signinAction',  '_route' => 'user_signin',);
             }
 
             // user_logout

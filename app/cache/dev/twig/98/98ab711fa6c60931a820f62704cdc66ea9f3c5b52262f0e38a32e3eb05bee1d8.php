@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:normal/discipline:disciplinelayout.html.twig */
+/* PedagogiePedagogieBundle::normal/discipline/disciplinelayout.html.twig */
 class __TwigTemplate_724b1311b84f5b6c531d076d2b7426efa44c268d4068fd1882d92b687aef19f6 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_724b1311b84f5b6c531d076d2b7426efa44c268d4068fd1882d92b687ae
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f3ea9c7852fa4354f8c7ef310258c5da7261ffd311d62b8f61bf0a229bdee9c8 = $this->env->getExtension("native_profiler");
-        $__internal_f3ea9c7852fa4354f8c7ef310258c5da7261ffd311d62b8f61bf0a229bdee9c8->enter($__internal_f3ea9c7852fa4354f8c7ef310258c5da7261ffd311d62b8f61bf0a229bdee9c8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:normal/discipline:disciplinelayout.html.twig"));
+        $__internal_7e171dd55ba06f6d0933d52c70dc50831cd98b95cc51fa591c06c3d27d3eb76b = $this->env->getExtension("native_profiler");
+        $__internal_7e171dd55ba06f6d0933d52c70dc50831cd98b95cc51fa591c06c3d27d3eb76b->enter($__internal_7e171dd55ba06f6d0933d52c70dc50831cd98b95cc51fa591c06c3d27d3eb76b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::normal/discipline/disciplinelayout.html.twig"));
 
         // line 1
         echo "<div class=\"section w3-clear\" style=\"margin-top:-25%;margin-left:1%;clear:both;\">
@@ -271,13 +271,13 @@ class __TwigTemplate_724b1311b84f5b6c531d076d2b7426efa44c268d4068fd1882d92b687ae
 
 \t";
         
-        $__internal_f3ea9c7852fa4354f8c7ef310258c5da7261ffd311d62b8f61bf0a229bdee9c8->leave($__internal_f3ea9c7852fa4354f8c7ef310258c5da7261ffd311d62b8f61bf0a229bdee9c8_prof);
+        $__internal_7e171dd55ba06f6d0933d52c70dc50831cd98b95cc51fa591c06c3d27d3eb76b->leave($__internal_7e171dd55ba06f6d0933d52c70dc50831cd98b95cc51fa591c06c3d27d3eb76b_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:normal/discipline:disciplinelayout.html.twig";
+        return "PedagogiePedagogieBundle::normal/discipline/disciplinelayout.html.twig";
     }
 
     public function isTraitable()

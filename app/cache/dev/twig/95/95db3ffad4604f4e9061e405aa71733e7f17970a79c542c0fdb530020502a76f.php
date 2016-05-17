@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:normal/filiere:filierelayout.html.twig */
+/* PedagogiePedagogieBundle::normal/filiere/filierelayout.html.twig */
 class __TwigTemplate_b3d233d3efa7a41fc4187f6404ebdd840a48c748630dca51121766a63169102d extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_b3d233d3efa7a41fc4187f6404ebdd840a48c748630dca51121766a6316
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_736b68eb9a6ca15b612ad352e6cf605774460ae126b777a11b4032681a680e97 = $this->env->getExtension("native_profiler");
-        $__internal_736b68eb9a6ca15b612ad352e6cf605774460ae126b777a11b4032681a680e97->enter($__internal_736b68eb9a6ca15b612ad352e6cf605774460ae126b777a11b4032681a680e97_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:normal/filiere:filierelayout.html.twig"));
+        $__internal_e6d31d4f350d9cd6db513798e12f6b686ccf00b360d015a0f8d6a008c582b280 = $this->env->getExtension("native_profiler");
+        $__internal_e6d31d4f350d9cd6db513798e12f6b686ccf00b360d015a0f8d6a008c582b280->enter($__internal_e6d31d4f350d9cd6db513798e12f6b686ccf00b360d015a0f8d6a008c582b280_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::normal/filiere/filierelayout.html.twig"));
 
         // line 1
         echo "<div class=\"section w3-clear\" style=\"margin-top:-25%;margin-left:1%;clear:both;\">
@@ -274,13 +274,13 @@ class __TwigTemplate_b3d233d3efa7a41fc4187f6404ebdd840a48c748630dca51121766a6316
 
 \t";
         
-        $__internal_736b68eb9a6ca15b612ad352e6cf605774460ae126b777a11b4032681a680e97->leave($__internal_736b68eb9a6ca15b612ad352e6cf605774460ae126b777a11b4032681a680e97_prof);
+        $__internal_e6d31d4f350d9cd6db513798e12f6b686ccf00b360d015a0f8d6a008c582b280->leave($__internal_e6d31d4f350d9cd6db513798e12f6b686ccf00b360d015a0f8d6a008c582b280_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:normal/filiere:filierelayout.html.twig";
+        return "PedagogiePedagogieBundle::normal/filiere/filierelayout.html.twig";
     }
 
     public function isTraitable()
