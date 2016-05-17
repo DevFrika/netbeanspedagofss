@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/filiere:addfilierelayout.html.twig */
+/* PedagogiePedagogieBundle::admin/filiere/addfilierelayout.html.twig */
 class __TwigTemplate_661b5bc7a0fe5729449e7ed1facabcfb003494fab358d467dfcfcdcff05f351e extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_661b5bc7a0fe5729449e7ed1facabcfb003494fab358d467dfcfcdcff05
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5e9d644471fbb3d3e48fa321eb71ad41637a501c946372d55d897e35a9f13e8e = $this->env->getExtension("native_profiler");
-        $__internal_5e9d644471fbb3d3e48fa321eb71ad41637a501c946372d55d897e35a9f13e8e->enter($__internal_5e9d644471fbb3d3e48fa321eb71ad41637a501c946372d55d897e35a9f13e8e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/filiere:addfilierelayout.html.twig"));
+        $__internal_5df43d5fa43a0829a7e130909199d7707229da09d899d2dceced0a75927ecacf = $this->env->getExtension("native_profiler");
+        $__internal_5df43d5fa43a0829a7e130909199d7707229da09d899d2dceced0a75927ecacf->enter($__internal_5df43d5fa43a0829a7e130909199d7707229da09d899d2dceced0a75927ecacf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/filiere/addfilierelayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"addfiliere\">
@@ -109,13 +109,13 @@ class __TwigTemplate_661b5bc7a0fe5729449e7ed1facabcfb003494fab358d467dfcfcdcff05
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_5e9d644471fbb3d3e48fa321eb71ad41637a501c946372d55d897e35a9f13e8e->leave($__internal_5e9d644471fbb3d3e48fa321eb71ad41637a501c946372d55d897e35a9f13e8e_prof);
+        $__internal_5df43d5fa43a0829a7e130909199d7707229da09d899d2dceced0a75927ecacf->leave($__internal_5df43d5fa43a0829a7e130909199d7707229da09d899d2dceced0a75927ecacf_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/filiere:addfilierelayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/filiere/addfilierelayout.html.twig";
     }
 
     public function isTraitable()

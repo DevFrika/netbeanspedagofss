@@ -145,11 +145,11 @@ class DisciplineController extends Controller
 						$i = 0;
 						foreach( $alldis as $dis )
 						{
-							$disciplines['dis'.$i] = array('discipline' => $dis->getDiscipline() );
+							$disciplines['dis'.$i] = array('discipline' => $dis->getDiscipline(),'disciplineid' => $dis->getId() );
 							$i++;
 						}
 						
-						if(empty($disciplines))
+						if($disciplines == null || empty($disciplines))
 						{
 							$data['success'] = false;
 							$data['message'] = ' Erreur de recuperation des Disciplines - Aucune Discipline trouvé !';
@@ -228,7 +228,7 @@ class DisciplineController extends Controller
 						$i = 0;
 						foreach( $alldis as $dis )
 						{
-							$disciplines['dis'.$i] = array('discipline' => $dis->getDiscipline() );
+							$disciplines['dis'.$i] = array('discipline' => $dis->getDiscipline(),'disciplineid' => $dis->getId() );
 							$i++;
 						}
 						
@@ -303,9 +303,9 @@ class DisciplineController extends Controller
 						// validate the variables ======================================================
 					// if any of these variables don't exist, add an error to our $errors array
 
-					if (empty($request->request->get('iddis')))
+					if (empty($request->request->get('nomdis')))
 					{
-						$errors['iddis'] = "L'ID de la discipline est requis ";
+						$errors['nomdis'] = "L'ID de la discipline est requis ";
 
 					}
 
@@ -323,7 +323,7 @@ class DisciplineController extends Controller
 					else
 					{
 						
-						$nomdis = htmlspecialchars($request->request->get('iddis'));
+						$nomdis = htmlspecialchars($request->request->get('nomdis'));
 						$doctrine = $this->getDoctrine();
 						$em = $doctrine->getManager();
 						$repository_discipline = $em->getRepository('PedagogiePedagogieBundle:Discipline');
@@ -497,21 +497,72 @@ class DisciplineController extends Controller
 						$doctrine = $this->getDoctrine();
 						$em = $doctrine->getManager();
 						
-						$departement = $em->getRepository('PedagogiePedagogieBundle:Departement')->findOneByDepartement($nomdep);
-						$filiere = $em->getRepository('PedagogiePedagogieBundle:Filiere')->findOneByFiliere($nomfil);
+						$departement = $em->getRepository('PedagogiePedagogieBundle:Departement')->findOneById($nomdep);
+						$filiere = $em->getRepository('PedagogiePedagogieBundle:Filiere')->findOneById($nomfil);
+						$discipline = $em->getRepository('PedagogiePedagogieBundle:Discipline')->findOneByDiscipline($nomdis);
 						
-						$discipline = new Discipline();
-						$discipline->setDiscipline($nomdis);
-						$discipline->addDepartement($departement);
-						$discipline->addFiliere($filiere);
+						if($discipline == null || empty($discipline))
+						{
 						
-						$em->persist($discipline); // Modifie l'entité de la base de données	
-						$em->flush(); // Exécute un UPDATE sur $enseignant
+								$discipline = new Discipline();
+								$discipline->setDiscipline($nomdis);
+								$discipline->addDepartement($departement);
+								$discipline->addFiliere($filiere);
+							
+								$em->persist($discipline); // Modifie l'entité de la base de données	
+								$em->flush(); // Exécute un UPDATE sur $enseignant
+							
+								$data['success'] = true;
+								$data['message'] = ' Ajout Reussi !';
+								$data["errors"] = false;
+								$data['is_successful_login'] = true;
+							
+						}
+						else
+						{
+								
+							$discipline = $em->getRepository('PedagogiePedagogieBundle:Discipline')->findExistDepartement($nomdis,$departement);
+							
+							if($discipline == null || empty($discipline))
+							{
+								$discipline = $em->getRepository('PedagogiePedagogieBundle:Discipline')->findOneByDiscipline($nomdis);
+								$discipline->addDepartement($departement);
+								$discipline->addFiliere($filiere);
+								$em->persist($discipline); // Modifie l'entité de la base de données	
+								$em->flush(); // Exécute un UPDATE sur $enseignant
                         
-						$data['success'] = true;
-						$data['message'] = ' Ajout Reussi !';
-						$data["errors"] = false;
-						$data['is_successful_login'] = true;
+								$data['success'] = true;
+								$data['message'] = ' Ajout Reussi !';
+								$data["errors"] = false;
+								$data['is_successful_login'] = true;
+							}
+							else
+							{
+								
+								$discipline = $em->getRepository('PedagogiePedagogieBundle:Discipline')->findExistFiliere($nomdis,$filiere);
+								if( $discipline == null || empty($discipline) )
+								{
+									$discipline = $em->getRepository('PedagogiePedagogieBundle:Discipline')->findOneByDiscipline($nomdis);
+									$discipline->addFiliere($filiere);
+									$em->persist($discipline); // Modifie l'entité de la base de données	
+									$em->flush(); // Exécute un UPDATE sur $enseignant
+                        
+									$data['success'] = true;
+									$data['message'] = ' Ajout Reussi !';
+									$data["errors"] = false;
+									$data['is_successful_login'] = true;								
+								}
+								else
+								{
+									$data['success'] = false;
+									$data['message'] = ' Cette Discipline existe deja dans ce departement et cette filiere !';
+									$data["errors"] = true;
+									$data['is_successful_login'] = true;								
+								}
+							}
+							
+						}
+						
 						
 					}
 					

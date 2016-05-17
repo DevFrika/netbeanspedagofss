@@ -20,7 +20,10 @@
 		"jms/di-extra-bundle": "dev-master",
 		"doctrine/doctrine-fixtures-bundle": "dev-master",
 		"doctrine/data-fixtures": "@dev",
-		"twig/extensions": "dev-master"
+		"twig/extensions": "dev-master",
+        "sylius/report-bundle": "^0.15.0",
+        "spipu/html2pdf": "^4.6",
+        "ensepar/html2pdf-bundle": "^2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

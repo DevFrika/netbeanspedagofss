@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/enseignant:deleteenseignantlayout.html.twig */
+/* PedagogiePedagogieBundle::admin/enseignant/deleteenseignantlayout.html.twig */
 class __TwigTemplate_80e9f065d20400041634e97b80e0ac33066d319eeaa7267d9a91958af149641f extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_80e9f065d20400041634e97b80e0ac33066d319eeaa7267d9a91958af14
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2617b23f746a01fca6f2bfea043399cd84ac1f8e2d12a2ca2b2387a0d062a21b = $this->env->getExtension("native_profiler");
-        $__internal_2617b23f746a01fca6f2bfea043399cd84ac1f8e2d12a2ca2b2387a0d062a21b->enter($__internal_2617b23f746a01fca6f2bfea043399cd84ac1f8e2d12a2ca2b2387a0d062a21b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/enseignant:deleteenseignantlayout.html.twig"));
+        $__internal_0fba28ec99b634782a8d3d63eadf40b603f5ef4772f45746532e8608037152bf = $this->env->getExtension("native_profiler");
+        $__internal_0fba28ec99b634782a8d3d63eadf40b603f5ef4772f45746532e8608037152bf->enter($__internal_0fba28ec99b634782a8d3d63eadf40b603f5ef4772f45746532e8608037152bf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/enseignant/deleteenseignantlayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"delens";
@@ -47,13 +47,13 @@ class __TwigTemplate_80e9f065d20400041634e97b80e0ac33066d319eeaa7267d9a91958af14
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_2617b23f746a01fca6f2bfea043399cd84ac1f8e2d12a2ca2b2387a0d062a21b->leave($__internal_2617b23f746a01fca6f2bfea043399cd84ac1f8e2d12a2ca2b2387a0d062a21b_prof);
+        $__internal_0fba28ec99b634782a8d3d63eadf40b603f5ef4772f45746532e8608037152bf->leave($__internal_0fba28ec99b634782a8d3d63eadf40b603f5ef4772f45746532e8608037152bf_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/enseignant:deleteenseignantlayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/enseignant/deleteenseignantlayout.html.twig";
     }
 
     public function isTraitable()

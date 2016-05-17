@@ -15,8 +15,8 @@ class __TwigTemplate_8700fe93a3760423367982f0f0e58f54795bbc5c782f049082d468df8a4
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0b7c6392f51559e4fdb5eae154d7b283b56d679dd02404ec5fd98ae448b9a5ea = $this->env->getExtension("native_profiler");
-        $__internal_0b7c6392f51559e4fdb5eae154d7b283b56d679dd02404ec5fd98ae448b9a5ea->enter($__internal_0b7c6392f51559e4fdb5eae154d7b283b56d679dd02404ec5fd98ae448b9a5ea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:etudiant/classe:updateclasselayout.html.twig"));
+        $__internal_ab2be9272fd8c26c1db54e90bb2813a4c12e7d13ff4a32697b5a0c973d91b315 = $this->env->getExtension("native_profiler");
+        $__internal_ab2be9272fd8c26c1db54e90bb2813a4c12e7d13ff4a32697b5a0c973d91b315->enter($__internal_ab2be9272fd8c26c1db54e90bb2813a4c12e7d13ff4a32697b5a0c973d91b315_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:etudiant/classe:updateclasselayout.html.twig"));
 
         // line 1
         echo "<div id=\"updatecls";
@@ -148,7 +148,7 @@ class __TwigTemplate_8700fe93a3760423367982f0f0e58f54795bbc5c782f049082d468df8a4
 \t</div>
 ";
         
-        $__internal_0b7c6392f51559e4fdb5eae154d7b283b56d679dd02404ec5fd98ae448b9a5ea->leave($__internal_0b7c6392f51559e4fdb5eae154d7b283b56d679dd02404ec5fd98ae448b9a5ea_prof);
+        $__internal_ab2be9272fd8c26c1db54e90bb2813a4c12e7d13ff4a32697b5a0c973d91b315->leave($__internal_ab2be9272fd8c26c1db54e90bb2813a4c12e7d13ff4a32697b5a0c973d91b315_prof);
 
     }
 

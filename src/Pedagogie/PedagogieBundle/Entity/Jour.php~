@@ -30,17 +30,23 @@ class Jour
     private $jour;
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Emploi",mappedBy="jours")
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Emploi",mappedBy="jours")
     * @ORM\JoinColumn(nullable=false)
     */
     private $emplois ;
 	
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Devoir",mappedBy="jours")
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Devoir",mappedBy="jours")
     * @ORM\JoinColumn(nullable=false)
     */
     private $devoirs ;
+	
+	/**
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Voeux",mappedBy="jour")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $voeux ;
 	
     /**
      * Constructor
@@ -147,5 +153,38 @@ class Jour
     public function getDevoirs()
     {
         return $this->devoirs;
+    }
+
+    /**
+     * Add voeux
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Voeux $voeux
+     * @return Jour
+     */
+    public function addVoeux(\Pedagogie\PedagogieBundle\Entity\Voeux $voeux)
+    {
+        $this->voeux[] = $voeux;
+
+        return $this;
+    }
+
+    /**
+     * Remove voeux
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Voeux $voeux
+     */
+    public function removeVoeux(\Pedagogie\PedagogieBundle\Entity\Voeux $voeux)
+    {
+        $this->voeux->removeElement($voeux);
+    }
+
+    /**
+     * Get voeux
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVoeux()
+    {
+        return $this->voeux;
     }
 }

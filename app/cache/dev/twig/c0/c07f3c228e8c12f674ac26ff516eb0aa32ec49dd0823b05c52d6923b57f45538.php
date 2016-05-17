@@ -15,8 +15,8 @@ class __TwigTemplate_05efa8ee116f3f264e833fac94ca80e98a9ceae0dca2023250f60779c33
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b7110d0656af9ce503e1b45ea9de90b07e38944e23107962aa13858c193a206c = $this->env->getExtension("native_profiler");
-        $__internal_b7110d0656af9ce503e1b45ea9de90b07e38944e23107962aa13858c193a206c->enter($__internal_b7110d0656af9ce503e1b45ea9de90b07e38944e23107962aa13858c193a206c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/filiere/modalfilierelayout.html.twig"));
+        $__internal_f6f0932fb692f773ff8dc05e5d033995d50a427137d298dc726ded67a91164e2 = $this->env->getExtension("native_profiler");
+        $__internal_f6f0932fb692f773ff8dc05e5d033995d50a427137d298dc726ded67a91164e2->enter($__internal_f6f0932fb692f773ff8dc05e5d033995d50a427137d298dc726ded67a91164e2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/filiere/modalfilierelayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"fil";
@@ -32,7 +32,17 @@ class __TwigTemplate_05efa8ee116f3f264e833fac94ca80e98a9ceae0dca2023250f60779c33
 \t\t\t\t\t\t<p> ";
         // line 9
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["fil"]) ? $context["fil"] : $this->getContext($context, "fil")), "filiere", array()), "html", null, true);
-        echo "  </p>
+        echo " : ";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["fil"]) ? $context["fil"] : $this->getContext($context, "fil")), "description", array()), "html", null, true);
+        echo "    </p>
+\t\t\t\t\t\t<p> ";
+        // line 10
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["fil"]) ? $context["fil"] : $this->getContext($context, "fil")), "classes", array()), "count", array()), "html", null, true);
+        echo "  classes </p>
+\t\t\t\t\t\t<p> ";
+        // line 11
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["fil"]) ? $context["fil"] : $this->getContext($context, "fil")), "groupes", array()), "count", array()), "html", null, true);
+        echo " groupes</p>
 \t\t\t\t\t  </div>
 \t\t\t\t\t  <div class=\"modal-footer\">
 \t\t\t\t\t\t<a class=\"btn btn-default\" data-dismiss=\"modal\">Close</a>
@@ -42,7 +52,7 @@ class __TwigTemplate_05efa8ee116f3f264e833fac94ca80e98a9ceae0dca2023250f60779c33
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_b7110d0656af9ce503e1b45ea9de90b07e38944e23107962aa13858c193a206c->leave($__internal_b7110d0656af9ce503e1b45ea9de90b07e38944e23107962aa13858c193a206c_prof);
+        $__internal_f6f0932fb692f773ff8dc05e5d033995d50a427137d298dc726ded67a91164e2->leave($__internal_f6f0932fb692f773ff8dc05e5d033995d50a427137d298dc726ded67a91164e2_prof);
 
     }
 
@@ -58,7 +68,7 @@ class __TwigTemplate_05efa8ee116f3f264e833fac94ca80e98a9ceae0dca2023250f60779c33
 
     public function getDebugInfo()
     {
-        return array (  34 => 9,  22 => 1,);
+        return array (  44 => 11,  40 => 10,  34 => 9,  22 => 1,);
     }
 }
 /* <div class="fade modal text-center" id="fil{{ fil.id }}">*/
@@ -69,7 +79,9 @@ class __TwigTemplate_05efa8ee116f3f264e833fac94ca80e98a9ceae0dca2023250f60779c33
 /* 						*/
 /* 					  </div>*/
 /* 					  <div class="modal-body">*/
-/* 						<p> {{ fil.filiere }}  </p>*/
+/* 						<p> {{ fil.filiere }} : {{ fil.description }}    </p>*/
+/* 						<p> {{ fil.classes.count }}  classes </p>*/
+/* 						<p> {{ fil.groupes.count }} groupes</p>*/
 /* 					  </div>*/
 /* 					  <div class="modal-footer">*/
 /* 						<a class="btn btn-default" data-dismiss="modal">Close</a>*/

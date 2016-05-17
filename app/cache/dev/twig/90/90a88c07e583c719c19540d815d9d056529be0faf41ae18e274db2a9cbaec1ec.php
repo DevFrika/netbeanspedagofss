@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/filiere:deletefilierelayout.html.twig */
+/* PedagogiePedagogieBundle::admin/filiere/deletefilierelayout.html.twig */
 class __TwigTemplate_dcb75e40869a7ee68325c2263379e6ec5f12136bdca077a7415840c16f25eb98 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_dcb75e40869a7ee68325c2263379e6ec5f12136bdca077a7415840c16f2
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b91a482d23fc1ec178748d8a88b91f633f6c7f89209eeaa8bc7a5dc78579e11b = $this->env->getExtension("native_profiler");
-        $__internal_b91a482d23fc1ec178748d8a88b91f633f6c7f89209eeaa8bc7a5dc78579e11b->enter($__internal_b91a482d23fc1ec178748d8a88b91f633f6c7f89209eeaa8bc7a5dc78579e11b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/filiere:deletefilierelayout.html.twig"));
+        $__internal_128920444b814e4e2671eb001e4081f053bf3cf47ce70340ec59c170102ebd6d = $this->env->getExtension("native_profiler");
+        $__internal_128920444b814e4e2671eb001e4081f053bf3cf47ce70340ec59c170102ebd6d->enter($__internal_128920444b814e4e2671eb001e4081f053bf3cf47ce70340ec59c170102ebd6d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/filiere/deletefilierelayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"delfil";
@@ -47,13 +47,13 @@ class __TwigTemplate_dcb75e40869a7ee68325c2263379e6ec5f12136bdca077a7415840c16f2
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_b91a482d23fc1ec178748d8a88b91f633f6c7f89209eeaa8bc7a5dc78579e11b->leave($__internal_b91a482d23fc1ec178748d8a88b91f633f6c7f89209eeaa8bc7a5dc78579e11b_prof);
+        $__internal_128920444b814e4e2671eb001e4081f053bf3cf47ce70340ec59c170102ebd6d->leave($__internal_128920444b814e4e2671eb001e4081f053bf3cf47ce70340ec59c170102ebd6d_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/filiere:deletefilierelayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/filiere/deletefilierelayout.html.twig";
     }
 
     public function isTraitable()

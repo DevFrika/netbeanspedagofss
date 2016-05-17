@@ -15,12 +15,12 @@ class __TwigTemplate_ed291e7fe5b5f7aa2c2a004e4761612c33e1660927b1946756434531b32
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_85689e9c0f8eab18bc47438e84ab0e77795dd01fc003462990a76e4565199606 = $this->env->getExtension("native_profiler");
-        $__internal_85689e9c0f8eab18bc47438e84ab0e77795dd01fc003462990a76e4565199606->enter($__internal_85689e9c0f8eab18bc47438e84ab0e77795dd01fc003462990a76e4565199606_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/voeux/updatevoeuxlayout.html.twig"));
+        $__internal_4c10821174021a9f9cfedaf840f690b223b64a685964307a35959a3d28877a1c = $this->env->getExtension("native_profiler");
+        $__internal_4c10821174021a9f9cfedaf840f690b223b64a685964307a35959a3d28877a1c->enter($__internal_4c10821174021a9f9cfedaf840f690b223b64a685964307a35959a3d28877a1c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/voeux/updatevoeuxlayout.html.twig"));
 
         // line 1
         echo "<div id=\"updateveu";
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["veu"]) ? $context["veu"] : $this->getContext($context, "veu")), "voeux", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["veu"]) ? $context["veu"] : $this->getContext($context, "veu")), "id", array()), "html", null, true);
         echo "\" class=\"w3-container tabs w3-animate-zoom\">
 \t\t<header class=\"w3-container\" style=\"padding-top:22px\">
 \t\t\t<div class=\"w3-left\">
@@ -28,7 +28,7 @@ class __TwigTemplate_ed291e7fe5b5f7aa2c2a004e4761612c33e1660927b1946756434531b32
 \t\t\t</div>
 \t\t\t\t<h3 class=\"text-center\"><b><i class=\"material-icons\">class</i> voeux - ";
         // line 6
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["veu"]) ? $context["veu"] : $this->getContext($context, "veu")), "voeux", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["veu"]) ? $context["veu"] : $this->getContext($context, "veu")), "id", array()), "html", null, true);
         echo " </b></h3>
 \t\t\t\t";
         // line 7
@@ -52,51 +52,196 @@ class __TwigTemplate_ed291e7fe5b5f7aa2c2a004e4761612c33e1660927b1946756434531b32
 \t\t\t\t\t
 \t\t\t\t\t<!-- SHOW ERROR/SUCCESS MESSAGES -->
 \t\t\t\t
-                <div class=\"veu-form-group\"> 
+                <div class=\"form-group veu-form-group\"> 
 \t\t\t\t\t<span class=\"messages-block\"></span>
 \t\t\t\t</div>
                
                 <!-- FORM -->
-                <form name=\"form";
+                <form name=\"updveuform";
         // line 29
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["veu"]) ? $context["veu"] : $this->getContext($context, "veu")), "voeux", array()), "html", null, true);
-        echo "\"  method=\"POST\" onsubmit=\"updateVoeux(event,'form";
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["veu"]) ? $context["veu"] : $this->getContext($context, "veu")), "voeux", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["veu"]) ? $context["veu"] : $this->getContext($context, "veu")), "id", array()), "html", null, true);
+        echo "\" class=\"form-horizontal\" method=\"POST\" onsubmit=\"updateVoeux(event,'updveuform";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["veu"]) ? $context["veu"] : $this->getContext($context, "veu")), "id", array()), "html", null, true);
         echo "')\" >
-                  <!-- Nom -->
-                  <div class=\"veu-form-group\">
-                    <label> Nom </label>
-                    <input type=\"text\" name=\"updnomvoeux\" class=\"form-control\" value=\"";
-        // line 33
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["veu"]) ? $context["veu"] : $this->getContext($context, "veu")), "voeux", array()), "html", null, true);
-        echo "\">
+\t\t\t\t
+                  <!-- Departements -->
+                  <div class=\"form-group veu-form-group\">
+                    <label> Départements </label>
+                    <select id=\"depselect\" onchange=\"veuLoadFiliere(this.value,'filselect')\" class=\"form-control\">
+\t\t\t\t\t\t";
+        // line 35
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["alldepartement"]) ? $context["alldepartement"] : $this->getContext($context, "alldepartement")));
+        foreach ($context['_seq'] as $context["_key"] => $context["dep"]) {
+            // line 36
+            echo "\t\t\t\t\t\t<option value=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["dep"], "id", array()), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["dep"], "departement", array()), "html", null, true);
+            echo "</option>
+\t\t\t\t\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dep'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 38
+        echo "\t\t\t\t\t</select>
                     <span class=\"help-block\"></span>
                   </div>
-                  <!-- Password -->
-                  <div class=\"veu-form-group\">
-                    <label> Departement </label>
-                    <input type=\"text\" name=\"upddepvoeux\" class=\"form-control\" value=\"";
-        // line 39
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["veu"]) ? $context["veu"] : $this->getContext($context, "veu")), "departement", array()), "departement", array()), "html", null, true);
-        echo "\">
-\t\t\t\t\t
-                    <span class=\"help-block\"></span>
+\t\t\t\t  
+\t\t\t\t  <!-- Filieres -->
+                  <div class=\"form-group veu-form-group\">
+                    <label> Filieres </label>
+                    <select id=\"filselect\" onchange=\"veuLoadClasse(this.value,'clsselect')\" class=\"form-control\">
+\t\t\t\t\t\t
+\t\t\t\t\t</select>
+\t\t\t\t\t<span class=\"help-block\"></span>
                   </div>
+\t\t\t\t  
+\t\t\t\t  <!-- Classes -->
+                  <div class=\"form-group veu-form-group\">
+                    <label> Classes </label>
+                    <select id=\"clsselect\" onchange=\"veuLoadGroupe(this.value,'grpselect')\" class=\"form-control\">
+\t\t\t\t\t\t
+\t\t\t\t\t</select>
+\t\t\t\t\t<span class=\"help-block\"></span>
+                  </div>
+\t\t\t\t  
+\t\t\t\t  <!-- Groupes -->
+                  <div class=\"form-group veu-form-group\">
+                    <label> Groupes </label>
+                    <select id=\"grpselect\" onchange=\"veuLoadDiscipline(this.value,'disselect')\" class=\"form-control\">
+\t\t\t\t\t\t
+\t\t\t\t\t</select>
+\t\t\t\t\t<span class=\"help-block\"></span>
+                  </div>
+\t\t\t\t  
+\t\t\t\t  <!-- Disciplines -->
+                  <div class=\"form-group veu-form-group\">
+                    <label> Disciplines </label>
+                    <select id=\"disselect\" onchange=\"veuLoadMatiere(this.value,'matselect')\" class=\"form-control\">
+\t\t\t\t\t\t
+\t\t\t\t\t</select>
+\t\t\t\t\t<span class=\"help-block\"></span>
+                  </div>
+\t\t\t\t  
+\t\t\t\t  
+\t\t\t\t  <!-- Matieres -->
+                  <div class=\"form-group veu-form-group\">
+                    <label> Matieres </label>
+                    <select id=\"matselect\" onchange=\"veuLoadEnseignant(this.value,'ensselect')\" class=\"form-control\">
+\t\t\t\t\t\t
+\t\t\t\t\t</select>
+\t\t\t\t\t<span class=\"help-block\"></span>
+                  </div>
+\t\t\t\t  
+\t\t\t\t  <!-- Enseignant -->
+\t\t\t\t  <div class=\"form-group veu-form-group\">
+                    <label> Enseignants </label>
+                    <select id=\"ensselect\" class=\"form-control\">
+\t\t\t\t\t\t
+\t\t\t\t\t</select>
+\t\t\t\t\t<span class=\"help-block\"></span>
+                  </div>
+\t\t\t\t  
+\t\t\t\t  <!-- Salles -->
+\t\t\t\t  <div class=\"form-group veu-form-group\">
+                    <label> Salles </label>
+                    <select id=\"salselect\" class=\"form-control\">
+\t\t\t\t\t\t
+\t\t\t\t\t</select>
+\t\t\t\t\t<span class=\"help-block\"></span>
+                  </div>
+\t\t\t\t  
+\t\t\t\t  <!-- Heure Debut -->
+                  <div class=\"form-group veu-form-group\">
+                    <label> Heure Debut </label>
+                    <select id=\"hdebselect\" class=\"form-control\">
+\t\t\t\t\t\t<option value=\"08\">08H</option>
+\t\t\t\t\t\t<option value=\"09\">09H</option>
+\t\t\t\t\t\t<option value=\"10\">10H</option>
+\t\t\t\t\t\t<option value=\"11\">11H</option>
+\t\t\t\t\t\t<option value=\"12\">12H</option>
+\t\t\t\t\t\t<option value=\"13\">13H</option>
+\t\t\t\t\t\t<option value=\"14\">14H</option>
+\t\t\t\t\t\t<option value=\"15\">15H</option>
+\t\t\t\t\t\t<option value=\"16\">16H</option>
+\t\t\t\t\t\t<option value=\"17\">17H</option>
+\t\t\t\t\t\t<option value=\"18\">18H</option>
+\t\t\t\t\t</select>
+\t\t\t\t\t<select id=\"mindebselect\" class=\"form-control\">
+\t\t\t\t\t\t<option value=\"00\">00M</option>
+\t\t\t\t\t\t<option value=\"05\">05M</option>
+\t\t\t\t\t\t<option value=\"10\">10M</option>
+\t\t\t\t\t\t<option value=\"15\">15M</option>
+\t\t\t\t\t\t<option value=\"20\">20M</option>
+\t\t\t\t\t\t<option value=\"25\">25M</option>
+\t\t\t\t\t\t<option value=\"30\">30M</option>
+\t\t\t\t\t\t<option value=\"35\">35M</option>
+\t\t\t\t\t\t<option value=\"40\">40M</option>
+\t\t\t\t\t\t<option value=\"45\">45M</option>
+\t\t\t\t\t\t<option value=\"50\">50M</option>
+\t\t\t\t\t\t<option value=\"55\">55M</option>
+\t\t\t\t\t</select>
+\t\t\t\t\t<span class=\"help-block\"></span>
+                  </div>
+\t\t\t\t  
+\t\t\t\t  <!-- Heure Fin -->
+                  <div class=\"form-group veu-form-group\">
+                    <label> Heure Fin </label>
+                    <select id=\"hfinselect\" class=\"form-control\">
+\t\t\t\t\t\t<option value=\"08\">08H</option>
+\t\t\t\t\t\t<option value=\"09\">09H</option>
+\t\t\t\t\t\t<option value=\"10\">10H</option>
+\t\t\t\t\t\t<option value=\"11\">11H</option>
+\t\t\t\t\t\t<option value=\"12\">12H</option>
+\t\t\t\t\t\t<option value=\"13\">13H</option>
+\t\t\t\t\t\t<option value=\"14\">14H</option>
+\t\t\t\t\t\t<option value=\"15\">15H</option>
+\t\t\t\t\t\t<option value=\"16\">16H</option>
+\t\t\t\t\t\t<option value=\"17\">17H</option>
+\t\t\t\t\t\t<option value=\"18\">18H</option>
+\t\t\t\t\t</select>
+\t\t\t\t\t<select id=\"minfinselect\" class=\"form-control\">
+\t\t\t\t\t\t<option value=\"00\">00M</option>
+\t\t\t\t\t\t<option value=\"05\">05M</option>
+\t\t\t\t\t\t<option value=\"10\">10M</option>
+\t\t\t\t\t\t<option value=\"15\">15M</option>
+\t\t\t\t\t\t<option value=\"20\">20M</option>
+\t\t\t\t\t\t<option value=\"25\">25M</option>
+\t\t\t\t\t\t<option value=\"30\">30M</option>
+\t\t\t\t\t\t<option value=\"35\">35M</option>
+\t\t\t\t\t\t<option value=\"40\">40M</option>
+\t\t\t\t\t\t<option value=\"45\">45M</option>
+\t\t\t\t\t\t<option value=\"50\">50M</option>
+\t\t\t\t\t\t<option value=\"55\">55M</option>
+\t\t\t\t\t</select>
+\t\t\t\t\t<span class=\"help-block\"></span>
+                  </div>
+\t\t\t\t  
+\t\t\t\t  
+\t\t\t\t  
                   <span class=\"ajax_wait\" align=\"center\">
                     <!--don't delete this span class=\"ajax_wait\"-->
                   </span>
+\t\t\t\t  
 \t\t\t\t  <input type=\"text\" name=\"updveutag\" value=\"updateveu\" hidden>
 \t\t\t\t  <input type=\"text\" name=\"oldveuname\" value=\"";
-        // line 47
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["veu"]) ? $context["veu"] : $this->getContext($context, "veu")), "voeux", array()), "html", null, true);
+        // line 179
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["veu"]) ? $context["veu"] : $this->getContext($context, "veu")), "id", array()), "html", null, true);
+        echo "\" hidden>
+\t\t\t\t   <input type=\"text\" name=\"delvoeux_url\" value=\"";
+        // line 180
+        echo $this->env->getExtension('routing')->getPath("pedagogie_deletevoeux");
         echo "\" hidden>
 \t\t\t\t  <input type=\"text\" name=\"updatevoeux_url\" value=\"";
-        // line 48
+        // line 181
         echo $this->env->getExtension('routing')->getPath("pedagogie_updatevoeux");
         echo "\" hidden>
                   <!-- SUBMIT BUTTON -->
                   <button type=\"submit\" class=\"btn btn-success btn-lg btn-block\">
-                    Enregistrer <i class=\"glyphicon glyphicon-save\"></i> </button>
+                    Enregistrer Les modifications <i class=\"glyphicon glyphicon-save\"></i> </button>
+\t\t\t\t\t
                 </form>
               </div>
 \t\t\t  </div>
@@ -106,7 +251,7 @@ class __TwigTemplate_ed291e7fe5b5f7aa2c2a004e4761612c33e1660927b1946756434531b32
 \t</div>
 ";
         
-        $__internal_85689e9c0f8eab18bc47438e84ab0e77795dd01fc003462990a76e4565199606->leave($__internal_85689e9c0f8eab18bc47438e84ab0e77795dd01fc003462990a76e4565199606_prof);
+        $__internal_4c10821174021a9f9cfedaf840f690b223b64a685964307a35959a3d28877a1c->leave($__internal_4c10821174021a9f9cfedaf840f690b223b64a685964307a35959a3d28877a1c_prof);
 
     }
 
@@ -122,15 +267,15 @@ class __TwigTemplate_ed291e7fe5b5f7aa2c2a004e4761612c33e1660927b1946756434531b32
 
     public function getDebugInfo()
     {
-        return array (  95 => 48,  91 => 47,  80 => 39,  71 => 33,  62 => 29,  41 => 10,  37 => 8,  35 => 7,  31 => 6,  22 => 1,);
+        return array (  239 => 181,  235 => 180,  231 => 179,  88 => 38,  77 => 36,  73 => 35,  62 => 29,  41 => 10,  37 => 8,  35 => 7,  31 => 6,  22 => 1,);
     }
 }
-/* <div id="updateveu{{ veu.voeux }}" class="w3-container tabs w3-animate-zoom">*/
+/* <div id="updateveu{{ veu.id }}" class="w3-container tabs w3-animate-zoom">*/
 /* 		<header class="w3-container" style="padding-top:22px">*/
 /* 			<div class="w3-left">*/
 /* 				<a href="#" onclick="closeMenu(event, 'voeuxlayout')"  class="w3-btn btn btn-info tablink"><i class="glyphicon glyphicon-menu-left"></i> Retour </a>*/
 /* 			</div>*/
-/* 				<h3 class="text-center"><b><i class="material-icons">class</i> voeux - {{ veu.voeux }} </b></h3>*/
+/* 				<h3 class="text-center"><b><i class="material-icons">class</i> voeux - {{ veu.id }} </b></h3>*/
 /* 				{% if session_id is defined and session_id != null and typeuser == "admin" %}*/
 /* 			*/
 /* 				{% endif %}*/
@@ -148,34 +293,168 @@ class __TwigTemplate_ed291e7fe5b5f7aa2c2a004e4761612c33e1660927b1946756434531b32
 /* 					*/
 /* 					<!-- SHOW ERROR/SUCCESS MESSAGES -->*/
 /* 				*/
-/*                 <div class="veu-form-group"> */
+/*                 <div class="form-group veu-form-group"> */
 /* 					<span class="messages-block"></span>*/
 /* 				</div>*/
 /*                */
 /*                 <!-- FORM -->*/
-/*                 <form name="form{{ veu.voeux }}"  method="POST" onsubmit="updateVoeux(event,'form{{ veu.voeux }}')" >*/
-/*                   <!-- Nom -->*/
-/*                   <div class="veu-form-group">*/
-/*                     <label> Nom </label>*/
-/*                     <input type="text" name="updnomvoeux" class="form-control" value="{{ veu.voeux }}">*/
+/*                 <form name="updveuform{{ veu.id }}" class="form-horizontal" method="POST" onsubmit="updateVoeux(event,'updveuform{{ veu.id }}')" >*/
+/* 				*/
+/*                   <!-- Departements -->*/
+/*                   <div class="form-group veu-form-group">*/
+/*                     <label> Départements </label>*/
+/*                     <select id="depselect" onchange="veuLoadFiliere(this.value,'filselect')" class="form-control">*/
+/* 						{%for dep in alldepartement %}*/
+/* 						<option value="{{ dep.id }}">{{ dep.departement}}</option>*/
+/* 						{% endfor %}*/
+/* 					</select>*/
 /*                     <span class="help-block"></span>*/
 /*                   </div>*/
-/*                   <!-- Password -->*/
-/*                   <div class="veu-form-group">*/
-/*                     <label> Departement </label>*/
-/*                     <input type="text" name="upddepvoeux" class="form-control" value="{{ veu.departement.departement }}">*/
-/* 					*/
-/*                     <span class="help-block"></span>*/
+/* 				  */
+/* 				  <!-- Filieres -->*/
+/*                   <div class="form-group veu-form-group">*/
+/*                     <label> Filieres </label>*/
+/*                     <select id="filselect" onchange="veuLoadClasse(this.value,'clsselect')" class="form-control">*/
+/* 						*/
+/* 					</select>*/
+/* 					<span class="help-block"></span>*/
 /*                   </div>*/
+/* 				  */
+/* 				  <!-- Classes -->*/
+/*                   <div class="form-group veu-form-group">*/
+/*                     <label> Classes </label>*/
+/*                     <select id="clsselect" onchange="veuLoadGroupe(this.value,'grpselect')" class="form-control">*/
+/* 						*/
+/* 					</select>*/
+/* 					<span class="help-block"></span>*/
+/*                   </div>*/
+/* 				  */
+/* 				  <!-- Groupes -->*/
+/*                   <div class="form-group veu-form-group">*/
+/*                     <label> Groupes </label>*/
+/*                     <select id="grpselect" onchange="veuLoadDiscipline(this.value,'disselect')" class="form-control">*/
+/* 						*/
+/* 					</select>*/
+/* 					<span class="help-block"></span>*/
+/*                   </div>*/
+/* 				  */
+/* 				  <!-- Disciplines -->*/
+/*                   <div class="form-group veu-form-group">*/
+/*                     <label> Disciplines </label>*/
+/*                     <select id="disselect" onchange="veuLoadMatiere(this.value,'matselect')" class="form-control">*/
+/* 						*/
+/* 					</select>*/
+/* 					<span class="help-block"></span>*/
+/*                   </div>*/
+/* 				  */
+/* 				  */
+/* 				  <!-- Matieres -->*/
+/*                   <div class="form-group veu-form-group">*/
+/*                     <label> Matieres </label>*/
+/*                     <select id="matselect" onchange="veuLoadEnseignant(this.value,'ensselect')" class="form-control">*/
+/* 						*/
+/* 					</select>*/
+/* 					<span class="help-block"></span>*/
+/*                   </div>*/
+/* 				  */
+/* 				  <!-- Enseignant -->*/
+/* 				  <div class="form-group veu-form-group">*/
+/*                     <label> Enseignants </label>*/
+/*                     <select id="ensselect" class="form-control">*/
+/* 						*/
+/* 					</select>*/
+/* 					<span class="help-block"></span>*/
+/*                   </div>*/
+/* 				  */
+/* 				  <!-- Salles -->*/
+/* 				  <div class="form-group veu-form-group">*/
+/*                     <label> Salles </label>*/
+/*                     <select id="salselect" class="form-control">*/
+/* 						*/
+/* 					</select>*/
+/* 					<span class="help-block"></span>*/
+/*                   </div>*/
+/* 				  */
+/* 				  <!-- Heure Debut -->*/
+/*                   <div class="form-group veu-form-group">*/
+/*                     <label> Heure Debut </label>*/
+/*                     <select id="hdebselect" class="form-control">*/
+/* 						<option value="08">08H</option>*/
+/* 						<option value="09">09H</option>*/
+/* 						<option value="10">10H</option>*/
+/* 						<option value="11">11H</option>*/
+/* 						<option value="12">12H</option>*/
+/* 						<option value="13">13H</option>*/
+/* 						<option value="14">14H</option>*/
+/* 						<option value="15">15H</option>*/
+/* 						<option value="16">16H</option>*/
+/* 						<option value="17">17H</option>*/
+/* 						<option value="18">18H</option>*/
+/* 					</select>*/
+/* 					<select id="mindebselect" class="form-control">*/
+/* 						<option value="00">00M</option>*/
+/* 						<option value="05">05M</option>*/
+/* 						<option value="10">10M</option>*/
+/* 						<option value="15">15M</option>*/
+/* 						<option value="20">20M</option>*/
+/* 						<option value="25">25M</option>*/
+/* 						<option value="30">30M</option>*/
+/* 						<option value="35">35M</option>*/
+/* 						<option value="40">40M</option>*/
+/* 						<option value="45">45M</option>*/
+/* 						<option value="50">50M</option>*/
+/* 						<option value="55">55M</option>*/
+/* 					</select>*/
+/* 					<span class="help-block"></span>*/
+/*                   </div>*/
+/* 				  */
+/* 				  <!-- Heure Fin -->*/
+/*                   <div class="form-group veu-form-group">*/
+/*                     <label> Heure Fin </label>*/
+/*                     <select id="hfinselect" class="form-control">*/
+/* 						<option value="08">08H</option>*/
+/* 						<option value="09">09H</option>*/
+/* 						<option value="10">10H</option>*/
+/* 						<option value="11">11H</option>*/
+/* 						<option value="12">12H</option>*/
+/* 						<option value="13">13H</option>*/
+/* 						<option value="14">14H</option>*/
+/* 						<option value="15">15H</option>*/
+/* 						<option value="16">16H</option>*/
+/* 						<option value="17">17H</option>*/
+/* 						<option value="18">18H</option>*/
+/* 					</select>*/
+/* 					<select id="minfinselect" class="form-control">*/
+/* 						<option value="00">00M</option>*/
+/* 						<option value="05">05M</option>*/
+/* 						<option value="10">10M</option>*/
+/* 						<option value="15">15M</option>*/
+/* 						<option value="20">20M</option>*/
+/* 						<option value="25">25M</option>*/
+/* 						<option value="30">30M</option>*/
+/* 						<option value="35">35M</option>*/
+/* 						<option value="40">40M</option>*/
+/* 						<option value="45">45M</option>*/
+/* 						<option value="50">50M</option>*/
+/* 						<option value="55">55M</option>*/
+/* 					</select>*/
+/* 					<span class="help-block"></span>*/
+/*                   </div>*/
+/* 				  */
+/* 				  */
+/* 				  */
 /*                   <span class="ajax_wait" align="center">*/
 /*                     <!--don't delete this span class="ajax_wait"-->*/
 /*                   </span>*/
+/* 				  */
 /* 				  <input type="text" name="updveutag" value="updateveu" hidden>*/
-/* 				  <input type="text" name="oldveuname" value="{{ veu.voeux }}" hidden>*/
+/* 				  <input type="text" name="oldveuname" value="{{ veu.id }}" hidden>*/
+/* 				   <input type="text" name="delvoeux_url" value="{{ path('pedagogie_deletevoeux') }}" hidden>*/
 /* 				  <input type="text" name="updatevoeux_url" value="{{ path('pedagogie_updatevoeux') }}" hidden>*/
 /*                   <!-- SUBMIT BUTTON -->*/
 /*                   <button type="submit" class="btn btn-success btn-lg btn-block">*/
-/*                     Enregistrer <i class="glyphicon glyphicon-save"></i> </button>*/
+/*                     Enregistrer Les modifications <i class="glyphicon glyphicon-save"></i> </button>*/
+/* 					*/
 /*                 </form>*/
 /*               </div>*/
 /* 			  </div>*/

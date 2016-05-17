@@ -1,4 +1,4 @@
-<div class="fade modal text-center" id="deldev{{ dev.devoir }}">
+<div class="fade modal text-center" id="deldev{{ dev.id }}">
 				  <div class="modal-dialog">
 					<div class="modal-content">
 					  <div class="modal-header">
@@ -6,11 +6,11 @@
 						
 					  </div>
 					  <div class="modal-body">
-						<p> Voulez vous reelment supprimer ce devoir {{ dev.devoir }} ?  </p>
+						<p> Voulez vous reelment supprimer cette devoir {{ dev.id }}  </p>
 					  </div>
 					  <div class="modal-footer">
 						<a class="btn btn-default" data-dismiss="modal">Fermer</a>
-						<a class="btn btn-primary w3-red" onclick="deleteDevoir(event, '{{ dev.devoir }}','#deldev{{ dev.devoir }}')"><i class="fa fa-trash"></i>Supprimer</a>
+						<a class="btn btn-primary w3-red" onclick="deleteDevoir(event, '{{ dev.id }}','#deldev{{ dev.id }}')"><i class="fa fa-trash"></i>Supprimer</a>
 					  </div>
 					</div>
 				  </div>

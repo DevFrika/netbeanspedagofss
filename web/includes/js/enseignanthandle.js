@@ -36,6 +36,8 @@
 		  'famname'             : $('input[name=ens_famname]').val(),
 		  'surname'             : $('input[name=ens_surname]').val(),
 		  'email'               : $('input[name=ens_email]').val(),
+		  'telens'               : $('input[name=ens_telephone]').val(),
+		  'codeens'               : $('input[name=ens_code]').val(),
 		  'depens'              : $( "#ensdepselect" ).val(),
 		  'sitens'              : $( "#enssitselect" ).val(),
 		  'grdens'              : $( "#ensgrdselect" ).val(),

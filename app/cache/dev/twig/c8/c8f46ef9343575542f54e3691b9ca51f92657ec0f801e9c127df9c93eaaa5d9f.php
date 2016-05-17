@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/classe:addclasselayout.html.twig */
+/* PedagogiePedagogieBundle::admin/classe/addclasselayout.html.twig */
 class __TwigTemplate_54a9db76e020b01cb2f2f1da05ca61917a0e8b2ffc55d946347c32acce78ba41 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_54a9db76e020b01cb2f2f1da05ca61917a0e8b2ffc55d946347c32acce7
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_8b494b16ca58c5cbd54b95ef161cc054482182c75420dd0af511f0d51e4aed02 = $this->env->getExtension("native_profiler");
-        $__internal_8b494b16ca58c5cbd54b95ef161cc054482182c75420dd0af511f0d51e4aed02->enter($__internal_8b494b16ca58c5cbd54b95ef161cc054482182c75420dd0af511f0d51e4aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/classe:addclasselayout.html.twig"));
+        $__internal_422bbf90cc90a4b219af7cd9c8afb455bb6da77db170e20f323e1b7ba67e77f4 = $this->env->getExtension("native_profiler");
+        $__internal_422bbf90cc90a4b219af7cd9c8afb455bb6da77db170e20f323e1b7ba67e77f4->enter($__internal_422bbf90cc90a4b219af7cd9c8afb455bb6da77db170e20f323e1b7ba67e77f4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/classe/addclasselayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"addclasse\">
@@ -125,13 +125,13 @@ class __TwigTemplate_54a9db76e020b01cb2f2f1da05ca61917a0e8b2ffc55d946347c32acce7
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_8b494b16ca58c5cbd54b95ef161cc054482182c75420dd0af511f0d51e4aed02->leave($__internal_8b494b16ca58c5cbd54b95ef161cc054482182c75420dd0af511f0d51e4aed02_prof);
+        $__internal_422bbf90cc90a4b219af7cd9c8afb455bb6da77db170e20f323e1b7ba67e77f4->leave($__internal_422bbf90cc90a4b219af7cd9c8afb455bb6da77db170e20f323e1b7ba67e77f4_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/classe:addclasselayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/classe/addclasselayout.html.twig";
     }
 
     public function isTraitable()

@@ -23,12 +23,11 @@ pedagogie_deletedepartement:
     path:     /Pedagogie/Departement/Delete
     defaults: { _controller: PedagogiePedagogieBundle:Departement:DepartementHandle }
 pedagogie_getdismatieres:
-    path:     /Pedagogie/Matiere/Get
+    path:     /Pedagogie/Matiere/Get/Discipline/Matiere
     defaults: { _controller: PedagogiePedagogieBundle:Matiere:GetDisMatiere }
 pedagogie_getmatnature:
-    path:     /Pedagogie/Nature/Get
+    path:     /Pedagogie/Nature/Get/Nature/Matiere
     defaults: { _controller: PedagogiePedagogieBundle:Matiere:GetMatNature }
-pedagogie_addmatiere:
 pedagogie_addmatiere:
     path:     /Pedagogie/Matiere/Add
     defaults: { _controller: PedagogiePedagogieBundle:Matiere:MatiereHandle } 
@@ -39,13 +38,13 @@ pedagogie_deletematiere:
     path:     /Pedagogie/Matiere/Delete
     defaults: { _controller: PedagogiePedagogieBundle:Matiere:MatiereHandle }
 pedagogie_getdepdisciplines:
-    path:     /Pedagogie/Discipline/Get
+    path:     /Pedagogie/Discipline/Get/Departement/Discipline
     defaults: { _controller: PedagogiePedagogieBundle:Discipline:GetDepDiscipline }
 pedagogie_getfildisciplines:
-    path:     /Pedagogie/Discipline/Get
+    path:     /Pedagogie/Discipline/Get/Filiere/Discipline
     defaults: { _controller: PedagogiePedagogieBundle:Discipline:GetFilDiscipline }
 pedagogie_getgrpdisciplines:
-    path:     /Pedagogie/Discipline/Get
+    path:     /Pedagogie/Discipline/Get/Groupe/Discipline
     defaults: { _controller: PedagogiePedagogieBundle:Discipline:GetGrpDiscipline }
 pedagogie_adddiscipline:
     path:     /Pedagogie/Discipline/Add
@@ -56,6 +55,18 @@ pedagogie_updatediscipline:
 pedagogie_deletediscipline:
     path:     /Pedagogie/Discipline/Delete
     defaults: { _controller: PedagogiePedagogieBundle:Discipline:DisciplineHandle }
+pedagogie_emploifiliere:
+    path:     /Pedagogie/Emploi/Filiere/Get
+    defaults: { _controller: PedagogiePedagogieBundle:Emploi:EmploiHandle }
+pedagogie_emploigroupe:
+    path:     /Pedagogie/Emploi/Groupe/Get
+    defaults: { _controller: PedagogiePedagogieBundle:Emploi:EmploiHandle } 
+pedagogie_emploisalle:
+    path:     /Pedagogie/Emploi/Salle/Get
+    defaults: { _controller: PedagogiePedagogieBundle:Emploi:EmploiHandle } 
+pedagogie_emploienseignant:
+    path:     /Pedagogie/Emploi/Enseignant/Get
+    defaults: { _controller: PedagogiePedagogieBundle:Emploi:EmploiHandle }     
 pedagogie_addemploi:
     path:     /Pedagogie/Emploi/Add
     defaults: { _controller: PedagogiePedagogieBundle:Emploi:EmploiHandle } 
@@ -66,7 +77,7 @@ pedagogie_deleteemploi:
     path:     /Pedagogie/Emploi/Delete
     defaults: { _controller: PedagogiePedagogieBundle:Emploi:EmploiHandle }
 pedagogie_getfilclasses:
-    path:     /Pedagogie/Classe/Get
+    path:     /Pedagogie/Classe/Get/Filiere/Classe
     defaults: { _controller: PedagogiePedagogieBundle:Classes:GetFilClasses }
 pedagogie_addclasse:
     path:     /Pedagogie/Classe/Add
@@ -78,7 +89,7 @@ pedagogie_deleteclasse:
     path:     /Pedagogie/Classe/Delete
     defaults: { _controller: PedagogiePedagogieBundle:Classes:ClassesHandle }
 pedagogie_getclsgroupes:
-    path:     /Pedagogie/Groupe/Get
+    path:     /Pedagogie/Groupe/Get/Classe/Groupe
     defaults: { _controller: PedagogiePedagogieBundle:Groupe:GetClsGroupe }
 pedagogie_addgroupe:
     path:     /Pedagogie/Groupe/Add
@@ -99,7 +110,7 @@ pedagogie_deletevoeux:
     path:     /Pedagogie/Voeux/Delete
     defaults: { _controller: PedagogiePedagogieBundle:Voeux:VoeuxHandle }
 pedagogie_getensdevoir:
-    path:     /Pedagogie/Devoir/Get
+    path:     /Pedagogie/Devoir/Get/Enseignant/Devoir
     defaults: { _controller: PedagogiePedagogieBundle:Devoir:GetEnsDevoir }
 pedagogie_adddevoir:
     path:     /Pedagogie/Devoir/Add
@@ -111,7 +122,7 @@ pedagogie_deletedevoir:
     path:     /Pedagogie/Devoir/Delete
     defaults: { _controller: PedagogiePedagogieBundle:Devoir:DevoirHandle }
 pedagogie_getmatenseignants:
-    path:     /Pedagogie/Enseignant/Get
+    path:     /Pedagogie/Enseignant/Get/Matiere/Enseignant
     defaults: { _controller: PedagogiePedagogieBundle:Enseignant:GetMatEnseignant }
 pedagogie_addenseignant:
     path:     /Pedagogie/Enseignant/Add
@@ -123,7 +134,7 @@ pedagogie_deleteenseignant:
     path:     /Pedagogie/Enseignant/Delete
     defaults: { _controller: PedagogiePedagogieBundle:Enseignant:EnseignantHandle }
 pedagogie_getlixsalles:
-    path:     /Pedagogie/Salle/Get
+    path:     /Pedagogie/Salle/Get/Lieux/Salles
     defaults: { _controller: PedagogiePedagogieBundle:Salle:GetLieuxSalles }
 pedagogie_addsalle:
     path:     /Pedagogie/Salle/Add
@@ -146,4 +157,22 @@ pedagogie_updatelieux:
 pedagogie_deletelieux:
     path:     /Pedagogie/Lieux/Delete
     defaults: { _controller: PedagogiePedagogieBundle:Lieux:LieuxHandle }
+pedagogie_getmutex:
+    path:     /Pedagogie/Mutex/Get
+    defaults: { _controller: PedagogiePedagogieBundle:Mutex:GetMutex }
+pedagogie_addmutex:
+    path:     /Pedagogie/Mutex/Add
+    defaults: { _controller: PedagogiePedagogieBundle:Mutex:MutexHandle } 
+pedagogie_deletemutex:
+    path:     /Pedagogie/Mutex/Delete
+    defaults: { _controller: PedagogiePedagogieBundle:Mutex:MutexHandle }
+pedagogie_gettransaction:
+    path:     /Pedagogie/Transaction/Get
+    defaults: { _controller: PedagogiePedagogieBundle:Transaction:GetTransaction }
+pedagogie_addtransaction:
+    path:     /Pedagogie/Transaction/Add
+    defaults: { _controller: PedagogiePedagogieBundle:Transaction:TransactionHandle } 
+pedagogie_deletetransaction:
+    path:     /Pedagogie/Transaction/Delete
+    defaults: { _controller: PedagogiePedagogieBundle:Transaction:TransactionHandle }
 

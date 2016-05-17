@@ -15,8 +15,8 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b25a16058ef7e93d43d730dca935da5710797a1a5a12a484f6d36abd3817752f = $this->env->getExtension("native_profiler");
-        $__internal_b25a16058ef7e93d43d730dca935da5710797a1a5a12a484f6d36abd3817752f->enter($__internal_b25a16058ef7e93d43d730dca935da5710797a1a5a12a484f6d36abd3817752f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/enseignant/addenseignantlayout.html.twig"));
+        $__internal_910af311330a657a9a836ebf652e0b8ae0c67d9ab70d4de6dda11b0501ff8ace = $this->env->getExtension("native_profiler");
+        $__internal_910af311330a657a9a836ebf652e0b8ae0c67d9ab70d4de6dda11b0501ff8ace->enter($__internal_910af311330a657a9a836ebf652e0b8ae0c67d9ab70d4de6dda11b0501ff8ace_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/enseignant/addenseignantlayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"addenseignant\">
@@ -44,30 +44,44 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
                 <form id=\"addenseignantform\" class=\"form-horizontal ens-form-group\" role=\"form\"  method=\"POST\" >
                  
 \t\t\t\t\t<!-- Family Name -->
-                  <div id=\"ens_username-group\" class=\"form-group ens-form-group\">
+                  <div class=\"form-group ens-form-group\">
                     <label> Nom </label>
                     <input type=\"text\" name=\"ens_famname\" class=\"form-control\" placeholder=\" \"> 
                     <span class=\"help-block\"></span>
                   </div>
 \t\t\t\t
 \t\t\t\t<!-- Surname -->
-                  <div id=\"ens_username-group\" class=\"form-group ens-form-group\">
+                  <div class=\"form-group ens-form-group\">
                     <label> Prénom </label>
                     <input type=\"text\" name=\"ens_surname\" class=\"form-control\" placeholder=\" \"> 
                     <span class=\"help-block\"></span>
                   </div>
 \t\t\t\t
 \t\t\t\t<!-- Username -->
-                  <div id=\"ens_username-group\" class=\"form-group ens-form-group\">
+                  <div class=\"form-group ens-form-group\">
                     <label> Username </label>
                     <input type=\"text\" name=\"ens_username\" class=\"form-control\" placeholder=\" \"> 
                     <span class=\"help-block\"></span>
                   </div>
 \t\t\t\t  
                   <!-- E-mail -->
-                  <div id=\"ens_email-group\" class=\"form-group ens-form-group\">
+                  <div class=\"form-group ens-form-group\">
                     <label> E-mail </label>
                     <input type=\"email\" name=\"ens_email\" class=\"form-control\" placeholder=\"\">
+                    <span class=\"help-block\"></span>
+                  </div>
+\t\t\t\t  
+\t\t\t\t   <!--  Code -->
+                  <div class=\"form-group ens-form-group\">
+                    <label> E-mail </label>
+                    <input type=\"text\" name=\"code\" class=\"form-control\" placeholder=\"\">
+                    <span class=\"help-block\"></span>
+                  </div>
+\t\t\t\t  
+\t\t\t\t   <!-- Telephone -->
+                  <div id=\"ens_email-group\" class=\"form-group ens-form-group\">
+                    <label> E-mail </label>
+                    <input type=\"text\" name=\"ens_telephone\" class=\"form-control\" placeholder=\"\">
                     <span class=\"help-block\"></span>
                   </div>
 \t\t\t\t  
@@ -76,11 +90,11 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
                     <label> Départements </label>
                     <select id=\"ensdepselect\" class=\"form-control\" onchange=\"ensLoadDiscipline(this.value,'ensdisselect')\">
 \t\t\t\t\t\t";
-        // line 57
+        // line 71
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["alldepartement"]) ? $context["alldepartement"] : $this->getContext($context, "alldepartement")));
         foreach ($context['_seq'] as $context["_key"] => $context["dep"]) {
-            // line 58
+            // line 72
             echo "\t\t\t\t\t\t<option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["dep"], "id", array()), "html", null, true);
             echo "\">";
@@ -91,7 +105,7 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dep'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 60
+        // line 74
         echo "\t\t\t\t\t</select>
                     <span class=\"help-block\"></span>
                   </div>
@@ -102,11 +116,11 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
                     <label> Disciplines </label>
                     <select id=\"ensdisselect\" class=\"form-control\" onchange=\"ensLoadMatiere(this.value,'ensmatselect')\">
 \t\t\t\t\t\t";
-        // line 69
+        // line 83
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["alldiscipline"]) ? $context["alldiscipline"] : $this->getContext($context, "alldiscipline")));
         foreach ($context['_seq'] as $context["_key"] => $context["dis"]) {
-            // line 70
+            // line 84
             echo "\t\t\t\t\t\t<option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["dis"], "id", array()), "html", null, true);
             echo "\">";
@@ -117,7 +131,7 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dis'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 72
+        // line 86
         echo "\t\t\t\t\t</select>
                     <span class=\"help-block\"></span>
                   </div>
@@ -127,11 +141,11 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
                     <label> Matiere </label>
                     <select id=\"ensmatselect\" class=\"form-control\" >
 \t\t\t\t\t\t";
-        // line 80
+        // line 94
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["allmatiere"]) ? $context["allmatiere"] : $this->getContext($context, "allmatiere")));
         foreach ($context['_seq'] as $context["_key"] => $context["mat"]) {
-            // line 81
+            // line 95
             echo "\t\t\t\t\t\t<option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "id", array()), "html", null, true);
             echo "\">";
@@ -142,7 +156,7 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['mat'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 83
+        // line 97
         echo "\t\t\t\t\t</select>
                     <span class=\"help-block\"></span>
                   </div>
@@ -152,11 +166,11 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
                     <label> Situation </label>
                     <select id=\"enssitselect\" class=\"form-control\" >
 \t\t\t\t\t\t";
-        // line 91
+        // line 105
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["allsituation"]) ? $context["allsituation"] : $this->getContext($context, "allsituation")));
         foreach ($context['_seq'] as $context["_key"] => $context["sit"]) {
-            // line 92
+            // line 106
             echo "\t\t\t\t\t\t<option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["sit"], "id", array()), "html", null, true);
             echo "\">";
@@ -167,7 +181,7 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['sit'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 94
+        // line 108
         echo "\t\t\t\t\t</select>
                     <span class=\"help-block\"></span>
                   </div>
@@ -177,11 +191,11 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
                     <label> Grade </label>
                     <select id=\"ensgrdselect\" class=\"form-control\">
 \t\t\t\t\t\t";
-        // line 102
+        // line 116
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["allgrade"]) ? $context["allgrade"] : $this->getContext($context, "allgrade")));
         foreach ($context['_seq'] as $context["_key"] => $context["grd"]) {
-            // line 103
+            // line 117
             echo "\t\t\t\t\t\t<option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["grd"], "code", array()), "html", null, true);
             echo "\">";
@@ -192,7 +206,7 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['grd'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 105
+        // line 119
         echo "\t\t\t\t\t</select>
                     <span class=\"help-block\"></span>
                   </div>
@@ -204,11 +218,11 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
 \t\t\t\t  
 \t\t\t\t  <input type=\"text\" name=\"addenstag\" value=\"addens\" hidden>
 \t\t\t\t  <input type=\"text\" name=\"getdepdis_url\" value=\"";
-        // line 115
+        // line 129
         echo $this->env->getExtension('routing')->getPath("pedagogie_getdepdisciplines");
         echo "\" hidden>
 \t\t\t\t  <input type=\"text\" name=\"ensregister_url\" value=\"";
-        // line 116
+        // line 130
         echo $this->env->getExtension('routing')->getPath("pedagogie_addenseignant");
         echo "\" hidden>
 \t\t\t\t  
@@ -228,7 +242,7 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_b25a16058ef7e93d43d730dca935da5710797a1a5a12a484f6d36abd3817752f->leave($__internal_b25a16058ef7e93d43d730dca935da5710797a1a5a12a484f6d36abd3817752f_prof);
+        $__internal_910af311330a657a9a836ebf652e0b8ae0c67d9ab70d4de6dda11b0501ff8ace->leave($__internal_910af311330a657a9a836ebf652e0b8ae0c67d9ab70d4de6dda11b0501ff8ace_prof);
 
     }
 
@@ -244,7 +258,7 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
 
     public function getDebugInfo()
     {
-        return array (  212 => 116,  208 => 115,  196 => 105,  185 => 103,  181 => 102,  171 => 94,  160 => 92,  156 => 91,  146 => 83,  135 => 81,  131 => 80,  121 => 72,  110 => 70,  106 => 69,  95 => 60,  84 => 58,  80 => 57,  22 => 1,);
+        return array (  226 => 130,  222 => 129,  210 => 119,  199 => 117,  195 => 116,  185 => 108,  174 => 106,  170 => 105,  160 => 97,  149 => 95,  145 => 94,  135 => 86,  124 => 84,  120 => 83,  109 => 74,  98 => 72,  94 => 71,  22 => 1,);
     }
 }
 /* <div class="fade modal text-center" id="addenseignant">*/
@@ -272,30 +286,44 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
 /*                 <form id="addenseignantform" class="form-horizontal ens-form-group" role="form"  method="POST" >*/
 /*                  */
 /* 					<!-- Family Name -->*/
-/*                   <div id="ens_username-group" class="form-group ens-form-group">*/
+/*                   <div class="form-group ens-form-group">*/
 /*                     <label> Nom </label>*/
 /*                     <input type="text" name="ens_famname" class="form-control" placeholder=" "> */
 /*                     <span class="help-block"></span>*/
 /*                   </div>*/
 /* 				*/
 /* 				<!-- Surname -->*/
-/*                   <div id="ens_username-group" class="form-group ens-form-group">*/
+/*                   <div class="form-group ens-form-group">*/
 /*                     <label> Prénom </label>*/
 /*                     <input type="text" name="ens_surname" class="form-control" placeholder=" "> */
 /*                     <span class="help-block"></span>*/
 /*                   </div>*/
 /* 				*/
 /* 				<!-- Username -->*/
-/*                   <div id="ens_username-group" class="form-group ens-form-group">*/
+/*                   <div class="form-group ens-form-group">*/
 /*                     <label> Username </label>*/
 /*                     <input type="text" name="ens_username" class="form-control" placeholder=" "> */
 /*                     <span class="help-block"></span>*/
 /*                   </div>*/
 /* 				  */
 /*                   <!-- E-mail -->*/
-/*                   <div id="ens_email-group" class="form-group ens-form-group">*/
+/*                   <div class="form-group ens-form-group">*/
 /*                     <label> E-mail </label>*/
 /*                     <input type="email" name="ens_email" class="form-control" placeholder="">*/
+/*                     <span class="help-block"></span>*/
+/*                   </div>*/
+/* 				  */
+/* 				   <!--  Code -->*/
+/*                   <div class="form-group ens-form-group">*/
+/*                     <label> E-mail </label>*/
+/*                     <input type="text" name="code" class="form-control" placeholder="">*/
+/*                     <span class="help-block"></span>*/
+/*                   </div>*/
+/* 				  */
+/* 				   <!-- Telephone -->*/
+/*                   <div id="ens_email-group" class="form-group ens-form-group">*/
+/*                     <label> E-mail </label>*/
+/*                     <input type="text" name="ens_telephone" class="form-control" placeholder="">*/
 /*                     <span class="help-block"></span>*/
 /*                   </div>*/
 /* 				  */
@@ -304,7 +332,7 @@ class __TwigTemplate_c54b3d326e75e357ca3b20ccc79dbc7c9875b7a447082884d0327ba6770
 /*                     <label> Départements </label>*/
 /*                     <select id="ensdepselect" class="form-control" onchange="ensLoadDiscipline(this.value,'ensdisselect')">*/
 /* 						{%for dep in alldepartement %}*/
-/* 						<option value="{{ dep.id }}">{{ dep.departement}}</option>*/
+/* 						<option value="{{ dep.id }}">{{ dep.departement }}</option>*/
 /* 						{% endfor %}*/
 /* 					</select>*/
 /*                     <span class="help-block"></span>*/

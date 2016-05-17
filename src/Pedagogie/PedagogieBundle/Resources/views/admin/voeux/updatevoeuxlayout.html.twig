@@ -1,9 +1,9 @@
-<div id="updateveu{{ veu.voeux }}" class="w3-container tabs w3-animate-zoom">
+<div id="updateveu{{ veu.id }}" class="w3-container tabs w3-animate-zoom">
 		<header class="w3-container" style="padding-top:22px">
 			<div class="w3-left">
 				<a href="#" onclick="closeMenu(event, 'voeuxlayout')"  class="w3-btn btn btn-info tablink"><i class="glyphicon glyphicon-menu-left"></i> Retour </a>
 			</div>
-				<h3 class="text-center"><b><i class="material-icons">class</i> voeux - {{ veu.voeux }} </b></h3>
+				<h3 class="text-center"><b><i class="material-icons">class</i> voeux - {{ veu.id }} </b></h3>
 				{% if session_id is defined and session_id != null and typeuser == "admin" %}
 			
 				{% endif %}
@@ -21,34 +21,168 @@
 					
 					<!-- SHOW ERROR/SUCCESS MESSAGES -->
 				
-                <div class="veu-form-group"> 
+                <div class="form-group veu-form-group"> 
 					<span class="messages-block"></span>
 				</div>
                
                 <!-- FORM -->
-                <form name="form{{ veu.voeux }}"  method="POST" onsubmit="updateVoeux(event,'form{{ veu.voeux }}')" >
-                  <!-- Nom -->
-                  <div class="veu-form-group">
-                    <label> Nom </label>
-                    <input type="text" name="updnomvoeux" class="form-control" value="{{ veu.voeux }}">
+                <form name="updveuform{{ veu.id }}" class="form-horizontal" method="POST" onsubmit="updateVoeux(event,'updveuform{{ veu.id }}')" >
+				
+                  <!-- Departements -->
+                  <div class="form-group veu-form-group">
+                    <label> Départements </label>
+                    <select id="depselect" onchange="veuLoadFiliere(this.value,'filselect')" class="form-control">
+						{%for dep in alldepartement %}
+						<option value="{{ dep.id }}">{{ dep.departement}}</option>
+						{% endfor %}
+					</select>
                     <span class="help-block"></span>
                   </div>
-                  <!-- Password -->
-                  <div class="veu-form-group">
-                    <label> Departement </label>
-                    <input type="text" name="upddepvoeux" class="form-control" value="{{ veu.departement.departement }}">
-					
-                    <span class="help-block"></span>
+				  
+				  <!-- Filieres -->
+                  <div class="form-group veu-form-group">
+                    <label> Filieres </label>
+                    <select id="filselect" onchange="veuLoadClasse(this.value,'clsselect')" class="form-control">
+						
+					</select>
+					<span class="help-block"></span>
                   </div>
+				  
+				  <!-- Classes -->
+                  <div class="form-group veu-form-group">
+                    <label> Classes </label>
+                    <select id="clsselect" onchange="veuLoadGroupe(this.value,'grpselect')" class="form-control">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Groupes -->
+                  <div class="form-group veu-form-group">
+                    <label> Groupes </label>
+                    <select id="grpselect" onchange="veuLoadDiscipline(this.value,'disselect')" class="form-control">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Disciplines -->
+                  <div class="form-group veu-form-group">
+                    <label> Disciplines </label>
+                    <select id="disselect" onchange="veuLoadMatiere(this.value,'matselect')" class="form-control">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  
+				  <!-- Matieres -->
+                  <div class="form-group veu-form-group">
+                    <label> Matieres </label>
+                    <select id="matselect" onchange="veuLoadEnseignant(this.value,'ensselect')" class="form-control">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Enseignant -->
+				  <div class="form-group veu-form-group">
+                    <label> Enseignants </label>
+                    <select id="ensselect" class="form-control">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Salles -->
+				  <div class="form-group veu-form-group">
+                    <label> Salles </label>
+                    <select id="salselect" class="form-control">
+						
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Heure Debut -->
+                  <div class="form-group veu-form-group">
+                    <label> Heure Debut </label>
+                    <select id="hdebselect" class="form-control">
+						<option value="08">08H</option>
+						<option value="09">09H</option>
+						<option value="10">10H</option>
+						<option value="11">11H</option>
+						<option value="12">12H</option>
+						<option value="13">13H</option>
+						<option value="14">14H</option>
+						<option value="15">15H</option>
+						<option value="16">16H</option>
+						<option value="17">17H</option>
+						<option value="18">18H</option>
+					</select>
+					<select id="mindebselect" class="form-control">
+						<option value="00">00M</option>
+						<option value="05">05M</option>
+						<option value="10">10M</option>
+						<option value="15">15M</option>
+						<option value="20">20M</option>
+						<option value="25">25M</option>
+						<option value="30">30M</option>
+						<option value="35">35M</option>
+						<option value="40">40M</option>
+						<option value="45">45M</option>
+						<option value="50">50M</option>
+						<option value="55">55M</option>
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Heure Fin -->
+                  <div class="form-group veu-form-group">
+                    <label> Heure Fin </label>
+                    <select id="hfinselect" class="form-control">
+						<option value="08">08H</option>
+						<option value="09">09H</option>
+						<option value="10">10H</option>
+						<option value="11">11H</option>
+						<option value="12">12H</option>
+						<option value="13">13H</option>
+						<option value="14">14H</option>
+						<option value="15">15H</option>
+						<option value="16">16H</option>
+						<option value="17">17H</option>
+						<option value="18">18H</option>
+					</select>
+					<select id="minfinselect" class="form-control">
+						<option value="00">00M</option>
+						<option value="05">05M</option>
+						<option value="10">10M</option>
+						<option value="15">15M</option>
+						<option value="20">20M</option>
+						<option value="25">25M</option>
+						<option value="30">30M</option>
+						<option value="35">35M</option>
+						<option value="40">40M</option>
+						<option value="45">45M</option>
+						<option value="50">50M</option>
+						<option value="55">55M</option>
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				  
+				  
                   <span class="ajax_wait" align="center">
                     <!--don't delete this span class="ajax_wait"-->
                   </span>
+				  
 				  <input type="text" name="updveutag" value="updateveu" hidden>
-				  <input type="text" name="oldveuname" value="{{ veu.voeux }}" hidden>
+				  <input type="text" name="oldveuname" value="{{ veu.id }}" hidden>
+				   <input type="text" name="delvoeux_url" value="{{ path('pedagogie_deletevoeux') }}" hidden>
 				  <input type="text" name="updatevoeux_url" value="{{ path('pedagogie_updatevoeux') }}" hidden>
                   <!-- SUBMIT BUTTON -->
                   <button type="submit" class="btn btn-success btn-lg btn-block">
-                    Enregistrer <i class="glyphicon glyphicon-save"></i> </button>
+                    Enregistrer Les modifications <i class="glyphicon glyphicon-save"></i> </button>
+					
                 </form>
               </div>
 			  </div>

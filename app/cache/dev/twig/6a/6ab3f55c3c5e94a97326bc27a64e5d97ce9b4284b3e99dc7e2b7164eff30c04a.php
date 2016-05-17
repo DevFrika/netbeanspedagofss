@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/departement:adddepartementlayout.html.twig */
+/* PedagogiePedagogieBundle::admin/departement/adddepartementlayout.html.twig */
 class __TwigTemplate_7c61c8108e24553a5b6ad7d18756dc23a10331746ce8e8dee11369361df2b127 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_7c61c8108e24553a5b6ad7d18756dc23a10331746ce8e8dee11369361df
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4195528bafd164a564af8a9c07bc65a5d72a7c37f17a585c73b2304ed58a5dd5 = $this->env->getExtension("native_profiler");
-        $__internal_4195528bafd164a564af8a9c07bc65a5d72a7c37f17a585c73b2304ed58a5dd5->enter($__internal_4195528bafd164a564af8a9c07bc65a5d72a7c37f17a585c73b2304ed58a5dd5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/departement:adddepartementlayout.html.twig"));
+        $__internal_2ad89c9a4093f7d94f7b189da09b29a20b4cd4fdde0d0d57a6e802d2f19cd654 = $this->env->getExtension("native_profiler");
+        $__internal_2ad89c9a4093f7d94f7b189da09b29a20b4cd4fdde0d0d57a6e802d2f19cd654->enter($__internal_2ad89c9a4093f7d94f7b189da09b29a20b4cd4fdde0d0d57a6e802d2f19cd654_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/departement/adddepartementlayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"adddepartement\">
@@ -74,13 +74,13 @@ class __TwigTemplate_7c61c8108e24553a5b6ad7d18756dc23a10331746ce8e8dee11369361df
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_4195528bafd164a564af8a9c07bc65a5d72a7c37f17a585c73b2304ed58a5dd5->leave($__internal_4195528bafd164a564af8a9c07bc65a5d72a7c37f17a585c73b2304ed58a5dd5_prof);
+        $__internal_2ad89c9a4093f7d94f7b189da09b29a20b4cd4fdde0d0d57a6e802d2f19cd654->leave($__internal_2ad89c9a4093f7d94f7b189da09b29a20b4cd4fdde0d0d57a6e802d2f19cd654_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/departement:adddepartementlayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/departement/adddepartementlayout.html.twig";
     }
 
     public function isTraitable()

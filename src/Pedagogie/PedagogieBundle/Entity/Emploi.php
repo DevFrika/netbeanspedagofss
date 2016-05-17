@@ -23,18 +23,25 @@ class Emploi
 	
 	
 	/**
-     * @var time
+     * @var datetime
      *
-     * @ORM\Column(name="heure_debut", type="time")
+     * @ORM\Column(name="heure_debut", type="datetime")
      */
 	private $heure_debut ;
 	
 	/**
-     * @var time
+     * @var datetime
      *
-     * @ORM\Column(name="heure_fin", type="time")
+     * @ORM\Column(name="heure_fin", type="datetime")
      */
 	private $heure_fin ;
+	
+	/**
+     * @var datetime
+     *
+     * @ORM\Column(name="date_maj", type="datetime")
+     */
+	private $date_maj ;
 	
 	/**
     * @ORM\ManyToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Periode")
@@ -443,5 +450,26 @@ class Emploi
     public function getSemestre()
     {
         return $this->semestre;
+    }
+
+    /**
+     * Set date_maj
+     * @return Emploi
+     */
+    public function setDateMaj()
+    {
+        $this->date_maj = new \DateTime();
+
+        return $this;
+    }
+
+    /**
+     * Get date_maj
+     *
+     * @return \DateTime 
+     */
+    public function getDateMaj()
+    {
+        return $this->date_maj;
     }
 }

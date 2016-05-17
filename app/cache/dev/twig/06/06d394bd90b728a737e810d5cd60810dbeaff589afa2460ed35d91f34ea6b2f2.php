@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/matiere:updatematierelayout.html.twig */
+/* PedagogiePedagogieBundle::admin/matiere/updatematierelayout.html.twig */
 class __TwigTemplate_ce73af298d9255c09411690559a38dd2b4b929058e2070b8473e2bf0f3de686f extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,18 +15,18 @@ class __TwigTemplate_ce73af298d9255c09411690559a38dd2b4b929058e2070b8473e2bf0f3d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7250d61a912a6e59907183a83e5db12b2b28ec4279ac6e53bdc406770f6dd42b = $this->env->getExtension("native_profiler");
-        $__internal_7250d61a912a6e59907183a83e5db12b2b28ec4279ac6e53bdc406770f6dd42b->enter($__internal_7250d61a912a6e59907183a83e5db12b2b28ec4279ac6e53bdc406770f6dd42b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/matiere:updatematierelayout.html.twig"));
+        $__internal_bf520797ccfdf78f94e4cf1486a487895a0a15fa5c291409272900a963a2902a = $this->env->getExtension("native_profiler");
+        $__internal_bf520797ccfdf78f94e4cf1486a487895a0a15fa5c291409272900a963a2902a->enter($__internal_bf520797ccfdf78f94e4cf1486a487895a0a15fa5c291409272900a963a2902a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/matiere/updatematierelayout.html.twig"));
 
         // line 1
         echo "<div id=\"updatemat";
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "matiere", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "id", array()), "html", null, true);
         echo "\" class=\"w3-container tabs w3-animate-zoom\">
 \t\t<header class=\"w3-container\" style=\"padding-top:22px\">
 \t\t\t<div class=\"w3-left\">
 \t\t\t\t<a href=\"#\" onclick=\"closeMenu(event, 'matierelayout')\"  class=\"w3-btn btn btn-info tablink\"><i class=\"glyphicon glyphicon-menu-left\"></i> Retour </a>
 \t\t\t</div>
-\t\t\t\t<h3 class=\"text-center\"><b><i class=\"material-icons\">class</i> matiere - ";
+\t\t\t\t<h3 class=\"text-center\"><b><i class=\"material-icons\">class</i> Matiere - ";
         // line 6
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "matiere", array()), "html", null, true);
         echo " </b></h3>
@@ -50,28 +50,35 @@ class __TwigTemplate_ce73af298d9255c09411690559a38dd2b4b929058e2070b8473e2bf0f3d
 \t\t\t\t</div>
                
                 <!-- FORM -->
-                <form name=\"form";
+                <form name=\"formupdmat";
         // line 27
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "matiere", array()), "html", null, true);
-        echo "\"  method=\"POST\" onsubmit=\"updateMatiere(event,'form";
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "matiere", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "id", array()), "html", null, true);
+        echo "\"  method=\"POST\" onsubmit=\"updateMatiere(event,'formupdmat";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "id", array()), "html", null, true);
+        echo "','";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "id", array()), "html", null, true);
         echo "')\" >
                   <!-- Nom -->
                   <div class=\"mat-form-group\">
                     <label> Nom </label>
-                    <input type=\"text\" name=\"updnommatiere\" class=\"form-control\" value=\"";
+                    <input type=\"text\" name=\"updnommatiere";
         // line 31
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "id", array()), "html", null, true);
+        echo "\" class=\"form-control\" value=\"";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "matiere", array()), "html", null, true);
         echo "\">
                     <span class=\"help-block\"></span>
                   </div>
-                  <!-- Password -->
+\t\t\t\t  
+                  <!-- Departement -->
                   <div class=\"mat-form-group\">
                     <label> Departement </label>
-                    <input type=\"text\" name=\"upddepmatiere\" class=\"form-control\" value=\"";
-        // line 37
+                    <input type=\"text\" name=\"upddepmatiere";
+        // line 38
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "id", array()), "html", null, true);
+        echo "\" class=\"form-control\" value=\"";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "matiere", array()), "html", null, true);
-        echo "\">
+        echo "\" disabled>
 \t\t\t\t\t
                     <span class=\"help-block\"></span>
                   </div>
@@ -80,11 +87,11 @@ class __TwigTemplate_ce73af298d9255c09411690559a38dd2b4b929058e2070b8473e2bf0f3d
                   </span>
 \t\t\t\t  <input type=\"text\" name=\"updmattag\" value=\"updatemat\" hidden>
 \t\t\t\t  <input type=\"text\" name=\"oldmatname\" value=\"";
-        // line 45
+        // line 46
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "matiere", array()), "html", null, true);
         echo "\" hidden>
 \t\t\t\t  <input type=\"text\" name=\"updatematiere_url\" value=\"";
-        // line 46
+        // line 47
         echo $this->env->getExtension('routing')->getPath("pedagogie_updatematiere");
         echo "\" hidden>
                   <!-- SUBMIT BUTTON -->
@@ -99,13 +106,13 @@ class __TwigTemplate_ce73af298d9255c09411690559a38dd2b4b929058e2070b8473e2bf0f3d
 \t</div>
 ";
         
-        $__internal_7250d61a912a6e59907183a83e5db12b2b28ec4279ac6e53bdc406770f6dd42b->leave($__internal_7250d61a912a6e59907183a83e5db12b2b28ec4279ac6e53bdc406770f6dd42b_prof);
+        $__internal_bf520797ccfdf78f94e4cf1486a487895a0a15fa5c291409272900a963a2902a->leave($__internal_bf520797ccfdf78f94e4cf1486a487895a0a15fa5c291409272900a963a2902a_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/matiere:updatematierelayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/matiere/updatematierelayout.html.twig";
     }
 
     public function isTraitable()
@@ -115,15 +122,15 @@ class __TwigTemplate_ce73af298d9255c09411690559a38dd2b4b929058e2070b8473e2bf0f3d
 
     public function getDebugInfo()
     {
-        return array (  88 => 46,  84 => 45,  73 => 37,  64 => 31,  55 => 27,  31 => 6,  22 => 1,);
+        return array (  95 => 47,  91 => 46,  78 => 38,  66 => 31,  55 => 27,  31 => 6,  22 => 1,);
     }
 }
-/* <div id="updatemat{{ mat.matiere }}" class="w3-container tabs w3-animate-zoom">*/
+/* <div id="updatemat{{ mat.id }}" class="w3-container tabs w3-animate-zoom">*/
 /* 		<header class="w3-container" style="padding-top:22px">*/
 /* 			<div class="w3-left">*/
 /* 				<a href="#" onclick="closeMenu(event, 'matierelayout')"  class="w3-btn btn btn-info tablink"><i class="glyphicon glyphicon-menu-left"></i> Retour </a>*/
 /* 			</div>*/
-/* 				<h3 class="text-center"><b><i class="material-icons">class</i> matiere - {{ mat.matiere }} </b></h3>*/
+/* 				<h3 class="text-center"><b><i class="material-icons">class</i> Matiere - {{ mat.matiere }} </b></h3>*/
 /* 				*/
 /* 		</header>*/
 /* 		*/
@@ -144,17 +151,18 @@ class __TwigTemplate_ce73af298d9255c09411690559a38dd2b4b929058e2070b8473e2bf0f3d
 /* 				</div>*/
 /*                */
 /*                 <!-- FORM -->*/
-/*                 <form name="form{{ mat.matiere }}"  method="POST" onsubmit="updateMatiere(event,'form{{ mat.matiere }}')" >*/
+/*                 <form name="formupdmat{{ mat.id }}"  method="POST" onsubmit="updateMatiere(event,'formupdmat{{ mat.id }}','{{ mat.id }}')" >*/
 /*                   <!-- Nom -->*/
 /*                   <div class="mat-form-group">*/
 /*                     <label> Nom </label>*/
-/*                     <input type="text" name="updnommatiere" class="form-control" value="{{ mat.matiere }}">*/
+/*                     <input type="text" name="updnommatiere{{ mat.id }}" class="form-control" value="{{ mat.matiere }}">*/
 /*                     <span class="help-block"></span>*/
 /*                   </div>*/
-/*                   <!-- Password -->*/
+/* 				  */
+/*                   <!-- Departement -->*/
 /*                   <div class="mat-form-group">*/
 /*                     <label> Departement </label>*/
-/*                     <input type="text" name="upddepmatiere" class="form-control" value="{{ mat.matiere }}">*/
+/*                     <input type="text" name="upddepmatiere{{ mat.id }}" class="form-control" value="{{ mat.matiere }}" disabled>*/
 /* 					*/
 /*                     <span class="help-block"></span>*/
 /*                   </div>*/

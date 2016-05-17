@@ -1,12 +1,39 @@
-<div class="fade modal text-center" id="dev{{ dev.devoir }}">
-				  <div class="modal-dialog">
+<div class="fade modal text-left" id="dev{{ dev.id }}">
+				  <div class="modal-dialog modal-lg">
 					<div class="modal-content">
 					  <div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 						
 					  </div>
 					  <div class="modal-body">
-						<p> {{ dev.devoir }}  </p>
+						<table>
+						<thead>
+							<tr>
+								<th> Jours </th>
+								<th> Heure Debut </th>
+								<th> Heure Fin </th>
+								<th> Matiere </th>
+								<th> Salle </th>
+								<th> Professeur </th>
+								<th> Groupe </th>
+								<th> Nature </th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td> {{ dev.jours.jour }} </td>
+								<td> {{ dev.getHeureDebut|date('H:i') }} </td>
+								<td> {{ dev.getHeureFin|date('H:i') }} </td>
+								<td> {{ dev.matiere.matiere }} </td>
+								<td> {{ dev.salles.salle }} </td>
+								<td> {{ dev.enseignants.enseignant }} </td>
+								<td> {{ dev.groupes.groupe }} </td>
+								<td> {{ dev.natures.nature }} </td>
+								
+							</tr>
+						</tbody>
+						</table>
 					  </div>
 					  <div class="modal-footer">
 						<a class="btn btn-default" data-dismiss="modal">Close</a>

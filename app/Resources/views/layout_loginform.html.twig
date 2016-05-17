@@ -6,22 +6,28 @@
                     <span ></span> </h4>
                 
                 <!-- SHOW ERROR/SUCCESS MESSAGES -->
-                <div id="login_messages"></div>
+                <div id="login_messages">
+					<span class="help-block"></span>
+				</div>
+				
                 <!-- FORM -->
                 <form id="connexionform" method="POST">
+				
                   <!-- E-mail -->
                   <div id="email-group" class="form-group">
                     <label> E-mail </label>
                     <input type="email" name="email" class="form-control" placeholder="e-mail...">
                     <span class="help-block"></span>
                   </div>
+				  
                   <!-- Password -->
                   <div id="password-group" class="form-group">
                     <label></label>
                     <input type="password" name="password" class="form-control" placeholder="password...">
-					
                     <span class="help-block"></span>
                   </div>
+				  
+				  
                   <span class="ajax_wait" align="center">
                     <!--don't delete this span class="ajax_wait"-->
                   </span>

@@ -88,12 +88,12 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             }
 
             // pedagogie_getdismatieres
-            if ($pathinfo === '/Pedagogie/Matiere/Get') {
+            if ($pathinfo === '/Pedagogie/Matiere/Get/Discipline/Matiere') {
                 return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\MatiereController::GetDisMatiereAction',  '_route' => 'pedagogie_getdismatieres',);
             }
 
             // pedagogie_getmatnature
-            if ($pathinfo === '/Pedagogie/Nature/Get') {
+            if ($pathinfo === '/Pedagogie/Nature/Get/Nature/Matiere') {
                 return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\MatiereController::GetMatNatureAction',  '_route' => 'pedagogie_getmatnature',);
             }
 
@@ -118,17 +118,17 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             if (0 === strpos($pathinfo, '/Pedagogie/Discipline')) {
                 if (0 === strpos($pathinfo, '/Pedagogie/Discipline/Get')) {
                     // pedagogie_getdepdisciplines
-                    if ($pathinfo === '/Pedagogie/Discipline/Get') {
+                    if ($pathinfo === '/Pedagogie/Discipline/Get/Departement/Discipline') {
                         return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\DisciplineController::GetDepDisciplineAction',  '_route' => 'pedagogie_getdepdisciplines',);
                     }
 
                     // pedagogie_getfildisciplines
-                    if ($pathinfo === '/Pedagogie/Discipline/Get') {
+                    if ($pathinfo === '/Pedagogie/Discipline/Get/Filiere/Discipline') {
                         return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\DisciplineController::GetFilDisciplineAction',  '_route' => 'pedagogie_getfildisciplines',);
                     }
 
                     // pedagogie_getgrpdisciplines
-                    if ($pathinfo === '/Pedagogie/Discipline/Get') {
+                    if ($pathinfo === '/Pedagogie/Discipline/Get/Groupe/Discipline') {
                         return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\DisciplineController::GetGrpDisciplineAction',  '_route' => 'pedagogie_getgrpdisciplines',);
                     }
 
@@ -152,6 +152,26 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             }
 
             if (0 === strpos($pathinfo, '/Pedagogie/Emploi')) {
+                // pedagogie_emploifiliere
+                if ($pathinfo === '/Pedagogie/Emploi/Filiere/Get') {
+                    return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\EmploiController::EmploiHandleAction',  '_route' => 'pedagogie_emploifiliere',);
+                }
+
+                // pedagogie_emploigroupe
+                if ($pathinfo === '/Pedagogie/Emploi/Groupe/Get') {
+                    return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\EmploiController::EmploiHandleAction',  '_route' => 'pedagogie_emploigroupe',);
+                }
+
+                // pedagogie_emploisalle
+                if ($pathinfo === '/Pedagogie/Emploi/Salle/Get') {
+                    return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\EmploiController::EmploiHandleAction',  '_route' => 'pedagogie_emploisalle',);
+                }
+
+                // pedagogie_emploienseignant
+                if ($pathinfo === '/Pedagogie/Emploi/Enseignant/Get') {
+                    return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\EmploiController::EmploiHandleAction',  '_route' => 'pedagogie_emploienseignant',);
+                }
+
                 // pedagogie_addemploi
                 if ($pathinfo === '/Pedagogie/Emploi/Add') {
                     return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\EmploiController::EmploiHandleAction',  '_route' => 'pedagogie_addemploi',);
@@ -171,7 +191,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
             if (0 === strpos($pathinfo, '/Pedagogie/Classe')) {
                 // pedagogie_getfilclasses
-                if ($pathinfo === '/Pedagogie/Classe/Get') {
+                if ($pathinfo === '/Pedagogie/Classe/Get/Filiere/Classe') {
                     return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\ClassesController::GetFilClassesAction',  '_route' => 'pedagogie_getfilclasses',);
                 }
 
@@ -194,7 +214,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
             if (0 === strpos($pathinfo, '/Pedagogie/Groupe')) {
                 // pedagogie_getclsgroupes
-                if ($pathinfo === '/Pedagogie/Groupe/Get') {
+                if ($pathinfo === '/Pedagogie/Groupe/Get/Classe/Groupe') {
                     return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\GroupeController::GetClsGroupeAction',  '_route' => 'pedagogie_getclsgroupes',);
                 }
 
@@ -235,7 +255,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
             if (0 === strpos($pathinfo, '/Pedagogie/Devoir')) {
                 // pedagogie_getensdevoir
-                if ($pathinfo === '/Pedagogie/Devoir/Get') {
+                if ($pathinfo === '/Pedagogie/Devoir/Get/Enseignant/Devoir') {
                     return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\DevoirController::GetEnsDevoirAction',  '_route' => 'pedagogie_getensdevoir',);
                 }
 
@@ -258,7 +278,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
             if (0 === strpos($pathinfo, '/Pedagogie/Enseignant')) {
                 // pedagogie_getmatenseignants
-                if ($pathinfo === '/Pedagogie/Enseignant/Get') {
+                if ($pathinfo === '/Pedagogie/Enseignant/Get/Matiere/Enseignant') {
                     return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\EnseignantController::GetMatEnseignantAction',  '_route' => 'pedagogie_getmatenseignants',);
                 }
 
@@ -281,7 +301,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
             if (0 === strpos($pathinfo, '/Pedagogie/Salle')) {
                 // pedagogie_getlixsalles
-                if ($pathinfo === '/Pedagogie/Salle/Get') {
+                if ($pathinfo === '/Pedagogie/Salle/Get/Lieux/Salles') {
                     return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\SalleController::GetLieuxSallesAction',  '_route' => 'pedagogie_getlixsalles',);
                 }
 
@@ -321,6 +341,42 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 // pedagogie_deletelieux
                 if ($pathinfo === '/Pedagogie/Lieux/Delete') {
                     return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\LieuxController::LieuxHandleAction',  '_route' => 'pedagogie_deletelieux',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/Pedagogie/Mutex')) {
+                // pedagogie_getmutex
+                if ($pathinfo === '/Pedagogie/Mutex/Get') {
+                    return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\MutexController::GetMutexAction',  '_route' => 'pedagogie_getmutex',);
+                }
+
+                // pedagogie_addmutex
+                if ($pathinfo === '/Pedagogie/Mutex/Add') {
+                    return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\MutexController::MutexHandleAction',  '_route' => 'pedagogie_addmutex',);
+                }
+
+                // pedagogie_deletemutex
+                if ($pathinfo === '/Pedagogie/Mutex/Delete') {
+                    return array (  '_controller' => 'Pedagogie\\PedagogieBundle\\Controller\\MutexController::MutexHandleAction',  '_route' => 'pedagogie_deletemutex',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/Pedagogie/Transaction')) {
+                // pedagogie_gettransaction
+                if ($pathinfo === '/Pedagogie/Transaction/Get') {
+                    return array (  '_controller' => 'PedagogiePedagogieBundle:Transaction:GetTransaction',  '_route' => 'pedagogie_gettransaction',);
+                }
+
+                // pedagogie_addtransaction
+                if ($pathinfo === '/Pedagogie/Transaction/Add') {
+                    return array (  '_controller' => 'PedagogiePedagogieBundle:Transaction:TransactionHandle',  '_route' => 'pedagogie_addtransaction',);
+                }
+
+                // pedagogie_deletetransaction
+                if ($pathinfo === '/Pedagogie/Transaction/Delete') {
+                    return array (  '_controller' => 'PedagogiePedagogieBundle:Transaction:TransactionHandle',  '_route' => 'pedagogie_deletetransaction',);
                 }
 
             }

@@ -71,6 +71,12 @@ class Discipline
 	* @ORM\JoinColumn(nullable=false)
     */
     private $devoirs;
+	
+	/**
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Voeux",mappedBy="discipline", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $voeux ;
    
     /**
      * Constructor
@@ -127,7 +133,6 @@ class Discipline
     public function addMatiere(\Pedagogie\PedagogieBundle\Entity\Matiere $matieres)
     {
         $this->matieres[] = $matieres;
-		$matieres->setDiscipline($this);
         return $this;
     }
 
@@ -194,6 +199,12 @@ class Discipline
     {
         $this->filieres[] = $filieres;
 		$filieres->addDiscipline($this);
+		$allclasses = $filieres->getClasses();
+		foreach( $allclasses as $cls )
+		{				
+			$this->addClasse($cls);				
+		}
+						
         return $this;
     }
 
@@ -260,6 +271,11 @@ class Discipline
     {
         $this->classe[] = $classe;
 		$classe->addDiscipline($this);
+		$allgroupes = $classe->getGroupes() ;
+		foreach( $allgroupes as $grp )
+		{				
+			$this->addGroupe($grp);				
+		}
         return $this;
     }
 
@@ -347,5 +363,38 @@ class Discipline
     public function getDevoirs()
     {
         return $this->devoirs;
+    }
+
+    /**
+     * Add voeux
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Voeux $voeux
+     * @return Discipline
+     */
+    public function addVoeux(\Pedagogie\PedagogieBundle\Entity\Voeux $voeux)
+    {
+        $this->voeux[] = $voeux;
+
+        return $this;
+    }
+
+    /**
+     * Remove voeux
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Voeux $voeux
+     */
+    public function removeVoeux(\Pedagogie\PedagogieBundle\Entity\Voeux $voeux)
+    {
+        $this->voeux->removeElement($voeux);
+    }
+
+    /**
+     * Get voeux
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVoeux()
+    {
+        return $this->voeux;
     }
 }

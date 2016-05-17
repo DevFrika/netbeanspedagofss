@@ -15,8 +15,8 @@ class __TwigTemplate_409b4ac6d5854942223d310610de89c150d84ca7f5d5bb4b2f138b07178
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_80f528bd1f365145572bf0263f81c594de1b3bf4cb0add8fae75b16149d1e664 = $this->env->getExtension("native_profiler");
-        $__internal_80f528bd1f365145572bf0263f81c594de1b3bf4cb0add8fae75b16149d1e664->enter($__internal_80f528bd1f365145572bf0263f81c594de1b3bf4cb0add8fae75b16149d1e664_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:prof/classe:addclasselayout.html.twig"));
+        $__internal_0f900f78acd9042f94461290c64d697ce725300c973d758c13d641bdefed2b19 = $this->env->getExtension("native_profiler");
+        $__internal_0f900f78acd9042f94461290c64d697ce725300c973d758c13d641bdefed2b19->enter($__internal_0f900f78acd9042f94461290c64d697ce725300c973d758c13d641bdefed2b19_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:prof/classe:addclasselayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"addclasse\">
@@ -168,7 +168,7 @@ class __TwigTemplate_409b4ac6d5854942223d310610de89c150d84ca7f5d5bb4b2f138b07178
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_80f528bd1f365145572bf0263f81c594de1b3bf4cb0add8fae75b16149d1e664->leave($__internal_80f528bd1f365145572bf0263f81c594de1b3bf4cb0add8fae75b16149d1e664_prof);
+        $__internal_0f900f78acd9042f94461290c64d697ce725300c973d758c13d641bdefed2b19->leave($__internal_0f900f78acd9042f94461290c64d697ce725300c973d758c13d641bdefed2b19_prof);
 
     }
 

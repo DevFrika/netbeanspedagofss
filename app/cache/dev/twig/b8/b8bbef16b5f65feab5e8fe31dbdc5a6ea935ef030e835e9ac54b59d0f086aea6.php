@@ -15,8 +15,8 @@ class __TwigTemplate_d7bdd6a102d2a293f06c82a31ccf591f4bb1eea47558c1cfb647414c39b
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fb47a6bfccbb17f020d0e504723bcfd8291eb973c7a61b2441f77c88d38761a5 = $this->env->getExtension("native_profiler");
-        $__internal_fb47a6bfccbb17f020d0e504723bcfd8291eb973c7a61b2441f77c88d38761a5->enter($__internal_fb47a6bfccbb17f020d0e504723bcfd8291eb973c7a61b2441f77c88d38761a5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/discipline/updatedisciplinelayout.html.twig"));
+        $__internal_1f7be98c75a44063e65426f03e9ef87be73c3877bbe861bbc9af6ca3f5371a7a = $this->env->getExtension("native_profiler");
+        $__internal_1f7be98c75a44063e65426f03e9ef87be73c3877bbe861bbc9af6ca3f5371a7a->enter($__internal_1f7be98c75a44063e65426f03e9ef87be73c3877bbe861bbc9af6ca3f5371a7a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/discipline/updatedisciplinelayout.html.twig"));
 
         // line 1
         echo "<div id=\"updatedis";
@@ -54,6 +54,8 @@ class __TwigTemplate_d7bdd6a102d2a293f06c82a31ccf591f4bb1eea47558c1cfb647414c39b
         // line 27
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dis"]) ? $context["dis"] : $this->getContext($context, "dis")), "id", array()), "html", null, true);
         echo "\"  method=\"POST\" onsubmit=\"updateDiscipline(event,'formdis";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dis"]) ? $context["dis"] : $this->getContext($context, "dis")), "id", array()), "html", null, true);
+        echo "','";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dis"]) ? $context["dis"] : $this->getContext($context, "dis")), "id", array()), "html", null, true);
         echo "')\" >
                  
@@ -136,7 +138,7 @@ class __TwigTemplate_d7bdd6a102d2a293f06c82a31ccf591f4bb1eea47558c1cfb647414c39b
 \t</div>
 ";
         
-        $__internal_fb47a6bfccbb17f020d0e504723bcfd8291eb973c7a61b2441f77c88d38761a5->leave($__internal_fb47a6bfccbb17f020d0e504723bcfd8291eb973c7a61b2441f77c88d38761a5_prof);
+        $__internal_1f7be98c75a44063e65426f03e9ef87be73c3877bbe861bbc9af6ca3f5371a7a->leave($__internal_1f7be98c75a44063e65426f03e9ef87be73c3877bbe861bbc9af6ca3f5371a7a_prof);
 
     }
 
@@ -152,7 +154,7 @@ class __TwigTemplate_d7bdd6a102d2a293f06c82a31ccf591f4bb1eea47558c1cfb647414c39b
 
     public function getDebugInfo()
     {
-        return array (  125 => 66,  121 => 65,  117 => 64,  103 => 53,  93 => 45,  82 => 43,  78 => 42,  65 => 32,  55 => 27,  31 => 6,  22 => 1,);
+        return array (  127 => 66,  123 => 65,  119 => 64,  105 => 53,  95 => 45,  84 => 43,  80 => 42,  67 => 32,  55 => 27,  31 => 6,  22 => 1,);
     }
 }
 /* <div id="updatedis{{ dis.id }}" class="w3-container tabs w3-animate-zoom">*/
@@ -181,7 +183,7 @@ class __TwigTemplate_d7bdd6a102d2a293f06c82a31ccf591f4bb1eea47558c1cfb647414c39b
 /* 				</div>*/
 /*                */
 /*                 <!-- FORM -->*/
-/*                 <form name="formdis{{ dis.id }}"  method="POST" onsubmit="updateDiscipline(event,'formdis{{ dis.id }}')" >*/
+/*                 <form name="formdis{{ dis.id }}"  method="POST" onsubmit="updateDiscipline(event,'formdis{{ dis.id }}','{{ dis.id }}')" >*/
 /*                  */
 /* 				  <!-- Nom -->*/
 /*                   <div class="form-group dis-form-group">*/

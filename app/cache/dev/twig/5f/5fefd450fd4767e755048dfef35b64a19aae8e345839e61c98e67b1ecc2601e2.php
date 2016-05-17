@@ -15,8 +15,8 @@ class __TwigTemplate_5c41090e0e46fc18c2efae17ec3073f81ae3b6c08d6249d454f1d3c9691
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_cfe8c8c16bcb002accd5aeec9644d49f66f957b3650567a9b7195892f7bd8507 = $this->env->getExtension("native_profiler");
-        $__internal_cfe8c8c16bcb002accd5aeec9644d49f66f957b3650567a9b7195892f7bd8507->enter($__internal_cfe8c8c16bcb002accd5aeec9644d49f66f957b3650567a9b7195892f7bd8507_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/modif/modiflayout.html.twig"));
+        $__internal_97c65bb0f48cb5f0a450ee22455dfcca13bb9c72ef7b72249bd5dd2785c783b7 = $this->env->getExtension("native_profiler");
+        $__internal_97c65bb0f48cb5f0a450ee22455dfcca13bb9c72ef7b72249bd5dd2785c783b7->enter($__internal_97c65bb0f48cb5f0a450ee22455dfcca13bb9c72ef7b72249bd5dd2785c783b7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/modif/modiflayout.html.twig"));
 
         // line 1
         echo "<div class=\"section w3-clear \" style=\"margin-top:-25%;clear:both;\">
@@ -571,6 +571,110 @@ class __TwigTemplate_5c41090e0e46fc18c2efae17ec3073f81ae3b6c08d6249d454f1d3c9691
         // line 161
         echo "\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t
+\t\t\t\t\t\t\t<div id=\"modiflieux\" class=\"tabs w3-container w3-section w3-animate-left\">
+\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t";
+        // line 165
+        if ( !(null === (isset($context["alllieux"]) ? $context["alllieux"] : $this->getContext($context, "alllieux")))) {
+            // line 166
+            echo "\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t";
+            // line 167
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["alllieux"]) ? $context["alllieux"] : $this->getContext($context, "alllieux")));
+            $context['loop'] = array(
+              'parent' => $context['_parent'],
+              'index0' => 0,
+              'index'  => 1,
+              'first'  => true,
+            );
+            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+                $length = count($context['_seq']);
+                $context['loop']['revindex0'] = $length - 1;
+                $context['loop']['revindex'] = $length;
+                $context['loop']['length'] = $length;
+                $context['loop']['last'] = 1 === $length;
+            }
+            foreach ($context['_seq'] as $context["_key"] => $context["lieux"]) {
+                // line 168
+                echo "\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t";
+                // line 169
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/lieux/updatelieuxlayout.html.twig", "@PedagogiePedagogie/admin/modif/modiflayout.html.twig", 169)->display($context);
+                // line 170
+                echo "\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t";
+                ++$context['loop']['index0'];
+                ++$context['loop']['index'];
+                $context['loop']['first'] = false;
+                if (isset($context['loop']['length'])) {
+                    --$context['loop']['revindex0'];
+                    --$context['loop']['revindex'];
+                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+                }
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['lieux'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 172
+            echo "\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t";
+        }
+        // line 174
+        echo "\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t<div id=\"modifsalle\" class=\"tabs w3-container w3-section w3-animate-left\">
+\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t";
+        // line 178
+        if ( !(null === (isset($context["allsalle"]) ? $context["allsalle"] : $this->getContext($context, "allsalle")))) {
+            // line 179
+            echo "\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t";
+            // line 180
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["allsalle"]) ? $context["allsalle"] : $this->getContext($context, "allsalle")));
+            $context['loop'] = array(
+              'parent' => $context['_parent'],
+              'index0' => 0,
+              'index'  => 1,
+              'first'  => true,
+            );
+            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+                $length = count($context['_seq']);
+                $context['loop']['revindex0'] = $length - 1;
+                $context['loop']['revindex'] = $length;
+                $context['loop']['length'] = $length;
+                $context['loop']['last'] = 1 === $length;
+            }
+            foreach ($context['_seq'] as $context["_key"] => $context["salle"]) {
+                // line 181
+                echo "\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t";
+                // line 182
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/salle/updatesallelayout.html.twig", "@PedagogiePedagogie/admin/modif/modiflayout.html.twig", 182)->display($context);
+                // line 183
+                echo "\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t";
+                ++$context['loop']['index0'];
+                ++$context['loop']['index'];
+                $context['loop']['first'] = false;
+                if (isset($context['loop']['length'])) {
+                    --$context['loop']['revindex0'];
+                    --$context['loop']['revindex'];
+                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+                }
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['salle'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 185
+            echo "\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t";
+        }
+        // line 187
+        echo "\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t
 \t\t\t\t\t\t  
 \t\t\t\t\t\t</div>
 \t\t\t\t\t  <!-- End page content -->
@@ -581,7 +685,7 @@ class __TwigTemplate_5c41090e0e46fc18c2efae17ec3073f81ae3b6c08d6249d454f1d3c9691
 \t</div>
 </div>";
         
-        $__internal_cfe8c8c16bcb002accd5aeec9644d49f66f957b3650567a9b7195892f7bd8507->leave($__internal_cfe8c8c16bcb002accd5aeec9644d49f66f957b3650567a9b7195892f7bd8507_prof);
+        $__internal_97c65bb0f48cb5f0a450ee22455dfcca13bb9c72ef7b72249bd5dd2785c783b7->leave($__internal_97c65bb0f48cb5f0a450ee22455dfcca13bb9c72ef7b72249bd5dd2785c783b7_prof);
 
     }
 
@@ -597,7 +701,7 @@ class __TwigTemplate_5c41090e0e46fc18c2efae17ec3073f81ae3b6c08d6249d454f1d3c9691
 
     public function getDebugInfo()
     {
-        return array (  572 => 161,  568 => 159,  553 => 157,  551 => 156,  548 => 155,  531 => 154,  528 => 153,  526 => 152,  520 => 148,  516 => 146,  501 => 144,  499 => 143,  496 => 142,  479 => 141,  476 => 140,  474 => 139,  467 => 134,  463 => 132,  448 => 130,  446 => 129,  443 => 128,  426 => 127,  423 => 126,  421 => 125,  415 => 121,  411 => 119,  396 => 117,  394 => 116,  391 => 115,  374 => 114,  371 => 113,  369 => 112,  362 => 107,  358 => 105,  343 => 103,  341 => 102,  338 => 101,  321 => 100,  318 => 99,  316 => 98,  310 => 94,  306 => 92,  291 => 90,  289 => 89,  286 => 88,  269 => 87,  266 => 86,  264 => 85,  258 => 81,  254 => 79,  239 => 77,  237 => 76,  234 => 75,  217 => 74,  214 => 73,  212 => 72,  206 => 68,  202 => 66,  187 => 64,  185 => 63,  182 => 62,  165 => 61,  162 => 60,  160 => 59,  154 => 55,  150 => 53,  135 => 51,  133 => 50,  130 => 49,  113 => 48,  110 => 47,  108 => 46,  102 => 42,  98 => 40,  83 => 38,  81 => 37,  78 => 36,  61 => 35,  58 => 34,  56 => 33,  22 => 1,);
+        return array (  676 => 187,  672 => 185,  657 => 183,  655 => 182,  652 => 181,  635 => 180,  632 => 179,  630 => 178,  624 => 174,  620 => 172,  605 => 170,  603 => 169,  600 => 168,  583 => 167,  580 => 166,  578 => 165,  572 => 161,  568 => 159,  553 => 157,  551 => 156,  548 => 155,  531 => 154,  528 => 153,  526 => 152,  520 => 148,  516 => 146,  501 => 144,  499 => 143,  496 => 142,  479 => 141,  476 => 140,  474 => 139,  467 => 134,  463 => 132,  448 => 130,  446 => 129,  443 => 128,  426 => 127,  423 => 126,  421 => 125,  415 => 121,  411 => 119,  396 => 117,  394 => 116,  391 => 115,  374 => 114,  371 => 113,  369 => 112,  362 => 107,  358 => 105,  343 => 103,  341 => 102,  338 => 101,  321 => 100,  318 => 99,  316 => 98,  310 => 94,  306 => 92,  291 => 90,  289 => 89,  286 => 88,  269 => 87,  266 => 86,  264 => 85,  258 => 81,  254 => 79,  239 => 77,  237 => 76,  234 => 75,  217 => 74,  214 => 73,  212 => 72,  206 => 68,  202 => 66,  187 => 64,  185 => 63,  182 => 62,  165 => 61,  162 => 60,  160 => 59,  154 => 55,  150 => 53,  135 => 51,  133 => 50,  130 => 49,  113 => 48,  110 => 47,  108 => 46,  102 => 42,  98 => 40,  83 => 38,  81 => 37,  78 => 36,  61 => 35,  58 => 34,  56 => 33,  22 => 1,);
     }
 }
 /* <div class="section w3-clear " style="margin-top:-25%;clear:both;">*/
@@ -756,6 +860,32 @@ class __TwigTemplate_5c41090e0e46fc18c2efae17ec3073f81ae3b6c08d6249d454f1d3c9691
 /* 									{% for dev in alldevoir  %}*/
 /* 									*/
 /* 										{% include "PedagogiePedagogieBundle::admin/devoir/updatedevoirlayout.html.twig" %}*/
+/* 										*/
+/* 									{% endfor %}*/
+/* 									*/
+/* 								{% endif %}*/
+/* 							</div>*/
+/* 							*/
+/* 							<div id="modiflieux" class="tabs w3-container w3-section w3-animate-left">*/
+/* 							*/
+/* 								{% if alllieux is not null %}*/
+/* 								*/
+/* 									{% for lieux in alllieux  %}*/
+/* 									*/
+/* 										{% include "PedagogiePedagogieBundle::admin/lieux/updatelieuxlayout.html.twig" %}*/
+/* 										*/
+/* 									{% endfor %}*/
+/* 									*/
+/* 								{% endif %}*/
+/* 							</div>*/
+/* 							*/
+/* 							<div id="modifsalle" class="tabs w3-container w3-section w3-animate-left">*/
+/* 							*/
+/* 								{% if allsalle is not null %}*/
+/* 								*/
+/* 									{% for salle in allsalle  %}*/
+/* 									*/
+/* 										{% include "PedagogiePedagogieBundle::admin/salle/updatesallelayout.html.twig" %}*/
 /* 										*/
 /* 									{% endfor %}*/
 /* 									*/

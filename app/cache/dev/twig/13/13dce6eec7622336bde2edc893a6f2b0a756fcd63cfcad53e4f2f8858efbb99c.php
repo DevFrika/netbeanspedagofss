@@ -15,8 +15,8 @@ class __TwigTemplate_baf44ab6f0abd37674857f19fa420330a451ca21c61c6a678eb0b83feab
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ea8b72f523530aa6334c186d05f048326c0af10863e5cc3a91363b7bc70bd981 = $this->env->getExtension("native_profiler");
-        $__internal_ea8b72f523530aa6334c186d05f048326c0af10863e5cc3a91363b7bc70bd981->enter($__internal_ea8b72f523530aa6334c186d05f048326c0af10863e5cc3a91363b7bc70bd981_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:prof/devoir:adddevoirlayout.html.twig"));
+        $__internal_69b02dcbd323912074357babf7d857857cc4176fa26bbccc1844d8bb53f7ffb1 = $this->env->getExtension("native_profiler");
+        $__internal_69b02dcbd323912074357babf7d857857cc4176fa26bbccc1844d8bb53f7ffb1->enter($__internal_69b02dcbd323912074357babf7d857857cc4176fa26bbccc1844d8bb53f7ffb1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:prof/devoir:adddevoirlayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"adddevoir\">
@@ -250,7 +250,7 @@ class __TwigTemplate_baf44ab6f0abd37674857f19fa420330a451ca21c61c6a678eb0b83feab
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_ea8b72f523530aa6334c186d05f048326c0af10863e5cc3a91363b7bc70bd981->leave($__internal_ea8b72f523530aa6334c186d05f048326c0af10863e5cc3a91363b7bc70bd981_prof);
+        $__internal_69b02dcbd323912074357babf7d857857cc4176fa26bbccc1844d8bb53f7ffb1->leave($__internal_69b02dcbd323912074357babf7d857857cc4176fa26bbccc1844d8bb53f7ffb1_prof);
 
     }
 

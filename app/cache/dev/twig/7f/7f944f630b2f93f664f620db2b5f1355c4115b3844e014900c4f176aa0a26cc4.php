@@ -15,8 +15,8 @@ class __TwigTemplate_9bcc2b01d66762f57b545b03015252a1a94c30c977554411db9a4721cb5
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c4dac6f694fed679e566efe99653d9bc22df67aa02b2fddeb6f9caad29f8bc66 = $this->env->getExtension("native_profiler");
-        $__internal_c4dac6f694fed679e566efe99653d9bc22df67aa02b2fddeb6f9caad29f8bc66->enter($__internal_c4dac6f694fed679e566efe99653d9bc22df67aa02b2fddeb6f9caad29f8bc66_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/groupe/groupelayout.html.twig"));
+        $__internal_54d6991b12f358289ba0e65b32d6f654504cf3fbf17b6b318012ee6479f0a7d0 = $this->env->getExtension("native_profiler");
+        $__internal_54d6991b12f358289ba0e65b32d6f654504cf3fbf17b6b318012ee6479f0a7d0->enter($__internal_54d6991b12f358289ba0e65b32d6f654504cf3fbf17b6b318012ee6479f0a7d0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/groupe/groupelayout.html.twig"));
 
         // line 1
         echo "<div class=\"section w3-clear \" style=\"margin-top:-25%;clear:both;\">
@@ -267,7 +267,7 @@ class __TwigTemplate_9bcc2b01d66762f57b545b03015252a1a94c30c977554411db9a4721cb5
 </div>
 ";
         
-        $__internal_c4dac6f694fed679e566efe99653d9bc22df67aa02b2fddeb6f9caad29f8bc66->leave($__internal_c4dac6f694fed679e566efe99653d9bc22df67aa02b2fddeb6f9caad29f8bc66_prof);
+        $__internal_54d6991b12f358289ba0e65b32d6f654504cf3fbf17b6b318012ee6479f0a7d0->leave($__internal_54d6991b12f358289ba0e65b32d6f654504cf3fbf17b6b318012ee6479f0a7d0_prof);
 
     }
 

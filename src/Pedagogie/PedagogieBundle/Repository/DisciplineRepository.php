@@ -51,5 +51,23 @@ class DisciplineRepository extends EntityRepository
 			return $qb->getQuery()->getResult();
 	}
 	
+	public function findExistDepartement($nomdis,$departement)
+	{
+			$qb = $this->createQueryBuilder('dis');
+			$qb->where('dis.discipline = :disp')->setParameter('disp', $nomdis);
+			$qb ->join('dis.departements', 'dep' ,'WITH', 'dep.id = \''.$departement->getId().'\'' ); // Puis on filtre sur le nom des catégories à l'aide d'un IN
+			// Enfin, on retourne le résultat
+			return $qb->getQuery()->getOneOrNullResult();
+	}
+	
+	public function findExistFiliere($nomdis,$filiere)
+	{
+			$qb = $this->createQueryBuilder('dis');
+			$qb->where('dis.discipline = :disp')->setParameter('disp', $nomdis);
+			$qb ->join('dis.filieres', 'fil' ,'WITH', 'fil.id = \''.$filiere->getId().'\'' ); // Puis on filtre sur le nom des catégories à l'aide d'un IN
+			// Enfin, on retourne le résultat
+			return $qb->getQuery()->getOneOrNullResult();
+	}
+	
 	
 }

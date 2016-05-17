@@ -24,10 +24,14 @@
 					  
 						<ul class="nav nav-pills nav-stacked">
 							<li><a href="#" class="tablinkw3-padding-hor-16 w3-hide-large w3-dark-grey w3-hover-black tablink" onclick="w3_close()" title="close menu"><i class="fa fa-remove"></i>  Close Menu</a></li>
-							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listeemploi','emploilayout')"><i class="fa fa-users"></i> Liste des emplois </a></li>
-							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listeemploidep','emploilayout')"><i class="fa fa-users"></i> Liste des emplois  par departements </a></li>
+							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listeemploifil','emploilayout')"><i class="fa fa-users"></i> Liste des Emplois par Filiere </a></li>
+							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listeemploigrp','emploilayout')"><i class="fa fa-users"></i> Liste des Emplois par Groupe </a></li>
+							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listeemploisal','emploilayout')"><i class="fa fa-users"></i> Liste des Emplois par Salle </a></li>
+							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listeemploiens','emploilayout')"><i class="fa fa-users"></i> Liste des Emplois par Enseignant </a></li>
+							<li><a href="#" class="tablink" onclick="openSubTab(event, 'listeemploidep','emploilayout')"><i class="fa fa-users"></i> Liste des Emplois </a></li>
 							<li><a href="#" class="tablink" onclick="openSubTab(event, 'designhelp','emploilayout')"><i class="fa fa-users"></i> Help Design </a></li>
-							<li><a href="#" class="w3-padding w3-blue tablink" data-toggle="modal" data-target="#addemploi" ><i class="glyphicon glyphicon-plus"></i> Ajouter une nouvelle emploi </a></li>
+							<li><a href="#" class="w3-padding w3-blue tablink" onclick="OpenEmpModal(event,'{{ session_id }}')" ><i class="glyphicon glyphicon-plus"></i> Ajouter un nouveau Emploi </a></li>
+							<!-- <li><a href="#" class="w3-padding w3-blue tablink" data-toggle="modal" data-target="#addemploi" ><i class="glyphicon glyphicon-plus"></i> Ajouter un nouveau Emploi </a></li> -->
 						</ul>
 					 
 					</nav>
@@ -52,30 +56,348 @@
 			
 							</div>
 							
-							<div id="listeemploi" class="tabs w3-container w3-section w3-animate-left">
+							<div id="listeemploifil" class="tabs w3-container w3-section w3-animate-left">
 							
 								{% if allemploi is not null %}
 						
 								<div class="section">
 									<div class="container">
-										{% for emp in allemploi  %}
-							
-											<div class="fssemp{{ emp.id }} col-md-8">
-											  <div class="col-md-4">
-												<img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive">
-											  </div>
-											  <div class="col-md-8">
-												<h3>{{ emp.id }}</h3>
-											
-													<a class="btn btn-primary" data-toggle="modal" data-target="#emp{{ emp.id }}" > <i class="fa fa-eye"></i> Consulter </a>
-													<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updateemp{{ emp.id }}','modifemploi','emploilayout')"><i class="fa fa-pencil"></i>Modifier</a>
-													<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delemp{{ emp.id }}" ><i class="fa fa-trash"></i>Supprimer</a>
+										{% for fil in allfiliere  %}
+										
+												{% if fil.emplois is not null and fil.emplois.count > 0 %}
 												
-											  </div>
-											</div>
-											
-										{%endfor%}
+														<div class="fssempfil{{ fil.id }} col-md-4">
+															<div class="col-md-4">
+																<h3>{{ fil.filiere }}</h3>
+															</div>
+															<div class="col-md-8">
+															
+																<a class="btn btn-primary" onclick="LoadEmpFil('{{ fil.id }}','graphique','false')" > <i class="fa fa-eye"></i> Consulter Emploi Graphique </a>
+																<a class="btn btn-primary" onclick="LoadEmpFil('{{ fil.id }}','liste','false')" > <i class="fa fa-eye"></i> Consulter Emploi Liste </a>
+																
+															</div>
+														</div>
+												
+												{% endif %}		
+										{% endfor %}
 
+									</div>
+								</div>
+									
+								{% else %}
+								  <h1> Pas d'emploi pour les filieres </h1>
+								{% endif %}
+						
+						
+							</div>
+							
+							<div id="listeemploigrp" class="tabs w3-container w3-section w3-animate-left">
+							
+								{% if allemploi is not null %}
+						
+								<div class="section">
+									<div class="container">
+										<div class="panel-group" role="tablist" aria-multiselectable="true">
+									
+											{% for dep in alldepartement  %}
+											<div class="panel panel-default">
+										
+												<div class="panel-heading" role="tab" >
+													<button class="w3-btn w3-blue w3-round" type="button" data-toggle="collapse" data-target="#depgrpempcol{{ dep.id }}" aria-expanded="false" aria-controls="depgrpempcol{{ dep.id }}">
+																 {{ dep.departement }}
+													</button>
+												</div>
+										
+												<div class="panel-collapse collapse w3-card-8" id="depgrpempcol{{ dep.id }}">
+													<div class="panel-body">
+														
+														<div class="panel-group" role="tablist" aria-multiselectable="true">
+														
+														{% for fil in dep.filieres  %}
+														
+														<div class="panel panel-default">
+										
+															<div class="panel-heading" role="tab" >
+																<button class="w3-btn w3-white" type="button" data-toggle="collapse" data-target="#filgrpempcol{{ dep.id }}_{{ fil.id }}" aria-expanded="false" aria-controls="filgrpempcol{{ dep.id }}_{{ fil.id }}">
+																				 {{ fil.filiere }}
+																</button>
+															</div>
+															
+														<div class="panel-collapse collapse w3-card-8" id="filgrpempcol{{ dep.id }}_{{ fil.id }}">
+															<div class="panel-body">
+															
+																<div class="panel-group" role="tablist" aria-multiselectable="true">
+														{% for cls in fil.classes  %}
+														
+														<div class="panel panel-default">
+										
+															<div class="panel-heading" role="tab" >
+															
+																<button class="w3-btn " type="button" data-toggle="collapse" data-target="#clsgrpempcol{{ dep.id }}_{{ fil.id }}_{{ cls.id }}" aria-expanded="false" aria-controls="clsgrpempcol{{ dep.id }}_{{ fil.id }}_{{ cls.id }}">
+																				 {{ cls.classe }}
+																</button>
+															</div>
+															
+														<div class="panel-collapse collapse w3-card-8" id="clsgrpempcol{{ dep.id }}_{{ fil.id }}_{{ cls.id }}">
+																<div class="panel-body">
+															
+																
+																
+															{% for grp in cls.groupes  %}
+															
+																<div class="row" >
+																
+																	<button class="w3-btn w3-light-blue" type="button" data-toggle="collapse" data-target="#grpempcol{{ dep.id }}_{{ fil.id }}_{{ cls.id }}_{{ grp.id }}" aria-expanded="false" aria-controls="grpempcol{{ dep.id }}_{{ fil.id }}_{{ cls.id }}_{{ grp.id }}">
+																		Liste des Emplois du groupe  {{ grp.groupe }}
+																	</button>
+																
+																	<div class="collapse w3-card-8" id="grpempcol{{ dep.id }}_{{ fil.id }}_{{ cls.id }}_{{ grp.id }}">
+																	
+																	{% if grp.emplois is not null and grp.emplois.count > 0 %}
+																	
+																			<div class="fssempgrp{{ grp.id }} col-md-12">
+																			
+																				<div class="row col-md-4">
+																					<h3>{{ grp.groupe }}</h3>
+																				</div>
+																				<div class="row col-md-8">
+																				
+																					<a class="btn btn-primary" onclick="LoadEmpGrp('{{ grp.id }}','graphique','false')" > <i class="fa fa-eye"></i> Consulter Emploi Graphique </a>
+																					<a class="btn btn-primary" onclick="LoadEmpGrp('{{ grp.id }}','liste','false')" > <i class="fa fa-eye"></i> Consulter Emploi Liste </a>
+																					
+																				</div>
+																				
+																				<div class="row col-md-12">
+																				
+																					<table>
+																						<thead>
+																							<tr>
+																								<th>Filiere</th>
+																								<th>Groupe</th>
+																								<th>Matiere</th>
+																								<th>Action</th>
+																							</tr>
+																						</thead>
+																						<tbody>
+																					{% for emp in grp.emplois  %}
+																					
+																						<tr class="fssemp{{ emp.id }}">
+																						
+																							<td>{{ emp.filieres.filiere }}</td>
+																							<td>{{ emp.groupes.groupe }}</td>
+																							<td>{{ emp.matiere.matiere }}</td>
+																							<td>												
+																									<a class="btn btn-primary" data-toggle="modal" data-target="#emp{{ emp.id }}" > <i class="fa fa-eye"></i> Consulter </a>
+																									<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updateemp{{ emp.id }}','modifemploi','emploilayout')"><i class="fa fa-pencil"></i>Modifier</a>
+																									<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delemp{{ emp.id }}" ><i class="fa fa-trash"></i>Supprimer</a>
+																							</td>
+																						</tr>
+																					{%endfor%}
+																						</tbody>
+																					</table>
+																	
+																				</div>
+																				
+																			</div>
+																	
+																	{% endif %}		
+																		
+																	
+																	</div>
+																	</div>
+																
+															{% endfor %}
+														
+															
+															
+														</div>	
+														</div>	
+														</div>	
+														{% endfor %}
+														</div>
+														</div>	
+														</div>	
+														</div>	
+														{% endfor %}
+														
+													
+										</div>
+										</div>
+										</div>
+										</div>	
+										{% endfor %}
+										
+									</div>
+									</div>
+								</div>
+									
+								{% else %}
+								  <h1> Pas d'emploi pour les groupes </h1>
+								{% endif %}
+						
+						
+							</div>
+							
+							
+							 <div id="listeemploisal" class="tabs w3-container w3-section w3-animate-left">
+							
+								{% if allemploi is not null %}
+						
+								<div class="section">
+									<div class="container">
+										{% for salle in allsalle  %}
+										
+										<div class="row" >
+										
+											<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#salempcol{{ salle.id }}" aria-expanded="false" aria-controls="salempcol{{ salle.id }}">
+												Liste des Emplois de la salle  {{ salle.salle }}
+											</button>
+											
+											<div class="collapse w3-card-8" id="salempcol{{ salle.id }}">
+											
+												{% if salle.emplois is not null and salle.emplois.count > 0 %}
+												
+													
+							
+														<div class="fssempsal{{ salle.id }} col-md-12">
+														
+															<div class="row col-md-4">
+																<h3>{{ salle.salle }}</h3>
+															</div>
+															<div class="row col-md-8">
+															
+																<a class="btn btn-primary" onclick="LoadEmpSal('{{ salle.id }}','graphique','false')" > <i class="fa fa-eye"></i> Consulter Emploi Graphique </a>
+																<a class="btn btn-primary" onclick="LoadEmpSal('{{ salle.id }}','liste','false')" > <i class="fa fa-eye"></i> Consulter Emploi Liste </a>
+																
+															</div>
+															
+															<div class="row col-md-12">
+															
+																<table>
+																	<thead>
+																		<tr>
+																			<th>Filiere</th>
+																			<th>Groupe</th>
+																			<th>Matiere</th>
+																			<th>Action</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																{% for emp in salle.emplois  %}
+																
+																	<tr class="fssemp{{ emp.id }}">
+																	
+																		<td>{{ emp.filieres.filiere }}</td>
+																		<td>{{ emp.groupes.groupe }}</td>
+																		<td>{{ emp.matiere.matiere }}</td>
+																		<td>												
+																				<a class="btn btn-primary" data-toggle="modal" data-target="#emp{{ emp.id }}" > <i class="fa fa-eye"></i> Consulter </a>
+																				<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updateemp{{ emp.id }}','modifemploi','emploilayout')"><i class="fa fa-pencil"></i>Modifier</a>
+																				<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delemp{{ emp.id }}" ><i class="fa fa-trash"></i>Supprimer</a>
+																		</td>
+																	</tr>
+																{%endfor%}
+																	</tbody>
+																</table>
+												
+															</div>
+															
+														</div>
+												
+												{% endif %}	
+												
+											</div>
+										</div>
+										
+										<br>
+										
+										{% endfor %}
+
+									</div>
+								</div>
+									
+								{% else %}
+								  <h1> Pas d'emploi pour les salles </h1>
+								{% endif %}
+						
+						
+							</div>
+							
+							<div id="listeemploiens" class="tabs w3-container w3-section w3-animate-left">
+							
+								{% if allemploi is not null %}
+						
+								<div class="section">
+									<div class="container">
+										<div class="row">
+										{% for ens in allenseignant  %}
+										
+										
+										<div class="row" >
+										
+											<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#ensempcol{{ ens.id }}" aria-expanded="false" aria-controls="ensempcol{{ ens.id }}">
+												Liste des Emplois de {{ ens.enseignant }}
+											</button>
+											
+											<div class="collapse w3-card-8" id="ensempcol{{ ens.id }}">
+											
+												{% if ens.emplois is not null and ens.emplois.count > 0 %}
+												
+														<div class="fssempens{{ ens.id }} col-md-12">
+														
+															<div class="row col-md-4">
+																<h3>{{ ens.enseignant }}</h3>
+															</div>
+															
+															<div class="row col-md-8">
+															
+																<a class="w3-btn btn btn-primary" onclick="LoadEmpEns('{{ ens.id }}','graphique','false')" > <i class="fa fa-eye"></i> Consulter Emploi Graphique </a>
+																<a class="w3-btn btn btn-primary" onclick="LoadEmpEns('{{ ens.id }}','liste','false')" > <i class="fa fa-eye"></i> Consulter Emploi Liste </a>
+																
+															</div>
+															
+															<div class="row col-md-12">
+															
+															<table>
+																<thead>
+																	<tr>
+																		<th>Filiere</th>
+																		<th>Groupe</th>
+																		<th>Matiere</th>
+																		<th>Action</th>
+																	</tr>
+																</thead>
+																<tbody>
+															{% for emp in ens.emplois  %}
+															
+																<tr class="fssemp{{ emp.id }}">
+																
+																	<td>{{ emp.filieres.filiere }}</td>
+																	<td>{{ emp.groupes.groupe }}</td>
+																	<td>{{ emp.matiere.matiere }}</td>
+																	<td>												
+																			<a class="btn btn-primary" data-toggle="modal" data-target="#emp{{ emp.id }}" > <i class="fa fa-eye"></i> Consulter </a>
+																			<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updateemp{{ emp.id }}','modifemploi','emploilayout')"><i class="fa fa-pencil"></i>Modifier</a>
+																			<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delemp{{ emp.id }}" ><i class="fa fa-trash"></i>Supprimer</a>
+																	</td>
+																</tr>
+															{%endfor%}
+																</tbody>
+															</table>
+												
+															</div>
+															
+														</div>
+											
+											
+												{% endif %}		
+											</div>
+										</div>
+										
+										<br>
+										
+										{% endfor %}
+										</div>
 									</div>
 								</div>
 									
@@ -86,10 +408,6 @@
 						
 							</div>
 							
-							
-							   
-							
-							
 							<div id="listeemploidep" class="tabs w3-container w3-section w3-animate-left">
 							
 							{% if allemploi is not null %}
@@ -97,24 +415,51 @@
 								<div class="section">
 									<div class="container">
 										
-										{% for emp in allemploi  %}
-							
-											<div class="fssemp{{ emp.id }} col-md-8">
-											  <div class="col-md-4">
-												<img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive">
-											  </div>
-											  <div class="col-md-8">
-												<h3>{{ emp.id }}</h3>
+										{% for dep in alldepartement  %}
+										
+										<div class="row">
+										
+											<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#depempcol{{ dep.id }}" aria-expanded="false" aria-controls="depempcol{{ dep.id }}">
+												Liste Emploi {{ dep.departement }}
+											</button>
 											
-													<a class="btn btn-primary" data-toggle="modal" data-target="#emp{{ emp.id }}" > <i class="fa fa-eye"></i> Consulter </a>
-													<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updateemp{{ emp.id }}','modifemploi','emploilayout')"><i class="fa fa-pencil"></i>Modifier</a>
-													<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delemp{{ emp.id }}" ><i class="fa fa-trash"></i>Supprimer</a>
+											<div class="collapse" id="depempcol{{ dep.id }}">
+											
+												<table>
+													<thead>
+														<tr>
+															<th>Filiere</th>
+															<th>Groupe</th>
+															<th>Matiere</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+												{% for emp in dep.emplois  %}
 												
-											  </div>
+													<tr class="fssemp{{ emp.id }}">
+													
+														<td>{{ emp.filieres.filiere }}</td>
+														<td>{{ emp.groupes.groupe }}</td>
+														<td>{{ emp.matiere.matiere }}</td>
+														<td>												
+																<a class="btn btn-primary" data-toggle="modal" data-target="#emp{{ emp.id }}" > <i class="fa fa-eye"></i> Consulter </a>
+																<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updateemp{{ emp.id }}','modifemploi','emploilayout')"><i class="fa fa-pencil"></i>Modifier</a>
+																<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delemp{{ emp.id }}" ><i class="fa fa-trash"></i>Supprimer</a>
+														</td>
+													</tr>
+												{%endfor%}
+													</tbody>
+												</table>
+											
 											</div>
 											
+										</div>
+										
+										<br>
+										
 										{%endfor%}
-
+										
 									</div>
 								</div>
 									

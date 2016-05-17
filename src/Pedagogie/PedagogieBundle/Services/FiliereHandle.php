@@ -13,8 +13,7 @@
  */
 namespace Pedagogie\PedagogieBundle\Services;
 // Attention à bien ajouter ce use en début de contrôleur
-use Pedagogie\PedagogieBundle\Entity\Filiere;
-use Pedagogie\PedagogieBundle\Entity\Departement;
+use Pedagogie\PedagogieBundle\Entity\Transaction;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
@@ -36,7 +35,11 @@ class FiliereHandle {
 	private $alllieux ;
 	private $allsalle ;
 	private $allnature ;
-    
+    private $allsemestre ;
+	private $allperiode ;
+	private $allmodule ;
+	
+	
 	public function getAllDepartement($controleur) {
         
         $doctrine = $controleur->getDoctrine();
@@ -196,6 +199,56 @@ class FiliereHandle {
         $this->allnature = $repository_nature->findAll();
         return $this->allnature;
 
+    }
+	
+	 public function getAllSemestre($controleur) {
+        
+        $doctrine = $controleur->getDoctrine();
+        $em = $doctrine->getManager();
+        $repository_semestre = $em->getRepository('PedagogiePedagogieBundle:Semestre');
+        $this->allsemestre = $repository_semestre->findAll();
+        return $this->allsemestre;
+
+    }
+	
+	 public function getAllPeriode($controleur) {
+        
+        $doctrine = $controleur->getDoctrine();
+        $em = $doctrine->getManager();
+        $repository_periode = $em->getRepository('PedagogiePedagogieBundle:Periode');
+        $this->allperiode = $repository_periode->findAll();
+        return $this->allperiode;
+
+    }
+	
+	
+	public function getAllModule($controleur) {
+        
+        $doctrine = $controleur->getDoctrine();
+        $em = $doctrine->getManager();
+        $repository_Module = $em->getRepository('PedagogiePedagogieBundle:Module');
+        $this->allModule = $repository_Module->findAll();
+        return $this->allModule;
+
+    }
+
+	public function saveAction($controleur,$userid,$typeact,$descaction) 
+	{
+        // On récupère la requête
+		
+        $doctrine = $controleur->getDoctrine();
+        $em = $doctrine->getManager();
+		
+        $user = $em->getRepository('PedagogiePedagogieBundle:Utilisateur')->findOneById($userid);
+		$transaction = new Transaction();
+		$transaction->setUtilisateur($user);
+		$transaction->setNomuser($user->getNom().' '.$user->getPrenom());
+		$transaction->setTypetransaction($typeact); 
+		$transaction->setDescrtiption($descaction);
+		$transaction->setDateTransaction();
+		$em->persist($transaction); // Modifie l'entité de la base de données
+		$em->flush(); // Exécute un UPDATE sur $filiere
+    
     }
 
 

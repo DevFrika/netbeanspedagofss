@@ -44,4 +44,41 @@ class MatiereRepository extends EntityRepository
 			return $qb->getQuery()->getResult();
 	}
 	
+	public function findByDisciplineGroupe($discipline,$groupe)
+	{
+			$qb = $this->createQueryBuilder('mat');
+			$qb->where('mat.discipline = :dis')->setParameter('dis', $discipline);
+			$qb ->join('mat.groupes', 'grp' ,'WITH', 'grp.id = \''.$groupe->getId().'\'' ); // Puis on filtre sur le nom des catégories à l'aide d'un IN
+			// Enfin, on retourne le résultat
+			return $qb->getQuery()->getResult();
 	}
+	
+	public function findExist($nommat,$discipline)
+	{
+			$qb = $this->createQueryBuilder('mat');
+			$qb->where('mat.matiere = :mat')->setParameter('mat', $nommat);
+			$qb ->join('mat.discipline', 'dis' ,'WITH', 'dis.id = \''.$discipline->getId().'\'' ); // Puis on filtre sur le nom des catégories à l'aide d'un IN
+			
+			// Enfin, on retourne le résultat
+			return $qb->getQuery()->getOneOrNullResult();
+	}
+	
+	public function findExistDepartement($nommat,$departement)
+	{
+			$qb = $this->createQueryBuilder('mat');
+			$qb->where('mat.matiere = :matiere')->setParameter('matiere', $nommat);
+			$qb ->join('mat.departements', 'dep' ,'WITH', 'dep.id = \''.$departement->getId().'\'' ); // Puis on filtre sur le nom des catégories à l'aide d'un IN
+			// Enfin, on retourne le résultat
+			return $qb->getQuery()->getOneOrNullResult();
+	}
+	
+	public function findExistFiliere($nommat,$filiere)
+	{
+			$qb = $this->createQueryBuilder('mat');
+			$qb->where('mat.matiere = :matiere')->setParameter('matiere', $nommat);
+			$qb ->join('mat.filieres', 'fil' ,'WITH', 'fil.id = \''.$filiere->getId().'\'' ); // Puis on filtre sur le nom des catégories à l'aide d'un IN
+			// Enfin, on retourne le résultat
+			return $qb->getQuery()->getOneOrNullResult();
+	}
+	
+}

@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/filiere:modalfilierelayout.html.twig */
+/* PedagogiePedagogieBundle::admin/filiere/modalfilierelayout.html.twig */
 class __TwigTemplate_322a2c5c4965e7c4cae9007ef788fb46de3d11c848c07aa6b4ba0fb020065dd3 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_322a2c5c4965e7c4cae9007ef788fb46de3d11c848c07aa6b4ba0fb0200
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b0bd7860fef4de30a1a1e258961d84afc97db1acb3c83d192f566a6d146b5ac3 = $this->env->getExtension("native_profiler");
-        $__internal_b0bd7860fef4de30a1a1e258961d84afc97db1acb3c83d192f566a6d146b5ac3->enter($__internal_b0bd7860fef4de30a1a1e258961d84afc97db1acb3c83d192f566a6d146b5ac3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/filiere:modalfilierelayout.html.twig"));
+        $__internal_779c487cbdb8061df76c6b61a65ad70caa1f8c9d39194d6ccf9ed28a15e93f67 = $this->env->getExtension("native_profiler");
+        $__internal_779c487cbdb8061df76c6b61a65ad70caa1f8c9d39194d6ccf9ed28a15e93f67->enter($__internal_779c487cbdb8061df76c6b61a65ad70caa1f8c9d39194d6ccf9ed28a15e93f67_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/filiere/modalfilierelayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"fil";
@@ -32,7 +32,17 @@ class __TwigTemplate_322a2c5c4965e7c4cae9007ef788fb46de3d11c848c07aa6b4ba0fb0200
 \t\t\t\t\t\t<p> ";
         // line 9
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["fil"]) ? $context["fil"] : $this->getContext($context, "fil")), "filiere", array()), "html", null, true);
-        echo "  </p>
+        echo " : ";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["fil"]) ? $context["fil"] : $this->getContext($context, "fil")), "description", array()), "html", null, true);
+        echo "    </p>
+\t\t\t\t\t\t<p> ";
+        // line 10
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["fil"]) ? $context["fil"] : $this->getContext($context, "fil")), "classes", array()), "count", array()), "html", null, true);
+        echo "  classes </p>
+\t\t\t\t\t\t<p> ";
+        // line 11
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["fil"]) ? $context["fil"] : $this->getContext($context, "fil")), "groupes", array()), "count", array()), "html", null, true);
+        echo " groupes</p>
 \t\t\t\t\t  </div>
 \t\t\t\t\t  <div class=\"modal-footer\">
 \t\t\t\t\t\t<a class=\"btn btn-default\" data-dismiss=\"modal\">Close</a>
@@ -42,13 +52,13 @@ class __TwigTemplate_322a2c5c4965e7c4cae9007ef788fb46de3d11c848c07aa6b4ba0fb0200
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_b0bd7860fef4de30a1a1e258961d84afc97db1acb3c83d192f566a6d146b5ac3->leave($__internal_b0bd7860fef4de30a1a1e258961d84afc97db1acb3c83d192f566a6d146b5ac3_prof);
+        $__internal_779c487cbdb8061df76c6b61a65ad70caa1f8c9d39194d6ccf9ed28a15e93f67->leave($__internal_779c487cbdb8061df76c6b61a65ad70caa1f8c9d39194d6ccf9ed28a15e93f67_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/filiere:modalfilierelayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/filiere/modalfilierelayout.html.twig";
     }
 
     public function isTraitable()
@@ -58,7 +68,7 @@ class __TwigTemplate_322a2c5c4965e7c4cae9007ef788fb46de3d11c848c07aa6b4ba0fb0200
 
     public function getDebugInfo()
     {
-        return array (  34 => 9,  22 => 1,);
+        return array (  44 => 11,  40 => 10,  34 => 9,  22 => 1,);
     }
 }
 /* <div class="fade modal text-center" id="fil{{ fil.id }}">*/
@@ -69,7 +79,9 @@ class __TwigTemplate_322a2c5c4965e7c4cae9007ef788fb46de3d11c848c07aa6b4ba0fb0200
 /* 						*/
 /* 					  </div>*/
 /* 					  <div class="modal-body">*/
-/* 						<p> {{ fil.filiere }}  </p>*/
+/* 						<p> {{ fil.filiere }} : {{ fil.description }}    </p>*/
+/* 						<p> {{ fil.classes.count }}  classes </p>*/
+/* 						<p> {{ fil.groupes.count }} groupes</p>*/
 /* 					  </div>*/
 /* 					  <div class="modal-footer">*/
 /* 						<a class="btn btn-default" data-dismiss="modal">Close</a>*/

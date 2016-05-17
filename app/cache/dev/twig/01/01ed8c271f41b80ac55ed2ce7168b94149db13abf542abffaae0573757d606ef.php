@@ -15,8 +15,8 @@ class __TwigTemplate_84ea141d2665834c644a4fcd89c96ee9e28764c66f44d3509b75b02a318
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d32108baf6babcd2f9a5c95cc62434e2d250b168043a450f1b1798adcbafe4c4 = $this->env->getExtension("native_profiler");
-        $__internal_d32108baf6babcd2f9a5c95cc62434e2d250b168043a450f1b1798adcbafe4c4->enter($__internal_d32108baf6babcd2f9a5c95cc62434e2d250b168043a450f1b1798adcbafe4c4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/prof/groupe/deletegroupelayout.html.twig"));
+        $__internal_2f0d3b70323d5952c9cdda405e9c6d19d7735052a93952da4cfa754c77661e26 = $this->env->getExtension("native_profiler");
+        $__internal_2f0d3b70323d5952c9cdda405e9c6d19d7735052a93952da4cfa754c77661e26->enter($__internal_2f0d3b70323d5952c9cdda405e9c6d19d7735052a93952da4cfa754c77661e26_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/prof/groupe/deletegroupelayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"delgrp";
@@ -47,7 +47,7 @@ class __TwigTemplate_84ea141d2665834c644a4fcd89c96ee9e28764c66f44d3509b75b02a318
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_d32108baf6babcd2f9a5c95cc62434e2d250b168043a450f1b1798adcbafe4c4->leave($__internal_d32108baf6babcd2f9a5c95cc62434e2d250b168043a450f1b1798adcbafe4c4_prof);
+        $__internal_2f0d3b70323d5952c9cdda405e9c6d19d7735052a93952da4cfa754c77661e26->leave($__internal_2f0d3b70323d5952c9cdda405e9c6d19d7735052a93952da4cfa754c77661e26_prof);
 
     }
 

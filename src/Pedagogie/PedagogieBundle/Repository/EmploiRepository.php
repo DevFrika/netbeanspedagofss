@@ -69,4 +69,14 @@ class EmploiRepository extends EntityRepository
 			// Enfin, on retourne le résultat
 			return $qb->getQuery()->getOneOrNullResult();
 	}
+	
+	public function findExistEnseignant($jour,$heureDebut,$enseignant)
+	{
+			$qb = $this->createQueryBuilder('emp');
+			$qb->where('emp.heure_debut = :hdeb')->setParameter('hdeb', $heureDebut);
+			$qb ->join('emp.jours', 'jour' ,'WITH', 'jour.id = \''.$jour->getId().'\'' );
+			$qb ->join('emp.jours', 'ens' ,'WITH', 'ens.id = \''.$enseignant->getId().'\'' );
+			// Enfin, on retourne le résultat
+			return $qb->getQuery()->getOneOrNullResult();
+	}
 }

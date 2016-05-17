@@ -15,8 +15,8 @@ class __TwigTemplate_f0a05aa7ca08911b4ee484d381e113fd8314c0e1e3751abb7530c54077d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_931eb29ee53719495fb2bc1336888dd6e5785773cf6acf5b0d3715f603c5410e = $this->env->getExtension("native_profiler");
-        $__internal_931eb29ee53719495fb2bc1336888dd6e5785773cf6acf5b0d3715f603c5410e->enter($__internal_931eb29ee53719495fb2bc1336888dd6e5785773cf6acf5b0d3715f603c5410e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagoFssUserBundle:Default:dashboardprof.html.twig"));
+        $__internal_9ec7b5bb60d6aa87b5e8bc0d91e39cb7f0e9dfe53b2ca9de441f75bd9c8ae006 = $this->env->getExtension("native_profiler");
+        $__internal_9ec7b5bb60d6aa87b5e8bc0d91e39cb7f0e9dfe53b2ca9de441f75bd9c8ae006->enter($__internal_9ec7b5bb60d6aa87b5e8bc0d91e39cb7f0e9dfe53b2ca9de441f75bd9c8ae006_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagoFssUserBundle:Default:dashboardprof.html.twig"));
 
         // line 1
         echo "<div id=\"dashboard\" class=\"w3-container tabs w3-animate-left \" >
@@ -79,7 +79,7 @@ class __TwigTemplate_f0a05aa7ca08911b4ee484d381e113fd8314c0e1e3751abb7530c54077d
 
     </div>";
         
-        $__internal_931eb29ee53719495fb2bc1336888dd6e5785773cf6acf5b0d3715f603c5410e->leave($__internal_931eb29ee53719495fb2bc1336888dd6e5785773cf6acf5b0d3715f603c5410e_prof);
+        $__internal_9ec7b5bb60d6aa87b5e8bc0d91e39cb7f0e9dfe53b2ca9de441f75bd9c8ae006->leave($__internal_9ec7b5bb60d6aa87b5e8bc0d91e39cb7f0e9dfe53b2ca9de441f75bd9c8ae006_prof);
 
     }
 

@@ -3,21 +3,20 @@
 
   error_reporting(0);
 
+  
+  define('MYSQL_HOSTNAME',  'eu-cdbr-azure-north-e.cloudapp.net:3306');  // hostname
+  define('MYSQL_USERNAME',  'b5bc3dc18bb01b');       // username
+  define('MYSQL_PASSWORD',  '2dc16253');   // password 
+  define('MYSQL_DATABASE',  'pfefss'); // database 
+  
+
+
   /*
-  define('MYSQL_HOSTNAME',  'br-cdbr-azure-south-a.cloudapp.net:3306');  // hostname
-  define('MYSQL_USERNAME',  'b08ef2695088a5');       // username
-  define('MYSQL_PASSWORD',  '78fe9174');   // password 
-  define('MYSQL_DATABASE',  'acsm_2351747c19e8776'); // database 
-  
-*/
-  
-  
-  
-  define('MYSQL_HOSTNAME',  'localhost:3308');  // hostname 
+  define('MYSQL_HOSTNAME',  'localhost:3306');  // hostname 
   define('MYSQL_USERNAME',  'root');       	   // username 
-  define('MYSQL_PASSWORD',  'NabouNanc1');    // password
+  define('MYSQL_PASSWORD',  'mysql');    // password
   define('MYSQL_DATABASE',  'netbeanspfefss');       // database
-  
+ */
   
   
   /* Login successful the redirect to */

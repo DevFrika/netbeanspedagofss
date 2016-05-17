@@ -1,0 +1,224 @@
+﻿
+	<div class="row">
+		<div  class="container-fluid text-center ">
+            <div class="col-sm-10">
+			
+				<div class="row">
+					<div class="container">
+						<div class="col-lg-12">
+							<div class="col-md-4 pull-left text-center">
+								<p> <strong> REPUBLIQUE TUNISIENNE </strong> </p>
+								<p> MINISTERE DE L'ENSEIGNEMENT SUPERIEURE ET DE LA RECHERCHE </p>
+								<p> <strong> UNIVERSITE DE SFAX </strong> </p>
+								<p> FACULTE DES SCIENCES DE SFAX </p>
+							</div>
+						  
+							<div class="col-md-3 text-center">
+								<h4 class="text-center lead">EMPLOI DU TEMPS </h4>
+								<h5 class="text-center "> {% if listeemp[0].semestre.code == "S1"  %} 1er Semestre {% else %} 2eme Semestre {% endif %} </h5>
+								<h5 class="text-center"> {{ listeemp[0].filieres.filiere }} </h5>
+								
+							</div>
+							<div class="col-md-4 text-center">
+								<p> Annee Universitaire : {{ listeemp[0].getHeureDebut|date('Y') }} / {{ listeemp[0].getHeureFin|date('Y') }}  </p>
+								<h5 > Departement : {{ listeemp[0].departements.departement }}    </h5>
+								<h5> {{ date().format('d/m/Y') }} </h5>
+							</div>
+						</div>
+					</div>
+				</div>
+			 
+			 <br>
+			 
+			  
+				<div class="row">
+					<div class="container">
+						<div class="col-lg-11">
+						
+							<table class="table table-bordered table-striped table-condensed">
+							
+								<thead>
+									<tr>
+										
+									</tr>
+								</thead>
+								
+								<tbody>
+						  
+									<tr>
+									  
+										<td class="col-xs-1 text-center">
+											<h3> Lundi </h3>
+										</td>
+										
+										{% for emp in listeemp %}
+											
+											{% if  emp.jours.id == 1 %}
+											<td class="col-xs-2 text-center">
+											  
+												<h5 class="text-center">
+													<span class="w3-green">  {{ emp.getHeureDebut|date('H:m') }}  </span>
+													<span class="w3-red">  {{ emp.getHeureFin|date('H:m') }}  </span>
+												</h5>
+												
+												<h5> {{ emp.matiere.matiere }} </h5>
+												<h5> {{ emp.enseignants.enseignant }} </h5>
+												<h5> {{ emp.salles.salle }} </h5>
+												<h5> {{ emp.natures.description }} </h5>
+											</td>
+											{% endif %}
+											
+									   {% endfor %}
+									   
+									</tr>
+									  
+									<tr>
+									  
+										<td class="col-xs-1 text-center">
+											<h3> Mardi </h3>
+										</td>
+										
+										{% for emp in listeemp %}
+											
+											{% if  emp.jours.id == 2 %}
+											<td class="col-xs-2 text-center">
+											  
+												<h5 class="text-center">
+													<span class="w3-green">  {{ emp.getHeureDebut|date('H:m') }}  </span>
+													<span class="w3-red">  {{ emp.getHeureFin|date('H:m') }}  </span>
+												</h5>
+												
+												<h5> {{ emp.matiere.matiere }} </h5>
+												<h5> {{ emp.enseignants.enseignant }} </h5>												
+												<h5> {{ emp.salles.salle }} </h5>
+												<h5> {{ emp.natures.description }} </h5>
+											</td>
+											{% endif %}
+											
+									   {% endfor %}
+									   
+									</tr>
+									  
+									<tr>
+									  
+										<td class="col-xs-1 text-center">
+											<h3> Mercredi </h3>
+										</td>
+										
+										{% for emp in listeemp %}
+											
+											{% if  emp.jours.id == 3 %}
+											<td class="col-xs-2 text-center">
+											  
+												<h5 class="text-center">
+													<span class="w3-green">  {{ emp.getHeureDebut|date('H:m') }}  </span>
+													<span class="w3-red">  {{ emp.getHeureFin|date('H:m') }}  </span>
+												</h5>
+												
+												<h5> {{ emp.matiere.matiere }} </h5> 
+												<h5> {{ emp.enseignants.enseignant }} </h5>
+												<h5> {{ emp.salles.salle }} </h5>
+												<h5> {{ emp.natures.description }} </h5>
+											</td>
+											{% endif %}
+											
+									   {% endfor %}
+										
+									</tr>
+									  
+									<tr>
+									  
+										<td class="col-xs-1 text-center">
+											<h3> Jeudi </h3>
+										</td>
+										
+										{% for emp in listeemp %}
+											
+											{% if  emp.jours.id == 4 %}
+											<td class="col-xs-2 text-center">
+											  
+												<h5 class="text-center">
+													<span class="w3-green">  {{ emp.getHeureDebut|date('H:m') }}  </span>
+													<span class="w3-red">  {{ emp.getHeureFin|date('H:m') }}  </span>
+												</h5>
+												
+												<h5> {{ emp.matiere.matiere }} </h5> 
+												<h5> {{ emp.enseignants.enseignant }} </h5>
+												<h5> {{ emp.salles.salle }} </h5>
+												<h5> {{ emp.natures.description }} </h5>
+											</td>
+											{% endif %}
+											
+									   {% endfor %}
+										
+										
+									</tr>
+									  
+									<tr>
+									  
+										<td class="col-xs-1 text-center">
+											<h3> Vendredi </h3>
+										</td>
+										
+										{% for emp in listeemp %}
+											
+											{% if  emp.jours.id == 5 %}
+											<td class="col-xs-2 text-center">
+											  
+												<h5 class="text-center">
+													<span class="w3-green">  {{ emp.getHeureDebut|date('H:m') }}  </span>
+													<span class="w3-red">  {{ emp.getHeureFin|date('H:m') }}  </span>
+												</h5>
+												
+												<h5> {{ emp.matiere.matiere }} </h5>
+												<h5> {{ emp.enseignants.enseignant }} </h5>
+												<h5> {{ emp.salles.salle }} </h5>
+												<h5> {{ emp.natures.description }} </h5>
+											</td>
+											{% endif %}
+											
+									   {% endfor %}
+										
+										
+									</tr>
+									  
+									<tr>
+									  
+										<td class="col-xs-1 text-center">
+											<h3> Samedi </h3>
+										</td>
+										
+										{% for emp in listeemp %}
+											
+											{% if  emp.jours.id == 6 %}
+											<td class="col-xs-2 text-center">
+											  
+												<h5 class="text-center">
+													<span class="w3-green">  {{ emp.getHeureDebut|date('H:m') }}  </span>
+													<span class="w3-red">  {{ emp.getHeureFin|date('H:m') }}  </span>
+												</h5>
+												
+												<h5> {{ emp.matiere.matiere }} </h5>
+												<h5> {{ emp.enseignants.enseignant }} </h5>
+												<h5> {{ emp.salles.salle }} </h5>
+												<h5> {{ emp.natures.description }} </h5>
+											</td>
+											{% endif %}
+											
+									   {% endfor %}
+										
+										
+									</tr>
+						  
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			  
+				
+				
+			</div>
+		</div>
+	</div>
+ 

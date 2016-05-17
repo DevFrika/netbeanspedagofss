@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/matiere:addmatierelayout.html.twig */
+/* PedagogiePedagogieBundle::admin/matiere/addmatierelayout.html.twig */
 class __TwigTemplate_7010562987335e63bc10582ee281c8e34597b0a54faefa84f003c647b151e9c6 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_7010562987335e63bc10582ee281c8e34597b0a54faefa84f003c647b15
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_52ffced1864bc0892aeab2891addae31a8c8ba603044de5776e6146ba9adf717 = $this->env->getExtension("native_profiler");
-        $__internal_52ffced1864bc0892aeab2891addae31a8c8ba603044de5776e6146ba9adf717->enter($__internal_52ffced1864bc0892aeab2891addae31a8c8ba603044de5776e6146ba9adf717_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/matiere:addmatierelayout.html.twig"));
+        $__internal_7934457cb537e3000f336eacc4be91f8240ddb5d2f8d568d408e341cb1eba972 = $this->env->getExtension("native_profiler");
+        $__internal_7934457cb537e3000f336eacc4be91f8240ddb5d2f8d568d408e341cb1eba972->enter($__internal_7934457cb537e3000f336eacc4be91f8240ddb5d2f8d568d408e341cb1eba972_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/matiere/addmatierelayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"addmatiere\">
@@ -34,17 +34,13 @@ class __TwigTemplate_7010562987335e63bc10582ee281c8e34597b0a54faefa84f003c647b15
                   <h4>
                     <span ></span> </h4>
                 
-                <!-- SHOW ERROR/SUCCESS MESSAGES -->
-\t\t\t\t
-                <div class=\"mat-form-group\"> 
-\t\t\t\t\t<span class=\"messages-block\"></span>
-\t\t\t\t</div>
+               
 \t\t\t\t
                 <!-- FORM -->
-                <form class=\"addmatiereform\"  method=\"POST\">
+                <form id=\"addmatiereform\" class=\"form-horizontal mat-form-group\"  method=\"POST\">
 \t\t\t\t
                  <!-- Nom -->
-                  <div class=\"form-group dis-form-group\">
+                  <div class=\"form-group mat-form-group\">
                     <label> Nom </label>
                     <input type=\"text\" name=\"nommatiere\" class=\"form-control\" placeholder=\"Nom de la matiere\">
                     <span class=\"help-block\"></span>
@@ -52,17 +48,17 @@ class __TwigTemplate_7010562987335e63bc10582ee281c8e34597b0a54faefa84f003c647b15
 \t\t\t\t  
 \t\t\t\t  
 \t\t\t\t   <!-- Departements -->
-                  <div class=\"form-group dis-form-group\">
+                  <div class=\"form-group mat-form-group\">
                     <label> Départements </label>
-                    <select id=\"depmatselect\" class=\"form-control\" onchange=\"matLoadFiliere(this.value,'fildisselect')\" >
+                    <select id=\"addmatdepselect\" class=\"form-control\" onchange=\"matLoadFiliere(this.value,'addmatfilselect')\" >
 \t\t\t\t\t\t";
-        // line 37
+        // line 33
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["alldepartement"]) ? $context["alldepartement"] : $this->getContext($context, "alldepartement")));
         foreach ($context['_seq'] as $context["_key"] => $context["dep"]) {
-            // line 38
+            // line 34
             echo "\t\t\t\t\t\t<option value=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["dep"], "departement", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["dep"], "id", array()), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["dep"], "departement", array()), "html", null, true);
             echo "</option>
@@ -71,43 +67,58 @@ class __TwigTemplate_7010562987335e63bc10582ee281c8e34597b0a54faefa84f003c647b15
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dep'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
+        // line 36
         echo "\t\t\t\t\t</select>
                     <span class=\"help-block\"></span>
                   </div>
 \t\t\t\t  
 \t\t\t\t  <!-- Filieres -->
-                  <div class=\"form-group dis-form-group\">
+                  <div class=\"form-group mat-form-group\">
                     <label> Filieres </label>
-                    <select id=\"filmatselect\" class=\"form-control\" >
+                    <select id=\"addmatfilselect\" class=\"form-control\" onchange=\"matLoadDiscipline(this.value,'addmatdisselect')\">
 \t\t\t\t\t\t
 \t\t\t\t\t</select>
 \t\t\t\t\t<span class=\"help-block\"></span>
                   </div>
 \t\t\t\t  
 \t\t\t\t  <!-- Disciplines -->
-                  <div class=\"form-group dis-form-group\">
+                  <div class=\"form-group mat-form-group\">
                     <label> Disciplines </label>
-                    <select id=\"dismatselect\" class=\"form-control\" >
+                    <select id=\"addmatdisselect\" class=\"form-control\" >
 \t\t\t\t\t\t
 \t\t\t\t\t</select>
 \t\t\t\t\t<span class=\"help-block\"></span>
                   </div>
 \t\t\t\t  
-                  <span class=\"ajax_wait\" align=\"center\">
-                    <!--don't delete this span class=\"ajax_wait\"-->
-                  </span>
+\t\t\t\t    <!-- Unité -->
+                  <div class=\"form-group mat-form-group\">
+                    <label> Unité d'enseignement </label>
+                    <select id=\"addmatuntselect\" class=\"form-control\" >
+\t\t\t\t\t\t<option value=\"1\"> Unité d'Enseignement Optionnele </option>
+\t\t\t\t\t\t<option value=\"2\"> Unité d'Enseignement Fondamentale </option>
+\t\t\t\t\t\t<option value=\"3\"> Unité d'Enseignement Transversale </option>
+\t\t\t\t\t</select>
+\t\t\t\t\t<span class=\"help-block\"></span>
+                  </div>
+\t\t\t\t  
+\t\t\t\t   <!-- SHOW ERROR/SUCCESS MESSAGES -->
+\t\t\t\t
+                <div class=\"form-group mat-form-group\"> 
+\t\t\t\t\t<span class=\"messages-block\"></span>
+\t\t\t\t</div> 
+\t\t\t\t  
+                 
 \t\t\t\t  <input type=\"text\" name=\"addmattag\" value=\"addmat\" hidden>
 \t\t\t\t  <input type=\"text\" name=\"addmatiere_url\" value=\"";
-        // line 66
+        // line 77
         echo $this->env->getExtension('routing')->getPath("pedagogie_addmatiere");
         echo "\" hidden>
 \t\t\t\t  <input type=\"text\" name=\"getfilmat_url\" value=\"";
-        // line 67
+        // line 78
         echo $this->env->getExtension('routing')->getPath("pedagogie_getdepfilieres");
         echo "\" hidden>
-\t\t\t\t  <input type=\"text\" name=\"getmatdis_url\" value=\"";
-        // line 68
+\t\t\t\t  <input type=\"text\" name=\"getmatfildisurl\" value=\"";
+        // line 79
         echo $this->env->getExtension('routing')->getPath("pedagogie_getfildisciplines");
         echo "\" hidden>
                   <div class=\"modal-footer\">
@@ -126,13 +137,13 @@ class __TwigTemplate_7010562987335e63bc10582ee281c8e34597b0a54faefa84f003c647b15
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_52ffced1864bc0892aeab2891addae31a8c8ba603044de5776e6146ba9adf717->leave($__internal_52ffced1864bc0892aeab2891addae31a8c8ba603044de5776e6146ba9adf717_prof);
+        $__internal_7934457cb537e3000f336eacc4be91f8240ddb5d2f8d568d408e341cb1eba972->leave($__internal_7934457cb537e3000f336eacc4be91f8240ddb5d2f8d568d408e341cb1eba972_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/matiere:addmatierelayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/matiere/addmatierelayout.html.twig";
     }
 
     public function isTraitable()
@@ -142,7 +153,7 @@ class __TwigTemplate_7010562987335e63bc10582ee281c8e34597b0a54faefa84f003c647b15
 
     public function getDebugInfo()
     {
-        return array (  111 => 68,  107 => 67,  103 => 66,  75 => 40,  64 => 38,  60 => 37,  22 => 1,);
+        return array (  122 => 79,  118 => 78,  114 => 77,  71 => 36,  60 => 34,  56 => 33,  22 => 1,);
     }
 }
 /* <div class="fade modal text-center" id="addmatiere">*/
@@ -160,17 +171,13 @@ class __TwigTemplate_7010562987335e63bc10582ee281c8e34597b0a54faefa84f003c647b15
 /*                   <h4>*/
 /*                     <span ></span> </h4>*/
 /*                 */
-/*                 <!-- SHOW ERROR/SUCCESS MESSAGES -->*/
-/* 				*/
-/*                 <div class="mat-form-group"> */
-/* 					<span class="messages-block"></span>*/
-/* 				</div>*/
+/*                */
 /* 				*/
 /*                 <!-- FORM -->*/
-/*                 <form class="addmatiereform"  method="POST">*/
+/*                 <form id="addmatiereform" class="form-horizontal mat-form-group"  method="POST">*/
 /* 				*/
 /*                  <!-- Nom -->*/
-/*                   <div class="form-group dis-form-group">*/
+/*                   <div class="form-group mat-form-group">*/
 /*                     <label> Nom </label>*/
 /*                     <input type="text" name="nommatiere" class="form-control" placeholder="Nom de la matiere">*/
 /*                     <span class="help-block"></span>*/
@@ -178,41 +185,56 @@ class __TwigTemplate_7010562987335e63bc10582ee281c8e34597b0a54faefa84f003c647b15
 /* 				  */
 /* 				  */
 /* 				   <!-- Departements -->*/
-/*                   <div class="form-group dis-form-group">*/
+/*                   <div class="form-group mat-form-group">*/
 /*                     <label> Départements </label>*/
-/*                     <select id="depmatselect" class="form-control" onchange="matLoadFiliere(this.value,'fildisselect')" >*/
+/*                     <select id="addmatdepselect" class="form-control" onchange="matLoadFiliere(this.value,'addmatfilselect')" >*/
 /* 						{%for dep in alldepartement %}*/
-/* 						<option value="{{ dep.departement }}">{{ dep.departement}}</option>*/
+/* 						<option value="{{ dep.id }}">{{ dep.departement}}</option>*/
 /* 						{% endfor %}*/
 /* 					</select>*/
 /*                     <span class="help-block"></span>*/
 /*                   </div>*/
 /* 				  */
 /* 				  <!-- Filieres -->*/
-/*                   <div class="form-group dis-form-group">*/
+/*                   <div class="form-group mat-form-group">*/
 /*                     <label> Filieres </label>*/
-/*                     <select id="filmatselect" class="form-control" >*/
+/*                     <select id="addmatfilselect" class="form-control" onchange="matLoadDiscipline(this.value,'addmatdisselect')">*/
 /* 						*/
 /* 					</select>*/
 /* 					<span class="help-block"></span>*/
 /*                   </div>*/
 /* 				  */
 /* 				  <!-- Disciplines -->*/
-/*                   <div class="form-group dis-form-group">*/
+/*                   <div class="form-group mat-form-group">*/
 /*                     <label> Disciplines </label>*/
-/*                     <select id="dismatselect" class="form-control" >*/
+/*                     <select id="addmatdisselect" class="form-control" >*/
 /* 						*/
 /* 					</select>*/
 /* 					<span class="help-block"></span>*/
 /*                   </div>*/
 /* 				  */
-/*                   <span class="ajax_wait" align="center">*/
-/*                     <!--don't delete this span class="ajax_wait"-->*/
-/*                   </span>*/
+/* 				    <!-- Unité -->*/
+/*                   <div class="form-group mat-form-group">*/
+/*                     <label> Unité d'enseignement </label>*/
+/*                     <select id="addmatuntselect" class="form-control" >*/
+/* 						<option value="1"> Unité d'Enseignement Optionnele </option>*/
+/* 						<option value="2"> Unité d'Enseignement Fondamentale </option>*/
+/* 						<option value="3"> Unité d'Enseignement Transversale </option>*/
+/* 					</select>*/
+/* 					<span class="help-block"></span>*/
+/*                   </div>*/
+/* 				  */
+/* 				   <!-- SHOW ERROR/SUCCESS MESSAGES -->*/
+/* 				*/
+/*                 <div class="form-group mat-form-group"> */
+/* 					<span class="messages-block"></span>*/
+/* 				</div> */
+/* 				  */
+/*                  */
 /* 				  <input type="text" name="addmattag" value="addmat" hidden>*/
 /* 				  <input type="text" name="addmatiere_url" value="{{ path('pedagogie_addmatiere') }}" hidden>*/
 /* 				  <input type="text" name="getfilmat_url" value="{{ path('pedagogie_getdepfilieres') }}" hidden>*/
-/* 				  <input type="text" name="getmatdis_url" value="{{ path('pedagogie_getfildisciplines') }}" hidden>*/
+/* 				  <input type="text" name="getmatfildisurl" value="{{ path('pedagogie_getfildisciplines') }}" hidden>*/
 /*                   <div class="modal-footer">*/
 /* 						<a class="btn btn-default" data-dismiss="modal">Close</a>*/
 /* 						<!-- SUBMIT BUTTON -->*/

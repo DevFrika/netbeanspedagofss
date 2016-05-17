@@ -1,6 +1,6 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host: eu-cdbr-azure-north-e.cloudapp.net
+    database_host: eu-cdbr-azure-north-e.cloudapp.net	
     database_port: 3306
     database_name: pfefss
     database_user: b5bc3dc18bb01b

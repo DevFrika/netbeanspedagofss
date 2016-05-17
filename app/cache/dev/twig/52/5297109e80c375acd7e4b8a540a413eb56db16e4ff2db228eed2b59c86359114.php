@@ -15,8 +15,8 @@ class __TwigTemplate_e5baadd2cfbcdd2470f344ec559a12b49162b623835aa654af15210ec9f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_85e6f5094a1221a9d0a5f4dd6167a7bbe31d2858af6ad720f41add3e8e0710a6 = $this->env->getExtension("native_profiler");
-        $__internal_85e6f5094a1221a9d0a5f4dd6167a7bbe31d2858af6ad720f41add3e8e0710a6->enter($__internal_85e6f5094a1221a9d0a5f4dd6167a7bbe31d2858af6ad720f41add3e8e0710a6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/normal/groupe/updategroupelayout.html.twig"));
+        $__internal_828049cdde851ebd6355d21c4d05f7d64741e4511ffd92372d1abb20e009c6b1 = $this->env->getExtension("native_profiler");
+        $__internal_828049cdde851ebd6355d21c4d05f7d64741e4511ffd92372d1abb20e009c6b1->enter($__internal_828049cdde851ebd6355d21c4d05f7d64741e4511ffd92372d1abb20e009c6b1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/normal/groupe/updategroupelayout.html.twig"));
 
         // line 1
         echo "<div id=\"updategrp";
@@ -106,7 +106,7 @@ class __TwigTemplate_e5baadd2cfbcdd2470f344ec559a12b49162b623835aa654af15210ec9f
 \t</div>
 ";
         
-        $__internal_85e6f5094a1221a9d0a5f4dd6167a7bbe31d2858af6ad720f41add3e8e0710a6->leave($__internal_85e6f5094a1221a9d0a5f4dd6167a7bbe31d2858af6ad720f41add3e8e0710a6_prof);
+        $__internal_828049cdde851ebd6355d21c4d05f7d64741e4511ffd92372d1abb20e009c6b1->leave($__internal_828049cdde851ebd6355d21c4d05f7d64741e4511ffd92372d1abb20e009c6b1_prof);
 
     }
 

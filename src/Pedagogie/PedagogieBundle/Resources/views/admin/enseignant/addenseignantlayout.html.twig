@@ -23,30 +23,44 @@
                 <form id="addenseignantform" class="form-horizontal ens-form-group" role="form"  method="POST" >
                  
 					<!-- Family Name -->
-                  <div id="ens_username-group" class="form-group ens-form-group">
+                  <div class="form-group ens-form-group">
                     <label> Nom </label>
                     <input type="text" name="ens_famname" class="form-control" placeholder=" "> 
                     <span class="help-block"></span>
                   </div>
 				
 				<!-- Surname -->
-                  <div id="ens_username-group" class="form-group ens-form-group">
+                  <div class="form-group ens-form-group">
                     <label> Prénom </label>
                     <input type="text" name="ens_surname" class="form-control" placeholder=" "> 
                     <span class="help-block"></span>
                   </div>
 				
 				<!-- Username -->
-                  <div id="ens_username-group" class="form-group ens-form-group">
+                  <div class="form-group ens-form-group">
                     <label> Username </label>
                     <input type="text" name="ens_username" class="form-control" placeholder=" "> 
                     <span class="help-block"></span>
                   </div>
 				  
                   <!-- E-mail -->
-                  <div id="ens_email-group" class="form-group ens-form-group">
+                  <div class="form-group ens-form-group">
                     <label> E-mail </label>
                     <input type="email" name="ens_email" class="form-control" placeholder="">
+                    <span class="help-block"></span>
+                  </div>
+				  
+				   <!--  Code -->
+                  <div class="form-group ens-form-group">
+                    <label> E-mail </label>
+                    <input type="text" name="code" class="form-control" placeholder="">
+                    <span class="help-block"></span>
+                  </div>
+				  
+				   <!-- Telephone -->
+                  <div id="ens_email-group" class="form-group ens-form-group">
+                    <label> E-mail </label>
+                    <input type="text" name="ens_telephone" class="form-control" placeholder="">
                     <span class="help-block"></span>
                   </div>
 				  
@@ -55,7 +69,7 @@
                     <label> Départements </label>
                     <select id="ensdepselect" class="form-control" onchange="ensLoadDiscipline(this.value,'ensdisselect')">
 						{%for dep in alldepartement %}
-						<option value="{{ dep.id }}">{{ dep.departement}}</option>
+						<option value="{{ dep.id }}">{{ dep.departement }}</option>
 						{% endfor %}
 					</select>
                     <span class="help-block"></span>

@@ -25,49 +25,52 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d94c600ec0cba68e1d2c2fe4db2c81e3bcbf47d4a115a8b160aa9bc846e104e5 = $this->env->getExtension("native_profiler");
-        $__internal_d94c600ec0cba68e1d2c2fe4db2c81e3bcbf47d4a115a8b160aa9bc846e104e5->enter($__internal_d94c600ec0cba68e1d2c2fe4db2c81e3bcbf47d4a115a8b160aa9bc846e104e5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/Default/admin.html.twig"));
+        $__internal_488b918532e7cf2ec74865fbe9ea8c561daabe37c186166888655aaaf95e0f14 = $this->env->getExtension("native_profiler");
+        $__internal_488b918532e7cf2ec74865fbe9ea8c561daabe37c186166888655aaaf95e0f14->enter($__internal_488b918532e7cf2ec74865fbe9ea8c561daabe37c186166888655aaaf95e0f14_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/Default/admin.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_d94c600ec0cba68e1d2c2fe4db2c81e3bcbf47d4a115a8b160aa9bc846e104e5->leave($__internal_d94c600ec0cba68e1d2c2fe4db2c81e3bcbf47d4a115a8b160aa9bc846e104e5_prof);
+        $__internal_488b918532e7cf2ec74865fbe9ea8c561daabe37c186166888655aaaf95e0f14->leave($__internal_488b918532e7cf2ec74865fbe9ea8c561daabe37c186166888655aaaf95e0f14_prof);
 
     }
 
     // line 2
     public function block_title($context, array $blocks = array())
     {
-        $__internal_1c8675667f7834c5efaf3f8df5c7c7f4054b77abbc9cbf3a147a8d62b290c3fe = $this->env->getExtension("native_profiler");
-        $__internal_1c8675667f7834c5efaf3f8df5c7c7f4054b77abbc9cbf3a147a8d62b290c3fe->enter($__internal_1c8675667f7834c5efaf3f8df5c7c7f4054b77abbc9cbf3a147a8d62b290c3fe_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_add75c4eeca73342100607ad86ed179fc7cddbe0e418b0ecf746c36b26d18925 = $this->env->getExtension("native_profiler");
+        $__internal_add75c4eeca73342100607ad86ed179fc7cddbe0e418b0ecf746c36b26d18925->enter($__internal_add75c4eeca73342100607ad86ed179fc7cddbe0e418b0ecf746c36b26d18925_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 3
         echo "Pedagogie - Admin
 ";
         
-        $__internal_1c8675667f7834c5efaf3f8df5c7c7f4054b77abbc9cbf3a147a8d62b290c3fe->leave($__internal_1c8675667f7834c5efaf3f8df5c7c7f4054b77abbc9cbf3a147a8d62b290c3fe_prof);
+        $__internal_add75c4eeca73342100607ad86ed179fc7cddbe0e418b0ecf746c36b26d18925->leave($__internal_add75c4eeca73342100607ad86ed179fc7cddbe0e418b0ecf746c36b26d18925_prof);
 
     }
 
     // line 6
     public function block_modals($context, array $blocks = array())
     {
-        $__internal_8b10f9d10326f448c33a18e9c0d5cd9daae2c8cbccfd8d8268a9762653dce423 = $this->env->getExtension("native_profiler");
-        $__internal_8b10f9d10326f448c33a18e9c0d5cd9daae2c8cbccfd8d8268a9762653dce423->enter($__internal_8b10f9d10326f448c33a18e9c0d5cd9daae2c8cbccfd8d8268a9762653dce423_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "modals"));
+        $__internal_412fc660a223ff2ef6db46dd188de64eb02f09e11003b3282dbf896321cde378 = $this->env->getExtension("native_profiler");
+        $__internal_412fc660a223ff2ef6db46dd188de64eb02f09e11003b3282dbf896321cde378->enter($__internal_412fc660a223ff2ef6db46dd188de64eb02f09e11003b3282dbf896321cde378_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "modals"));
 
         // line 7
         echo "
+
 ";
-        // line 8
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/emploi/addemploilayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 8)->display($context);
         // line 9
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/emploi/addemploilayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 9)->display($context);
+        // line 10
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/emploi/emploitemplatelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 10)->display($context);
+        // line 11
         echo "
 ";
-        // line 10
+        // line 12
         if ( !(null === (isset($context["allemploi"]) ? $context["allemploi"] : $this->getContext($context, "allemploi")))) {
-            // line 11
+            // line 13
             echo "
 \t";
-            // line 12
+            // line 14
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["allemploi"]) ? $context["allemploi"] : $this->getContext($context, "allemploi")));
             $context['loop'] = array(
@@ -84,13 +87,13 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["emp"]) {
-                // line 13
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/emploi/modalemploilayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 13)->display($context);
-                // line 14
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/emploi/deleteemploilayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 14)->display($context);
                 // line 15
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/emploi/modalemploilayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 15)->display($context);
+                // line 16
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/emploi/deleteemploilayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 16)->display($context);
+                // line 17
                 echo "\t";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -104,25 +107,25 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['emp'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 16
+            // line 18
             echo "\t
 ";
         }
-        // line 18
+        // line 20
         echo "
 
 ";
-        // line 20
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/departement/adddepartementlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 20)->display($context);
-        // line 21
+        // line 22
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/departement/adddepartementlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 22)->display($context);
+        // line 23
         echo "
 ";
-        // line 22
+        // line 24
         if ( !(null === (isset($context["alldepartement"]) ? $context["alldepartement"] : $this->getContext($context, "alldepartement")))) {
-            // line 23
+            // line 25
             echo "
 \t";
-            // line 24
+            // line 26
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["alldepartement"]) ? $context["alldepartement"] : $this->getContext($context, "alldepartement")));
             $context['loop'] = array(
@@ -139,13 +142,13 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["dep"]) {
-                // line 25
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/departement/modaldepartementlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 25)->display($context);
-                // line 26
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/departement/deletedepartementlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 26)->display($context);
                 // line 27
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/departement/modaldepartementlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 27)->display($context);
+                // line 28
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/departement/deletedepartementlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 28)->display($context);
+                // line 29
                 echo "\t";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -159,24 +162,24 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dep'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 28
+            // line 30
             echo "\t
 ";
         }
-        // line 30
-        echo "
-";
-        // line 31
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/filiere/addfilierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 31)->display($context);
         // line 32
         echo "
 ";
         // line 33
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/filiere/addfilierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 33)->display($context);
+        // line 34
+        echo "
+";
+        // line 35
         if ( !(null === (isset($context["allfiliere"]) ? $context["allfiliere"] : $this->getContext($context, "allfiliere")))) {
-            // line 34
+            // line 36
             echo "
 \t";
-            // line 35
+            // line 37
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["allfiliere"]) ? $context["allfiliere"] : $this->getContext($context, "allfiliere")));
             $context['loop'] = array(
@@ -193,13 +196,13 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["fil"]) {
-                // line 36
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/filiere/modalfilierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 36)->display($context);
-                // line 37
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/filiere/deletefilierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 37)->display($context);
                 // line 38
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/filiere/modalfilierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 38)->display($context);
+                // line 39
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/filiere/deletefilierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 39)->display($context);
+                // line 40
                 echo "\t";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -213,24 +216,24 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['fil'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 39
+            // line 41
             echo "\t
 ";
         }
-        // line 41
-        echo "
-";
-        // line 42
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/discipline/adddisciplinelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 42)->display($context);
         // line 43
         echo "
 ";
         // line 44
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/discipline/adddisciplinelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 44)->display($context);
+        // line 45
+        echo "
+";
+        // line 46
         if ( !(null === (isset($context["alldiscipline"]) ? $context["alldiscipline"] : $this->getContext($context, "alldiscipline")))) {
-            // line 45
+            // line 47
             echo "
 \t";
-            // line 46
+            // line 48
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["alldiscipline"]) ? $context["alldiscipline"] : $this->getContext($context, "alldiscipline")));
             $context['loop'] = array(
@@ -247,13 +250,13 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["dis"]) {
-                // line 47
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/discipline/modaldisciplinelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 47)->display($context);
-                // line 48
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/discipline/deletedisciplinelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 48)->display($context);
                 // line 49
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/discipline/modaldisciplinelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 49)->display($context);
+                // line 50
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/discipline/deletedisciplinelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 50)->display($context);
+                // line 51
                 echo "\t";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -267,26 +270,26 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dis'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 50
+            // line 52
             echo "\t
 ";
         }
-        // line 52
+        // line 54
         echo "
 
 
-";
-        // line 55
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/matiere/addmatierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 55)->display($context);
-        // line 56
-        echo "
 ";
         // line 57
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/matiere/addmatierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 57)->display($context);
+        // line 58
+        echo "
+";
+        // line 59
         if ( !(null === (isset($context["allmatiere"]) ? $context["allmatiere"] : $this->getContext($context, "allmatiere")))) {
-            // line 58
+            // line 60
             echo "
 \t";
-            // line 59
+            // line 61
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["allmatiere"]) ? $context["allmatiere"] : $this->getContext($context, "allmatiere")));
             $context['loop'] = array(
@@ -303,13 +306,13 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["mat"]) {
-                // line 60
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/matiere/modalmatierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 60)->display($context);
-                // line 61
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/matiere/deletematierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 61)->display($context);
                 // line 62
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/matiere/modalmatierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 62)->display($context);
+                // line 63
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/matiere/deletematierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 63)->display($context);
+                // line 64
                 echo "\t";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -323,24 +326,24 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['mat'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 63
+            // line 65
             echo "\t
 ";
         }
-        // line 65
-        echo "
-";
-        // line 66
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/classe/addclasselayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 66)->display($context);
         // line 67
         echo "
 ";
         // line 68
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/classe/addclasselayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 68)->display($context);
+        // line 69
+        echo "
+";
+        // line 70
         if ( !(null === (isset($context["allclasse"]) ? $context["allclasse"] : $this->getContext($context, "allclasse")))) {
-            // line 69
+            // line 71
             echo "
 \t";
-            // line 70
+            // line 72
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["allclasse"]) ? $context["allclasse"] : $this->getContext($context, "allclasse")));
             $context['loop'] = array(
@@ -357,13 +360,13 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["cls"]) {
-                // line 71
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/classe/modalclasselayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 71)->display($context);
-                // line 72
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/classe/deleteclasselayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 72)->display($context);
                 // line 73
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/classe/modalclasselayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 73)->display($context);
+                // line 74
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/classe/deleteclasselayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 74)->display($context);
+                // line 75
                 echo "\t";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -377,25 +380,25 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cls'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 74
+            // line 76
             echo "\t
 ";
         }
-        // line 76
+        // line 78
         echo "
 
 ";
-        // line 78
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/groupe/addgroupelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 78)->display($context);
-        // line 79
+        // line 80
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/groupe/addgroupelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 80)->display($context);
+        // line 81
         echo "
 ";
-        // line 80
+        // line 82
         if ( !(null === (isset($context["allgroupe"]) ? $context["allgroupe"] : $this->getContext($context, "allgroupe")))) {
-            // line 81
+            // line 83
             echo "
 \t";
-            // line 82
+            // line 84
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["allgroupe"]) ? $context["allgroupe"] : $this->getContext($context, "allgroupe")));
             $context['loop'] = array(
@@ -412,13 +415,15 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["grp"]) {
-                // line 83
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/groupe/modalgroupelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 83)->display($context);
-                // line 84
-                echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/groupe/deletegroupelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 84)->display($context);
                 // line 85
+                echo "\t\t\t\t
+\t\t\t\t";
+                // line 86
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/groupe/modalgroupelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 86)->display($context);
+                // line 87
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/groupe/deletegroupelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 87)->display($context);
+                // line 88
                 echo "\t";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -432,25 +437,25 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['grp'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 86
+            // line 89
             echo "\t
 ";
         }
-        // line 88
+        // line 91
         echo "
 
 ";
-        // line 90
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/voeux/addvoeuxlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 90)->display($context);
-        // line 91
+        // line 93
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/voeux/addvoeuxlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 93)->display($context);
+        // line 94
         echo "
 ";
-        // line 92
+        // line 95
         if ( !(null === (isset($context["allvoeux"]) ? $context["allvoeux"] : $this->getContext($context, "allvoeux")))) {
-            // line 93
+            // line 96
             echo "
 \t";
-            // line 94
+            // line 97
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["allvoeux"]) ? $context["allvoeux"] : $this->getContext($context, "allvoeux")));
             $context['loop'] = array(
@@ -467,13 +472,13 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["veu"]) {
-                // line 95
+                // line 98
                 echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/voeux/modalvoeuxlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 95)->display($context);
-                // line 96
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/voeux/modalvoeuxlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 98)->display($context);
+                // line 99
                 echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/voeux/deletevoeuxlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 96)->display($context);
-                // line 97
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/voeux/deletevoeuxlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 99)->display($context);
+                // line 100
                 echo "\t";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -487,24 +492,24 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['veu'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 98
+            // line 101
             echo "\t
 ";
         }
-        // line 100
-        echo "
-";
-        // line 101
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/devoir/adddevoirlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 101)->display($context);
-        // line 102
-        echo "
-";
         // line 103
+        echo "
+";
+        // line 104
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/devoir/adddevoirlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 104)->display($context);
+        // line 105
+        echo "
+";
+        // line 106
         if ( !(null === (isset($context["alldevoir"]) ? $context["alldevoir"] : $this->getContext($context, "alldevoir")))) {
-            // line 104
+            // line 107
             echo "
 \t";
-            // line 105
+            // line 108
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["alldevoir"]) ? $context["alldevoir"] : $this->getContext($context, "alldevoir")));
             $context['loop'] = array(
@@ -521,13 +526,13 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["dev"]) {
-                // line 106
+                // line 109
                 echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/devoir/modaldevoirlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 106)->display($context);
-                // line 107
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/devoir/modaldevoirlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 109)->display($context);
+                // line 110
                 echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/devoir/deletedevoirlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 107)->display($context);
-                // line 108
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/devoir/deletedevoirlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 110)->display($context);
+                // line 111
                 echo "\t";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -541,25 +546,25 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dev'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 109
+            // line 112
             echo "\t
 ";
         }
-        // line 111
+        // line 114
         echo "
 
 ";
-        // line 113
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/enseignant/addenseignantlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 113)->display($context);
-        // line 114
+        // line 116
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/enseignant/addenseignantlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 116)->display($context);
+        // line 117
         echo "
 ";
-        // line 115
+        // line 118
         if ( !(null === (isset($context["allenseignant"]) ? $context["allenseignant"] : $this->getContext($context, "allenseignant")))) {
-            // line 116
+            // line 119
             echo "
 \t";
-            // line 117
+            // line 120
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["allenseignant"]) ? $context["allenseignant"] : $this->getContext($context, "allenseignant")));
             $context['loop'] = array(
@@ -576,13 +581,13 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["ens"]) {
-                // line 118
+                // line 121
                 echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/enseignant/modalenseignantlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 118)->display($context);
-                // line 119
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/enseignant/modalenseignantlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 121)->display($context);
+                // line 122
                 echo "\t\t\t\t";
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/enseignant/deleteenseignantlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 119)->display($context);
-                // line 120
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/enseignant/deleteenseignantlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 122)->display($context);
+                // line 123
                 echo "\t";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -596,28 +601,135 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ens'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 121
+            // line 124
             echo "\t
 ";
         }
-        // line 123
+        // line 126
         echo "
 
-  
+";
+        // line 128
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/lieux/addlieuxlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 128)->display($context);
+        // line 129
+        echo "
+";
+        // line 130
+        if ( !(null === (isset($context["alllieux"]) ? $context["alllieux"] : $this->getContext($context, "alllieux")))) {
+            // line 131
+            echo "
+\t";
+            // line 132
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["alllieux"]) ? $context["alllieux"] : $this->getContext($context, "alllieux")));
+            $context['loop'] = array(
+              'parent' => $context['_parent'],
+              'index0' => 0,
+              'index'  => 1,
+              'first'  => true,
+            );
+            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+                $length = count($context['_seq']);
+                $context['loop']['revindex0'] = $length - 1;
+                $context['loop']['revindex'] = $length;
+                $context['loop']['length'] = $length;
+                $context['loop']['last'] = 1 === $length;
+            }
+            foreach ($context['_seq'] as $context["_key"] => $context["lieux"]) {
+                // line 133
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/lieux/modallieuxlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 133)->display($context);
+                // line 134
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/lieux/deletelieuxlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 134)->display($context);
+                // line 135
+                echo "\t";
+                ++$context['loop']['index0'];
+                ++$context['loop']['index'];
+                $context['loop']['first'] = false;
+                if (isset($context['loop']['length'])) {
+                    --$context['loop']['revindex0'];
+                    --$context['loop']['revindex'];
+                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+                }
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['lieux'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 136
+            echo "\t
+";
+        }
+        // line 138
+        echo "
+";
+        // line 139
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/salle/addsallelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 139)->display($context);
+        // line 140
+        echo "
+";
+        // line 141
+        if ( !(null === (isset($context["allsalle"]) ? $context["allsalle"] : $this->getContext($context, "allsalle")))) {
+            // line 142
+            echo "
+\t";
+            // line 143
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["allsalle"]) ? $context["allsalle"] : $this->getContext($context, "allsalle")));
+            $context['loop'] = array(
+              'parent' => $context['_parent'],
+              'index0' => 0,
+              'index'  => 1,
+              'first'  => true,
+            );
+            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+                $length = count($context['_seq']);
+                $context['loop']['revindex0'] = $length - 1;
+                $context['loop']['revindex'] = $length;
+                $context['loop']['length'] = $length;
+                $context['loop']['last'] = 1 === $length;
+            }
+            foreach ($context['_seq'] as $context["_key"] => $context["salle"]) {
+                // line 144
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/salle/modalsallelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 144)->display($context);
+                // line 145
+                echo "\t\t\t\t";
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/salle/deletesallelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 145)->display($context);
+                // line 146
+                echo "\t";
+                ++$context['loop']['index0'];
+                ++$context['loop']['index'];
+                $context['loop']['first'] = false;
+                if (isset($context['loop']['length'])) {
+                    --$context['loop']['revindex0'];
+                    --$context['loop']['revindex'];
+                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+                }
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['salle'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 147
+            echo "\t
+";
+        }
+        // line 149
+        echo "  
   
   ";
         
-        $__internal_8b10f9d10326f448c33a18e9c0d5cd9daae2c8cbccfd8d8268a9762653dce423->leave($__internal_8b10f9d10326f448c33a18e9c0d5cd9daae2c8cbccfd8d8268a9762653dce423_prof);
+        $__internal_412fc660a223ff2ef6db46dd188de64eb02f09e11003b3282dbf896321cde378->leave($__internal_412fc660a223ff2ef6db46dd188de64eb02f09e11003b3282dbf896321cde378_prof);
 
     }
 
-    // line 130
+    // line 154
     public function block_submenu($context, array $blocks = array())
     {
-        $__internal_29edb862043925c58085b6346834e5f303d560b04db840f7f76cd824d9a09d2c = $this->env->getExtension("native_profiler");
-        $__internal_29edb862043925c58085b6346834e5f303d560b04db840f7f76cd824d9a09d2c->enter($__internal_29edb862043925c58085b6346834e5f303d560b04db840f7f76cd824d9a09d2c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "submenu"));
+        $__internal_4c81b2cb51b3e963ce72d9d507b3f57bf4bbf6df2e7778f0960b1b5614d5d677 = $this->env->getExtension("native_profiler");
+        $__internal_4c81b2cb51b3e963ce72d9d507b3f57bf4bbf6df2e7778f0960b1b5614d5d677->enter($__internal_4c81b2cb51b3e963ce72d9d507b3f57bf4bbf6df2e7778f0960b1b5614d5d677_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "submenu"));
 
-        // line 131
+        // line 155
         echo "\t
         <div class=\"row\">
 \t\t\t<div class=\"col-xs-2\">
@@ -761,109 +873,133 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
 \t\t
 \t";
         
-        $__internal_29edb862043925c58085b6346834e5f303d560b04db840f7f76cd824d9a09d2c->leave($__internal_29edb862043925c58085b6346834e5f303d560b04db840f7f76cd824d9a09d2c_prof);
+        $__internal_4c81b2cb51b3e963ce72d9d507b3f57bf4bbf6df2e7778f0960b1b5614d5d677->leave($__internal_4c81b2cb51b3e963ce72d9d507b3f57bf4bbf6df2e7778f0960b1b5614d5d677_prof);
 
     }
 
-    // line 274
+    // line 298
     public function block_bodycontent($context, array $blocks = array())
     {
-        $__internal_57ee43b626cb67818acbe4a6b41a6e041bc878609fb7e2b7867cb4a28aa49261 = $this->env->getExtension("native_profiler");
-        $__internal_57ee43b626cb67818acbe4a6b41a6e041bc878609fb7e2b7867cb4a28aa49261->enter($__internal_57ee43b626cb67818acbe4a6b41a6e041bc878609fb7e2b7867cb4a28aa49261_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "bodycontent"));
+        $__internal_16bc72d22a0b043d3b2d5a15ead56705f80510142890c1e337e6ede9c6cf0d64 = $this->env->getExtension("native_profiler");
+        $__internal_16bc72d22a0b043d3b2d5a15ead56705f80510142890c1e337e6ede9c6cf0d64->enter($__internal_16bc72d22a0b043d3b2d5a15ead56705f80510142890c1e337e6ede9c6cf0d64_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "bodycontent"));
 
-        // line 275
+        // line 299
         echo "\t\t
 \t\t";
-        // line 276
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/emploi/emploilayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 276)->display($context);
-        // line 277
+        // line 300
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/emploi/emploilayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 300)->display($context);
+        // line 301
         echo "\t\t";
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/departement/departementlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 277)->display($context);
-        // line 278
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/departement/departementlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 301)->display($context);
+        // line 302
         echo "\t\t";
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/filiere/filierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 278)->display($context);
-        // line 279
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/filiere/filierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 302)->display($context);
+        // line 303
         echo "\t\t";
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/classe/classelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 279)->display($context);
-        // line 280
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/classe/classelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 303)->display($context);
+        // line 304
         echo "\t\t";
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/groupe/groupelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 280)->display($context);
-        // line 281
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/groupe/groupelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 304)->display($context);
+        // line 305
         echo "\t\t";
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/enseignant/enseignantlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 281)->display($context);
-        // line 282
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/enseignant/enseignantlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 305)->display($context);
+        // line 306
         echo "\t\t";
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/discipline/disciplinelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 282)->display($context);
-        // line 283
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/discipline/disciplinelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 306)->display($context);
+        // line 307
         echo "\t\t";
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/matiere/matierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 283)->display($context);
-        // line 284
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/matiere/matierelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 307)->display($context);
+        // line 308
         echo "\t\t";
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/voeux/voeuxlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 284)->display($context);
-        // line 285
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/voeux/voeuxlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 308)->display($context);
+        // line 309
         echo "\t\t";
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/devoir/devoirlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 285)->display($context);
-        // line 286
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/devoir/devoirlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 309)->display($context);
+        // line 310
         echo "\t\t";
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/modif/modiflayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 286)->display($context);
-        // line 287
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/lieux/lieuxlayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 310)->display($context);
+        // line 311
+        echo "\t\t";
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/salle/sallelayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 311)->display($context);
+        // line 312
+        echo "\t\t";
+        $this->loadTemplate("PedagogiePedagogieBundle::admin/modif/modiflayout.html.twig", "@PedagogiePedagogie/Default/admin.html.twig", 312)->display($context);
+        // line 313
         echo "\t
 \t";
         
-        $__internal_57ee43b626cb67818acbe4a6b41a6e041bc878609fb7e2b7867cb4a28aa49261->leave($__internal_57ee43b626cb67818acbe4a6b41a6e041bc878609fb7e2b7867cb4a28aa49261_prof);
+        $__internal_16bc72d22a0b043d3b2d5a15ead56705f80510142890c1e337e6ede9c6cf0d64->leave($__internal_16bc72d22a0b043d3b2d5a15ead56705f80510142890c1e337e6ede9c6cf0d64_prof);
 
     }
 
-    // line 292
+    // line 318
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_4e493b9e30b2a49540ae0191863bf5777aa84b25579db228ad2f4c724546395f = $this->env->getExtension("native_profiler");
-        $__internal_4e493b9e30b2a49540ae0191863bf5777aa84b25579db228ad2f4c724546395f->enter($__internal_4e493b9e30b2a49540ae0191863bf5777aa84b25579db228ad2f4c724546395f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_1651cd998285aed3134eafba89c65402226734ae6ecacc51129dbf980b37dd9b = $this->env->getExtension("native_profiler");
+        $__internal_1651cd998285aed3134eafba89c65402226734ae6ecacc51129dbf980b37dd9b->enter($__internal_1651cd998285aed3134eafba89c65402226734ae6ecacc51129dbf980b37dd9b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 293
-        echo "\t";
+        // line 319
+        echo "
+\t";
+        // line 320
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
 \t
 \t<script type=\"text/javascript\" src=\"";
-        // line 295
+        // line 322
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("includes/js/pedagogie.js"), "html", null, true);
         echo "\"></script>
 \t<script type=\"text/javascript\" src=\"";
-        // line 296
+        // line 323
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("includes/js/emploihandle.js"), "html", null, true);
         echo "\"></script>
 \t<script type=\"text/javascript\" src=\"";
-        // line 297
+        // line 324
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("includes/js/departementhandle.js"), "html", null, true);
         echo "\"></script>
 \t<script type=\"text/javascript\" src=\"";
-        // line 298
+        // line 325
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("includes/js/filierehandle.js"), "html", null, true);
         echo "\"></script>
 \t<script type=\"text/javascript\" src=\"";
-        // line 299
+        // line 326
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("includes/js/classehandle.js"), "html", null, true);
         echo "\"></script>
 \t<script type=\"text/javascript\" src=\"";
-        // line 300
+        // line 327
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("includes/js/groupehandle.js"), "html", null, true);
         echo "\"></script>
 \t<script type=\"text/javascript\" src=\"";
-        // line 301
+        // line 328
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("includes/js/enseignanthandle.js"), "html", null, true);
         echo "\"></script>
 \t<script type=\"text/javascript\" src=\"";
-        // line 302
+        // line 329
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("includes/js/disciplinehandle.js"), "html", null, true);
         echo "\"></script>
 \t<script type=\"text/javascript\" src=\"";
-        // line 303
+        // line 330
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("includes/js/matierehandle.js"), "html", null, true);
+        echo "\"></script>
+\t<script type=\"text/javascript\" src=\"";
+        // line 331
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("includes/js/lieuxhandle.js"), "html", null, true);
+        echo "\"></script>
+\t<script type=\"text/javascript\" src=\"";
+        // line 332
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("includes/js/sallehandle.js"), "html", null, true);
+        echo "\"></script>
+\t<script type=\"text/javascript\" src=\"";
+        // line 333
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("includes/js/devoirhandle.js"), "html", null, true);
+        echo "\"></script>
+\t<script type=\"text/javascript\" src=\"";
+        // line 334
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("includes/js/voeuxhandle.js"), "html", null, true);
         echo "\"></script>
 ";
         
-        $__internal_4e493b9e30b2a49540ae0191863bf5777aa84b25579db228ad2f4c724546395f->leave($__internal_4e493b9e30b2a49540ae0191863bf5777aa84b25579db228ad2f4c724546395f_prof);
+        $__internal_1651cd998285aed3134eafba89c65402226734ae6ecacc51129dbf980b37dd9b->leave($__internal_1651cd998285aed3134eafba89c65402226734ae6ecacc51129dbf980b37dd9b_prof);
 
     }
 
@@ -879,7 +1015,7 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
 
     public function getDebugInfo()
     {
-        return array (  862 => 303,  858 => 302,  854 => 301,  850 => 300,  846 => 299,  842 => 298,  838 => 297,  834 => 296,  830 => 295,  824 => 293,  818 => 292,  810 => 287,  807 => 286,  804 => 285,  801 => 284,  798 => 283,  795 => 282,  792 => 281,  789 => 280,  786 => 279,  783 => 278,  780 => 277,  778 => 276,  775 => 275,  769 => 274,  621 => 131,  615 => 130,  604 => 123,  600 => 121,  586 => 120,  583 => 119,  580 => 118,  563 => 117,  560 => 116,  558 => 115,  555 => 114,  553 => 113,  549 => 111,  545 => 109,  531 => 108,  528 => 107,  525 => 106,  508 => 105,  505 => 104,  503 => 103,  500 => 102,  498 => 101,  495 => 100,  491 => 98,  477 => 97,  474 => 96,  471 => 95,  454 => 94,  451 => 93,  449 => 92,  446 => 91,  444 => 90,  440 => 88,  436 => 86,  422 => 85,  419 => 84,  416 => 83,  399 => 82,  396 => 81,  394 => 80,  391 => 79,  389 => 78,  385 => 76,  381 => 74,  367 => 73,  364 => 72,  361 => 71,  344 => 70,  341 => 69,  339 => 68,  336 => 67,  334 => 66,  331 => 65,  327 => 63,  313 => 62,  310 => 61,  307 => 60,  290 => 59,  287 => 58,  285 => 57,  282 => 56,  280 => 55,  275 => 52,  271 => 50,  257 => 49,  254 => 48,  251 => 47,  234 => 46,  231 => 45,  229 => 44,  226 => 43,  224 => 42,  221 => 41,  217 => 39,  203 => 38,  200 => 37,  197 => 36,  180 => 35,  177 => 34,  175 => 33,  172 => 32,  170 => 31,  167 => 30,  163 => 28,  149 => 27,  146 => 26,  143 => 25,  126 => 24,  123 => 23,  121 => 22,  118 => 21,  116 => 20,  112 => 18,  108 => 16,  94 => 15,  91 => 14,  88 => 13,  71 => 12,  68 => 11,  66 => 10,  63 => 9,  61 => 8,  58 => 7,  52 => 6,  44 => 3,  38 => 2,  11 => 1,);
+        return array (  998 => 334,  994 => 333,  990 => 332,  986 => 331,  982 => 330,  978 => 329,  974 => 328,  970 => 327,  966 => 326,  962 => 325,  958 => 324,  954 => 323,  950 => 322,  945 => 320,  942 => 319,  936 => 318,  928 => 313,  925 => 312,  922 => 311,  919 => 310,  916 => 309,  913 => 308,  910 => 307,  907 => 306,  904 => 305,  901 => 304,  898 => 303,  895 => 302,  892 => 301,  890 => 300,  887 => 299,  881 => 298,  733 => 155,  727 => 154,  718 => 149,  714 => 147,  700 => 146,  697 => 145,  694 => 144,  677 => 143,  674 => 142,  672 => 141,  669 => 140,  667 => 139,  664 => 138,  660 => 136,  646 => 135,  643 => 134,  640 => 133,  623 => 132,  620 => 131,  618 => 130,  615 => 129,  613 => 128,  609 => 126,  605 => 124,  591 => 123,  588 => 122,  585 => 121,  568 => 120,  565 => 119,  563 => 118,  560 => 117,  558 => 116,  554 => 114,  550 => 112,  536 => 111,  533 => 110,  530 => 109,  513 => 108,  510 => 107,  508 => 106,  505 => 105,  503 => 104,  500 => 103,  496 => 101,  482 => 100,  479 => 99,  476 => 98,  459 => 97,  456 => 96,  454 => 95,  451 => 94,  449 => 93,  445 => 91,  441 => 89,  427 => 88,  424 => 87,  422 => 86,  419 => 85,  402 => 84,  399 => 83,  397 => 82,  394 => 81,  392 => 80,  388 => 78,  384 => 76,  370 => 75,  367 => 74,  364 => 73,  347 => 72,  344 => 71,  342 => 70,  339 => 69,  337 => 68,  334 => 67,  330 => 65,  316 => 64,  313 => 63,  310 => 62,  293 => 61,  290 => 60,  288 => 59,  285 => 58,  283 => 57,  278 => 54,  274 => 52,  260 => 51,  257 => 50,  254 => 49,  237 => 48,  234 => 47,  232 => 46,  229 => 45,  227 => 44,  224 => 43,  220 => 41,  206 => 40,  203 => 39,  200 => 38,  183 => 37,  180 => 36,  178 => 35,  175 => 34,  173 => 33,  170 => 32,  166 => 30,  152 => 29,  149 => 28,  146 => 27,  129 => 26,  126 => 25,  124 => 24,  121 => 23,  119 => 22,  115 => 20,  111 => 18,  97 => 17,  94 => 16,  91 => 15,  74 => 14,  71 => 13,  69 => 12,  66 => 11,  64 => 10,  62 => 9,  58 => 7,  52 => 6,  44 => 3,  38 => 2,  11 => 1,);
     }
 }
 /* {% extends "::layout.html.twig" %}*/
@@ -889,7 +1025,9 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
 /* */
 /* {% block modals %}*/
 /* */
+/* */
 /* {% include "PedagogiePedagogieBundle::admin/emploi/addemploilayout.html.twig" %}*/
+/* {% include "PedagogiePedagogieBundle::admin/emploi/emploitemplatelayout.html.twig" %}*/
 /* */
 /* {% if allemploi is not null %}*/
 /* */
@@ -964,6 +1102,7 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
 /* {% if allgroupe is not null %}*/
 /* */
 /* 	{% for grp in allgroupe  %}*/
+/* 				*/
 /* 				{% include "PedagogiePedagogieBundle::admin/groupe/modalgroupelayout.html.twig" %}*/
 /* 				{% include "PedagogiePedagogieBundle::admin/groupe/deletegroupelayout.html.twig" %}*/
 /* 	{% endfor %}*/
@@ -1006,6 +1145,27 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
 /* {% endif %}*/
 /* */
 /* */
+/* {% include "PedagogiePedagogieBundle::admin/lieux/addlieuxlayout.html.twig" %}*/
+/* */
+/* {% if alllieux is not null %}*/
+/* */
+/* 	{% for lieux in alllieux  %}*/
+/* 				{% include "PedagogiePedagogieBundle::admin/lieux/modallieuxlayout.html.twig" %}*/
+/* 				{% include "PedagogiePedagogieBundle::admin/lieux/deletelieuxlayout.html.twig" %}*/
+/* 	{% endfor %}*/
+/* 	*/
+/* {% endif %}*/
+/* */
+/* {% include "PedagogiePedagogieBundle::admin/salle/addsallelayout.html.twig" %}*/
+/* */
+/* {% if allsalle is not null %}*/
+/* */
+/* 	{% for salle in allsalle  %}*/
+/* 				{% include "PedagogiePedagogieBundle::admin/salle/modalsallelayout.html.twig" %}*/
+/* 				{% include "PedagogiePedagogieBundle::admin/salle/deletesallelayout.html.twig" %}*/
+/* 	{% endfor %}*/
+/* 	*/
+/* {% endif %}*/
 /*   */
 /*   */
 /*   {% endblock %}*/
@@ -1167,6 +1327,8 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
 /* 		{% include "PedagogiePedagogieBundle::admin/matiere/matierelayout.html.twig" %}*/
 /* 		{% include "PedagogiePedagogieBundle::admin/voeux/voeuxlayout.html.twig" %}*/
 /* 		{% include "PedagogiePedagogieBundle::admin/devoir/devoirlayout.html.twig" %}*/
+/* 		{% include "PedagogiePedagogieBundle::admin/lieux/lieuxlayout.html.twig" %}*/
+/* 		{% include "PedagogiePedagogieBundle::admin/salle/sallelayout.html.twig" %}*/
 /* 		{% include "PedagogiePedagogieBundle::admin/modif/modiflayout.html.twig" %}*/
 /* 	*/
 /* 	{% endblock %}*/
@@ -1174,6 +1336,7 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
 /* */
 /* */
 /* {% block javascripts %}*/
+/* */
 /* 	{{ parent() }}*/
 /* 	*/
 /* 	<script type="text/javascript" src="{{ asset('includes/js/pedagogie.js') }}"></script>*/
@@ -1185,4 +1348,8 @@ class __TwigTemplate_40f6dfb2ad7bf313dc6c6e3212d1979658ab4d9d0373d4dd05f805ea3be
 /* 	<script type="text/javascript" src="{{ asset('includes/js/enseignanthandle.js') }}"></script>*/
 /* 	<script type="text/javascript" src="{{ asset('includes/js/disciplinehandle.js') }}"></script>*/
 /* 	<script type="text/javascript" src="{{ asset('includes/js/matierehandle.js') }}"></script>*/
+/* 	<script type="text/javascript" src="{{ asset('includes/js/lieuxhandle.js') }}"></script>*/
+/* 	<script type="text/javascript" src="{{ asset('includes/js/sallehandle.js') }}"></script>*/
+/* 	<script type="text/javascript" src="{{ asset('includes/js/devoirhandle.js') }}"></script>*/
+/* 	<script type="text/javascript" src="{{ asset('includes/js/voeuxhandle.js') }}"></script>*/
 /* {% endblock %}*/

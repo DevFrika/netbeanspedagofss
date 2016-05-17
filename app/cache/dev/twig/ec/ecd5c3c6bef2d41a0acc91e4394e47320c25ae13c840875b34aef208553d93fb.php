@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/groupe:deletegroupelayout.html.twig */
+/* PedagogiePedagogieBundle::admin/groupe/deletegroupelayout.html.twig */
 class __TwigTemplate_d2012e6dee66db3be6717d712c1b4a18e92f4febd2800e59cff6f25654efc4ba extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_d2012e6dee66db3be6717d712c1b4a18e92f4febd2800e59cff6f25654e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_22a463bf6f19fc1a4f7f9319963e5e1472ec1dca8efb9ef8099c382050127cb8 = $this->env->getExtension("native_profiler");
-        $__internal_22a463bf6f19fc1a4f7f9319963e5e1472ec1dca8efb9ef8099c382050127cb8->enter($__internal_22a463bf6f19fc1a4f7f9319963e5e1472ec1dca8efb9ef8099c382050127cb8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/groupe:deletegroupelayout.html.twig"));
+        $__internal_566b551d582db8023e5c451166d707d17ef9e9e8c992fe0ba5d6f0e32338418e = $this->env->getExtension("native_profiler");
+        $__internal_566b551d582db8023e5c451166d707d17ef9e9e8c992fe0ba5d6f0e32338418e->enter($__internal_566b551d582db8023e5c451166d707d17ef9e9e8c992fe0ba5d6f0e32338418e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/groupe/deletegroupelayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"delgrp";
@@ -47,13 +47,13 @@ class __TwigTemplate_d2012e6dee66db3be6717d712c1b4a18e92f4febd2800e59cff6f25654e
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_22a463bf6f19fc1a4f7f9319963e5e1472ec1dca8efb9ef8099c382050127cb8->leave($__internal_22a463bf6f19fc1a4f7f9319963e5e1472ec1dca8efb9ef8099c382050127cb8_prof);
+        $__internal_566b551d582db8023e5c451166d707d17ef9e9e8c992fe0ba5d6f0e32338418e->leave($__internal_566b551d582db8023e5c451166d707d17ef9e9e8c992fe0ba5d6f0e32338418e_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/groupe:deletegroupelayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/groupe/deletegroupelayout.html.twig";
     }
 
     public function isTraitable()

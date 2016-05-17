@@ -15,12 +15,12 @@ class __TwigTemplate_655920314f87d05cf54415a85a9ef1f4225db0146d4e9f8b0c95268a8ca
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0087f1bb19d2ca6c498fdc7aadc4937e60855881555063f69e95edff9c7db3ca = $this->env->getExtension("native_profiler");
-        $__internal_0087f1bb19d2ca6c498fdc7aadc4937e60855881555063f69e95edff9c7db3ca->enter($__internal_0087f1bb19d2ca6c498fdc7aadc4937e60855881555063f69e95edff9c7db3ca_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/devoir/deletedevoirlayout.html.twig"));
+        $__internal_26a30628e9f286dd8e28c181001ac60324f72b0f931767912375bc4dcaa9bef3 = $this->env->getExtension("native_profiler");
+        $__internal_26a30628e9f286dd8e28c181001ac60324f72b0f931767912375bc4dcaa9bef3->enter($__internal_26a30628e9f286dd8e28c181001ac60324f72b0f931767912375bc4dcaa9bef3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/devoir/deletedevoirlayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"deldev";
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dev"]) ? $context["dev"] : $this->getContext($context, "dev")), "devoir", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dev"]) ? $context["dev"] : $this->getContext($context, "dev")), "id", array()), "html", null, true);
         echo "\">
 \t\t\t\t  <div class=\"modal-dialog\">
 \t\t\t\t\t<div class=\"modal-content\">
@@ -29,25 +29,25 @@ class __TwigTemplate_655920314f87d05cf54415a85a9ef1f4225db0146d4e9f8b0c95268a8ca
 \t\t\t\t\t\t
 \t\t\t\t\t  </div>
 \t\t\t\t\t  <div class=\"modal-body\">
-\t\t\t\t\t\t<p> Voulez vous reelment supprimer ce devoir ";
+\t\t\t\t\t\t<p> Voulez vous reelment supprimer cette devoir ";
         // line 9
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dev"]) ? $context["dev"] : $this->getContext($context, "dev")), "devoir", array()), "html", null, true);
-        echo " ?  </p>
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dev"]) ? $context["dev"] : $this->getContext($context, "dev")), "id", array()), "html", null, true);
+        echo "  </p>
 \t\t\t\t\t  </div>
 \t\t\t\t\t  <div class=\"modal-footer\">
 \t\t\t\t\t\t<a class=\"btn btn-default\" data-dismiss=\"modal\">Fermer</a>
 \t\t\t\t\t\t<a class=\"btn btn-primary w3-red\" onclick=\"deleteDevoir(event, '";
         // line 13
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dev"]) ? $context["dev"] : $this->getContext($context, "dev")), "devoir", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dev"]) ? $context["dev"] : $this->getContext($context, "dev")), "id", array()), "html", null, true);
         echo "','#deldev";
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dev"]) ? $context["dev"] : $this->getContext($context, "dev")), "devoir", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dev"]) ? $context["dev"] : $this->getContext($context, "dev")), "id", array()), "html", null, true);
         echo "')\"><i class=\"fa fa-trash\"></i>Supprimer</a>
 \t\t\t\t\t  </div>
 \t\t\t\t\t</div>
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_0087f1bb19d2ca6c498fdc7aadc4937e60855881555063f69e95edff9c7db3ca->leave($__internal_0087f1bb19d2ca6c498fdc7aadc4937e60855881555063f69e95edff9c7db3ca_prof);
+        $__internal_26a30628e9f286dd8e28c181001ac60324f72b0f931767912375bc4dcaa9bef3->leave($__internal_26a30628e9f286dd8e28c181001ac60324f72b0f931767912375bc4dcaa9bef3_prof);
 
     }
 
@@ -66,7 +66,7 @@ class __TwigTemplate_655920314f87d05cf54415a85a9ef1f4225db0146d4e9f8b0c95268a8ca
         return array (  41 => 13,  34 => 9,  22 => 1,);
     }
 }
-/* <div class="fade modal text-center" id="deldev{{ dev.devoir }}">*/
+/* <div class="fade modal text-center" id="deldev{{ dev.id }}">*/
 /* 				  <div class="modal-dialog">*/
 /* 					<div class="modal-content">*/
 /* 					  <div class="modal-header">*/
@@ -74,11 +74,11 @@ class __TwigTemplate_655920314f87d05cf54415a85a9ef1f4225db0146d4e9f8b0c95268a8ca
 /* 						*/
 /* 					  </div>*/
 /* 					  <div class="modal-body">*/
-/* 						<p> Voulez vous reelment supprimer ce devoir {{ dev.devoir }} ?  </p>*/
+/* 						<p> Voulez vous reelment supprimer cette devoir {{ dev.id }}  </p>*/
 /* 					  </div>*/
 /* 					  <div class="modal-footer">*/
 /* 						<a class="btn btn-default" data-dismiss="modal">Fermer</a>*/
-/* 						<a class="btn btn-primary w3-red" onclick="deleteDevoir(event, '{{ dev.devoir }}','#deldev{{ dev.devoir }}')"><i class="fa fa-trash"></i>Supprimer</a>*/
+/* 						<a class="btn btn-primary w3-red" onclick="deleteDevoir(event, '{{ dev.id }}','#deldev{{ dev.id }}')"><i class="fa fa-trash"></i>Supprimer</a>*/
 /* 					  </div>*/
 /* 					</div>*/
 /* 				  </div>*/

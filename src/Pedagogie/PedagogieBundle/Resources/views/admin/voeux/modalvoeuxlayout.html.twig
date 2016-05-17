@@ -1,12 +1,39 @@
-<div class="fade modal text-center" id="veu{{ veu.voeux }}">
-				  <div class="modal-dialog">
+<div class="fade modal text-left" id="veu{{ veu.id }}">
+				  <div class="modal-dialog modal-lg">
 					<div class="modal-content">
 					  <div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 						
 					  </div>
 					  <div class="modal-body">
-						<p> {{ veu.voeux }}  </p>
+						<table>
+						<thead>
+							<tr>
+								<th> Jours </th>
+								<th> Heure Debut </th>
+								<th> Heure Fin </th>
+								<th> Matiere </th>
+								<th> Salle </th>
+								<th> Professeur </th>
+								<th> Groupe </th>
+								<th> Nature </th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td> {{ veu.jours.jour }} </td>
+								<td> {{ veu.getHeureDebut|date('H:i') }} </td>
+								<td> {{ veu.getHeureFin|date('H:i') }} </td>
+								<td> {{ veu.matiere.matiere }} </td>
+								<td> {{ veu.salles.salle }} </td>
+								<td> {{ veu.enseignants.enseignant }} </td>
+								<td> {{ veu.groupes.groupe }} </td>
+								<td> {{ veu.natures.nature }} </td>
+								
+							</tr>
+						</tbody>
+						</table>
 					  </div>
 					  <div class="modal-footer">
 						<a class="btn btn-default" data-dismiss="modal">Close</a>

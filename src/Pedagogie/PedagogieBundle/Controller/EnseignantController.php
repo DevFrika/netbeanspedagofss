@@ -340,7 +340,7 @@ class EnseignantController extends Controller
 
 					if (empty($request->request->get('username')))
 					{
-						$errors['username'] = "Le nom d'utilisateur l' enseignant est requis ";
+						$errors['username'] = "Le nom d'utilisateur l'enseignant est requis ";
 
 					}
 					
@@ -356,10 +356,14 @@ class EnseignantController extends Controller
 
 					}
 					
-					if (empty($request->request->get('famname')))
+					if (empty($request->request->get('codeens')))
 					{
-						$errors['famname'] = "Le nom de la enseignant est requis ";
+						$errors['famname'] = "Le code de l'enseignant est requis ";
 
+					}
+					if (empty($request->request->get('telens')))
+					{
+						$errors['famname'] = "Le telephone l'enseignant est requis ";
 					}
 					
 					if (empty($request->request->get('email')))
@@ -384,6 +388,8 @@ class EnseignantController extends Controller
                         $famname = htmlspecialchars($request->request->get('famname'));
                         $surname = htmlspecialchars($request->request->get('surname'));
                         $email = htmlspecialchars($request->request->get('email'));
+						$codeens = htmlspecialchars($request->request->get('codeens'));
+						$telens = htmlspecialchars($request->request->get('telens'));
 						$nomdep = htmlspecialchars($request->request->get('depens'));
 						$nomsit = htmlspecialchars($request->request->get('sitens'));
                         $nomgrd = htmlspecialchars($request->request->get('grdens'));
@@ -414,6 +420,8 @@ class EnseignantController extends Controller
 						
 						$enseignant = new Enseignant();
 						$enseignant->setEnseignant($famname." ".$surname);
+						$enseignant->setCode($codeens);
+						$enseignant->setTelephone($telens);
 						$enseignant->setDepartement($departement);
 						$enseignant->setGrade($grade);
 						$enseignant->setSituation($situation);

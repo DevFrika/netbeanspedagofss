@@ -117,6 +117,7 @@ class appDevDebugProjectContainer extends Container
             'fragment.renderer.hinclude' => 'getFragment_Renderer_HincludeService',
             'fragment.renderer.inline' => 'getFragment_Renderer_InlineService',
             'fragment.renderer.ssi' => 'getFragment_Renderer_SsiService',
+            'html2pdf_factory' => 'getHtml2pdfFactoryService',
             'http_kernel' => 'getHttpKernelService',
             'kernel' => 'getKernelService',
             'kernel.class_cache.cache_warmer' => 'getKernel_ClassCache_CacheWarmerService',
@@ -135,6 +136,7 @@ class appDevDebugProjectContainer extends Container
             'monolog.logger.templating' => 'getMonolog_Logger_TemplatingService',
             'monolog.logger.translation' => 'getMonolog_Logger_TranslationService',
             'pedagogie.filierehandle' => 'getPedagogie_FilierehandleService',
+            'pedagogie.printhandle' => 'getPedagogie_PrinthandleService',
             'profiler' => 'getProfilerService',
             'profiler_listener' => 'getProfilerListenerService',
             'property_accessor' => 'getPropertyAccessorService',
@@ -1404,6 +1406,19 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'html2pdf_factory' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Ensepar\Html2pdfBundle\Factory\Html2pdfFactory A Ensepar\Html2pdfBundle\Factory\Html2pdfFactory instance.
+     */
+    protected function getHtml2pdfFactoryService()
+    {
+        return $this->services['html2pdf_factory'] = new \Ensepar\Html2pdfBundle\Factory\Html2pdfFactory('P', 'A4', 'en', true, 'UTF-8', array(0 => 10, 1 => 15, 2 => 10, 3 => 15));
+    }
+
+    /**
      * Gets the 'http_kernel' service.
      *
      * This service is shared.
@@ -1693,6 +1708,19 @@ class appDevDebugProjectContainer extends Container
     protected function getPedagogie_FilierehandleService()
     {
         return $this->services['pedagogie.filierehandle'] = new \Pedagogie\PedagogieBundle\Services\FiliereHandle();
+    }
+
+    /**
+     * Gets the 'pedagogie.printhandle' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Pedagogie\PedagogieBundle\Services\PrintHandle A Pedagogie\PedagogieBundle\Services\PrintHandle instance.
+     */
+    protected function getPedagogie_PrinthandleService()
+    {
+        return $this->services['pedagogie.printhandle'] = new \Pedagogie\PedagogieBundle\Services\PrintHandle();
     }
 
     /**
@@ -1991,7 +2019,7 @@ class appDevDebugProjectContainer extends Container
 
         $e = new \Symfony\Component\Security\Http\AccessMap();
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '572d1f84dbf8b5.27537539', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '573a9a45a21366.19179782', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
     }
 
     /**
@@ -3324,7 +3352,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('572d1f84dbf8b5.27537539')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('573a9a45a21366.19179782')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -3521,6 +3549,7 @@ class appDevDebugProjectContainer extends Container
                 'PedagoFssUserBundle' => 'PedagoFss\\UserBundle\\PedagoFssUserBundle',
                 'PedagogiePedagogieBundle' => 'Pedagogie\\PedagogieBundle\\PedagogiePedagogieBundle',
                 'FssWebsiteDepartementBundle' => 'Fss\\Website\\DepartementBundle\\FssWebsiteDepartementBundle',
+                'EnseparHtml2pdfBundle' => 'Ensepar\\Html2pdfBundle\\EnseparHtml2pdfBundle',
                 'DebugBundle' => 'Symfony\\Bundle\\DebugBundle\\DebugBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
@@ -4023,6 +4052,17 @@ class appDevDebugProjectContainer extends Container
             'sensio_framework_extra.converter.doctrine.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DoctrineParamConverter',
             'sensio_framework_extra.converter.datetime.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DateTimeParamConverter',
             'sensio_framework_extra.view.listener.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\TemplateListener',
+            'html2pdf.orientation' => 'P',
+            'html2pdf.format' => 'A4',
+            'html2pdf.lang' => 'en',
+            'html2pdf.unicode' => true,
+            'html2pdf.encoding' => 'UTF-8',
+            'html2pdf.margin' => array(
+                0 => 10,
+                1 => 15,
+                2 => 10,
+                3 => 15,
+            ),
             'web_profiler.controller.profiler.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ProfilerController',
             'web_profiler.controller.router.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\RouterController',
             'web_profiler.controller.exception.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ExceptionController',

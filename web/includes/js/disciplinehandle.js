@@ -9,16 +9,13 @@
 				// process the form
 	$('#adddisciplineform').submit(function(event) {
 		 
-		var addclasseurl = $('input[name=addclasse_url]').val(); 
-	  // remove success messages and remove the past errors
-	  $('#usermessages').removeClass('alert alert-success').empty();
-	  $('#usermessages').removeClass('alert alert-danger alert-dismissable').empty();
-	  
-		$(".ajax_spinner").remove();
-		$(".ajax_wait").remove();
-		var label = "<span class='ajax_spinner' align=center><img src='includes/images/ispinner.gif'/> Chargement </span>";
-		$(".ajax_wait").after(label);
-	   
+		var adddisciplineurl = $('input[name=adddiscipline_url]').val(); 
+	
+	
+	    // remove success messages and remove the past errors
+	 $('.dis-form-group .messages-block').removeClass('alert alert-success').empty();
+	 $('.dis-form-group .messages-block').removeClass('alert alert-danger alert-dismissable').empty();
+	 
 	  // get the form data
 	  var formData = {
 		  'nomdis'              : $('input[name=nomdiscipline]').val(),
@@ -30,7 +27,7 @@
 	  // process the form
 	  $.ajax({
 		type        : 'POST',
-		url         : addclasseurl,
+		url         : adddisciplineurl,
 		data        : formData,
 		dataType    : 'json',
 		success     : function(data) {
@@ -43,31 +40,30 @@
 		  // if validation fails
 		  // add the error class to show a red input
 		  // add the error message to the help block under the input
-		  if ( ! data.success) {
-			  
-			  
-			
-			$(".ajax_spinner").remove();
-			  $(".ajax_wait").remove();
-			
-			$('#usermessages').addClass('alert alert-danger alert-dismissable').html('<p>' + data.message + '</p>');
-			document.getElementById("usermessages").style.display = "block";
-			$('#usermessages').fadeIn( showingtime/5 );
-			$('#usermessages').fadeOut( showingtime );
-			
+		  if ( ! data.success) 
+		  {
+			 
+			$('#adddisciplineform .dis-form-group .messages-block').addClass('alert alert-danger alert-dismissable').html(data.message);
 
-		  } else {
+		  } 
+		  else 
+		  {
 			
 			// if validation is good add success message
-			$('#addclasse').modal('hide');
-			$('#usermessages').addClass('alert alert-success').html('<p>' + data.message + '</p>');
-			document.getElementById("usermessages").style.display = "block";
-			$('#usermessages').fadeIn( showingtime/5 );
-			$('#usermessages').fadeOut( showingtime );			
 			
-					
-		
+			
+			$('#adddisciplineform .dis-form-group .messages-block').addClass('alert alert-success alert-dismissable').html(data.message);
+			document.getElementById("adddisciplineform").reset();
+	
 		  }
+		  
+		  setTimeout(function()
+			{
+				$('#adddisciplineform .dis-form-group .messages-block').removeClass('alert alert-success').empty();
+				$('#adddisciplineform .dis-form-group .messages-block').removeClass('alert alert-danger alert-dismissable').empty();
+				
+			}, 5000);
+			
 		}
 	  });
 
@@ -111,40 +107,17 @@ function deleteDiscipline(evt, disName,nomModal) {
 		  // if validation fails
 		  // add the error class to show a red input
 		  // add the error message to the help block under the input
-		  if ( ! data.success) {
+		  if ( ! data.success) 
+		  {
 			 
-			  $(".ajax_spinner").remove();
-			  $(".ajax_wait").remove();
-			  
-			  
-			if (data.errors.nomfil || data.errors.tag ) {
-			  $('#email-group').addClass('has-error');
-			  $('#email-group .help-block').html(data.errors.email);
-			}
-
-			
-			
-			$('#usermessages').addClass('alert alert-danger alert-dismissable').html('<p>' + data.message + '</p>');
-			document.getElementById("usermessages").style.display = "block";
-			$('#usermessages').fadeIn( showingtime/5 );
-			$('#usermessages').fadeOut( showingtime );
-			
 			
 		  }
 		  else 
 		  {
-			$(nomModal).modal('hide');
-			document.getElementById('fssdis'+disName).style.display = "none";
-			document.getElementById('fssdis'+disName).style.display = "none";
-			
 			// if validation is good add success message
-			$('#usermessages').addClass('alert alert-success').html('<p>' + data.message + '</p>');
-			document.getElementById("usermessages").style.display = "block";
-			$('#usermessages').fadeIn( showingtime/5 );
-			$('#usermessages').fadeOut( showingtime );
-			
-			
-		
+			document.getElementById('fssdis'+disName).style.display = "none";
+			document.getElementById('fssdis'+disName).style.display = "none";
+			$(nomModal).modal('hide');
 		  }
 		}
 	  });
@@ -156,20 +129,19 @@ function deleteDiscipline(evt, disName,nomModal) {
 }
 
 
-function updateDiscipline(evt,formName,nomClasse) {
+function updateDiscipline(evt,formName,nomDiscipline) {
 	
 	
-	var fname = formName;
+	
 	// stop the form from submitting and refreshing
 	  evt.preventDefault();
 	  
-	  console.log(fname);
-	var updnomcls = $("form[name='"+fname+"']").find('input[name="updnomclasse"]').val();
-	var upddepcls = $( "#upddepclsselect"+nomClasse ).val();
-	var updfilcls = $( "#updfilclsselect"+nomClasse ).val();
-	var updancls = $( "#anclsselect"+nomClasse ).val();
-	var oldclsname = $("form[name='"+fname+"']").find('input[name="oldclsname"]').val();
-	var updclstag = $("form[name='"+fname+"']").find('input[name="updclstag"]').val();
+	var fname = formName;
+	var updnomdis = $("form[name='"+fname+"']").find('input[name="updnomclasse"]').val();
+	var upddepdis = $( "#upddepclsselect"+nomClasse ).val();
+	var updfildis = $( "#updfilclsselect"+nomClasse ).val();
+	var olddisname = $("form[name='"+fname+"']").find('input[name="oldclsname"]').val();
+	var upddistag = $("form[name='"+fname+"']").find('input[name="updclstag"]').val();
 	var updateclasseurl = $("form[name='"+fname+"']").find('input[name="updateclasse_url"]').val();
 		
 		
@@ -181,12 +153,11 @@ function updateDiscipline(evt,formName,nomClasse) {
 	   
 	  // get the form data
 	  var formData = {
-		  'nomcls'              	: updnomcls,
-		  'depcls'              	: upddepcls,
-		  'filcls'					: updfilcls,
-		  'ancls'					: updancls,
-		  'oldclsname'				: oldclsname,
-		  'tag'						: updclstag
+		  'nomdis'              	: updnomdis,
+		  'depdis'              	: upddepdis,
+		  'fildis'					: updfildis,
+		  'olddisname'				: olddisname,
+		  'tag'						: upddistag
 	  };
 	  
 	  $(".ajax_spinner").remove();
@@ -215,24 +186,14 @@ function updateDiscipline(evt,formName,nomClasse) {
 			  
 			  
 			
-			$(".ajax_spinner").remove();
-			$(".ajax_wait").remove();
 			
-			
-			$('#usermessages').addClass('alert alert-danger alert-dismissable').html('<p>' + data.message + '</p>');
-			document.getElementById("usermessages").style.display = "block";
-			$('#usermessages').fadeIn( showingtime/5 );
-			$('#usermessages').fadeOut( showingtime );
 			
 			
 
 		  } else {
 			
 			// if validation is good add success message
-			$('#usermessages').addClass('alert alert-success alert-dismissable').html('<p>' + data.message + '</p>');
-			document.getElementById("usermessages").style.display = "block";
-			$('#usermessages').fadeIn( showingtime/5 );
-			$('#usermessages').fadeOut( showingtime );
+			
 			
 		
 		  }
@@ -270,7 +231,7 @@ function disLoadFiliere(depName,selectId)
 
 	   
 		
-		  // if validation fails
+		// if validation fails
 		  // add the error class to show a red input
 		  // add the error message to the help block under the input
 		
@@ -281,7 +242,7 @@ function disLoadFiliere(depName,selectId)
 			 
 			// if validation is bad add error message
 			var filiere = "Aucune Filiere trouvée ";
-			var newoption ='<option value="'+filiere+'" >'+filiere+'</option>' ;
+			var newoption ='<option value="'+0+'" >'+filiere+'</option>' ;
 			document.getElementById(selectId).innerHTML += newoption;		
 			
 			
@@ -296,23 +257,18 @@ function disLoadFiliere(depName,selectId)
 			
 			for( fil in data.filiere )
 			{
-				var filiere = data.filiere['fil'+i].fil;
-				var newoption ='<option value="'+filiere+'" >'+filiere+'</option>' ;
+				var filiere = data.filiere['fil'+i].filiere;
+				var filid = data.filiere['fil'+i].filiereid;
+				var newoption ='<option value="'+filid+'" >'+filiere+'</option>' ;
 				document.getElementById(selectId).innerHTML += newoption;
 				i++;
 			}
 		
 		  }
 		  
-			document.getElementById("loadertext").innerHTML = "" ;
-			document.getElementById("loadermodal").style.display = "none";
-	
-			
-		  
 		}
 	  });
 
-	
 	setTimeout(function()
 	{
 		document.getElementById("loadertext").innerHTML = "" ;

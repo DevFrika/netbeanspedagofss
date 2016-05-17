@@ -6,7 +6,9 @@
 						
 					  </div>
 					  <div class="modal-body">
-						<p> {{ fil.filiere }}  </p>
+						<p> {{ fil.filiere }} : {{ fil.description }}    </p>
+						<p> {{ fil.classes.count }}  classes </p>
+						<p> {{ fil.groupes.count }} groupes</p>
 					  </div>
 					  <div class="modal-footer">
 						<a class="btn btn-default" data-dismiss="modal">Close</a>

@@ -15,8 +15,8 @@ class __TwigTemplate_549ff92efc21bc087fdbd5392353eac068f2a1be3f6950e6497d64d032f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_56569e0c00e1778e0bc14a95892d4ab3f47fc147b9b0cb4aba66d1db0e27346a = $this->env->getExtension("native_profiler");
-        $__internal_56569e0c00e1778e0bc14a95892d4ab3f47fc147b9b0cb4aba66d1db0e27346a->enter($__internal_56569e0c00e1778e0bc14a95892d4ab3f47fc147b9b0cb4aba66d1db0e27346a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:prof/classe:classelayout.html.twig"));
+        $__internal_affa243e1dce5ef8962b97984781606ec8fa563e2b29b40d708ca4c0cee4de81 = $this->env->getExtension("native_profiler");
+        $__internal_affa243e1dce5ef8962b97984781606ec8fa563e2b29b40d708ca4c0cee4de81->enter($__internal_affa243e1dce5ef8962b97984781606ec8fa563e2b29b40d708ca4c0cee4de81_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:prof/classe:classelayout.html.twig"));
 
         // line 1
         echo "<div class=\"section w3-clear\" style=\"margin-top:-2%;margin-left:1%;clear:both;\">
@@ -265,7 +265,7 @@ class __TwigTemplate_549ff92efc21bc087fdbd5392353eac068f2a1be3f6950e6497d64d032f
 
 \t";
         
-        $__internal_56569e0c00e1778e0bc14a95892d4ab3f47fc147b9b0cb4aba66d1db0e27346a->leave($__internal_56569e0c00e1778e0bc14a95892d4ab3f47fc147b9b0cb4aba66d1db0e27346a_prof);
+        $__internal_affa243e1dce5ef8962b97984781606ec8fa563e2b29b40d708ca4c0cee4de81->leave($__internal_affa243e1dce5ef8962b97984781606ec8fa563e2b29b40d708ca4c0cee4de81_prof);
 
     }
 

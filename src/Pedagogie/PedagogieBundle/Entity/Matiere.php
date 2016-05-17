@@ -28,6 +28,18 @@ class Matiere
      * @ORM\Column(name="Matiere", type="string", length=255, unique=true)
      */
     private $matiere;
+	
+	/**
+     * @var string
+     *
+     * @ORM\Column(name="CodeMatiere", type="string", length=255, unique=true)
+     */
+    private $codematiere;
+	
+	/**
+    * @ORM\ManyToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Unite", inversedBy="matieres", cascade={"persist"})
+    */
+    private $unite;
 
 	
 	/**
@@ -73,6 +85,12 @@ class Matiere
 	* 
     */
     private $devoirs;
+	
+	/**
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Voeux",mappedBy="matiere", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $voeux ;
 	
 	/**
     * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Nature", inversedBy="matieres", cascade={"persist"})
@@ -137,7 +155,7 @@ class Matiere
     public function setDiscipline(\Pedagogie\PedagogieBundle\Entity\Discipline $discipline = null)
     {
         $this->discipline = $discipline;
-
+		$discipline->addMatiere($this);
         return $this;
     }
 
@@ -194,6 +212,11 @@ class Matiere
     {
         $this->filieres[] = $filieres;
 		$filieres->addMatiere($this);
+		$allclasses = $filieres->getClasses();
+		foreach( $allclasses as $cls )
+		{				
+			$this->addClass($cls);				
+		}
         return $this;
     }
 
@@ -260,6 +283,11 @@ class Matiere
     {
         $this->classes[] = $classes;
 		$classes->addMatiere($this);
+		$allgroupes =  $classes->getGroupes() ;
+		foreach( $allgroupes as $grp )
+		{				
+			$this->addGroupe($grp);				
+		}
         return $this;
     }
 
@@ -413,5 +441,84 @@ class Matiere
     public function getDevoirs()
     {
         return $this->devoirs;
+    }
+
+    /**
+     * Set codematiere
+     *
+     * @param string $codematiere
+     * @return Matiere
+     */
+    public function setCodematiere($codematiere)
+    {
+        $this->codematiere = $codematiere;
+
+        return $this;
+    }
+
+    /**
+     * Get codematiere
+     *
+     * @return string 
+     */
+    public function getCodematiere()
+    {
+        return $this->codematiere;
+    }
+
+    /**
+     * Set unite
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Unite $unite
+     * @return Matiere
+     */
+    public function setUnite(\Pedagogie\PedagogieBundle\Entity\Unite $unite = null)
+    {
+        $this->unite = $unite;
+
+        return $this;
+    }
+
+    /**
+     * Get unite
+     *
+     * @return \Pedagogie\PedagogieBundle\Entity\Unite 
+     */
+    public function getUnite()
+    {
+        return $this->unite;
+    }
+
+    /**
+     * Add voeux
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Voeux $voeux
+     * @return Matiere
+     */
+    public function addVoeux(\Pedagogie\PedagogieBundle\Entity\Voeux $voeux)
+    {
+        $this->voeux[] = $voeux;
+
+        return $this;
+    }
+
+    /**
+     * Remove voeux
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Voeux $voeux
+     */
+    public function removeVoeux(\Pedagogie\PedagogieBundle\Entity\Voeux $voeux)
+    {
+        $this->voeux->removeElement($voeux);
+    }
+
+    /**
+     * Get voeux
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVoeux()
+    {
+        return $this->voeux;
     }
 }

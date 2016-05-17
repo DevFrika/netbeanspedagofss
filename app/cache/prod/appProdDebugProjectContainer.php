@@ -109,6 +109,7 @@ class appProdDebugProjectContainer extends Container
             'fragment.renderer.hinclude' => 'getFragment_Renderer_HincludeService',
             'fragment.renderer.inline' => 'getFragment_Renderer_InlineService',
             'fragment.renderer.ssi' => 'getFragment_Renderer_SsiService',
+            'html2pdf_factory' => 'getHtml2pdfFactoryService',
             'http_kernel' => 'getHttpKernelService',
             'kernel' => 'getKernelService',
             'kernel.class_cache.cache_warmer' => 'getKernel_ClassCache_CacheWarmerService',
@@ -126,6 +127,7 @@ class appProdDebugProjectContainer extends Container
             'monolog.logger.templating' => 'getMonolog_Logger_TemplatingService',
             'monolog.logger.translation' => 'getMonolog_Logger_TranslationService',
             'pedagogie.filierehandle' => 'getPedagogie_FilierehandleService',
+            'pedagogie.printhandle' => 'getPedagogie_PrinthandleService',
             'property_accessor' => 'getPropertyAccessorService',
             'request' => 'getRequestService',
             'request_stack' => 'getRequestStackService',
@@ -455,7 +457,7 @@ class appProdDebugProjectContainer extends Container
         $b = new \Doctrine\DBAL\Configuration();
         $b->setSQLLogger($a);
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'pdo_mysql', 'host' => '127.0.0.1', 'port' => 3308, 'dbname' => 'netbeanspfefss', 'user' => 'root', 'password' => 'NabouNanc1', 'charset' => 'UTF8', 'driverOptions' => array(), 'defaultTableOptions' => array()), $b, new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this), array());
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'pdo_mysql', 'host' => '127.0.0.1', 'port' => 3306, 'dbname' => 'netbeanspfefss', 'user' => 'root', 'password' => 'mysql', 'charset' => 'UTF8', 'driverOptions' => array(), 'defaultTableOptions' => array()), $b, new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this), array());
     }
 
     /**
@@ -1288,6 +1290,19 @@ class appProdDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'html2pdf_factory' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Ensepar\Html2pdfBundle\Factory\Html2pdfFactory A Ensepar\Html2pdfBundle\Factory\Html2pdfFactory instance.
+     */
+    protected function getHtml2pdfFactoryService()
+    {
+        return $this->services['html2pdf_factory'] = new \Ensepar\Html2pdfBundle\Factory\Html2pdfFactory('P', 'A4', 'en', true, 'UTF-8', array(0 => 10, 1 => 15, 2 => 10, 3 => 15));
+    }
+
+    /**
      * Gets the 'http_kernel' service.
      *
      * This service is shared.
@@ -1555,6 +1570,19 @@ class appProdDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'pedagogie.printhandle' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Pedagogie\PedagogieBundle\Services\PrintHandle A Pedagogie\PedagogieBundle\Services\PrintHandle instance.
+     */
+    protected function getPedagogie_PrinthandleService()
+    {
+        return $this->services['pedagogie.printhandle'] = new \Pedagogie\PedagogieBundle\Services\PrintHandle();
+    }
+
+    /**
      * Gets the 'property_accessor' service.
      *
      * This service is shared.
@@ -1795,7 +1823,7 @@ class appProdDebugProjectContainer extends Container
 
         $e = new \Symfony\Component\Security\Http\AccessMap();
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5727b9f37026f9.81977094', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '57389fd851df55.33715610', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
     }
 
     /**
@@ -2998,7 +3026,7 @@ class appProdDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5727b9f37026f9.81977094')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('57389fd851df55.33715610')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -3195,14 +3223,15 @@ class appProdDebugProjectContainer extends Container
                 'PedagoFssUserBundle' => 'PedagoFss\\UserBundle\\PedagoFssUserBundle',
                 'PedagogiePedagogieBundle' => 'Pedagogie\\PedagogieBundle\\PedagogiePedagogieBundle',
                 'FssWebsiteDepartementBundle' => 'Fss\\Website\\DepartementBundle\\FssWebsiteDepartementBundle',
+                'EnseparHtml2pdfBundle' => 'Ensepar\\Html2pdfBundle\\EnseparHtml2pdfBundle',
             ),
             'kernel.charset' => 'UTF-8',
             'kernel.container_class' => 'appProdDebugProjectContainer',
             'database_host' => '127.0.0.1',
-            'database_port' => 3308,
+            'database_port' => 3306,
             'database_name' => 'netbeanspfefss',
             'database_user' => 'root',
-            'database_password' => 'NabouNanc1',
+            'database_password' => 'mysql',
             'mailer_transport' => 'smtp',
             'mailer_host' => '127.0.0.1',
             'mailer_user' => 'diopisemou@gmail.com',
@@ -3664,6 +3693,17 @@ class appProdDebugProjectContainer extends Container
             'sensio_framework_extra.converter.doctrine.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DoctrineParamConverter',
             'sensio_framework_extra.converter.datetime.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DateTimeParamConverter',
             'sensio_framework_extra.view.listener.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\TemplateListener',
+            'html2pdf.orientation' => 'P',
+            'html2pdf.format' => 'A4',
+            'html2pdf.lang' => 'en',
+            'html2pdf.unicode' => true,
+            'html2pdf.encoding' => 'UTF-8',
+            'html2pdf.margin' => array(
+                0 => 10,
+                1 => 15,
+                2 => 10,
+                3 => 15,
+            ),
             'console.command.ids' => array(
 
             ),

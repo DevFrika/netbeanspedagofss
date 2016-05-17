@@ -3,7 +3,7 @@
 namespace Pedagogie\PedagogieBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-
+use Pedagogie\PedagogieBundle\Entity\Salle;
 
 class SalleController extends Controller
 {
@@ -109,7 +109,6 @@ class SalleController extends Controller
 		$tag = $request->request->get('tag');
 		
 		
-			include('includes/files/config.php');
 			/**
 			 * File to handle all API requests
 			 * Accepts GET and POST
@@ -128,9 +127,9 @@ class SalleController extends Controller
 						// validate the variables ======================================================
 					// if any of these variables don't exist, add an error to our $errors array
 
-					if (empty($request->request->get('nomfil')))
+					if (empty($request->request->get('nomsalle')))
 					{
-						$errors['nomfil'] = 'Le nom de la filiere est requis ';
+						$errors['nomsalle'] = " L'id de la salle est requise ";
 
 					}
 
@@ -148,19 +147,16 @@ class SalleController extends Controller
 					else
 					{
 						
-						$nomfil = htmlspecialchars($request->request->get('nomfil'));
+						$nomsalle = htmlspecialchars($request->request->get('nomsalle'));
 						$doctrine = $this->getDoctrine();
 						$em = $doctrine->getManager();
-						$repository_filiere = $em->getRepository('PedagogiePedagogieBundle:Filiere');
-        
-        
-						$filiere = $repository_filiere->findOneByFiliere($nomfil);
+						$salles = $em->getRepository('PedagogiePedagogieBundle:Filiere')->findOneById($nomsalle);
 						
 						// Fonction Remove de EntityManager
-						$em->remove($filiere); // Supprime l'entité de la base de données
+						$em->remove($salles); // Supprime l'entité de la base de données
 						$em->flush(); // Exécute un DELETE sur $article
                                                 
-                                                $data['success'] = true;
+                        $data['success'] = true;
 						$data['message'] = ' Suppression Reussie !';
 						$data["errors"] = false;
 						$data['is_successful_login'] = true;
@@ -185,8 +181,6 @@ class SalleController extends Controller
 		// On récupère notre paramètre tag
 		$tag = $request->request->get('tag');
 		
-		
-			include('includes/files/config.php');
 			/**
 			 * File to handle all API requests
 			 * Accepts GET and POST
@@ -257,15 +251,13 @@ class SalleController extends Controller
     }
     
     
-    public function addclasseAction()
+    public function addsalleAction()
     {
         // On récupère la requête
 		$request = $this->getRequest();
 		// On récupère notre paramètre tag
 		$tag = $request->request->get('tag');
 		
-		
-			include('includes/files/config.php');
 			/**
 			 * File to handle all API requests
 			 * Accepts GET and POST
@@ -287,9 +279,19 @@ class SalleController extends Controller
 						// validate the variables ======================================================
 					// if any of these variables don't exist, add an error to our $errors array
 
-					if (empty($request->request->get('nomfil')))
+					if (empty($request->request->get('nomsalle')))
 					{
-						$errors['nomfil'] = 'Le nom de la filiere est requis ';
+						$errors['nomsalle'] = 'Le nom de la salle est requis ';
+
+					}
+					if (empty($request->request->get('codelieux')))
+					{
+						$errors['nomlieux'] = 'Le nom du lieux est requis ';
+
+					}
+					if (empty($request->request->get('capsalle')))
+					{
+						$errors['capsalle'] = 'La capacité de la salle est requise ';
 
 					}
 
@@ -305,18 +307,22 @@ class SalleController extends Controller
 					else
 					{
 						
-						$nomfil = htmlspecialchars($request->request->get('nomfil'));
-                        $nomdep = htmlspecialchars($request->request->get('depfil'));
+						$nomsalle = htmlspecialchars($request->request->get('nomsalle'));
+                        $nomlieux = htmlspecialchars($request->request->get('codelieux'));
+						$capsalle = htmlspecialchars($request->request->get('capsalle'));
 						$doctrine = $this->getDoctrine();
 						$em = $doctrine->getManager();
 						
-						$departement = $em->getRepository('PedagogiePedagogieBundle:Departement')->findOneByDepartement($nomdep);
-						$allfil = $em->getRepository('PedagogiePedagogieBundle:Filiere')->findAll();
-						$numfil = sizeof($allfil)+1;
-						$filiere = new Filiere();
-						$filiere->setFiliere(htmlspecialchars($request->request->get('nomfil')));
-						$filiere->setDepartement($departement);
-						$em->persist($filiere); // Modifie l'entité de la base de données
+						$lieux = $em->getRepository('PedagogiePedagogieBundle:Lieux')->findOneById($nomlieux);
+						
+							
+							// On crée les Salles
+						$salles = new Salle();
+						$salles->setSalle($nomsalle);
+						$salles->setLieux($lieux);
+						$salles->setCapacite($capsalle);
+						// On la persiste
+						$em->persist($$salles); // Modifie l'entité de la base de données
 						$em->flush(); // Exécute un UPDATE sur $filiere
                                                 
                                                 $data['success'] = true;
@@ -332,7 +338,7 @@ class SalleController extends Controller
 
     }
     
-    public function ClassesHandleAction()
+    public function SalleHandleAction()
     {
          // On récupère la requête
 		$request = $this->getRequest();

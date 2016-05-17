@@ -15,8 +15,8 @@ class __TwigTemplate_b6bde9f42db16884e0dcc2d0f9709025a44daafb13949bd8deeffeadf26
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0546b3b87c5b4410b6725e3fd57adf552fd0bdbe6d8691a09b311bf6b5193c31 = $this->env->getExtension("native_profiler");
-        $__internal_0546b3b87c5b4410b6725e3fd57adf552fd0bdbe6d8691a09b311bf6b5193c31->enter($__internal_0546b3b87c5b4410b6725e3fd57adf552fd0bdbe6d8691a09b311bf6b5193c31_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TestBundle:MyApp:index.html.twig"));
+        $__internal_5beb7df88f4aca11b314e025b826b8746376052858d42f1f316f44d7a5649409 = $this->env->getExtension("native_profiler");
+        $__internal_5beb7df88f4aca11b314e025b826b8746376052858d42f1f316f44d7a5649409->enter($__internal_5beb7df88f4aca11b314e025b826b8746376052858d42f1f316f44d7a5649409_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TestBundle:MyApp:index.html.twig"));
 
         // line 1
         echo "
@@ -26,7 +26,7 @@ class __TwigTemplate_b6bde9f42db16884e0dcc2d0f9709025a44daafb13949bd8deeffeadf26
 \t</body>
 </html>";
         
-        $__internal_0546b3b87c5b4410b6725e3fd57adf552fd0bdbe6d8691a09b311bf6b5193c31->leave($__internal_0546b3b87c5b4410b6725e3fd57adf552fd0bdbe6d8691a09b311bf6b5193c31_prof);
+        $__internal_5beb7df88f4aca11b314e025b826b8746376052858d42f1f316f44d7a5649409->leave($__internal_5beb7df88f4aca11b314e025b826b8746376052858d42f1f316f44d7a5649409_prof);
 
     }
 

@@ -21,17 +21,17 @@
 					
 					<!-- SHOW ERROR/SUCCESS MESSAGES -->
 				
-                <div class="emp-form-group"> 
+                <div class="form-group emp-form-group"> 
 					<span class="messages-block"></span>
 				</div>
                
                 <!-- FORM -->
-                <form name="form{{ emp.id }}"  method="POST" onsubmit="updateEmploi(event,'form{{ emp.id }}')" >
+                <form name="updempform{{ emp.id }}" class="form-horizontal" method="POST" onsubmit="updateEmploi(event,'updempform{{ emp.id }}')" >
 				
                   <!-- Departements -->
-                  <div class="emp-form-group">
+                  <div class="form-group emp-form-group">
                     <label> Départements </label>
-                    <select id="depselect" onchange="empLoadFiliere(this.value,'filselect')">
+                    <select id="depselect" onchange="empLoadFiliere(this.value,'filselect')" class="form-control">
 						{%for dep in alldepartement %}
 						<option value="{{ dep.id }}">{{ dep.departement}}</option>
 						{% endfor %}
@@ -40,36 +40,36 @@
                   </div>
 				  
 				  <!-- Filieres -->
-                  <div class="emp-form-group">
+                  <div class="form-group emp-form-group">
                     <label> Filieres </label>
-                    <select id="filselect" onchange="empLoadClasse(this.value,'clsselect')">
+                    <select id="filselect" onchange="empLoadClasse(this.value,'clsselect')" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Classes -->
-                  <div class="emp-form-group">
+                  <div class="form-group emp-form-group">
                     <label> Classes </label>
-                    <select id="clsselect" onchange="empLoadGroupe(this.value,'grpselect')">
+                    <select id="clsselect" onchange="empLoadGroupe(this.value,'grpselect')" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Groupes -->
-                  <div class="emp-form-group">
+                  <div class="form-group emp-form-group">
                     <label> Groupes </label>
-                    <select id="grpselect" onchange="empLoadDiscipline(this.value,'disselect')">
+                    <select id="grpselect" onchange="empLoadDiscipline(this.value,'disselect')" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Disciplines -->
-                  <div class="emp-form-group">
+                  <div class="form-group emp-form-group">
                     <label> Disciplines </label>
-                    <select id="disselect" onchange="empLoadMatiere(this.value,'matselect')">
+                    <select id="disselect" onchange="empLoadMatiere(this.value,'matselect')" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
@@ -77,36 +77,36 @@
 				  
 				  
 				  <!-- Matieres -->
-                  <div class="emp-form-group">
+                  <div class="form-group emp-form-group">
                     <label> Matieres </label>
-                    <select id="matselect" onchange="empLoadEnseignant(this.value,'ensselect')">
+                    <select id="matselect" onchange="empLoadEnseignant(this.value,'ensselect')" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Enseignant -->
-				  <div class="emp-form-group">
+				  <div class="form-group emp-form-group">
                     <label> Enseignants </label>
-                    <select id="ensselect" >
+                    <select id="ensselect" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Salles -->
-				  <div class="emp-form-group">
+				  <div class="form-group emp-form-group">
                     <label> Salles </label>
-                    <select id="salselect" >
+                    <select id="salselect" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Heure Debut -->
-                  <div class="emp-form-group">
+                  <div class="form-group emp-form-group">
                     <label> Heure Debut </label>
-                    <select id="hdebselect">
+                    <select id="hdebselect" class="form-control">
 						<option value="08">08H</option>
 						<option value="09">09H</option>
 						<option value="10">10H</option>
@@ -119,7 +119,7 @@
 						<option value="17">17H</option>
 						<option value="18">18H</option>
 					</select>
-					<select id="mindebselect">
+					<select id="mindebselect" class="form-control">
 						<option value="00">00M</option>
 						<option value="05">05M</option>
 						<option value="10">10M</option>
@@ -137,9 +137,9 @@
                   </div>
 				  
 				  <!-- Heure Fin -->
-                  <div class="emp-form-group">
+                  <div class="form-group emp-form-group">
                     <label> Heure Fin </label>
-                    <select id="hfinselect">
+                    <select id="hfinselect" class="form-control">
 						<option value="08">08H</option>
 						<option value="09">09H</option>
 						<option value="10">10H</option>
@@ -152,7 +152,7 @@
 						<option value="17">17H</option>
 						<option value="18">18H</option>
 					</select>
-					<select id="minfinselect">
+					<select id="minfinselect" class="form-control">
 						<option value="00">00M</option>
 						<option value="05">05M</option>
 						<option value="10">10M</option>

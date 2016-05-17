@@ -5,6 +5,13 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
+	
+    public function __construct($environment, $debug)
+    {
+        date_default_timezone_set( 'UTC' );
+        parent::__construct($environment, $debug);
+    }
+	
     public function registerBundles()
     {
         $bundles = array(
@@ -20,6 +27,8 @@ class AppKernel extends Kernel
             new PedagoFss\UserBundle\PedagoFssUserBundle(),
             new Pedagogie\PedagogieBundle\PedagogiePedagogieBundle(),
             new Fss\Website\DepartementBundle\FssWebsiteDepartementBundle(),
+			new Ensepar\Html2pdfBundle\EnseparHtml2pdfBundle(),
+			
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

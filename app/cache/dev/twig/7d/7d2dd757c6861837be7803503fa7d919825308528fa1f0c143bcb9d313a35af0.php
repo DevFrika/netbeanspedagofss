@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/filiere:filierelayout.html.twig */
+/* PedagogiePedagogieBundle::admin/filiere/filierelayout.html.twig */
 class __TwigTemplate_801d5ad558dfb5fa4a3efc8d01569cc2ae3bea9430b72eaeaed6e6db9535747a extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_801d5ad558dfb5fa4a3efc8d01569cc2ae3bea9430b72eaeaed6e6db953
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_768af607239651bc7f0ce614ff6b2c231202107f2da040d6c7586780ceebde02 = $this->env->getExtension("native_profiler");
-        $__internal_768af607239651bc7f0ce614ff6b2c231202107f2da040d6c7586780ceebde02->enter($__internal_768af607239651bc7f0ce614ff6b2c231202107f2da040d6c7586780ceebde02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/filiere:filierelayout.html.twig"));
+        $__internal_620f877cda04b23c25090a2972ca40501dbb90c30bb7f186d37132b1e77c6597 = $this->env->getExtension("native_profiler");
+        $__internal_620f877cda04b23c25090a2972ca40501dbb90c30bb7f186d37132b1e77c6597->enter($__internal_620f877cda04b23c25090a2972ca40501dbb90c30bb7f186d37132b1e77c6597_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/filiere/filierelayout.html.twig"));
 
         // line 1
         echo "<div class=\"section w3-clear \" style=\"margin-top:-25%;clear:both;\">
@@ -87,10 +87,10 @@ class __TwigTemplate_801d5ad558dfb5fa4a3efc8d01569cc2ae3bea9430b72eaeaed6e6db953
                 // line 59
                 echo "\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t<div id=\"fssfil";
+\t\t\t\t\t\t\t\t\t\t\t<div class=\"fssfil";
                 // line 61
                 echo twig_escape_filter($this->env, $this->getAttribute($context["fil"], "id", array()), "html", null, true);
-                echo "\" class=\"col-md-6\">
+                echo "col-md-6\">
 \t\t\t\t\t\t\t\t\t\t\t 
 \t\t\t\t\t\t\t\t\t\t\t  <div class=\"col-md-10\">
 \t\t\t\t\t\t\t\t\t\t\t\t<h3>";
@@ -169,10 +169,10 @@ class __TwigTemplate_801d5ad558dfb5fa4a3efc8d01569cc2ae3bea9430b72eaeaed6e6db953
                 foreach ($context['_seq'] as $context["_key"] => $context["fil"]) {
                     // line 102
                     echo "\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t<<div id=\"fssfil";
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fssfil";
                     // line 103
                     echo twig_escape_filter($this->env, $this->getAttribute($context["fil"], "id", array()), "html", null, true);
-                    echo "\" class=\"col-md-6\">
+                    echo " col-md-6\">
 \t\t\t\t\t\t\t\t\t\t\t 
 \t\t\t\t\t\t\t\t\t\t\t  <div class=\"col-md-10\">
 \t\t\t\t\t\t\t\t\t\t\t\t<h3>";
@@ -276,13 +276,13 @@ class __TwigTemplate_801d5ad558dfb5fa4a3efc8d01569cc2ae3bea9430b72eaeaed6e6db953
 
 \t";
         
-        $__internal_768af607239651bc7f0ce614ff6b2c231202107f2da040d6c7586780ceebde02->leave($__internal_768af607239651bc7f0ce614ff6b2c231202107f2da040d6c7586780ceebde02_prof);
+        $__internal_620f877cda04b23c25090a2972ca40501dbb90c30bb7f186d37132b1e77c6597->leave($__internal_620f877cda04b23c25090a2972ca40501dbb90c30bb7f186d37132b1e77c6597_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/filiere:filierelayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/filiere/filierelayout.html.twig";
     }
 
     public function isTraitable()
@@ -355,7 +355,7 @@ class __TwigTemplate_801d5ad558dfb5fa4a3efc8d01569cc2ae3bea9430b72eaeaed6e6db953
 /* 										{% for fil in allfiliere  %}*/
 /* 							*/
 /* 								*/
-/* 											<div id="fssfil{{ fil.id }}" class="col-md-6">*/
+/* 											<div class="fssfil{{ fil.id }}col-md-6">*/
 /* 											 */
 /* 											  <div class="col-md-10">*/
 /* 												<h3>{{ fil.filiere }}</h3>*/
@@ -397,7 +397,7 @@ class __TwigTemplate_801d5ad558dfb5fa4a3efc8d01569cc2ae3bea9430b72eaeaed6e6db953
 /* 													<h3> Departement de {{ dep.departement }} </h3>*/
 /* 											{% for fil in dep.filieres  %}*/
 /* 								*/
-/* 												<<div id="fssfil{{ fil.id }}" class="col-md-6">*/
+/* 												<div class="fssfil{{ fil.id }} col-md-6">*/
 /* 											 */
 /* 											  <div class="col-md-10">*/
 /* 												<h3>{{ fil.filiere }}</h3>*/

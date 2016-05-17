@@ -1,9 +1,12 @@
-<div id="updatedev{{ dev.devoir }}" class="w3-container tabs w3-animate-zoom">
+<div id="updatedev{{ dev.id }}" class="w3-container tabs w3-animate-zoom">
 		<header class="w3-container" style="padding-top:22px">
 			<div class="w3-left">
 				<a href="#" onclick="closeMenu(event, 'devoirlayout')"  class="w3-btn btn btn-info tablink"><i class="glyphicon glyphicon-menu-left"></i> Retour </a>
 			</div>
-				<h3 class="text-center"><b><i class="material-icons">class</i> Devoir - {{ dev.devoir }} </b></h3>	
+				<h3 class="text-center"><b><i class="material-icons">class</i> devoir - {{ dev.id }} </b></h3>
+				{% if session_id is defined and session_id != null and typeuser == "admin" %}
+			
+				{% endif %}
 		</header>
 		
 
@@ -18,55 +21,55 @@
 					
 					<!-- SHOW ERROR/SUCCESS MESSAGES -->
 				
-                <div class="dev-form-group"> 
+                <div class="form-group dev-form-group"> 
 					<span class="messages-block"></span>
 				</div>
                
                 <!-- FORM -->
-                <form name="form{{ dev.devoir }}"  method="POST" onsubmit="updateDevoir(event,'form{{ dev.devoir }}')" >
+                <form name="upddevform{{ dev.id }}" class="form-horizontal" method="POST" onsubmit="updateDevoir(event,'upddevform{{ dev.id }}')" >
 				
                   <!-- Departements -->
-                  <div class="dev-form-group">
+                  <div class="form-group dev-form-group">
                     <label> Départements </label>
-                    <select id="depselect" onchange="loadFiliere(this.value,'filselect')">
+                    <select id="depselect" onchange="devLoadFiliere(this.value,'filselect')" class="form-control">
 						{%for dep in alldepartement %}
-						<option value="{{ dep.departement }}">{{ dep.departement}}</option>
+						<option value="{{ dep.id }}">{{ dep.departement}}</option>
 						{% endfor %}
 					</select>
                     <span class="help-block"></span>
                   </div>
 				  
 				  <!-- Filieres -->
-                  <div class="dev-form-group">
+                  <div class="form-group dev-form-group">
                     <label> Filieres </label>
-                    <select id="filselect" onchange="loadClasse(this.value,'clsselect')">
+                    <select id="filselect" onchange="devLoadClasse(this.value,'clsselect')" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Classes -->
-                  <div class="dev-form-group">
+                  <div class="form-group dev-form-group">
                     <label> Classes </label>
-                    <select id="clsselect" onchange="loadGroupe(this.value,'grpselect')">
+                    <select id="clsselect" onchange="devLoadGroupe(this.value,'grpselect')" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Groupes -->
-                  <div class="dev-form-group">
+                  <div class="form-group dev-form-group">
                     <label> Groupes </label>
-                    <select id="grpselect" onchange="loadDiscipline(this.value,'disselect')">
+                    <select id="grpselect" onchange="devLoadDiscipline(this.value,'disselect')" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Disciplines -->
-                  <div class="dev-form-group">
+                  <div class="form-group dev-form-group">
                     <label> Disciplines </label>
-                    <select id="disselect" onchange="loadMatiere(this.value,'matselect')">
+                    <select id="disselect" onchange="devLoadMatiere(this.value,'matselect')" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
@@ -74,36 +77,36 @@
 				  
 				  
 				  <!-- Matieres -->
-                  <div class="dev-form-group">
+                  <div class="form-group dev-form-group">
                     <label> Matieres </label>
-                    <select id="matselect" onchange="loadEnseignant(this.value,'ensselect')">
+                    <select id="matselect" onchange="devLoadEnseignant(this.value,'ensselect')" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Enseignant -->
-				  <div class="dev-form-group">
+				  <div class="form-group dev-form-group">
                     <label> Enseignants </label>
-                    <select id="ensselect" >
+                    <select id="ensselect" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Salles -->
-				  <div class="dev-form-group">
+				  <div class="form-group dev-form-group">
                     <label> Salles </label>
-                    <select id="salselect" >
+                    <select id="salselect" class="form-control">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Heure Debut -->
-                  <div class="dev-form-group">
+                  <div class="form-group dev-form-group">
                     <label> Heure Debut </label>
-                    <select id="hdebselect">
+                    <select id="hdebselect" class="form-control">
 						<option value="08">08H</option>
 						<option value="09">09H</option>
 						<option value="10">10H</option>
@@ -116,7 +119,7 @@
 						<option value="17">17H</option>
 						<option value="18">18H</option>
 					</select>
-					<select id="mindebselect">
+					<select id="mindebselect" class="form-control">
 						<option value="00">00M</option>
 						<option value="05">05M</option>
 						<option value="10">10M</option>
@@ -134,9 +137,9 @@
                   </div>
 				  
 				  <!-- Heure Fin -->
-                  <div class="dev-form-group">
+                  <div class="form-group dev-form-group">
                     <label> Heure Fin </label>
-                    <select id="hfinselect">
+                    <select id="hfinselect" class="form-control">
 						<option value="08">08H</option>
 						<option value="09">09H</option>
 						<option value="10">10H</option>
@@ -149,7 +152,7 @@
 						<option value="17">17H</option>
 						<option value="18">18H</option>
 					</select>
-					<select id="minfinselect">
+					<select id="minfinselect" class="form-control">
 						<option value="00">00M</option>
 						<option value="05">05M</option>
 						<option value="10">10M</option>
@@ -173,7 +176,7 @@
                   </span>
 				  
 				  <input type="text" name="upddevtag" value="updatedev" hidden>
-				  <input type="text" name="olddevname" value="{{ dev.devoir }}" hidden>
+				  <input type="text" name="olddevname" value="{{ dev.id }}" hidden>
 				   <input type="text" name="deldevoir_url" value="{{ path('pedagogie_deletedevoir') }}" hidden>
 				  <input type="text" name="updatedevoir_url" value="{{ path('pedagogie_updatedevoir') }}" hidden>
                   <!-- SUBMIT BUTTON -->

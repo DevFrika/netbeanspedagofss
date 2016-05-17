@@ -5,7 +5,9 @@ Pedagogie - Admin
 
 {% block modals %}
 
+
 {% include "PedagogiePedagogieBundle::admin/emploi/addemploilayout.html.twig" %}
+{% include "PedagogiePedagogieBundle::admin/emploi/emploitemplatelayout.html.twig" %}
 
 {% if allemploi is not null %}
 
@@ -80,6 +82,7 @@ Pedagogie - Admin
 {% if allgroupe is not null %}
 
 	{% for grp in allgroupe  %}
+				
 				{% include "PedagogiePedagogieBundle::admin/groupe/modalgroupelayout.html.twig" %}
 				{% include "PedagogiePedagogieBundle::admin/groupe/deletegroupelayout.html.twig" %}
 	{% endfor %}
@@ -122,6 +125,27 @@ Pedagogie - Admin
 {% endif %}
 
 
+{% include "PedagogiePedagogieBundle::admin/lieux/addlieuxlayout.html.twig" %}
+
+{% if alllieux is not null %}
+
+	{% for lieux in alllieux  %}
+				{% include "PedagogiePedagogieBundle::admin/lieux/modallieuxlayout.html.twig" %}
+				{% include "PedagogiePedagogieBundle::admin/lieux/deletelieuxlayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
+
+{% include "PedagogiePedagogieBundle::admin/salle/addsallelayout.html.twig" %}
+
+{% if allsalle is not null %}
+
+	{% for salle in allsalle  %}
+				{% include "PedagogiePedagogieBundle::admin/salle/modalsallelayout.html.twig" %}
+				{% include "PedagogiePedagogieBundle::admin/salle/deletesallelayout.html.twig" %}
+	{% endfor %}
+	
+{% endif %}
   
   
   {% endblock %}
@@ -283,13 +307,19 @@ Pedagogie - Admin
 		{% include "PedagogiePedagogieBundle::admin/matiere/matierelayout.html.twig" %}
 		{% include "PedagogiePedagogieBundle::admin/voeux/voeuxlayout.html.twig" %}
 		{% include "PedagogiePedagogieBundle::admin/devoir/devoirlayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/lieux/lieuxlayout.html.twig" %}
+		{% include "PedagogiePedagogieBundle::admin/salle/sallelayout.html.twig" %}
 		{% include "PedagogiePedagogieBundle::admin/modif/modiflayout.html.twig" %}
 	
 	{% endblock %}
     
+	{% block footer %}
+	
+	{% endblock %}
 
 
 {% block javascripts %}
+
 	{{ parent() }}
 	
 	<script type="text/javascript" src="{{ asset('includes/js/pedagogie.js') }}"></script>
@@ -301,4 +331,8 @@ Pedagogie - Admin
 	<script type="text/javascript" src="{{ asset('includes/js/enseignanthandle.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('includes/js/disciplinehandle.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('includes/js/matierehandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/lieuxhandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/sallehandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/devoirhandle.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('includes/js/voeuxhandle.js') }}"></script>
 {% endblock %}

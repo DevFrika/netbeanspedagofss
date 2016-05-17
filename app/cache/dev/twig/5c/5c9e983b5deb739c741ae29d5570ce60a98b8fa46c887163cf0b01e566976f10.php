@@ -15,8 +15,8 @@ class __TwigTemplate_9c055ca3de061aa621db4d53ac713be5787c97f85e7b6672999952da6f4
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fdd67e6a74e260bf37afbf12d3f90744b28ac3cb99469a64cf4c2506b23cb628 = $this->env->getExtension("native_profiler");
-        $__internal_fdd67e6a74e260bf37afbf12d3f90744b28ac3cb99469a64cf4c2506b23cb628->enter($__internal_fdd67e6a74e260bf37afbf12d3f90744b28ac3cb99469a64cf4c2506b23cb628_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/discipline/adddisciplinelayout.html.twig"));
+        $__internal_d4518fd03725c3535583611a0409193168d18b9a6c691fc3edddb0069740654b = $this->env->getExtension("native_profiler");
+        $__internal_d4518fd03725c3535583611a0409193168d18b9a6c691fc3edddb0069740654b->enter($__internal_d4518fd03725c3535583611a0409193168d18b9a6c691fc3edddb0069740654b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/discipline/adddisciplinelayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"adddiscipline\">
@@ -62,7 +62,7 @@ class __TwigTemplate_9c055ca3de061aa621db4d53ac713be5787c97f85e7b6672999952da6f4
         foreach ($context['_seq'] as $context["_key"] => $context["dep"]) {
             // line 38
             echo "\t\t\t\t\t\t<option value=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["dep"], "departement", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["dep"], "id", array()), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["dep"], "departement", array()), "html", null, true);
             echo "</option>
@@ -115,7 +115,7 @@ class __TwigTemplate_9c055ca3de061aa621db4d53ac713be5787c97f85e7b6672999952da6f4
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_fdd67e6a74e260bf37afbf12d3f90744b28ac3cb99469a64cf4c2506b23cb628->leave($__internal_fdd67e6a74e260bf37afbf12d3f90744b28ac3cb99469a64cf4c2506b23cb628_prof);
+        $__internal_d4518fd03725c3535583611a0409193168d18b9a6c691fc3edddb0069740654b->leave($__internal_d4518fd03725c3535583611a0409193168d18b9a6c691fc3edddb0069740654b_prof);
 
     }
 
@@ -171,7 +171,7 @@ class __TwigTemplate_9c055ca3de061aa621db4d53ac713be5787c97f85e7b6672999952da6f4
 /*                     <label> Départements </label>*/
 /*                     <select id="depdisselect" class="form-control" onchange="disLoadFiliere(this.value,'fildisselect')" >*/
 /* 						{%for dep in alldepartement %}*/
-/* 						<option value="{{ dep.departement }}">{{ dep.departement}}</option>*/
+/* 						<option value="{{ dep.id }}">{{ dep.departement}}</option>*/
 /* 						{% endfor %}*/
 /* 					</select>*/
 /*                     <span class="help-block"></span>*/

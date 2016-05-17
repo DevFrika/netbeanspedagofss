@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/matiere:modalmatierelayout.html.twig */
+/* PedagogiePedagogieBundle::admin/matiere/modalmatierelayout.html.twig */
 class __TwigTemplate_a712b3dea04e8324316094ce19b2f1c1552382a611baf323c9a63b0e9ae66c49 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,12 +15,12 @@ class __TwigTemplate_a712b3dea04e8324316094ce19b2f1c1552382a611baf323c9a63b0e9ae
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_eacd386ae9faea8ec7e30c1b32bbe5440b3761bd1db7d7486ea0a880fc16e175 = $this->env->getExtension("native_profiler");
-        $__internal_eacd386ae9faea8ec7e30c1b32bbe5440b3761bd1db7d7486ea0a880fc16e175->enter($__internal_eacd386ae9faea8ec7e30c1b32bbe5440b3761bd1db7d7486ea0a880fc16e175_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/matiere:modalmatierelayout.html.twig"));
+        $__internal_3dec7dce5c3cf0ac465d1bf2f6d698cf45cdbe369b90efa43f352b0f789272c3 = $this->env->getExtension("native_profiler");
+        $__internal_3dec7dce5c3cf0ac465d1bf2f6d698cf45cdbe369b90efa43f352b0f789272c3->enter($__internal_3dec7dce5c3cf0ac465d1bf2f6d698cf45cdbe369b90efa43f352b0f789272c3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/matiere/modalmatierelayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"mat";
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "matiere", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["mat"]) ? $context["mat"] : $this->getContext($context, "mat")), "id", array()), "html", null, true);
         echo "\">
 \t\t\t\t  <div class=\"modal-dialog\">
 \t\t\t\t\t<div class=\"modal-content\">
@@ -42,13 +42,13 @@ class __TwigTemplate_a712b3dea04e8324316094ce19b2f1c1552382a611baf323c9a63b0e9ae
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_eacd386ae9faea8ec7e30c1b32bbe5440b3761bd1db7d7486ea0a880fc16e175->leave($__internal_eacd386ae9faea8ec7e30c1b32bbe5440b3761bd1db7d7486ea0a880fc16e175_prof);
+        $__internal_3dec7dce5c3cf0ac465d1bf2f6d698cf45cdbe369b90efa43f352b0f789272c3->leave($__internal_3dec7dce5c3cf0ac465d1bf2f6d698cf45cdbe369b90efa43f352b0f789272c3_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/matiere:modalmatierelayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/matiere/modalmatierelayout.html.twig";
     }
 
     public function isTraitable()
@@ -61,7 +61,7 @@ class __TwigTemplate_a712b3dea04e8324316094ce19b2f1c1552382a611baf323c9a63b0e9ae
         return array (  34 => 9,  22 => 1,);
     }
 }
-/* <div class="fade modal text-center" id="mat{{ mat.matiere }}">*/
+/* <div class="fade modal text-center" id="mat{{ mat.id }}">*/
 /* 				  <div class="modal-dialog">*/
 /* 					<div class="modal-content">*/
 /* 					  <div class="modal-header">*/

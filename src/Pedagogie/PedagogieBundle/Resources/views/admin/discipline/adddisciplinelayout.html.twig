@@ -35,7 +35,7 @@
                     <label> Départements </label>
                     <select id="depdisselect" class="form-control" onchange="disLoadFiliere(this.value,'fildisselect')" >
 						{%for dep in alldepartement %}
-						<option value="{{ dep.departement }}">{{ dep.departement}}</option>
+						<option value="{{ dep.id }}">{{ dep.departement}}</option>
 						{% endfor %}
 					</select>
                     <span class="help-block"></span>

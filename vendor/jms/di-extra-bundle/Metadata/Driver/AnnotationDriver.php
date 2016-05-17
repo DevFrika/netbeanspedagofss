@@ -81,10 +81,14 @@ class AnnotationDriver implements DriverInterface
                 $metadata->parent = $annot->parent;
                 $metadata->public = $annot->public;
                 $metadata->scope = $annot->scope;
+                $metadata->shared = $annot->shared;
                 $metadata->abstract = $annot->abstract;
                 $metadata->decorates = $annot->decorates;
                 $metadata->decoration_inner_name = $annot->decoration_inner_name;
                 $metadata->deprecated = $annot->deprecated;
+                $metadata->environments = $annot->environments;
+                $metadata->autowire = $annot->autowire;
+                $metadata->autowiringTypes = $annot->autowiringTypes;
             } else if ($annot instanceof Tag) {
                 $metadata->tags[$annot->name][] = $annot->attributes;
             } else if ($annot instanceof Validator) {
@@ -119,7 +123,7 @@ class AnnotationDriver implements DriverInterface
                 // try to extract it from the class itself
                 if (null === $alias) {
                     $instance = unserialize(sprintf('O:%d:"%s":0:{}', strlen($className), $className));
-                    $alias = $instance->getName();
+                    $alias = method_exists($instance, 'getBlockPrefix') ? $instance->getBlockPrefix() : $instance->getName();
                 }
 
                 $metadata->tags['form.type'][] = array(

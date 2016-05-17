@@ -20,4 +20,13 @@ class EnseignantRepository extends EntityRepository
 			// Enfin, on retourne le résultat
 			return $qb->getQuery()->getResult();
 	}
+	
+	public function findExistDepartement($nomens,$departement)
+	{
+			$qb = $this->createQueryBuilder('ens');
+			$qb->where('ens.enseigant = :nomens')->setParameter('nomens', $nomens);
+			$qb ->join('ens.departement', 'dep' ,'WITH', 'dep.id = \''.$departement->getId().'\'' ); // Puis on filtre sur le nom des catégories à l'aide d'un IN
+			// Enfin, on retourne le résultat
+			return $qb->getQuery()->getOneOrNullResult();
+	}
 }

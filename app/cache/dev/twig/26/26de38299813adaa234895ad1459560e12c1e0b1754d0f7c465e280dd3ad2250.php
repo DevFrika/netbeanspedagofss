@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/enseignant:updateenseignantlayout.html.twig */
+/* PedagogiePedagogieBundle::admin/enseignant/updateenseignantlayout.html.twig */
 class __TwigTemplate_f938c8bdabd009bf660f62debab1b0e4cdde9953113c69aed4644b67561f4142 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_f938c8bdabd009bf660f62debab1b0e4cdde9953113c69aed4644b67561
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_04273491e9a429fcc4d59130eb7a4e1d73bb6a78aa456eb96d3cc85b9b4301d6 = $this->env->getExtension("native_profiler");
-        $__internal_04273491e9a429fcc4d59130eb7a4e1d73bb6a78aa456eb96d3cc85b9b4301d6->enter($__internal_04273491e9a429fcc4d59130eb7a4e1d73bb6a78aa456eb96d3cc85b9b4301d6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/enseignant:updateenseignantlayout.html.twig"));
+        $__internal_bd46a20043e3a4b7f2305388aeb9791a5d7ed6741007baf63cfb6bb806ab247b = $this->env->getExtension("native_profiler");
+        $__internal_bd46a20043e3a4b7f2305388aeb9791a5d7ed6741007baf63cfb6bb806ab247b->enter($__internal_bd46a20043e3a4b7f2305388aeb9791a5d7ed6741007baf63cfb6bb806ab247b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/enseignant/updateenseignantlayout.html.twig"));
 
         // line 1
         echo "<div id=\"updateens";
@@ -247,13 +247,13 @@ class __TwigTemplate_f938c8bdabd009bf660f62debab1b0e4cdde9953113c69aed4644b67561
 \t</div>
 ";
         
-        $__internal_04273491e9a429fcc4d59130eb7a4e1d73bb6a78aa456eb96d3cc85b9b4301d6->leave($__internal_04273491e9a429fcc4d59130eb7a4e1d73bb6a78aa456eb96d3cc85b9b4301d6_prof);
+        $__internal_bd46a20043e3a4b7f2305388aeb9791a5d7ed6741007baf63cfb6bb806ab247b->leave($__internal_bd46a20043e3a4b7f2305388aeb9791a5d7ed6741007baf63cfb6bb806ab247b_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/enseignant:updateenseignantlayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/enseignant/updateenseignantlayout.html.twig";
     }
 
     public function isTraitable()

@@ -15,8 +15,8 @@ class __TwigTemplate_22311d9bbad4de5ee80832ea46b169b24b567c2373d0366b2c571e77747
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_19cbdbe67b96d362589d9111369a02ddd391a98bfd17dd5387b1ad73bfe94668 = $this->env->getExtension("native_profiler");
-        $__internal_19cbdbe67b96d362589d9111369a02ddd391a98bfd17dd5387b1ad73bfe94668->enter($__internal_19cbdbe67b96d362589d9111369a02ddd391a98bfd17dd5387b1ad73bfe94668_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/filiere/filierelayout.html.twig"));
+        $__internal_1ca9c166316abf6d523f8578fde78b0ff42ce73be8e02799f3c81e82eb1b262f = $this->env->getExtension("native_profiler");
+        $__internal_1ca9c166316abf6d523f8578fde78b0ff42ce73be8e02799f3c81e82eb1b262f->enter($__internal_1ca9c166316abf6d523f8578fde78b0ff42ce73be8e02799f3c81e82eb1b262f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PedagogiePedagogie/admin/filiere/filierelayout.html.twig"));
 
         // line 1
         echo "<div class=\"section w3-clear \" style=\"margin-top:-25%;clear:both;\">
@@ -87,10 +87,10 @@ class __TwigTemplate_22311d9bbad4de5ee80832ea46b169b24b567c2373d0366b2c571e77747
                 // line 59
                 echo "\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t<div id=\"fssfil";
+\t\t\t\t\t\t\t\t\t\t\t<div class=\"fssfil";
                 // line 61
                 echo twig_escape_filter($this->env, $this->getAttribute($context["fil"], "id", array()), "html", null, true);
-                echo "\" class=\"col-md-6\">
+                echo "col-md-6\">
 \t\t\t\t\t\t\t\t\t\t\t 
 \t\t\t\t\t\t\t\t\t\t\t  <div class=\"col-md-10\">
 \t\t\t\t\t\t\t\t\t\t\t\t<h3>";
@@ -169,10 +169,10 @@ class __TwigTemplate_22311d9bbad4de5ee80832ea46b169b24b567c2373d0366b2c571e77747
                 foreach ($context['_seq'] as $context["_key"] => $context["fil"]) {
                     // line 102
                     echo "\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t<<div id=\"fssfil";
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"fssfil";
                     // line 103
                     echo twig_escape_filter($this->env, $this->getAttribute($context["fil"], "id", array()), "html", null, true);
-                    echo "\" class=\"col-md-6\">
+                    echo " col-md-6\">
 \t\t\t\t\t\t\t\t\t\t\t 
 \t\t\t\t\t\t\t\t\t\t\t  <div class=\"col-md-10\">
 \t\t\t\t\t\t\t\t\t\t\t\t<h3>";
@@ -276,7 +276,7 @@ class __TwigTemplate_22311d9bbad4de5ee80832ea46b169b24b567c2373d0366b2c571e77747
 
 \t";
         
-        $__internal_19cbdbe67b96d362589d9111369a02ddd391a98bfd17dd5387b1ad73bfe94668->leave($__internal_19cbdbe67b96d362589d9111369a02ddd391a98bfd17dd5387b1ad73bfe94668_prof);
+        $__internal_1ca9c166316abf6d523f8578fde78b0ff42ce73be8e02799f3c81e82eb1b262f->leave($__internal_1ca9c166316abf6d523f8578fde78b0ff42ce73be8e02799f3c81e82eb1b262f_prof);
 
     }
 
@@ -355,7 +355,7 @@ class __TwigTemplate_22311d9bbad4de5ee80832ea46b169b24b567c2373d0366b2c571e77747
 /* 										{% for fil in allfiliere  %}*/
 /* 							*/
 /* 								*/
-/* 											<div id="fssfil{{ fil.id }}" class="col-md-6">*/
+/* 											<div class="fssfil{{ fil.id }}col-md-6">*/
 /* 											 */
 /* 											  <div class="col-md-10">*/
 /* 												<h3>{{ fil.filiere }}</h3>*/
@@ -397,7 +397,7 @@ class __TwigTemplate_22311d9bbad4de5ee80832ea46b169b24b567c2373d0366b2c571e77747
 /* 													<h3> Departement de {{ dep.departement }} </h3>*/
 /* 											{% for fil in dep.filieres  %}*/
 /* 								*/
-/* 												<<div id="fssfil{{ fil.id }}" class="col-md-6">*/
+/* 												<div class="fssfil{{ fil.id }} col-md-6">*/
 /* 											 */
 /* 											  <div class="col-md-10">*/
 /* 												<h3>{{ fil.filiere }}</h3>*/

@@ -1,6 +1,8 @@
 services:
     pedagogie.filierehandle:
         class: Pedagogie\PedagogieBundle\Services\FiliereHandle
+    pedagogie.printhandle:
+        class: Pedagogie\PedagogieBundle\Services\PrintHandle
 #    pedagogie_pedagogie.example:
 #        class: Pedagogie\PedagogieBundle\Example
 #        arguments: ["@service_id", "plain_value", %parameter%]

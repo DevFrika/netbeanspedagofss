@@ -61,16 +61,16 @@
 											{% for mat in allmatiere  %}
 								
 									
-												<div id="fss{{ mat.matiere }}" class="col-md-6">
+												<div  class="fssmat{{ mat.id }} col-md-6">
 												  <div class="col-md-4">
 													<img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive">
 												  </div>
-												  <div class="col-md-15">
+												  <div class="col-md-8">
 													<h3>{{ mat.matiere }}</h3>
 												
-														<a class="btn btn-primary" data-toggle="modal" data-target="#mat{{ mat.matiere }}" > <i class="fa fa-eye"></i> Consulter </a>
-														<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updatemat{{ mat.matiere }}','modifmatiere','matierelayout')"><i class="fa fa-pencil"></i>Modifier</a>
-														<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delmat{{ mat.matiere }}" ><i class="fa fa-trash"></i>Supprimer</a>
+														<a class="btn btn-primary" data-toggle="modal" data-target="#mat{{ mat.id }}" > <i class="fa fa-eye"></i> Consulter </a>
+														<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updatemat{{ mat.id }}','modifmatiere','matierelayout')"><i class="fa fa-pencil"></i>Modifier</a>
+														<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delmat{{ mat.id }}" ><i class="fa fa-trash"></i>Supprimer</a>
 													
 												  </div>
 												</div>
@@ -101,16 +101,16 @@
 											{% for mat in allmatiere  %}
 								
 									
-												<div id="fss{{ mat.matiere }}" class="col-md-6">
+													<div  class="fssmat{{ mat.id }} col-md-6">
 												  <div class="col-md-4">
 													<img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive">
 												  </div>
-												  <div class="col-md-15">
+												  <div class="col-md-8">
 													<h3>{{ mat.matiere }}</h3>
 												
-														<a class="btn btn-primary" data-toggle="modal" data-target="#mat{{ mat.matiere }}" > <i class="fa fa-eye"></i> Consulter </a>
-														<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updatemat{{ mat.matiere }}','modifmatiere','matierelayout')"><i class="fa fa-pencil"></i>Modifier</a>
-														<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delmat{{ mat.matiere }}" ><i class="fa fa-trash"></i>Supprimer</a>
+														<a class="btn btn-primary" data-toggle="modal" data-target="#mat{{ mat.id }}" > <i class="fa fa-eye"></i> Consulter </a>
+														<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updatemat{{ mat.id }}','modifmatiere','matierelayout')"><i class="fa fa-pencil"></i>Modifier</a>
+														<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delmat{{ mat.id }}" ><i class="fa fa-trash"></i>Supprimer</a>
 													
 												  </div>
 												</div>

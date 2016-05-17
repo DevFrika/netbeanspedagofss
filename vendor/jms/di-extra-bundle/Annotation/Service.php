@@ -36,6 +36,9 @@ final class Service
     /** @var string */
     public $scope;
 
+    /** @var boolean */
+    public $shared;
+
     /** @var string */
     public $deprecated;
 
@@ -50,4 +53,10 @@ final class Service
 
     /** @var array<string> */
     public $environments = array();
+
+    /** @var boolean */
+    public $autowire;
+
+    /** @var array<string> */
+    public $autowiringTypes;
 }

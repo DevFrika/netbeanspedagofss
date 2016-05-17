@@ -29,6 +29,14 @@ class Filiere
     private $filiere;
 	
 	/**
+     * @var int
+     *
+     * @ORM\Column(name="nbEtudiant", type="string", length=255, nullable=true, options={"default":0})
+     */
+	private $nb_etudiant;
+	
+	
+	/**
      * @var string
      *
      * @ORM\Column(name="Description", type="string", length=255, unique=true)
@@ -68,16 +76,22 @@ class Filiere
     private $matieres ;
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Emploi", mappedBy="filieres", cascade={"persist"})
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Emploi", mappedBy="filieres", cascade={"persist"})
 	* @ORM\JoinColumn(nullable=false)
     */
     private $emplois;
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Devoir", mappedBy="filieres", cascade={"persist"})
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Devoir", mappedBy="filieres", cascade={"persist"})
 	* @ORM\JoinColumn(nullable=false)
     */
     private $devoirs;
+	
+	/**
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Voeux",mappedBy="filiere", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $voeux ;
     
     
   
@@ -135,7 +149,7 @@ class Filiere
     public function setDepartement(\Pedagogie\PedagogieBundle\Entity\Departement $departement)
     {
         $this->departement = $departement;
-
+		$departement->addFiliere($this);
         return $this;
     }
 
@@ -190,8 +204,7 @@ class Filiere
     public function addGroupe(\Pedagogie\PedagogieBundle\Entity\Groupe $groupes)
     {
         $this->groupes[] = $groupes;
-		$groupes->setDepartement($this->departement);
-		$groupes->setFiliere($this);
+		
 		return $this;
     }
 
@@ -224,8 +237,7 @@ class Filiere
     public function addClass(\Pedagogie\PedagogieBundle\Entity\Classe $classes)
     {
         $this->classes[] = $classes;
-		$classes->setDepartement($this->departement);
-		$classes->setFiliere($this);
+		
         return $this;
     }
 
@@ -368,5 +380,61 @@ class Filiere
     public function getDevoirs()
     {
         return $this->devoirs;
+    }
+
+    /**
+     * Set nb_etudiant
+     *
+     * @param string $nbEtudiant
+     * @return Filiere
+     */
+    public function setNbEtudiant($nbEtudiant)
+    {
+        $this->nb_etudiant = $nbEtudiant;
+
+        return $this;
+    }
+
+    /**
+     * Get nb_etudiant
+     *
+     * @return string 
+     */
+    public function getNbEtudiant()
+    {
+        return $this->nb_etudiant;
+    }
+
+    /**
+     * Add voeux
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Voeux $voeux
+     * @return Filiere
+     */
+    public function addVoeux(\Pedagogie\PedagogieBundle\Entity\Voeux $voeux)
+    {
+        $this->voeux[] = $voeux;
+
+        return $this;
+    }
+
+    /**
+     * Remove voeux
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Voeux $voeux
+     */
+    public function removeVoeux(\Pedagogie\PedagogieBundle\Entity\Voeux $voeux)
+    {
+        $this->voeux->removeElement($voeux);
+    }
+
+    /**
+     * Get voeux
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVoeux()
+    {
+        return $this->voeux;
     }
 }

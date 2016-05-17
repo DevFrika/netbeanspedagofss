@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/discipline:updatedisciplinelayout.html.twig */
+/* PedagogiePedagogieBundle::admin/discipline/updatedisciplinelayout.html.twig */
 class __TwigTemplate_a5f75028f6078bde3ea8b2b4c6f6b70ec55d7fe9c9cb6cfd6dba962fc63c4186 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_a5f75028f6078bde3ea8b2b4c6f6b70ec55d7fe9c9cb6cfd6dba962fc63
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_971cb93cd48e8d7a9b560924bd7552e58cc068224b79e578e9d18ef120b2cf42 = $this->env->getExtension("native_profiler");
-        $__internal_971cb93cd48e8d7a9b560924bd7552e58cc068224b79e578e9d18ef120b2cf42->enter($__internal_971cb93cd48e8d7a9b560924bd7552e58cc068224b79e578e9d18ef120b2cf42_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/discipline:updatedisciplinelayout.html.twig"));
+        $__internal_6582abd66974df51c28c8da824d021d00a287d2a0e600a669e3ffbad9b80dfb8 = $this->env->getExtension("native_profiler");
+        $__internal_6582abd66974df51c28c8da824d021d00a287d2a0e600a669e3ffbad9b80dfb8->enter($__internal_6582abd66974df51c28c8da824d021d00a287d2a0e600a669e3ffbad9b80dfb8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/discipline/updatedisciplinelayout.html.twig"));
 
         // line 1
         echo "<div id=\"updatedis";
@@ -54,6 +54,8 @@ class __TwigTemplate_a5f75028f6078bde3ea8b2b4c6f6b70ec55d7fe9c9cb6cfd6dba962fc63
         // line 27
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dis"]) ? $context["dis"] : $this->getContext($context, "dis")), "id", array()), "html", null, true);
         echo "\"  method=\"POST\" onsubmit=\"updateDiscipline(event,'formdis";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dis"]) ? $context["dis"] : $this->getContext($context, "dis")), "id", array()), "html", null, true);
+        echo "','";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dis"]) ? $context["dis"] : $this->getContext($context, "dis")), "id", array()), "html", null, true);
         echo "')\" >
                  
@@ -136,13 +138,13 @@ class __TwigTemplate_a5f75028f6078bde3ea8b2b4c6f6b70ec55d7fe9c9cb6cfd6dba962fc63
 \t</div>
 ";
         
-        $__internal_971cb93cd48e8d7a9b560924bd7552e58cc068224b79e578e9d18ef120b2cf42->leave($__internal_971cb93cd48e8d7a9b560924bd7552e58cc068224b79e578e9d18ef120b2cf42_prof);
+        $__internal_6582abd66974df51c28c8da824d021d00a287d2a0e600a669e3ffbad9b80dfb8->leave($__internal_6582abd66974df51c28c8da824d021d00a287d2a0e600a669e3ffbad9b80dfb8_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/discipline:updatedisciplinelayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/discipline/updatedisciplinelayout.html.twig";
     }
 
     public function isTraitable()
@@ -152,7 +154,7 @@ class __TwigTemplate_a5f75028f6078bde3ea8b2b4c6f6b70ec55d7fe9c9cb6cfd6dba962fc63
 
     public function getDebugInfo()
     {
-        return array (  125 => 66,  121 => 65,  117 => 64,  103 => 53,  93 => 45,  82 => 43,  78 => 42,  65 => 32,  55 => 27,  31 => 6,  22 => 1,);
+        return array (  127 => 66,  123 => 65,  119 => 64,  105 => 53,  95 => 45,  84 => 43,  80 => 42,  67 => 32,  55 => 27,  31 => 6,  22 => 1,);
     }
 }
 /* <div id="updatedis{{ dis.id }}" class="w3-container tabs w3-animate-zoom">*/
@@ -181,7 +183,7 @@ class __TwigTemplate_a5f75028f6078bde3ea8b2b4c6f6b70ec55d7fe9c9cb6cfd6dba962fc63
 /* 				</div>*/
 /*                */
 /*                 <!-- FORM -->*/
-/*                 <form name="formdis{{ dis.id }}"  method="POST" onsubmit="updateDiscipline(event,'formdis{{ dis.id }}')" >*/
+/*                 <form name="formdis{{ dis.id }}"  method="POST" onsubmit="updateDiscipline(event,'formdis{{ dis.id }}','{{ dis.id }}')" >*/
 /*                  */
 /* 				  <!-- Nom -->*/
 /*                   <div class="form-group dis-form-group">*/

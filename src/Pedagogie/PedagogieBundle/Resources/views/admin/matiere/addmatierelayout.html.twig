@@ -13,17 +13,13 @@
                   <h4>
                     <span ></span> </h4>
                 
-                <!-- SHOW ERROR/SUCCESS MESSAGES -->
-				
-                <div class="mat-form-group"> 
-					<span class="messages-block"></span>
-				</div>
+               
 				
                 <!-- FORM -->
-                <form class="addmatiereform"  method="POST">
+                <form id="addmatiereform" class="form-horizontal mat-form-group"  method="POST">
 				
                  <!-- Nom -->
-                  <div class="form-group dis-form-group">
+                  <div class="form-group mat-form-group">
                     <label> Nom </label>
                     <input type="text" name="nommatiere" class="form-control" placeholder="Nom de la matiere">
                     <span class="help-block"></span>
@@ -31,41 +27,56 @@
 				  
 				  
 				   <!-- Departements -->
-                  <div class="form-group dis-form-group">
+                  <div class="form-group mat-form-group">
                     <label> Départements </label>
-                    <select id="depmatselect" class="form-control" onchange="matLoadFiliere(this.value,'fildisselect')" >
+                    <select id="addmatdepselect" class="form-control" onchange="matLoadFiliere(this.value,'addmatfilselect')" >
 						{%for dep in alldepartement %}
-						<option value="{{ dep.departement }}">{{ dep.departement}}</option>
+						<option value="{{ dep.id }}">{{ dep.departement}}</option>
 						{% endfor %}
 					</select>
                     <span class="help-block"></span>
                   </div>
 				  
 				  <!-- Filieres -->
-                  <div class="form-group dis-form-group">
+                  <div class="form-group mat-form-group">
                     <label> Filieres </label>
-                    <select id="filmatselect" class="form-control" >
+                    <select id="addmatfilselect" class="form-control" onchange="matLoadDiscipline(this.value,'addmatdisselect')">
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
 				  <!-- Disciplines -->
-                  <div class="form-group dis-form-group">
+                  <div class="form-group mat-form-group">
                     <label> Disciplines </label>
-                    <select id="dismatselect" class="form-control" >
+                    <select id="addmatdisselect" class="form-control" >
 						
 					</select>
 					<span class="help-block"></span>
                   </div>
 				  
-                  <span class="ajax_wait" align="center">
-                    <!--don't delete this span class="ajax_wait"-->
-                  </span>
+				    <!-- Unité -->
+                  <div class="form-group mat-form-group">
+                    <label> Unité d'enseignement </label>
+                    <select id="addmatuntselect" class="form-control" >
+						<option value="1"> Unité d'Enseignement Optionnele </option>
+						<option value="2"> Unité d'Enseignement Fondamentale </option>
+						<option value="3"> Unité d'Enseignement Transversale </option>
+					</select>
+					<span class="help-block"></span>
+                  </div>
+				  
+				   <!-- SHOW ERROR/SUCCESS MESSAGES -->
+				
+                <div class="form-group mat-form-group"> 
+					<span class="messages-block"></span>
+				</div> 
+				  
+                 
 				  <input type="text" name="addmattag" value="addmat" hidden>
 				  <input type="text" name="addmatiere_url" value="{{ path('pedagogie_addmatiere') }}" hidden>
 				  <input type="text" name="getfilmat_url" value="{{ path('pedagogie_getdepfilieres') }}" hidden>
-				  <input type="text" name="getmatdis_url" value="{{ path('pedagogie_getfildisciplines') }}" hidden>
+				  <input type="text" name="getmatfildisurl" value="{{ path('pedagogie_getfildisciplines') }}" hidden>
                   <div class="modal-footer">
 						<a class="btn btn-default" data-dismiss="modal">Close</a>
 						<!-- SUBMIT BUTTON -->

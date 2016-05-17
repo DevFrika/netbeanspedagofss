@@ -6,8 +6,34 @@
 						
 					  </div>
 					  <div class="modal-body">
-						<p> {{ emp.id }}  </p>
-						{% include "PedagogiePedagogieBundle::admin/emploi/emploiclassetemplate.html.twig" %}
+						<table>
+						<thead>
+							<tr>
+								<th> Jours </th>
+								<th> Heure Debut </th>
+								<th> Heure Fin </th>
+								<th> Matiere </th>
+								<th> Salle </th>
+								<th> Professeur </th>
+								<th> Groupe </th>
+								<th> Nature </th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td> {{ emp.jours.jour }} </td>
+								<td> {{ emp.getHeureDebut|date('H:i') }} </td>
+								<td> {{ emp.getHeureFin|date('H:i') }} </td>
+								<td> {{ emp.matiere.matiere }} </td>
+								<td> {{ emp.salles.salle }} </td>
+								<td> {{ emp.enseignants.enseignant }} </td>
+								<td> {{ emp.groupes.groupe }} </td>
+								<td> {{ emp.natures.nature }} </td>
+								
+							</tr>
+						</tbody>
+						</table>
 					  </div>
 					  <div class="modal-footer">
 						<a class="btn btn-default" data-dismiss="modal">Close</a>

@@ -58,7 +58,7 @@ class FiliereController extends Controller
 							$i++;
 						}
 						
-						if(empty($filiere))
+						if(empty($filiere) || $filiere == null )
 						{
 							$data['success'] = false;
 							$data['message'] = ' Erreur de recuperation des filieres - Aucune filiere trouvée !';
@@ -161,7 +161,10 @@ class FiliereController extends Controller
 						$em->remove($filiere); // Supprime l'entité de la base de données
 						$em->flush(); // Exécute un DELETE sur $article
                                                 
-                                                $data['success'] = true;
+                        $savehandle = $this->get('pedagogie.filierehandle');
+						$savehandle->saveAction($this,$request->cookies->get('session_id'),'type:Suppression','Suppression de filiere par '.$request->cookies->get('nomuser')) ;
+		
+						$data['success'] = true;
 						$data['message'] = ' Suppression Reussie !';
 						$data["errors"] = false;
 						$data['is_successful_login'] = true;
@@ -243,7 +246,10 @@ class FiliereController extends Controller
 						// Fonction Remove de EntityManager
 						$em->persist($filiere); // Modifie l'entité de la base de données
 						$em->flush(); // Exécute un UPDATE sur $filiere
-                                                
+                        
+						$savehandle = $this->get('pedagogie.filierehandle');
+						$savehandle->saveAction($this,$request->cookies->get('session_id'),'Modification','Modification de filiere par '.$request->cookies->get('nomuser')) ;
+		
                         $data['success'] = true;
 						$data['message'] = ' Modification Reussie !';
 						$data["errors"] = false;
@@ -321,7 +327,10 @@ class FiliereController extends Controller
 							$filiere->setDepartement($departement);
 							$em->persist($filiere); // Modifie l'entité de la base de données
 							$em->flush(); // Exécute un UPDATE sur $filiere
-													
+							
+							$savehandle = $this->get('pedagogie.filierehandle');
+						$savehandle->saveAction($this,$request->cookies->get('session_id'),'Ajout','Ajout de filiere par '.$request->cookies->get('nomuser')) ;
+		
 							$data['success'] = true;
 							$data['message'] = ' Ajout Reussi !';
 							$data["errors"] = false;

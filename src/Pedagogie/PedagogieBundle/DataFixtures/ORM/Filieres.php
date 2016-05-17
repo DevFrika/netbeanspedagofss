@@ -17,6 +17,8 @@
 	use Pedagogie\PedagogieBundle\Entity\Jour;
 	use Pedagogie\PedagogieBundle\Entity\Lieux;
 	use Pedagogie\PedagogieBundle\Entity\Salle;
+	use Pedagogie\PedagogieBundle\Entity\Periode;
+	use Pedagogie\PedagogieBundle\Entity\Semestre;
 	
 	class Filieres implements FixtureInterface
 	{
@@ -44,11 +46,11 @@
 			
 			
 			// Liste des noms des disciplines à ajouter
-			$nomdisc = array('LFSTU', 'ANGLAIS', 'FRANCAIS', 'INFORMATIQUE','MATH','PHYSIQUE');
+			$nomdisc = array('ANGLAIS', 'FRANCAIS', 'INFORMATIQUE','MATH','PHYSIQUE');
 			
 			
 			// Liste des noms des matieres à ajouter
-			$nommat = array('ATOMISTIQUE', 'ANGLAIS', 'Techniques d\'expression ', 'BASE DE DONNEE','ALGEBRE LINEAIRE','CRISTALLOGRAPHIE');
+			$nommat = array('ANGLAIS', 'Techniques d\'expression ', 'BASE DE DONNEE','ALGEBRE LINEAIRE','CRISTALLOGRAPHIE');
 			
 			
 			// Liste des noms des natures à ajouter
@@ -81,6 +83,14 @@
 			$nomlieux = array('*', 'Amphi-Theatres', 'Laboratoires', 'Salles');
 			$codelieux = array('*', 'A', 'Lab', 'S');
 			
+			// Liste des noms des periodes à ajouter
+			$nomprd = array('Normal','Quinzaine');
+			
+			
+			// Liste des noms des semestres à ajouter
+			$nomsemestre = array('Semestre 1', 'Semestre 2');
+			$codesemestre = array('S1','S2');
+			
 	
 			
 			$liste_departements;
@@ -93,7 +103,28 @@
 			$liste_grades;
 			$liste_lieux;
 			$liste_salles;
+			$liste_periodes;
+			$liste_semestres;
 			
+			for($i=0;$i<2;$i++)
+			{
+				// On crée les Periodes
+				$liste_periodes[$i] = new Periode();
+				$liste_periodes[$i]->setPeriode($nomprd[$i]);
+
+				// On la persiste
+				$manager->persist($liste_periodes[$i]);
+			}
+			
+			for($i=0;$i<2;$i++)
+			{
+				// On crée les Semestres
+				$liste_semestres[$i] = new Semestre();
+				$liste_semestres[$i]->setSemestre($nomsemestre[$i]);
+				$liste_semestres[$i]->setCode($codesemestre[$i]);
+				// On la persiste
+				$manager->persist($liste_semestres[$i]);
+			}
 			
 			for($i=0;$i<6;$i++)
 			{
@@ -118,7 +149,7 @@
 				$manager->persist($liste_lieux[$i]);
 			}
 			
-			for($i=0;$i<10;$i++)
+			for($i=1;$i<11;$i++)
 			{
 				// On crée les Salles
 				$liste_salles[$i] = new Salle();
@@ -243,12 +274,31 @@
 			
 			for($i=0;$i<$z;$i++)
 			{
-				// On crée les groupes
-				$groupes1 = new Groupe();
-				$groupes1->setGroupe($liste_classes[$i]->getClasse().'A1');
-				$groupes1->setClasse($liste_classes[$i]);
-				$groupes1->setFiliere($liste_classes[$i]->getFiliere());
-				$groupes1->setDepartement($liste_classes[$i]->getDepartement());
+				for($y=1;$y<3;$y++)
+				{
+					// On crée les groupes
+					$groupes1 = new Groupe();
+					$groupes1->setGroupe($liste_classes[$i]->getClasse().'A'.$y);
+					$groupes1->setClasse($liste_classes[$i]);
+					$groupes1->setFiliere($liste_classes[$i]->getFiliere());
+					$groupes1->setDepartement($liste_classes[$i]->getDepartement());				
+					// On la persiste
+					$manager->persist($groupes1);
+				}
+				
+				for($y=1;$y<3;$y++)
+				{
+					// On crée les groupes
+					$groupes1 = new Groupe();
+					$groupes1->setGroupe($liste_classes[$i]->getClasse().'B'.$y);
+					$groupes1->setClasse($liste_classes[$i]);
+					$groupes1->setFiliere($liste_classes[$i]->getFiliere());
+					$groupes1->setDepartement($liste_classes[$i]->getDepartement());				
+					// On la persiste
+					$manager->persist($groupes1);
+				}
+				
+				/*
 				
 				$groupes2 = new Groupe();
 				$groupes2->setGroupe($liste_classes[$i]->getClasse().'A2');
@@ -268,49 +318,60 @@
 				$groupes4->setFiliere($liste_classes[$i]->getFiliere());
 				$groupes4->setDepartement($liste_classes[$i]->getDepartement());
 				
-				// On la persiste
-				$manager->persist($groupes1);
 				$manager->persist($groupes2);
 				$manager->persist($groupes3);
 				$manager->persist($groupes4);
-			}
 			
-			for($i=0;$i<6;$i++)
-			{
-				// On crée les groupes
-				$liste_groupes[$i] = new Groupe();
-				$liste_groupes[$i]->setGroupe($nomgrp[$i]);
-				$liste_groupes[$i]->setClasse($liste_classes[$i]);
-				$liste_groupes[$i]->setFiliere($liste_filieres[$i]);
-				$liste_groupes[$i]->setDepartement($liste_departements[$i]);
-				// On la persiste
-				$manager->persist($liste_groupes[$i]);
-			}
+				*/
+				
+				}
 			
-			for($i=0;$i<6;$i++)
+			
+			
+			for($i=0;$i<5;$i++)
 			{
-				// On crée les disciplines
+					// On crée les disciplines
 				$liste_disciplines[$i] = new Discipline();
 				$liste_disciplines[$i]->setDiscipline($nomdisc[$i]);
-				$liste_disciplines[$i]->addGroupe($liste_groupes[$i]);
-				$liste_disciplines[$i]->addClasse($liste_classes[$i]);
-				$liste_disciplines[$i]->addFiliere($liste_filieres[$i]);
-				$liste_disciplines[$i]->addDepartement($liste_departements[$i]);
+				
+				for($j=0;$j<37;$j++)
+				{
+				
+				//$liste_disciplines[$i]->addGroupe($liste_groupes[$i]);
+				//$liste_disciplines[$i]->addClasse($liste_classes[$i]);
+				$liste_disciplines[$i]->addFiliere($liste_filieres[$j]);
+				
+				}
+				for($z=0;$z<7;$z++)
+				{
+					$liste_disciplines[$i]->addDepartement($liste_departements[$z]);			
+				
+				}
 				// On la persiste
 				$manager->persist($liste_disciplines[$i]);
+			
 			}
 			
-			for($i=0;$i<6;$i++)
+			for($i=0;$i<5;$i++)
 			{
 				// On crée les matieres
 				$liste_matieres[$i] = new Matiere();
 				$liste_matieres[$i]->setMatiere($nommat[$i]);
 				$liste_matieres[$i]->addNature($liste_natures[$i]);
 				$liste_matieres[$i]->setDiscipline($liste_disciplines[$i]);
-				$liste_matieres[$i]->addGroupe($liste_groupes[$i]);
-				$liste_matieres[$i]->addClass($liste_classes[$i]);
-				$liste_matieres[$i]->addFiliere($liste_filieres[$i]);
-				$liste_matieres[$i]->addDepartement($liste_departements[$i]);
+				
+				for($j=0;$j<37;$j++)
+				{
+				//$liste_matieres[$i]->addGroupe($liste_groupes[$i]);
+				//$liste_matieres[$i]->addClass($liste_classes[$i]);
+				$liste_matieres[$i]->addFiliere($liste_filieres[$j]);
+				}
+				
+				for($z=0;$z<7;$z++)
+				{
+					$liste_matieres[$i]->addDepartement($liste_departements[$z]);
+				}
+				
 				// On la persiste
 				$manager->persist($liste_matieres[$i]);
 			}

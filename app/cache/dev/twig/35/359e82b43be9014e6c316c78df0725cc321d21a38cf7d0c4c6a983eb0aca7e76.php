@@ -15,8 +15,8 @@ class __TwigTemplate_7c6bcbbf1c6975e1b61bb3519a7360105085b06bf0d3bf1cf11b5aa3aa7
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_536aba9e477ee81b345f1d37e440aeacd59865ed7c1138079f0f32d6ab75ce78 = $this->env->getExtension("native_profiler");
-        $__internal_536aba9e477ee81b345f1d37e440aeacd59865ed7c1138079f0f32d6ab75ce78->enter($__internal_536aba9e477ee81b345f1d37e440aeacd59865ed7c1138079f0f32d6ab75ce78_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:normal/discipline:deletedisciplinelayout.html.twig"));
+        $__internal_94c47c1bd5a0438ab1d4a9631a73c0d995466415ece5b7d38577aab745662ff7 = $this->env->getExtension("native_profiler");
+        $__internal_94c47c1bd5a0438ab1d4a9631a73c0d995466415ece5b7d38577aab745662ff7->enter($__internal_94c47c1bd5a0438ab1d4a9631a73c0d995466415ece5b7d38577aab745662ff7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:normal/discipline:deletedisciplinelayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"deldis";
@@ -47,7 +47,7 @@ class __TwigTemplate_7c6bcbbf1c6975e1b61bb3519a7360105085b06bf0d3bf1cf11b5aa3aa7
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_536aba9e477ee81b345f1d37e440aeacd59865ed7c1138079f0f32d6ab75ce78->leave($__internal_536aba9e477ee81b345f1d37e440aeacd59865ed7c1138079f0f32d6ab75ce78_prof);
+        $__internal_94c47c1bd5a0438ab1d4a9631a73c0d995466415ece5b7d38577aab745662ff7->leave($__internal_94c47c1bd5a0438ab1d4a9631a73c0d995466415ece5b7d38577aab745662ff7_prof);
 
     }
 

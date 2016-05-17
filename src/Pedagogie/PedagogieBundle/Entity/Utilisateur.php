@@ -74,7 +74,7 @@ class Utilisateur
 	/**
      * @var string
      *
-     * @ORM\Column(name="Userdetails", type="integer", length=255, nullable=true, options={"default":0})
+     * @ORM\Column(name="Userdetails", type="string", length=255, nullable=true, options={"default":0})
      */
     private $userdetails;
 	
@@ -249,7 +249,7 @@ class Utilisateur
     /**
      * Set userdetails
      *
-     * @param integer $userdetails
+     * @param string $userdetails
      * @return Utilisateur
      */
     public function setUserdetails($userdetails)
@@ -262,7 +262,7 @@ class Utilisateur
     /**
      * Get userdetails
      *
-     * @return integer 
+     * @return string
      */
     public function getUserdetails()
     {

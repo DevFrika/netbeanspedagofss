@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/enseignant:enseignantlayout.html.twig */
+/* PedagogiePedagogieBundle::admin/enseignant/enseignantlayout.html.twig */
 class __TwigTemplate_34876a8730bd0838f7d4458fc2c9316a445eddd76908cc6f6d1cb48dcd0caf80 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_34876a8730bd0838f7d4458fc2c9316a445eddd76908cc6f6d1cb48dcd0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fbcc1229497d002a97f243e650504d09a6af4bd0861eb8516099d4d274fc0fc1 = $this->env->getExtension("native_profiler");
-        $__internal_fbcc1229497d002a97f243e650504d09a6af4bd0861eb8516099d4d274fc0fc1->enter($__internal_fbcc1229497d002a97f243e650504d09a6af4bd0861eb8516099d4d274fc0fc1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/enseignant:enseignantlayout.html.twig"));
+        $__internal_240893d8a12b478a707cc0774dd3b8c637f5e1787bea48c3ec19bddc996dc88f = $this->env->getExtension("native_profiler");
+        $__internal_240893d8a12b478a707cc0774dd3b8c637f5e1787bea48c3ec19bddc996dc88f->enter($__internal_240893d8a12b478a707cc0774dd3b8c637f5e1787bea48c3ec19bddc996dc88f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/enseignant/enseignantlayout.html.twig"));
 
         // line 1
         echo "<div class=\"section w3-clear \" style=\"margin-top:-25%;clear:both;\">
@@ -291,13 +291,13 @@ class __TwigTemplate_34876a8730bd0838f7d4458fc2c9316a445eddd76908cc6f6d1cb48dcd0
 
 \t";
         
-        $__internal_fbcc1229497d002a97f243e650504d09a6af4bd0861eb8516099d4d274fc0fc1->leave($__internal_fbcc1229497d002a97f243e650504d09a6af4bd0861eb8516099d4d274fc0fc1_prof);
+        $__internal_240893d8a12b478a707cc0774dd3b8c637f5e1787bea48c3ec19bddc996dc88f->leave($__internal_240893d8a12b478a707cc0774dd3b8c637f5e1787bea48c3ec19bddc996dc88f_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/enseignant:enseignantlayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/enseignant/enseignantlayout.html.twig";
     }
 
     public function isTraitable()

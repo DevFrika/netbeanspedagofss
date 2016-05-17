@@ -1,0 +1,20 @@
+<div class="fade modal text-center" id="salle{{ salle.id }}">
+				  <div class="modal-dialog">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						
+					  </div>
+					  <div class="modal-body">
+						<p> {{ salle.salle }} :</p>
+						<p> Capacité = {{ salle.capacite }}  </p>
+						<p> Audio : {% if salle.audio == 0 %} Non {% else %} Oui {% endif %}</p>
+						<p> Retro : {% if salle.retro == 0 %} Non {% else %} Oui {% endif %}</p>
+					  </div>
+					  <div class="modal-footer">
+						<a class="btn btn-default" data-dismiss="modal">Close</a>
+						
+					  </div>
+					</div>
+				  </div>
+				</div>

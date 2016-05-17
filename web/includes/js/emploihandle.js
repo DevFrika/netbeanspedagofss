@@ -1,5 +1,8 @@
 var showingtime = 30000 ;
-var hideloader = 10000;
+var hideloader = 30000;
+
+
+
 	
 	$(document).ready(function() {
 
@@ -11,8 +14,25 @@ var hideloader = 10000;
 	var days = 1;
 	var usercookie = "iduser";
 	
+/*
+	$('#addemploi').on('show.bs.modal', function (e) {
+	alert("Modal add emploi ouvert");
+	 e.preventDefault();
+     e.stopImmediatePropagation();
+	$('#addemploi').modal('hide');
+})
 
-	
+*/
+
+
+	$('#addemploi').on('hidden.bs.modal', function (e) {
+		var userid = $('input[name=addempuserid]').val();
+		CloseEmpModal(e,userid);
+})
+
+
+
+
 
 	//  ==================  Add Processing   ===================
 
@@ -29,17 +49,21 @@ var hideloader = 10000;
 		var nommat = $( "#addempmatselect" ).val();
 		var nomens = $( "#addempensselect" ).val();
 		var nomnat = $( "#natselect" ).val();
+		var periode = $( "#prdselect" ).val();
+		var semestre = $( "#smtselect" ).val();
 		var nomlieux = $( "#addemplieuxselect" ).val();
 		var nomsal = $( "#addempsalselect" ).val();
 		var nomjour = $( "#addempjourselect" ).val();
+		var yearval = $( "#yearselect" ).val();
 		var hdeb = $( "#addemphdebselect" ).val();
 		var mindeb = $( "#addempmindebselect" ).val();
 		var hfin = $( "#addemphfinselect" ).val();
 		var minfin = $( "#addempminfinselect" ).val();
 		var tag = $('input[name=addemptag]').val();
+		var userid = $('input[name=addempuserid]').val();
 	  // remove success messages and remove the past errors
-	 $('.emp-form-group .messages-block').removeClass('alert alert-success').empty();
-	  $('.emp-form-group .messages-block').removeClass('alert alert-danger alert-dismissable').empty();
+	 $('#addemploiform .emp-form-group .messages-block').removeClass('alert alert-success').empty();
+	  $('#addemploiform .emp-form-group .messages-block').removeClass('alert alert-danger alert-dismissable').empty();
 	  
 		
 		if(hdeb==hfin && mindeb==minfin)
@@ -49,6 +73,10 @@ var hideloader = 10000;
 		else if(hdeb>hfin )
 		{
 			alert("L'heure de debut est superieure à l'heure de fin ");
+		}
+		else if( (hfin-hdeb)<1 && (minfin-mindeb)<15)
+		{
+			alert("La durée est inferieure à 1h15 mn ");
 		}
 		else
 		{
@@ -62,9 +90,12 @@ var hideloader = 10000;
 					  'nommat'				: nommat,
 					  'nomens'				: nomens,
 					  'nomnat'				: nomnat,
+					  'semestre'				: semestre,
+					  'periode'				: periode,
 					  'nomlieux'			: nomlieux,
 					  'nomsal'				: nomsal,
 					  'nomjour'				: nomjour,
+					  'yearval'				: yearval,
 					  'hdeb'				: hdeb,
 					  'mindeb'				: mindeb,
 					  'hfin'				: hfin,
@@ -92,29 +123,31 @@ var hideloader = 10000;
 						  
 						  
 						
-						$(".ajax_spinner").remove();
-						  $(".ajax_wait").remove();
-						$('.emp-form-group .messages-block').addClass('alert alert-danger alert-dismissable').html(data.message);
+						$('#addemploiform .emp-form-group .messages-block').addClass('alert alert-danger alert-dismissable').html(data.message);
 						
 						
 
 					  } else {
 						
 						
-						$('.emp-form-group .messages-block').addClass('alert alert-success alert-dismissable').html(data.message);
-						document.getElementById("addemploiform").reset();
+						$('#addemploiform .emp-form-group .messages-block').addClass('alert alert-success alert-dismissable').html(data.message);
+						
+						//document.getElementById("addemploiform").reset();
 						
 						// if validation is good add success message
 						//$('#addemploi').modal('hide');
 						
-								setTimeout(function()
-								{
-									$('.emp-form-group .messages-block').removeClass('alert alert-success').empty();
-									$('.emp-form-group .messages-block').removeClass('alert alert-danger alert-dismissable').empty();
-									
-								}, 5000);
-												
 					  }
+					  
+					  
+					setTimeout(function()
+					{
+						$('#addemploiform .emp-form-group .messages-block').removeClass('alert alert-success').empty();
+						$('#addemploiform .emp-form-group .messages-block').removeClass('alert alert-danger alert-dismissable').empty();
+						
+						
+					}, 5000);
+												
 					}
 				  });
 
@@ -130,6 +163,141 @@ var hideloader = 10000;
 
 });
 
+function OpenEmpModal(evt,userid)
+{
+	document.getElementById("loadertext").innerHTML = " <p> Chargement du Concepteur  </p> " ;
+	document.getElementById("loadermodal").style.display = "block";
+		
+	var getmuturl= 'http://localhost/netbeanspedagofss/web/app_dev.php/Pedagogie/Mutex/Get';
+	var addmuturl= 'http://localhost/netbeanspedagofss/web/app_dev.php/Pedagogie/Mutex/Add';
+
+	  // get the form data
+	  var formData = {
+		  'typemutex'              : 'emploi',
+		  'tag'					: 'getmutex'
+	  };
+
+	
+		
+	  // process the form  
+	  $.ajax({
+		type        : 'POST',
+		url         : getmuturl,
+		data        : formData,
+		dataType    : 'json',
+		success     : function(data) {
+
+		 
+		 
+		
+		  // if validation fails
+		  // add the error class to show a red input
+		  // add the error message to the help block under the input
+		  if ( ! data.success) 
+		  {
+			 
+			alert("Le module d'emploi du temps est entrain d'etre utilisé par "+data.username);
+			document.getElementById("loadermodal").style.display = "none";
+		  }
+		  else 
+		  {
+				
+				
+				  // get the form data
+				  var formData = {
+					  'iduser'              : userid,
+					  'typemutex'             : 'emploi',
+					  'tag'					: 'addmutex'
+				  };
+
+				  // process the form  
+				  $.ajax({
+					type        : 'POST',
+					url         : addmuturl, 
+					data        : formData,
+					dataType    : 'json',
+					success     : function(data) 
+					{
+
+					  // if validation fails
+					  if ( ! data.success) 
+					  {
+						alert("Le mutex n'as pas pu etre defini ");
+						$('#addemploi').modal('hide');
+					  }
+					  else
+					  {
+						document.getElementById("loadermodal").style.display = "none";
+						$('#addemploi').modal('show');
+					  }
+					  
+					}
+				  });
+				  
+		  }
+		}
+	  });
+
+	  
+	  evt.preventDefault();
+	setTimeout(function()
+	{
+		document.getElementById("loadermodal").style.display = "none";
+	}, hideloader);
+
+}
+
+function CloseEmpModal(evt,userid)
+{
+	$('#addemploi').modal('hide');
+	
+	
+	var delmuturl= 'http://localhost/netbeanspedagofss/web/app_dev.php/Pedagogie/Mutex/Delete';
+
+	  // get the form data
+	  var formData = {
+					  'iduser'              : userid,
+					  'typemutex'           : 'emploi',
+					  'tag'					: 'deletemutex'
+				  };
+
+	
+		
+	  // process the form  
+	  $.ajax({
+		type        : 'POST',
+		url         : delmuturl,
+		data        : formData,
+		dataType    : 'json',
+		success     : function(data) {
+
+		 
+		 
+		
+		  // if validation fails
+		  // add the error class to show a red input
+		  // add the error message to the help block under the input
+		  if ( ! data.success) 
+		  {
+			  var redirection = 'http://localhost/netbeanspedagofss/web/app_dev.php/Pedagogie';
+			setTimeout(function()
+			{
+				window.location=redirection;
+			}, 1000);
+					
+		  }
+		  else 
+		  {
+			
+		  }
+		}
+	  });
+
+	  
+	  evt.preventDefault();
+  
+	
+}
 
 function deleteEmploi(evt, empName,nomModal) {
 
@@ -637,11 +805,13 @@ function empLoadMatiere(disName,selectId)
 		
 		var getmat_url = $('input[name=getmat_url]').val();
 		var nomdis = disName; 
+		var nomgrp =  $( "#addempgrpselect" ).val();
 		var tag = 'getdismat';
 		
 	  // get the form data
 	  var formData = {
 		  'nomdis'              : nomdis,
+		  'nomgrp'              : nomgrp,
 		  'tag'					: tag
 	  };
 
@@ -657,7 +827,7 @@ function empLoadMatiere(disName,selectId)
 		  // if validation fails
 		  // add the error class to show a red input
 		  // add the error message to the help block under the input
-		  document.getElementById(selectId).innerHTML = "" ;
+		  
 		  
 		  if ( ! data.success ) 
 		  {
@@ -751,7 +921,7 @@ function empLoadEnseignant(matName,selectId)
 			
 			document.getElementById("loadertext").innerHTML = "" ;
 			document.getElementById("loadermodal").style.display = "none";
-			
+			document.getElementById(selectId).innerHTML = "" ;
 			var enseignants = "Aucun Enseignant Trouvé ";
 			var newoption ='<option value="'+0+'" >'+enseignants+'</option>' ;
 			document.getElementById(selectId).innerHTML += newoption;
@@ -945,7 +1115,275 @@ function empLoadNature(matName,selectId)
 	
 	
 }
-	
 
+	function LoadEmpFil(filId,typeEmp,printing)
+{
+	document.getElementById("loadertext").innerHTML = " <p> Récuperation de l'emploi du temps </p> " ;
+		document.getElementById("loadermodal").style.display = "block";
+		
+		var getfilemp_url = 'http://localhost/netbeanspedagofss/web/app_dev.php/Pedagogie/Emploi/Filiere/Get';
+		var nomfil = filId; 
+		var tag = 'getfilemp';
+		
+	  // get the form data
+	  var formData = {
+		  'nomfil'              : nomfil,
+		  'typeemploi'          : typeEmp,
+		  'printing'	        : printing,
+		  'tag'					: tag
+	  };
+
+	  // process the form
+	  $.ajax({
+		type        : 'POST',
+		url         : getfilemp_url,
+		data        : formData,
+		dataType    : 'json',
+		success     : function(data) {
+
+	   
+		  // if validation fails
+		  // add the error class to show a red input
+		  // add the error message to the help block under the input
+		  
+		  
+		  if ( ! data.success ) 
+		  {
+			 
+				// if validation is bad add error message
+				$('#loadermodal ').addClass('alert alert-danger alert-dismissable');
+				
+				document.getElementById("loadertext").innerHTML = "" ;
+				document.getElementById("loadermodal").style.display = "none";
+				
+				alert('Aucun Emploi du temps trouvé ');
+			
+			
+		  } 
+		  else 
+		  {
+				document.getElementById("loadertext").innerHTML = "" ;
+				document.getElementById("loadermodal").style.display = "none";
+				$('#emptemplate .modal-body').html(data.contenu);
+				$('#emptemplate').modal('show');	
+		
+		  }
+		  
+	
+			
+	
+		}
+	  });
+
+	  setTimeout(function()
+	{
+		document.getElementById("loadertext").innerHTML = "" ;
+		document.getElementById("loadermodal").style.display = "none";
+		
+	}, hideloader);
+}
+
+
+function LoadEmpGrp(grpId,typeEmp,printing)
+{
+	document.getElementById("loadertext").innerHTML = " <p> Récuperation de l'emploi du temps </p> " ;
+	document.getElementById("loadermodal").style.display = "block";
+		
+		var getgrpemp_url = 'http://localhost/netbeanspedagofss/web/app_dev.php/Pedagogie/Emploi/Groupe/Get';
+		var nomgrp = grpId;
+		var tag = 'getgrpemp';
+		
+	  // get the form data
+	  var formData = {
+		  'nomgrp'              : nomgrp,
+		  'typeemploi'          : typeEmp,
+		  'printing'          : printing,
+		  'tag'					: tag
+	  };
+
+	  // process the form
+	  $.ajax({
+		type        : 'POST',
+		url         : getgrpemp_url,
+		data        : formData,
+		dataType    : 'json',
+		success     : function(data) {
+
+	   
+		  // if validation fails
+		  // add the error class to show a red input
+		  // add the error message to the help block under the input
+		  
+		  
+		  if ( ! data.success ) 
+		  {
+			 
+				// if validation is bad add error message
+				$('#loadermodal ').addClass('alert alert-danger alert-dismissable');
+				
+				document.getElementById("loadertext").innerHTML = "" ;
+				document.getElementById("loadermodal").style.display = "none";
+				
+				alert('Aucun Emploi du temps trouvé ');
+			
+			
+		  } 
+		  else 
+		  {
+				document.getElementById("loadertext").innerHTML = "" ;
+				document.getElementById("loadermodal").style.display = "none";
+				$('#emptemplate .modal-body').html(data.contenu);
+				$('#emptemplate').modal('show');	
+		
+		  }
+		  
+	
+			
+	
+		}
+	  });
+
+	  setTimeout(function()
+	{
+		document.getElementById("loadertext").innerHTML = "" ;
+		document.getElementById("loadermodal").style.display = "none";
+		
+	}, hideloader);
+}
+
+
+function LoadEmpSal(salId,typeEmp,printing)
+{
+	document.getElementById("loadertext").innerHTML = " <p> Récuperation de l'emploi du temps </p> " ;
+		document.getElementById("loadermodal").style.display = "block";
+		
+		var getdis_url = 'http://localhost/netbeanspedagofss/web/app_dev.php/Pedagogie/Emploi/Salle/Get';
+		var nomsal = salId; 
+		var tag = 'getsalemp';
+		
+	  // get the form data
+	  var formData = {
+		  'nomsal'              : nomsal,
+		  'typeemploi'          : typeEmp,
+		  'printing'          	: printing,
+		  'tag'					: tag
+	  };
+
+	  // process the form
+	  $.ajax({
+		type        : 'POST',
+		url         : getdis_url,
+		data        : formData,
+		dataType    : 'json',
+		success     : function(data) {
+
+	   
+		  // if validation fails
+		  // add the error class to show a red input
+		  // add the error message to the help block under the input
+		  
+		  
+		  if ( ! data.success ) 
+		  {
+			 
+				// if validation is bad add error message
+				$('#loadermodal ').addClass('alert alert-danger alert-dismissable');
+				
+				document.getElementById("loadertext").innerHTML = "" ;
+				document.getElementById("loadermodal").style.display = "none";
+				
+				alert('Aucun Emploi du temps trouvé ');
+			
+			
+		  } 
+		  else 
+		  {
+				document.getElementById("loadertext").innerHTML = "" ;
+				document.getElementById("loadermodal").style.display = "none";
+				$('#emptemplate .modal-body').html(data.contenu);
+				$('#emptemplate').modal('show');	
+		
+		  }
+		  
+	
+			
+	
+		}
+	  });
+
+	  setTimeout(function()
+	{
+		document.getElementById("loadertext").innerHTML = "" ;
+		document.getElementById("loadermodal").style.display = "none";
+		
+	}, hideloader);
+}
+
+function LoadEmpEns(ensId,typeEmp,printing)
+{
+	document.getElementById("loadertext").innerHTML = " <p> Récuperation de l'emploi du temps </p> " ;
+		document.getElementById("loadermodal").style.display = "block";
+		
+		var getdis_url = 'http://localhost/netbeanspedagofss/web/app_dev.php/Pedagogie/Emploi/Enseignant/Get';
+		var nomens = ensId; 
+		var tag = 'getensemp';
+		
+	  // get the form data
+	  var formData = {
+		  'nomens'              : nomens,
+		  'typeemploi'              : typeEmp,
+		  'printing'              : printing,
+		  'tag'					: tag
+	  };
+
+	  // process the form
+	  $.ajax({
+		type        : 'POST',
+		url         : getdis_url,
+		data        : formData,
+		dataType    : 'json',
+		success     : function(data) {
+
+	   
+		  // if validation fails
+		  // add the error class to show a red input
+		  // add the error message to the help block under the input
+		  
+		  
+		  if ( ! data.success ) 
+		  {
+			 
+				// if validation is bad add error message
+				$('#loadermodal ').addClass('alert alert-danger alert-dismissable');
+				
+				document.getElementById("loadertext").innerHTML = "" ;
+				document.getElementById("loadermodal").style.display = "none";
+				
+				alert('Aucun Emploi du temps trouvé ');
+			
+			
+		  } 
+		  else 
+		  {
+				document.getElementById("loadertext").innerHTML = "" ;
+				document.getElementById("loadermodal").style.display = "none";
+				$('#emptemplate .modal-body').html(data.contenu);
+				$('#emptemplate').modal('show');	
+		
+		  }
+		  
+	
+			
+	
+		}
+	  });
+
+	  setTimeout(function()
+	{
+		document.getElementById("loadertext").innerHTML = "" ;
+		document.getElementById("loadermodal").style.display = "none";
+		
+	}, hideloader);
+}
 
 

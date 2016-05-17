@@ -1,0 +1,89 @@
+<div class="fade modal text-center" id="addsalle">
+				  <div class="modal-dialog">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						
+					  </div>
+					  <div class="modal-body">
+						<div id="container" class="container-fluid text-center">
+              <div class="col-sm-10 col-md-offset-1" >
+                <!-- PAGE TITLE -->
+                
+                  <h4>
+                    <span ></span> </h4>
+                
+               
+				
+                <!-- FORM -->
+                <form class="addsalleform form-horizontal"  method="POST">
+				
+                  <!-- Nom salle -->
+                  <div class="form-group salle-form-group">
+                    <label> Nom </label>
+                    <input type="text" name="nomsalle" class="form-control" value="">
+                    <span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Lieux de la  salle -->
+                  <div class="form-group salle-form-group">
+                   <label> Lieux </label>
+                    <select id="sallelieuxselect" class="form-control">
+						{%for lix in alllieux %}
+						<option value="{{lix.id}}">{{lix.lieux}}</option>
+						{% endfor %}
+					</select>
+                    <span class="help-block"></span>
+                  </div>
+                 
+				  <!-- Capacité salle -->
+                  <div class="form-group salle-form-group">
+                    <label> Capacité  </label>
+                    <input type="text" name="capsalle" class="form-control" value="">
+                    <span class="help-block"></span>
+                  </div>
+				  
+				   <!-- Audio salle -->
+                  <div class="form-group salle-form-group">
+                    <label> Audio  </label>
+					<input type="radio" name="audiosalle" value="1" checked="checked"> Oui </input>
+					<input type="radio" name="audiosalle" value="0"> Non </input>
+				  <span class="help-block"></span>
+                  </div>
+				  
+				  <!-- Retro salle -->
+                  <div class="form-group salle-form-group">
+                    <label> Retro  </label>
+					<input type="radio" name="retrosalle" value="1" checked="checked"> Oui </input>
+					<input type="radio" name="retrosalle" value="0"> Non </input>
+				  <span class="help-block"></span>
+                  </div>
+				  
+				  
+				   <!-- SHOW ERROR/SUCCESS MESSAGES -->
+				<div class="form-group salle-form-group"> 
+					<span class="messages-block"></span>
+				</div>
+				  
+                  <span class="ajax_wait" align="center">
+                    <!--don't delete this span class="ajax_wait"-->
+                  </span>
+				  
+				  <input type="text" name="addsalletag" value="addsalle" hidden>
+				  <input type="text" name="addsalle_url" value="{{ path('pedagogie_addsalle') }}" hidden>
+				  
+                  <div class="modal-footer">
+						<a class="btn btn-default" data-dismiss="modal">Close</a>
+						<!-- SUBMIT BUTTON -->
+                  <button type="submit" class="btn btn-success "><i class="fa fa-plus"></i> Enregistrer </button>
+					
+					  </div>
+                  
+                </form>
+              </div>
+			  </div>
+					  </div>
+					  
+					</div>
+				  </div>
+				</div>

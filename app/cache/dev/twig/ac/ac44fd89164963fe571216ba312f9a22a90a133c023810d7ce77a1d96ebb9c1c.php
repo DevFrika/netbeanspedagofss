@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/matiere:matierelayout.html.twig */
+/* PedagogiePedagogieBundle::admin/matiere/matierelayout.html.twig */
 class __TwigTemplate_900de8aa54b52d2c4f7c1d0baf3e276c14c86f19ad88169df31a696d3aca3247 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_900de8aa54b52d2c4f7c1d0baf3e276c14c86f19ad88169df31a696d3ac
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1c34e4917c01dc84aa888a4ee4a2beba90521edf0081499ad6d09f14d5423184 = $this->env->getExtension("native_profiler");
-        $__internal_1c34e4917c01dc84aa888a4ee4a2beba90521edf0081499ad6d09f14d5423184->enter($__internal_1c34e4917c01dc84aa888a4ee4a2beba90521edf0081499ad6d09f14d5423184_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/matiere:matierelayout.html.twig"));
+        $__internal_c0f92d036ab6727b0b924dfdb4611da7e021d0f044e45a2a0591200a0082dbfb = $this->env->getExtension("native_profiler");
+        $__internal_c0f92d036ab6727b0b924dfdb4611da7e021d0f044e45a2a0591200a0082dbfb->enter($__internal_c0f92d036ab6727b0b924dfdb4611da7e021d0f044e45a2a0591200a0082dbfb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/matiere/matierelayout.html.twig"));
 
         // line 1
         echo "<div class=\"section w3-clear \" style=\"margin-top:-25%;clear:both;\">
@@ -90,14 +90,14 @@ class __TwigTemplate_900de8aa54b52d2c4f7c1d0baf3e276c14c86f19ad88169df31a696d3ac
                 // line 62
                 echo "\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t<div id=\"fss";
+\t\t\t\t\t\t\t\t\t\t\t\t<div  class=\"fssmat";
                 // line 64
-                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "matiere", array()), "html", null, true);
-                echo "\" class=\"col-md-6\">
+                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "id", array()), "html", null, true);
+                echo " col-md-6\">
 \t\t\t\t\t\t\t\t\t\t\t\t  <div class=\"col-md-4\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png\" class=\"img-responsive\">
 \t\t\t\t\t\t\t\t\t\t\t\t  </div>
-\t\t\t\t\t\t\t\t\t\t\t\t  <div class=\"col-md-15\">
+\t\t\t\t\t\t\t\t\t\t\t\t  <div class=\"col-md-8\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<h3>";
                 // line 69
                 echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "matiere", array()), "html", null, true);
@@ -105,15 +105,15 @@ class __TwigTemplate_900de8aa54b52d2c4f7c1d0baf3e276c14c86f19ad88169df31a696d3ac
 \t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#mat";
                 // line 71
-                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "matiere", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "id", array()), "html", null, true);
                 echo "\" > <i class=\"fa fa-eye\"></i> Consulter </a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"btn btn-primary w3-green tablink\" onclick=\"openSubMenu(event, 'updatemat";
                 // line 72
-                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "matiere", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "id", array()), "html", null, true);
                 echo "','modifmatiere','matierelayout')\"><i class=\"fa fa-pencil\"></i>Modifier</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"btn btn-primary w3-red\" data-toggle=\"modal\" data-target=\"#delmat";
                 // line 73
-                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "matiere", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "id", array()), "html", null, true);
                 echo "\" ><i class=\"fa fa-trash\"></i>Supprimer</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t  </div>
@@ -162,14 +162,14 @@ class __TwigTemplate_900de8aa54b52d2c4f7c1d0baf3e276c14c86f19ad88169df31a696d3ac
                 // line 102
                 echo "\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t<div id=\"fss";
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div  class=\"fssmat";
                 // line 104
-                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "matiere", array()), "html", null, true);
-                echo "\" class=\"col-md-6\">
+                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "id", array()), "html", null, true);
+                echo " col-md-6\">
 \t\t\t\t\t\t\t\t\t\t\t\t  <div class=\"col-md-4\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png\" class=\"img-responsive\">
 \t\t\t\t\t\t\t\t\t\t\t\t  </div>
-\t\t\t\t\t\t\t\t\t\t\t\t  <div class=\"col-md-15\">
+\t\t\t\t\t\t\t\t\t\t\t\t  <div class=\"col-md-8\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<h3>";
                 // line 109
                 echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "matiere", array()), "html", null, true);
@@ -177,15 +177,15 @@ class __TwigTemplate_900de8aa54b52d2c4f7c1d0baf3e276c14c86f19ad88169df31a696d3ac
 \t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#mat";
                 // line 111
-                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "matiere", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "id", array()), "html", null, true);
                 echo "\" > <i class=\"fa fa-eye\"></i> Consulter </a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"btn btn-primary w3-green tablink\" onclick=\"openSubMenu(event, 'updatemat";
                 // line 112
-                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "matiere", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "id", array()), "html", null, true);
                 echo "','modifmatiere','matierelayout')\"><i class=\"fa fa-pencil\"></i>Modifier</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"btn btn-primary w3-red\" data-toggle=\"modal\" data-target=\"#delmat";
                 // line 113
-                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "matiere", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["mat"], "id", array()), "html", null, true);
                 echo "\" ><i class=\"fa fa-trash\"></i>Supprimer</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\t\t\t  </div>
@@ -265,13 +265,13 @@ class __TwigTemplate_900de8aa54b52d2c4f7c1d0baf3e276c14c86f19ad88169df31a696d3ac
 </div>
 ";
         
-        $__internal_1c34e4917c01dc84aa888a4ee4a2beba90521edf0081499ad6d09f14d5423184->leave($__internal_1c34e4917c01dc84aa888a4ee4a2beba90521edf0081499ad6d09f14d5423184_prof);
+        $__internal_c0f92d036ab6727b0b924dfdb4611da7e021d0f044e45a2a0591200a0082dbfb->leave($__internal_c0f92d036ab6727b0b924dfdb4611da7e021d0f044e45a2a0591200a0082dbfb_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/matiere:matierelayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/matiere/matierelayout.html.twig";
     }
 
     public function isTraitable()
@@ -347,16 +347,16 @@ class __TwigTemplate_900de8aa54b52d2c4f7c1d0baf3e276c14c86f19ad88169df31a696d3ac
 /* 											{% for mat in allmatiere  %}*/
 /* 								*/
 /* 									*/
-/* 												<div id="fss{{ mat.matiere }}" class="col-md-6">*/
+/* 												<div  class="fssmat{{ mat.id }} col-md-6">*/
 /* 												  <div class="col-md-4">*/
 /* 													<img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive">*/
 /* 												  </div>*/
-/* 												  <div class="col-md-15">*/
+/* 												  <div class="col-md-8">*/
 /* 													<h3>{{ mat.matiere }}</h3>*/
 /* 												*/
-/* 														<a class="btn btn-primary" data-toggle="modal" data-target="#mat{{ mat.matiere }}" > <i class="fa fa-eye"></i> Consulter </a>*/
-/* 														<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updatemat{{ mat.matiere }}','modifmatiere','matierelayout')"><i class="fa fa-pencil"></i>Modifier</a>*/
-/* 														<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delmat{{ mat.matiere }}" ><i class="fa fa-trash"></i>Supprimer</a>*/
+/* 														<a class="btn btn-primary" data-toggle="modal" data-target="#mat{{ mat.id }}" > <i class="fa fa-eye"></i> Consulter </a>*/
+/* 														<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updatemat{{ mat.id }}','modifmatiere','matierelayout')"><i class="fa fa-pencil"></i>Modifier</a>*/
+/* 														<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delmat{{ mat.id }}" ><i class="fa fa-trash"></i>Supprimer</a>*/
 /* 													*/
 /* 												  </div>*/
 /* 												</div>*/
@@ -387,16 +387,16 @@ class __TwigTemplate_900de8aa54b52d2c4f7c1d0baf3e276c14c86f19ad88169df31a696d3ac
 /* 											{% for mat in allmatiere  %}*/
 /* 								*/
 /* 									*/
-/* 												<div id="fss{{ mat.matiere }}" class="col-md-6">*/
+/* 													<div  class="fssmat{{ mat.id }} col-md-6">*/
 /* 												  <div class="col-md-4">*/
 /* 													<img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive">*/
 /* 												  </div>*/
-/* 												  <div class="col-md-15">*/
+/* 												  <div class="col-md-8">*/
 /* 													<h3>{{ mat.matiere }}</h3>*/
 /* 												*/
-/* 														<a class="btn btn-primary" data-toggle="modal" data-target="#mat{{ mat.matiere }}" > <i class="fa fa-eye"></i> Consulter </a>*/
-/* 														<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updatemat{{ mat.matiere }}','modifmatiere','matierelayout')"><i class="fa fa-pencil"></i>Modifier</a>*/
-/* 														<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delmat{{ mat.matiere }}" ><i class="fa fa-trash"></i>Supprimer</a>*/
+/* 														<a class="btn btn-primary" data-toggle="modal" data-target="#mat{{ mat.id }}" > <i class="fa fa-eye"></i> Consulter </a>*/
+/* 														<a class="btn btn-primary w3-green tablink" onclick="openSubMenu(event, 'updatemat{{ mat.id }}','modifmatiere','matierelayout')"><i class="fa fa-pencil"></i>Modifier</a>*/
+/* 														<a class="btn btn-primary w3-red" data-toggle="modal" data-target="#delmat{{ mat.id }}" ><i class="fa fa-trash"></i>Supprimer</a>*/
 /* 													*/
 /* 												  </div>*/
 /* 												</div>*/

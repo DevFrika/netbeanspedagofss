@@ -55,17 +55,16 @@
 
 	   
 	  // remove the past errors
-	  $('#email-group').removeClass('has-error');
+	  $('#email-group').removeClass('has-error alert alert-success alert-danger alert-dismissable');
 	  $('#email-group .help-block').empty();
-	  $('#password-group').removeClass('has-error');
+	  $('#password-group').removeClass('has-error alert alert-success alert-danger alert-dismissable');
 	  $('#password-group .help-block').empty();
 
 	  // remove success messages
-	  $('#messages').removeClass('alert alert-success').empty();
-	  $('#messages').removeClass('alert alert-danger alert-dismissable').empty();
+	  $('#login_messages').removeClass('alert alert-success alert-dismissable').empty();
+	  $('#login_messages').removeClass('alert alert-danger alert-dismissable').empty();
 	  
-		var label = "<span class='ajax_spinner' align=center><img src='includes/script/files/ispinner.gif'/> Chargement </span>";
-	   $(".ajax_wait").after(label);
+		
 	  
 
 	  // get the form data
@@ -90,22 +89,20 @@
 		  // add the error class to show a red input
 		  // add the error message to the help block under the input
 		  if ( ! data.success) {
-			 
-			  $(".ajax_spinner").remove();
-			  $(".ajax_wait").remove();
+			
 			  
 			  
 			if (data.errors.email) {
-			  $('#email-group').addClass('has-error');
+			  $('#email-group').addClass('alert alert-danger alert-dismissable has-error');
 			  $('#email-group .help-block').html(data.errors.email);
 			}
 
 			if (data.errors.password) {
-			  $('#password-group').addClass('has-error');
+			  $('#password-group').addClass('alert alert-danger alert-dismissable has-error');
 			  $('#password-group .help-block').html(data.errors.password);
 			}
 			
-			$('#messages').addClass('alert alert-danger alert-dismissable').append('<p>' + data.message + '</p>');
+			$('#login_messages').addClass('alert alert-danger alert-dismissable').html('<p>' + data.message + '</p>');
 			
 			var date = new Date();
 			date.setTime(date.getTime ()+(1*24*60*60*1000));
@@ -119,7 +116,7 @@
 			
 
 			// if validation is good add success message
-			$('#messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
+			$('#login_messages').addClass('alert alert-danger alert-dismissable').html(data.message );
 			
 			
 			
@@ -169,11 +166,11 @@
 	   
 	   
 	  // remove the past errors
-	  $('#reg_username-group').removeClass('has-error');
+	  $('#reg_username-group').removeClass('has-error alert alert-success alert-danger alert-dismissable');
+	  $('#reg_username-group .help-block').empty();
+	  $('#reg_email-group').removeClass('has-error alert alert-success alert-danger alert-dismissable');
 	  $('#reg_email-group .help-block').empty();
-	  $('#reg_username-group').removeClass('has-error');
-	  $('#reg_email-group .help-block').empty();
-	  $('#reg_password-group').removeClass('has-error');
+	  $('#reg_password-group').removeClass('has-error alert alert-success alert-danger alert-dismissable');
 	  $('#reg_password-group .help-block').empty();
 
 	  // remove success messages
@@ -201,8 +198,7 @@
 		success     : function(data) {
 
 		 
-		var label = "<span class='ajax_spinner' align=center><img src='includes/script/files/ispinner.gif'/> Chargement </span>";
-	   $(".ajax_wait").after(label);
+		
 		  
 	   
 	   
@@ -215,21 +211,21 @@
 			  $(".ajax_wait").remove();
 			 
 			if (data.errors.username) {
-			  $('#reg_username-group').addClass('has-error');
+			  $('#reg_username-group').addClass('alert alert-danger alert-dismissable has-error');
 			  $('#reg_username-group .help-block').html(data.errors.username);
 			}
 			
 			if (data.errors.email) {
-			  $('#reg_email-group').addClass('has-error');
+			  $('#reg_email-group').addClass('alert alert-danger alert-dismissable has-error');
 			  $('#reg_email-group .help-block').html(data.errors.email);
 			}
 
 			if (data.errors.password) {
-			  $('#reg_password-group').addClass('has-error');
+			  $('#reg_password-group').addClass('alert alert-danger alert-dismissable has-error');
 			  $('#reg_password-group .help-block').html(data.errors.password);
 			}
 			
-			$('#reg_messages').addClass('alert alert-danger alert-dismissable').append('<p>' + data.message + '</p>');
+			$('#reg_messages').addClass('alert alert-danger alert-dismissable').html(data.message);
 			
 			var date = new Date();
 			date.setTime(date.getTime ()+(days*cookietime));
@@ -240,8 +236,7 @@
 		  } else {
 			
 			// if validation is good add success message
-			$('#reg_messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
-			
+			$('#reg_messages').addClass('alert alert-success alert-dismissable').html(data.message );
 			
 			var days = 1;
 			
@@ -551,3 +546,4 @@ function closeSubTab(evt, cityName,container) {
   evt.currentTarget.classList.add("w3-red");
   
 }
+

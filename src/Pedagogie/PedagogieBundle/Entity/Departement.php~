@@ -29,6 +29,13 @@ class Departement
      */
     private $departement;
 
+	
+	/**
+    * @ORM\OneToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Enseignant",mappedBy="departement")
+	* @ORM\JoinColumn(nullable=false)
+    */
+    private $directeur ;
+	
 	/**
     * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Filiere",mappedBy="departement")
     * @ORM\JoinColumn(nullable=false)
@@ -68,16 +75,22 @@ class Departement
     private $matieres ;
     
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Emploi", mappedBy="departements", cascade={"persist"})
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Emploi", mappedBy="departements", cascade={"persist"})
 	* @ORM\JoinColumn(nullable=false)
     */
     private $emplois;
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Devoir", mappedBy="departements", cascade={"persist"})
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Devoir", mappedBy="departements", cascade={"persist"})
 	* @ORM\JoinColumn(nullable=false)
     */
     private $devoirs;
+	
+	/**
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Voeux",mappedBy="departement", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $voeux ;
 	
 	
     /**
@@ -136,7 +149,7 @@ class Departement
     public function addFiliere(\Pedagogie\PedagogieBundle\Entity\Filiere $filieres)
     {
         $this->filieres[] = $filieres;
-		$filieres->setDepartement($this);
+		
         return $this;
     }
 
@@ -201,7 +214,7 @@ class Departement
     public function addGroupe(\Pedagogie\PedagogieBundle\Entity\Groupe $groupes)
     {
         $this->groupes[] = $groupes;
-		$groupes->setDepartement($this);
+		
         return $this;
     }
 
@@ -234,7 +247,7 @@ class Departement
     public function addClass(\Pedagogie\PedagogieBundle\Entity\Classe $classes)
     {
         $this->classes[] = $classes;
-		$classes->setDepartement($this);
+		
         return $this;
     }
 
@@ -385,5 +398,61 @@ class Departement
     public function getDevoirs()
     {
         return $this->devoirs;
+    }
+
+    /**
+     * Set directeur
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Enseignant $directeur
+     * @return Departement
+     */
+    public function setDirecteur(\Pedagogie\PedagogieBundle\Entity\Enseignant $directeur)
+    {
+        $this->directeur = $directeur;
+
+        return $this;
+    }
+
+    /**
+     * Get directeur
+     *
+     * @return \Pedagogie\PedagogieBundle\Entity\Enseignant 
+     */
+    public function getDirecteur()
+    {
+        return $this->directeur;
+    }
+
+    /**
+     * Add voeux
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Voeux $voeux
+     * @return Departement
+     */
+    public function addVoeux(\Pedagogie\PedagogieBundle\Entity\Voeux $voeux)
+    {
+        $this->voeux[] = $voeux;
+
+        return $this;
+    }
+
+    /**
+     * Remove voeux
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Voeux $voeux
+     */
+    public function removeVoeux(\Pedagogie\PedagogieBundle\Entity\Voeux $voeux)
+    {
+        $this->voeux->removeElement($voeux);
+    }
+
+    /**
+     * Get voeux
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVoeux()
+    {
+        return $this->voeux;
     }
 }

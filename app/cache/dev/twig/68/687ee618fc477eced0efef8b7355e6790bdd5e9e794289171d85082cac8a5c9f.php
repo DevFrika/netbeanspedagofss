@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/emploi:modalemploilayout.html.twig */
+/* PedagogiePedagogieBundle::admin/emploi/modalemploilayout.html.twig */
 class __TwigTemplate_7b04699054cedc4e9b0a438d720db5b1de7b49a2548dc160bdd6ca095bdc4e3b extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_7b04699054cedc4e9b0a438d720db5b1de7b49a2548dc160bdd6ca095bd
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3f72e42c3d6e6d7a8538152e0c86d34bb9c5bf4d2bfe3c443ac68b02dbe16d63 = $this->env->getExtension("native_profiler");
-        $__internal_3f72e42c3d6e6d7a8538152e0c86d34bb9c5bf4d2bfe3c443ac68b02dbe16d63->enter($__internal_3f72e42c3d6e6d7a8538152e0c86d34bb9c5bf4d2bfe3c443ac68b02dbe16d63_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/emploi:modalemploilayout.html.twig"));
+        $__internal_670c771c3e21de29dbc2b7d1c5b49f6be91ab997f977527227e7fbfd9c4071ca = $this->env->getExtension("native_profiler");
+        $__internal_670c771c3e21de29dbc2b7d1c5b49f6be91ab997f977527227e7fbfd9c4071ca->enter($__internal_670c771c3e21de29dbc2b7d1c5b49f6be91ab997f977527227e7fbfd9c4071ca_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/emploi/modalemploilayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-left\" id=\"emp";
@@ -29,15 +29,59 @@ class __TwigTemplate_7b04699054cedc4e9b0a438d720db5b1de7b49a2548dc160bdd6ca095bd
 \t\t\t\t\t\t
 \t\t\t\t\t  </div>
 \t\t\t\t\t  <div class=\"modal-body\">
-\t\t\t\t\t\t<p> ";
-        // line 9
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["emp"]) ? $context["emp"] : $this->getContext($context, "emp")), "id", array()), "html", null, true);
-        echo "  </p>
-\t\t\t\t\t\t";
-        // line 10
-        $this->loadTemplate("PedagogiePedagogieBundle::admin/emploi/emploiclassetemplate.html.twig", "PedagogiePedagogieBundle:admin/emploi:modalemploilayout.html.twig", 10)->display($context);
-        // line 11
-        echo "\t\t\t\t\t  </div>
+\t\t\t\t\t\t<table>
+\t\t\t\t\t\t<thead>
+\t\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t\t<th> Jours </th>
+\t\t\t\t\t\t\t\t<th> Heure Debut </th>
+\t\t\t\t\t\t\t\t<th> Heure Fin </th>
+\t\t\t\t\t\t\t\t<th> Matiere </th>
+\t\t\t\t\t\t\t\t<th> Salle </th>
+\t\t\t\t\t\t\t\t<th> Professeur </th>
+\t\t\t\t\t\t\t\t<th> Groupe </th>
+\t\t\t\t\t\t\t\t<th> Nature </th>
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t</tr>
+\t\t\t\t\t\t</thead>
+\t\t\t\t\t\t<tbody>
+\t\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t\t<td> ";
+        // line 25
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["emp"]) ? $context["emp"] : $this->getContext($context, "emp")), "jours", array()), "jour", array()), "html", null, true);
+        echo " </td>
+\t\t\t\t\t\t\t\t<td> ";
+        // line 26
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["emp"]) ? $context["emp"] : $this->getContext($context, "emp")), "getHeureDebut", array()), "H:i"), "html", null, true);
+        echo " </td>
+\t\t\t\t\t\t\t\t<td> ";
+        // line 27
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["emp"]) ? $context["emp"] : $this->getContext($context, "emp")), "getHeureFin", array()), "H:i"), "html", null, true);
+        echo " </td>
+\t\t\t\t\t\t\t\t<td> ";
+        // line 28
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["emp"]) ? $context["emp"] : $this->getContext($context, "emp")), "matiere", array()), "matiere", array()), "html", null, true);
+        echo " </td>
+\t\t\t\t\t\t\t\t<td> ";
+        // line 29
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["emp"]) ? $context["emp"] : $this->getContext($context, "emp")), "salles", array()), "salle", array()), "html", null, true);
+        echo " </td>
+\t\t\t\t\t\t\t\t<td> ";
+        // line 30
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["emp"]) ? $context["emp"] : $this->getContext($context, "emp")), "enseignants", array()), "enseignant", array()), "html", null, true);
+        echo " </td>
+\t\t\t\t\t\t\t\t<td> ";
+        // line 31
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["emp"]) ? $context["emp"] : $this->getContext($context, "emp")), "groupes", array()), "groupe", array()), "html", null, true);
+        echo " </td>
+\t\t\t\t\t\t\t\t<td> ";
+        // line 32
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["emp"]) ? $context["emp"] : $this->getContext($context, "emp")), "natures", array()), "nature", array()), "html", null, true);
+        echo " </td>
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t</tr>
+\t\t\t\t\t\t</tbody>
+\t\t\t\t\t\t</table>
+\t\t\t\t\t  </div>
 \t\t\t\t\t  <div class=\"modal-footer\">
 \t\t\t\t\t\t<a class=\"btn btn-default\" data-dismiss=\"modal\">Close</a>
 \t\t\t\t\t\t
@@ -46,13 +90,13 @@ class __TwigTemplate_7b04699054cedc4e9b0a438d720db5b1de7b49a2548dc160bdd6ca095bd
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_3f72e42c3d6e6d7a8538152e0c86d34bb9c5bf4d2bfe3c443ac68b02dbe16d63->leave($__internal_3f72e42c3d6e6d7a8538152e0c86d34bb9c5bf4d2bfe3c443ac68b02dbe16d63_prof);
+        $__internal_670c771c3e21de29dbc2b7d1c5b49f6be91ab997f977527227e7fbfd9c4071ca->leave($__internal_670c771c3e21de29dbc2b7d1c5b49f6be91ab997f977527227e7fbfd9c4071ca_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/emploi:modalemploilayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/emploi/modalemploilayout.html.twig";
     }
 
     public function isTraitable()
@@ -62,7 +106,7 @@ class __TwigTemplate_7b04699054cedc4e9b0a438d720db5b1de7b49a2548dc160bdd6ca095bd
 
     public function getDebugInfo()
     {
-        return array (  40 => 11,  38 => 10,  34 => 9,  22 => 1,);
+        return array (  78 => 32,  74 => 31,  70 => 30,  66 => 29,  62 => 28,  58 => 27,  54 => 26,  50 => 25,  22 => 1,);
     }
 }
 /* <div class="fade modal text-left" id="emp{{ emp.id }}">*/
@@ -73,8 +117,34 @@ class __TwigTemplate_7b04699054cedc4e9b0a438d720db5b1de7b49a2548dc160bdd6ca095bd
 /* 						*/
 /* 					  </div>*/
 /* 					  <div class="modal-body">*/
-/* 						<p> {{ emp.id }}  </p>*/
-/* 						{% include "PedagogiePedagogieBundle::admin/emploi/emploiclassetemplate.html.twig" %}*/
+/* 						<table>*/
+/* 						<thead>*/
+/* 							<tr>*/
+/* 								<th> Jours </th>*/
+/* 								<th> Heure Debut </th>*/
+/* 								<th> Heure Fin </th>*/
+/* 								<th> Matiere </th>*/
+/* 								<th> Salle </th>*/
+/* 								<th> Professeur </th>*/
+/* 								<th> Groupe </th>*/
+/* 								<th> Nature </th>*/
+/* 								*/
+/* 							</tr>*/
+/* 						</thead>*/
+/* 						<tbody>*/
+/* 							<tr>*/
+/* 								<td> {{ emp.jours.jour }} </td>*/
+/* 								<td> {{ emp.getHeureDebut|date('H:i') }} </td>*/
+/* 								<td> {{ emp.getHeureFin|date('H:i') }} </td>*/
+/* 								<td> {{ emp.matiere.matiere }} </td>*/
+/* 								<td> {{ emp.salles.salle }} </td>*/
+/* 								<td> {{ emp.enseignants.enseignant }} </td>*/
+/* 								<td> {{ emp.groupes.groupe }} </td>*/
+/* 								<td> {{ emp.natures.nature }} </td>*/
+/* 								*/
+/* 							</tr>*/
+/* 						</tbody>*/
+/* 						</table>*/
 /* 					  </div>*/
 /* 					  <div class="modal-footer">*/
 /* 						<a class="btn btn-default" data-dismiss="modal">Close</a>*/

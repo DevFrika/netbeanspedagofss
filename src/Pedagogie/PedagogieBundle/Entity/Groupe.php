@@ -65,17 +65,24 @@ class Groupe
     private $matieres ;
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Emploi", mappedBy="groupes", cascade={"persist"})
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Emploi", mappedBy="groupes", cascade={"persist"})
 	* @ORM\JoinColumn(nullable=false)
     */
     private $emplois;
 
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Devoir", mappedBy="groupes", cascade={"persist"})
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Devoir", mappedBy="groupes", cascade={"persist"})
 	* @ORM\JoinColumn(nullable=false)
     */
     private $devoirs;
+	
+	
+	/**
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Voeux",mappedBy="groupe", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $voeux ;
    
     /**
      * Constructor
@@ -129,7 +136,7 @@ class Groupe
     public function setDepartement(\Pedagogie\PedagogieBundle\Entity\Departement $departement)
     {
         $this->departement = $departement;
-
+		$departement->addGroupe($this);
         return $this;
     }
 
@@ -152,7 +159,7 @@ class Groupe
     public function setFiliere(\Pedagogie\PedagogieBundle\Entity\Filiere $filiere)
     {
         $this->filiere = $filiere;
-
+		$filiere->addGroupe($this);
         return $this;
     }
 
@@ -208,7 +215,7 @@ class Groupe
     public function setClasse(\Pedagogie\PedagogieBundle\Entity\Classe $classe)
     {
         $this->classe = $classe;
-
+		$classe->addGroupe($this);
         return $this;
     }
 
@@ -319,5 +326,38 @@ class Groupe
     public function getDevoirs()
     {
         return $this->devoirs;
+    }
+
+    /**
+     * Add voeux
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Voeux $voeux
+     * @return Groupe
+     */
+    public function addVoeux(\Pedagogie\PedagogieBundle\Entity\Voeux $voeux)
+    {
+        $this->voeux[] = $voeux;
+
+        return $this;
+    }
+
+    /**
+     * Remove voeux
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Voeux $voeux
+     */
+    public function removeVoeux(\Pedagogie\PedagogieBundle\Entity\Voeux $voeux)
+    {
+        $this->voeux->removeElement($voeux);
+    }
+
+    /**
+     * Get voeux
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVoeux()
+    {
+        return $this->voeux;
     }
 }

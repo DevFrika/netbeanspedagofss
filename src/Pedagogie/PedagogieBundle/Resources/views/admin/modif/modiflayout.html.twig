@@ -160,6 +160,32 @@
 								{% endif %}
 							</div>
 							
+							<div id="modiflieux" class="tabs w3-container w3-section w3-animate-left">
+							
+								{% if alllieux is not null %}
+								
+									{% for lieux in alllieux  %}
+									
+										{% include "PedagogiePedagogieBundle::admin/lieux/updatelieuxlayout.html.twig" %}
+										
+									{% endfor %}
+									
+								{% endif %}
+							</div>
+							
+							<div id="modifsalle" class="tabs w3-container w3-section w3-animate-left">
+							
+								{% if allsalle is not null %}
+								
+									{% for salle in allsalle  %}
+									
+										{% include "PedagogiePedagogieBundle::admin/salle/updatesallelayout.html.twig" %}
+										
+									{% endfor %}
+									
+								{% endif %}
+							</div>
+							
 						  
 						</div>
 					  <!-- End page content -->

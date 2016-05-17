@@ -1,4 +1,4 @@
-<div class="fade modal text-center" id="delmat{{ mat.matiere }}">
+<div class="fade modal text-center" id="delmat{{ mat.id }}">
 				  <div class="modal-dialog">
 					<div class="modal-content">
 					  <div class="modal-header">
@@ -10,7 +10,7 @@
 					  </div>
 					  <div class="modal-footer">
 						<a class="btn btn-default" data-dismiss="modal">Fermer</a>
-						<a class="btn btn-primary w3-red" onclick="deleteMatiere(event, '{{ mat.matiere }}','#delmat{{ mat.matiere }}')"><i class="fa fa-trash"></i>Supprimer</a>
+						<a class="btn btn-primary w3-red" onclick="deleteMatiere(event, '{{ mat.id }}','#delmat{{ mat.id }}')"><i class="fa fa-trash"></i>Supprimer</a>
 					  </div>
 					</div>
 				  </div>

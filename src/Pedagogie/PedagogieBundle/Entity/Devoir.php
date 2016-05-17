@@ -21,42 +21,62 @@ class Devoir
      */
     private $id;
 	
+	/**
+     * @var int
+     *
+     * @ORM\Column(name="etat", type="integer")
+     */
+    private $etat;
 	
 	/**
-     * @var time
+     * @var datetime
      *
-     * @ORM\Column(name="heure_debut", type="time")
+     * @ORM\Column(name="heure_debut", type="datetime")
      */
 	private $heure_debut ;
 	
 	/**
-     * @var time
+     * @var datetime
      *
-     * @ORM\Column(name="heure_fin", type="time")
+     * @ORM\Column(name="heure_fin", type="datetime")
      */
 	private $heure_fin ;
 	
+	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Departement",inversedBy="devoirs")
+    * @ORM\ManyToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Periode")
+    * @ORM\JoinColumn(nullable=false)
+    */
+	private $periode ;
+
+	/**
+    * @ORM\ManyToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Semestre")
+    * @ORM\JoinColumn(nullable=false)
+    */
+	private $semestre ;
+
+	
+	/**
+    * @ORM\ManyToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Departement",inversedBy="devoirs")
     * @ORM\JoinColumn(nullable=false)
     */
     private $departements ;
 	
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Filiere",inversedBy="devoirs")
+    * @ORM\ManyToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Filiere",inversedBy="devoirs")
     * @ORM\JoinColumn(nullable=false)
     */
     private $filieres ;
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Groupe",inversedBy="devoirs")
+    * @ORM\ManyToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Groupe",inversedBy="devoirs")
     * @ORM\JoinColumn(nullable=false)
     */
     private $groupes ;
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Classe",inversedBy="devoirs")
+    * @ORM\ManyToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Classe",inversedBy="devoirs")
     * @ORM\JoinColumn(nullable=false)
     */
     private $classes ;
@@ -74,7 +94,7 @@ class Devoir
     private $matiere ;
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Nature")
+    * @ORM\ManyToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Nature")
     * @ORM\JoinColumn(nullable=false)
     */
     private $natures ;
@@ -83,35 +103,21 @@ class Devoir
     * @ORM\ManyToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Enseignant",inversedBy="devoirs")
     * @ORM\JoinColumn(nullable=false)
     */
-    private $enseignant ;
+    private $enseignants ;
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Salle",inversedBy="devoirs")
+    * @ORM\ManyToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Salle",inversedBy="devoirs")
     * @ORM\JoinColumn(nullable=false)
     */
     private $salles ;
 	
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Jour",inversedBy="devoirs")
+    * @ORM\ManyToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Jour",inversedBy="devoirs")
     * @ORM\JoinColumn(nullable=false)
     */
     private $jours ;
 	
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->salles = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->jours = new \Doctrine\Common\Collections\ArrayCollection();
-		$this->departements = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->filieres = new \Doctrine\Common\Collections\ArrayCollection();
-		$this->classes = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->groupes = new \Doctrine\Common\Collections\ArrayCollection();
-		$this->enseignants = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Get id
@@ -124,10 +130,33 @@ class Devoir
     }
 
     /**
+     * Set etat
+     *
+     * @param integer $etat
+     * @return Devoir
+     */
+    public function setEtat($etat)
+    {
+        $this->etat = $etat;
+
+        return $this;
+    }
+
+    /**
+     * Get etat
+     *
+     * @return integer 
+     */
+    public function getEtat()
+    {
+        return $this->etat;
+    }
+
+    /**
      * Set heure_debut
      *
      * @param \DateTime $heureDebut
-     * @return Emploi
+     * @return Devoir
      */
     public function setHeureDebut($heureDebut)
     {
@@ -150,7 +179,7 @@ class Devoir
      * Set heure_fin
      *
      * @param \DateTime $heureFin
-     * @return Emploi
+     * @return Devoir
      */
     public function setHeureFin($heureFin)
     {
@@ -169,12 +198,149 @@ class Devoir
         return $this->heure_fin;
     }
 
+    /**
+     * Set periode
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Periode $periode
+     * @return Devoir
+     */
+    public function setPeriode(\Pedagogie\PedagogieBundle\Entity\Periode $periode)
+    {
+        $this->periode = $periode;
+
+        return $this;
+    }
+
+    /**
+     * Get periode
+     *
+     * @return \Pedagogie\PedagogieBundle\Entity\Periode 
+     */
+    public function getPeriode()
+    {
+        return $this->periode;
+    }
+
+    /**
+     * Set semestre
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Semestre $semestre
+     * @return Devoir
+     */
+    public function setSemestre(\Pedagogie\PedagogieBundle\Entity\Semestre $semestre)
+    {
+        $this->semestre = $semestre;
+
+        return $this;
+    }
+
+    /**
+     * Get semestre
+     *
+     * @return \Pedagogie\PedagogieBundle\Entity\Semestre 
+     */
+    public function getSemestre()
+    {
+        return $this->semestre;
+    }
+
+    /**
+     * Set departements
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Departement $departements
+     * @return Devoir
+     */
+    public function setDepartements(\Pedagogie\PedagogieBundle\Entity\Departement $departements)
+    {
+        $this->departements = $departements;
+
+        return $this;
+    }
+
+    /**
+     * Get departements
+     *
+     * @return \Pedagogie\PedagogieBundle\Entity\Departement 
+     */
+    public function getDepartements()
+    {
+        return $this->departements;
+    }
+
+    /**
+     * Set filieres
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Filiere $filieres
+     * @return Devoir
+     */
+    public function setFilieres(\Pedagogie\PedagogieBundle\Entity\Filiere $filieres)
+    {
+        $this->filieres = $filieres;
+
+        return $this;
+    }
+
+    /**
+     * Get filieres
+     *
+     * @return \Pedagogie\PedagogieBundle\Entity\Filiere 
+     */
+    public function getFilieres()
+    {
+        return $this->filieres;
+    }
+
+    /**
+     * Set groupes
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Groupe $groupes
+     * @return Devoir
+     */
+    public function setGroupes(\Pedagogie\PedagogieBundle\Entity\Groupe $groupes)
+    {
+        $this->groupes = $groupes;
+
+        return $this;
+    }
+
+    /**
+     * Get groupes
+     *
+     * @return \Pedagogie\PedagogieBundle\Entity\Groupe 
+     */
+    public function getGroupes()
+    {
+        return $this->groupes;
+    }
+
+    /**
+     * Set classes
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Classe $classes
+     * @return Devoir
+     */
+    public function setClasses(\Pedagogie\PedagogieBundle\Entity\Classe $classes)
+    {
+        $this->classes = $classes;
+
+        return $this;
+    }
+
+    /**
+     * Get classes
+     *
+     * @return \Pedagogie\PedagogieBundle\Entity\Classe 
+     */
+    public function getClasses()
+    {
+        return $this->classes;
+    }
 
     /**
      * Set discipline
      *
      * @param \Pedagogie\PedagogieBundle\Entity\Discipline $discipline
-     * @return Emploi
+     * @return Devoir
      */
     public function setDiscipline(\Pedagogie\PedagogieBundle\Entity\Discipline $discipline)
     {
@@ -197,7 +363,7 @@ class Devoir
      * Set matiere
      *
      * @param \Pedagogie\PedagogieBundle\Entity\Matiere $matiere
-     * @return Emploi
+     * @return Devoir
      */
     public function setMatiere(\Pedagogie\PedagogieBundle\Entity\Matiere $matiere)
     {
@@ -216,233 +382,23 @@ class Devoir
         return $this->matiere;
     }
 
-   
-
     /**
-     * Add salles
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Salle $salles
-     * @return Emploi
-     */
-    public function addSalle(\Pedagogie\PedagogieBundle\Entity\Salle $salles)
-    {
-        $this->salles[] = $salles;
-		$salles->addDevoir($this);
-        return $this;
-    }
-
-    /**
-     * Remove salles
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Salle $salles
-     */
-    public function removeSalle(\Pedagogie\PedagogieBundle\Entity\Salle $salles)
-    {
-        $this->salles->removeElement($salles);
-    }
-
-    /**
-     * Get salles
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getSalles()
-    {
-        return $this->salles;
-    }
-
-    /**
-     * Add jours
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Jour $jours
-     * @return Emploi
-     */
-    public function addJour(\Pedagogie\PedagogieBundle\Entity\Jour $jours)
-    {
-        $this->jours[] = $jours;
-		$jours->addDevoir($this);
-        return $this;
-    }
-
-    /**
-     * Remove jours
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Jour $jours
-     */
-    public function removeJour(\Pedagogie\PedagogieBundle\Entity\Jour $jours)
-    {
-        $this->jours->removeElement($jours);
-    }
-
-    /**
-     * Get jours
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getJours()
-    {
-        return $this->jours;
-    }
-
-    /**
-     * Add departements
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Departement $departements
-     * @return Emploi
-     */
-    public function addDepartement(\Pedagogie\PedagogieBundle\Entity\Departement $departements)
-    {
-        $this->departements[] = $departements;
-		$departements->addDevoir($this);
-        return $this;
-    }
-
-    /**
-     * Remove departements
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Departement $departements
-     */
-    public function removeDepartement(\Pedagogie\PedagogieBundle\Entity\Departement $departements)
-    {
-        $this->departements->removeElement($departements);
-    }
-
-    /**
-     * Get departements
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getDepartements()
-    {
-        return $this->departements;
-    }
-
-    /**
-     * Add filieres
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Filiere $filieres
-     * @return Emploi
-     */
-    public function addFiliere(\Pedagogie\PedagogieBundle\Entity\Filiere $filieres)
-    {
-        $this->filieres[] = $filieres;
-		$filiere->addDevoir($this);
-        return $this;
-    }
-
-    /**
-     * Remove filieres
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Filiere $filieres
-     */
-    public function removeFiliere(\Pedagogie\PedagogieBundle\Entity\Filiere $filieres)
-    {
-        $this->filieres->removeElement($filieres);
-    }
-
-    /**
-     * Get filieres
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getFilieres()
-    {
-        return $this->filieres;
-    }
-
-    /**
-     * Add groupes
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Groupe $groupes
-     * @return Emploi
-     */
-    public function addGroupe(\Pedagogie\PedagogieBundle\Entity\Groupe $groupes)
-    {
-        $this->groupes[] = $groupes;
-		$groupes->addDevoir($this);
-        return $this;
-    }
-
-    /**
-     * Remove groupes
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Groupe $groupes
-     */
-    public function removeGroupe(\Pedagogie\PedagogieBundle\Entity\Groupe $groupes)
-    {
-        $this->groupes->removeElement($groupes);
-    }
-
-    /**
-     * Get groupes
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getGroupes()
-    {
-        return $this->groupes;
-    }
-
-    /**
-     * Add classes
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Classe $classes
-     * @return Emploi
-     */
-    public function addClass(\Pedagogie\PedagogieBundle\Entity\Classe $classes)
-    {
-        $this->classes[] = $classes;
-		$classes->addDevoir($this);
-        return $this;
-    }
-
-    /**
-     * Remove classes
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Classe $classes
-     */
-    public function removeClass(\Pedagogie\PedagogieBundle\Entity\Classe $classes)
-    {
-        $this->classes->removeElement($classes);
-    }
-
-    /**
-     * Get classes
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getClasses()
-    {
-        return $this->classes;
-    }
-
-    /**
-     * Add natures
+     * Set natures
      *
      * @param \Pedagogie\PedagogieBundle\Entity\Nature $natures
-     * @return Emploi
+     * @return Devoir
      */
-    public function addNature(\Pedagogie\PedagogieBundle\Entity\Nature $natures)
+    public function setNatures(\Pedagogie\PedagogieBundle\Entity\Nature $natures)
     {
-        $this->natures[] = $natures;
-		
-        return $this;
-    }
+        $this->natures = $natures;
 
-    /**
-     * Remove natures
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Nature $natures
-     */
-    public function removeNature(\Pedagogie\PedagogieBundle\Entity\Nature $natures)
-    {
-        $this->natures->removeElement($natures);
+        return $this;
     }
 
     /**
      * Get natures
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Pedagogie\PedagogieBundle\Entity\Nature 
      */
     public function getNatures()
     {
@@ -450,32 +406,22 @@ class Devoir
     }
 
     /**
-     * Add enseignants
+     * Set enseignants
      *
      * @param \Pedagogie\PedagogieBundle\Entity\Enseignant $enseignants
-     * @return Emploi
+     * @return Devoir
      */
-    public function addEnseignant(\Pedagogie\PedagogieBundle\Entity\Enseignant $enseignants)
+    public function setEnseignants(\Pedagogie\PedagogieBundle\Entity\Enseignant $enseignants)
     {
-        $this->enseignants[] = $enseignants;
-		$enseignants->addDevoir($this);
-        return $this;
-    }
+        $this->enseignants = $enseignants;
 
-    /**
-     * Remove enseignants
-     *
-     * @param \Pedagogie\PedagogieBundle\Entity\Enseignant $enseignants
-     */
-    public function removeEnseignant(\Pedagogie\PedagogieBundle\Entity\Enseignant $enseignants)
-    {
-        $this->enseignants->removeElement($enseignants);
+        return $this;
     }
 
     /**
      * Get enseignants
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Pedagogie\PedagogieBundle\Entity\Enseignant 
      */
     public function getEnseignants()
     {
@@ -483,25 +429,48 @@ class Devoir
     }
 
     /**
-     * Set enseignant
+     * Set salles
      *
-     * @param \Pedagogie\PedagogieBundle\Entity\Enseignant $enseignant
+     * @param \Pedagogie\PedagogieBundle\Entity\Salle $salles
      * @return Devoir
      */
-    public function setEnseignant(\Pedagogie\PedagogieBundle\Entity\Enseignant $enseignant)
+    public function setSalles(\Pedagogie\PedagogieBundle\Entity\Salle $salles)
     {
-        $this->enseignant = $enseignant;
+        $this->salles = $salles;
 
         return $this;
     }
 
     /**
-     * Get enseignant
+     * Get salles
      *
-     * @return \Pedagogie\PedagogieBundle\Entity\Enseignant 
+     * @return \Pedagogie\PedagogieBundle\Entity\Salle 
      */
-    public function getEnseignant()
+    public function getSalles()
     {
-        return $this->enseignant;
+        return $this->salles;
+    }
+
+    /**
+     * Set jours
+     *
+     * @param \Pedagogie\PedagogieBundle\Entity\Jour $jours
+     * @return Devoir
+     */
+    public function setJours(\Pedagogie\PedagogieBundle\Entity\Jour $jours)
+    {
+        $this->jours = $jours;
+
+        return $this;
+    }
+
+    /**
+     * Get jours
+     *
+     * @return \Pedagogie\PedagogieBundle\Entity\Jour 
+     */
+    public function getJours()
+    {
+        return $this->jours;
     }
 }

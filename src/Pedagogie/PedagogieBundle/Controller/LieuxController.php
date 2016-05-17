@@ -3,8 +3,7 @@
 namespace Pedagogie\PedagogieBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use Pedagogie\PedagogieBundle\Entity\Classe;
-use Pedagogie\PedagogieBundle\Entity\Filiere;
+use Pedagogie\PedagogieBundle\Entity\Lieux;
 
 
 class LieuxController extends Controller
@@ -29,7 +28,6 @@ class LieuxController extends Controller
 		$tag = $request->request->get('tag');
 		
 		
-			include('includes/files/config.php');
 			/**
 			 * File to handle all API requests
 			 * Accepts GET and POST
@@ -48,13 +46,12 @@ class LieuxController extends Controller
 						// validate the variables ======================================================
 					// if any of these variables don't exist, add an error to our $errors array
 
-					if (empty($request->request->get('nomfil')))
+					if (empty($request->request->get('nomlieux')))
 					{
-						$errors['nomfil'] = 'Le nom de la filiere est requis ';
+						$errors['nomfil'] = "L'id du lieux est requis ";
 
 					}
 
-					
 					
 						if ( ! empty($errors)) 
 					{
@@ -68,19 +65,16 @@ class LieuxController extends Controller
 					else
 					{
 						
-						$nomfil = htmlspecialchars($request->request->get('nomfil'));
+						$nomlieux = htmlspecialchars($request->request->get('nomlieux'));
 						$doctrine = $this->getDoctrine();
 						$em = $doctrine->getManager();
-						$repository_filiere = $em->getRepository('PedagogiePedagogieBundle:Filiere');
-        
-        
-						$filiere = $repository_filiere->findOneByFiliere($nomfil);
+						$lieux = $em->getRepository('PedagogiePedagogieBundle:Lieux')->findOneById($nomlieux);
 						
 						// Fonction Remove de EntityManager
-						$em->remove($filiere); // Supprime l'entité de la base de données
+						$em->remove($lieux); // Supprime l'entité de la base de données
 						$em->flush(); // Exécute un DELETE sur $article
                                                 
-                                                $data['success'] = true;
+                        $data['success'] = true;
 						$data['message'] = ' Suppression Reussie !';
 						$data["errors"] = false;
 						$data['is_successful_login'] = true;
@@ -98,7 +92,7 @@ class LieuxController extends Controller
     
     
     
-    public function updateclasseAction()
+    public function updatelieuxAction()
     {
         // On récupère la requête
 		$request = $this->getRequest();
@@ -106,7 +100,6 @@ class LieuxController extends Controller
 		$tag = $request->request->get('tag');
 		
 		
-			include('includes/files/config.php');
 			/**
 			 * File to handle all API requests
 			 * Accepts GET and POST
@@ -128,12 +121,12 @@ class LieuxController extends Controller
 						// validate the variables ======================================================
 					// if any of these variables don't exist, add an error to our $errors array
 
-					if (empty($request->request->get('nomfil')))
+					if (empty($request->request->get('updnomlieux')))
 					{
 						$errors['nomfil'] = 'Le nom de la filiere est requis ';
 
 					}
-                                        if (empty($request->request->get('oldfilname')))
+                    if (empty($request->request->get('oldlieuxname')))
 					{
 						$errors['nomfil'] = 'Le nom de la filiere est requis ';
 
@@ -151,19 +144,19 @@ class LieuxController extends Controller
 					else
 					{
 						
-						$nomfil = htmlspecialchars($request->request->get('oldfilname'));
+						$oldlieuxname = htmlspecialchars($request->request->get('oldlieuxname'));
 						$doctrine = $this->getDoctrine();
 						$em = $doctrine->getManager();
-						$repository_filiere = $em->getRepository('PedagogiePedagogieBundle:Filiere');
         
         
-						$filiere = $repository_filiere->findOneByFiliere($nomfil);
-						$filiere->setFiliere(htmlspecialchars($request->request->get('nomfil')));
+						$lieux = $em->getRepository('PedagogiePedagogieBundle:Lieux')->findOneById($oldlieuxname);
+						$lieux->setLieux(htmlspecialchars($request->request->get('updnomlieux')));
+						$lieux->setCode(htmlspecialchars($request->request->get('updcodelieux')));
 						// Fonction Remove de EntityManager
-						$em->persist($filiere); // Modifie l'entité de la base de données
+						$em->persist($lieux); // Modifie l'entité de la base de données
 						$em->flush(); // Exécute un UPDATE sur $filiere
                                                 
-                                                $data['success'] = true;
+                        $data['success'] = true;
 						$data['message'] = ' Modification Reussie !';
 						$data["errors"] = false;
 						$data['is_successful_login'] = true;
@@ -177,7 +170,7 @@ class LieuxController extends Controller
     }
     
     
-    public function addclasseAction()
+    public function addlieuxAction()
     {
         // On récupère la requête
 		$request = $this->getRequest();
@@ -185,7 +178,6 @@ class LieuxController extends Controller
 		$tag = $request->request->get('tag');
 		
 		
-			include('includes/files/config.php');
 			/**
 			 * File to handle all API requests
 			 * Accepts GET and POST
@@ -207,9 +199,14 @@ class LieuxController extends Controller
 						// validate the variables ======================================================
 					// if any of these variables don't exist, add an error to our $errors array
 
-					if (empty($request->request->get('nomfil')))
+					if (empty($request->request->get('nomlieux')))
 					{
-						$errors['nomfil'] = 'Le nom de la filiere est requis ';
+						$errors['nomlieux'] = 'Le nom du lieux requis ';
+
+					}
+					if (empty($request->request->get('codelieux')))
+					{
+						$errors['codelieux'] = 'Le code du lieux est requis ';
 
 					}
 
@@ -225,21 +222,19 @@ class LieuxController extends Controller
 					else
 					{
 						
-						$nomfil = htmlspecialchars($request->request->get('nomfil'));
-                        $nomdep = htmlspecialchars($request->request->get('depfil'));
+						$nomlieux= htmlspecialchars($request->request->get('nomlieux'));
+                        $codelieux = htmlspecialchars($request->request->get('codelieux'));
 						$doctrine = $this->getDoctrine();
 						$em = $doctrine->getManager();
 						
-						$departement = $em->getRepository('PedagogiePedagogieBundle:Departement')->findOneByDepartement($nomdep);
-						$allfil = $em->getRepository('PedagogiePedagogieBundle:Filiere')->findAll();
-						$numfil = sizeof($allfil)+1;
-						$filiere = new Filiere();
-						$filiere->setFiliere(htmlspecialchars($request->request->get('nomfil')));
-						$filiere->setDepartement($departement);
-						$em->persist($filiere); // Modifie l'entité de la base de données
+						
+						$lieux = new Lieux();
+						$lieux->setLieux($nomlieux);
+						$lieux->setCode($codelieux);
+						$em->persist($lieux); // Modifie l'entité de la base de données
 						$em->flush(); // Exécute un UPDATE sur $filiere
                                                 
-                                                $data['success'] = true;
+                        $data['success'] = true;
 						$data['message'] = ' Ajout Reussi !';
 						$data["errors"] = false;
 						$data['is_successful_login'] = true;
@@ -252,15 +247,13 @@ class LieuxController extends Controller
 
     }
     
-    public function ClassesHandleAction()
+    public function LieuxHandleAction()
     {
          // On récupère la requête
 		$request = $this->getRequest();
 		// On récupère notre paramètre tag
 		$tag = $request->request->get('tag');
 		
-		
-			include('includes/files/config.php');
 			/**
 			 * File to handle all API requests
 			 * Accepts GET and POST
@@ -281,18 +274,18 @@ class LieuxController extends Controller
 			{
                       
 				// check for tag type
-				if ($tag == 'deletefil') 
+				if ($tag == 'deletelieux') 
 				{
-                                    $response = $this->deletefiliereAction();
+                    $response = $this->deletelieuxAction();
 				}
-                                else if($tag == 'updatefil')
-                                {
-                                    $response = $this->updatefiliereAction();
-                                }
-                                else if($tag == 'addfil')
-                                {
-                                    $response = $this->addfiliereAction();
-                                }
+				else if($tag == 'updatelieux')
+				{
+					$response = $this->updatelieuxAction();
+				}
+				else if($tag == 'addlieux')
+				{
+					$response = $this->addlieuxAction();
+				}
 				else 
 				{
 					// The tag is not login or register ==> failure

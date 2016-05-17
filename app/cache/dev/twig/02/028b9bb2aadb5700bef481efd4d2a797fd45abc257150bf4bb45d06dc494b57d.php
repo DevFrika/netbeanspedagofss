@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle:admin/discipline:adddisciplinelayout.html.twig */
+/* PedagogiePedagogieBundle::admin/discipline/adddisciplinelayout.html.twig */
 class __TwigTemplate_a36777b4614e573c7f1d510c44f4e75ba926ad34dc228ddc18b6826995f908f8 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_a36777b4614e573c7f1d510c44f4e75ba926ad34dc228ddc18b6826995f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_61f2889901acde15d0ae37a3ec533241d8df1c694b914a93b2e30cff15ff5cd3 = $this->env->getExtension("native_profiler");
-        $__internal_61f2889901acde15d0ae37a3ec533241d8df1c694b914a93b2e30cff15ff5cd3->enter($__internal_61f2889901acde15d0ae37a3ec533241d8df1c694b914a93b2e30cff15ff5cd3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:admin/discipline:adddisciplinelayout.html.twig"));
+        $__internal_1b178dac6edc162bd722f1fe4008c302332af16e20e45cc7e188f9e05e4d6dfc = $this->env->getExtension("native_profiler");
+        $__internal_1b178dac6edc162bd722f1fe4008c302332af16e20e45cc7e188f9e05e4d6dfc->enter($__internal_1b178dac6edc162bd722f1fe4008c302332af16e20e45cc7e188f9e05e4d6dfc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::admin/discipline/adddisciplinelayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"adddiscipline\">
@@ -62,7 +62,7 @@ class __TwigTemplate_a36777b4614e573c7f1d510c44f4e75ba926ad34dc228ddc18b6826995f
         foreach ($context['_seq'] as $context["_key"] => $context["dep"]) {
             // line 38
             echo "\t\t\t\t\t\t<option value=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["dep"], "departement", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["dep"], "id", array()), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["dep"], "departement", array()), "html", null, true);
             echo "</option>
@@ -115,13 +115,13 @@ class __TwigTemplate_a36777b4614e573c7f1d510c44f4e75ba926ad34dc228ddc18b6826995f
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_61f2889901acde15d0ae37a3ec533241d8df1c694b914a93b2e30cff15ff5cd3->leave($__internal_61f2889901acde15d0ae37a3ec533241d8df1c694b914a93b2e30cff15ff5cd3_prof);
+        $__internal_1b178dac6edc162bd722f1fe4008c302332af16e20e45cc7e188f9e05e4d6dfc->leave($__internal_1b178dac6edc162bd722f1fe4008c302332af16e20e45cc7e188f9e05e4d6dfc_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle:admin/discipline:adddisciplinelayout.html.twig";
+        return "PedagogiePedagogieBundle::admin/discipline/adddisciplinelayout.html.twig";
     }
 
     public function isTraitable()
@@ -171,7 +171,7 @@ class __TwigTemplate_a36777b4614e573c7f1d510c44f4e75ba926ad34dc228ddc18b6826995f
 /*                     <label> Départements </label>*/
 /*                     <select id="depdisselect" class="form-control" onchange="disLoadFiliere(this.value,'fildisselect')" >*/
 /* 						{%for dep in alldepartement %}*/
-/* 						<option value="{{ dep.departement }}">{{ dep.departement}}</option>*/
+/* 						<option value="{{ dep.id }}">{{ dep.departement}}</option>*/
 /* 						{% endfor %}*/
 /* 					</select>*/
 /*                     <span class="help-block"></span>*/

@@ -1,0 +1,44 @@
+<div class="fade modal text-left" id="dev{{ dev.id }}">
+				  <div class="modal-dialog modal-lg">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						
+					  </div>
+					  <div class="modal-body">
+						<table>
+						<thead>
+							<tr>
+								<th> Jours </th>
+								<th> Heure Debut </th>
+								<th> Heure Fin </th>
+								<th> Matiere </th>
+								<th> Salle </th>
+								<th> Professeur </th>
+								<th> Groupe </th>
+								<th> Nature </th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td> {{ emp.jours.jour }} </td>
+								<td> {{ emp.getHeureDebut|date('H:i') }} </td>
+								<td> {{ emp.getHeureFin|date('H:i') }} </td>
+								<td> {{ emp.matiere.matiere }} </td>
+								<td> {{ emp.salles.salle }} </td>
+								<td> {{ emp.enseignants.enseignant }} </td>
+								<td> {{ emp.groupes.groupe }} </td>
+								<td> {{ emp.natures.nature }} </td>
+								
+							</tr>
+						</tbody>
+						</table>
+					  </div>
+					  <div class="modal-footer">
+						<a class="btn btn-default" data-dismiss="modal">Close</a>
+						
+					  </div>
+					</div>
+				  </div>
+				</div>

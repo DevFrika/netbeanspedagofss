@@ -30,6 +30,20 @@ class Enseignant
     private $enseignant;
 	
 	/**
+     * @var string
+     *
+     * @ORM\Column(name="Telephone", type="string", length=255)
+     */
+    private $telephone;
+	
+	/**
+akh     * @var string
+     *
+     * @ORM\Column(name="Code", type="string", length=255, unique=true)
+     */
+    private $code;
+	
+	/**
     * @ORM\OneToOne(targetEntity="Pedagogie\PedagogieBundle\Entity\Utilisateur")
     * @ORM\JoinColumn(nullable=false)
     */
@@ -47,12 +61,12 @@ class Enseignant
     private $matieres ;
 	
 	/**
-    * @ORM\ManyToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Emploi", mappedBy="enseignants")
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Emploi", mappedBy="enseignants")
     */
     private $emplois;
 	
 	/**
-    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Devoir", mappedBy="enseignant")
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Devoir", mappedBy="enseignants")
     */
     private $devoirs;
 	
@@ -69,7 +83,7 @@ class Enseignant
 	private $situation;
 	
 	/**
-    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Voeux",mappedBy="enseignant")
+    * @ORM\OneToMany(targetEntity="Pedagogie\PedagogieBundle\Entity\Voeux",mappedBy="enseignant", cascade={"persist"})
     * @ORM\JoinColumn(nullable=false)
     */
     private $voeux ;
@@ -337,5 +351,51 @@ class Enseignant
     public function getVoeux()
     {
         return $this->voeux;
+    }
+
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     * @return Enseignant
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string 
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * Set code
+     *
+     * @param string $code
+     * @return Enseignant
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+
+        return $this;
+    }
+
+    /**
+     * Get code
+     *
+     * @return string 
+     */
+    public function getCode()
+    {
+        return $this->code;
     }
 }
