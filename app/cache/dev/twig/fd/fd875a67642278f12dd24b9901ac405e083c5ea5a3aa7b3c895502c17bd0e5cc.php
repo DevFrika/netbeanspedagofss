@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle::normal/modif/modiflayout.html.twig */
+/* PedagogiePedagogieBundle:normal/modif:modiflayout.html.twig */
 class __TwigTemplate_d5f147c3aa51d255c119cb9fbcc728adf0b468722a8661e69ef2fc794a828601 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_d5f147c3aa51d255c119cb9fbcc728adf0b468722a8661e69ef2fc794a8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_31c407e1922d2f28297d6d067e3a536bd99a2a81021a177e117d92f16db9c14d = $this->env->getExtension("native_profiler");
-        $__internal_31c407e1922d2f28297d6d067e3a536bd99a2a81021a177e117d92f16db9c14d->enter($__internal_31c407e1922d2f28297d6d067e3a536bd99a2a81021a177e117d92f16db9c14d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::normal/modif/modiflayout.html.twig"));
+        $__internal_a3553eb16b21ef1107c95ba3102765779076fc78f2048d7653551f33f94a7033 = $this->env->getExtension("native_profiler");
+        $__internal_a3553eb16b21ef1107c95ba3102765779076fc78f2048d7653551f33f94a7033->enter($__internal_a3553eb16b21ef1107c95ba3102765779076fc78f2048d7653551f33f94a7033_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:normal/modif:modiflayout.html.twig"));
 
         // line 1
         echo "<div class=\"section w3-clear\" style=\"margin-top:-25%;margin-left:1%;clear:both;\">
@@ -78,7 +78,7 @@ class __TwigTemplate_d5f147c3aa51d255c119cb9fbcc728adf0b468722a8661e69ef2fc794a8
                 echo "\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
                 // line 37
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/departement/updatedepartementlayout.html.twig", "PedagogiePedagogieBundle::normal/modif/modiflayout.html.twig", 37)->display($context);
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/departement/updatedepartementlayout.html.twig", "PedagogiePedagogieBundle:normal/modif:modiflayout.html.twig", 37)->display($context);
                 // line 38
                 echo "\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t";
@@ -130,7 +130,7 @@ class __TwigTemplate_d5f147c3aa51d255c119cb9fbcc728adf0b468722a8661e69ef2fc794a8
                 echo "\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
                 // line 50
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/matiere/updatematierelayout.html.twig", "PedagogiePedagogieBundle::normal/modif/modiflayout.html.twig", 50)->display($context);
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/matiere/updatematierelayout.html.twig", "PedagogiePedagogieBundle:normal/modif:modiflayout.html.twig", 50)->display($context);
                 // line 51
                 echo "\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t";
@@ -182,7 +182,7 @@ class __TwigTemplate_d5f147c3aa51d255c119cb9fbcc728adf0b468722a8661e69ef2fc794a8
                 echo "\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
                 // line 63
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/filiere/updatefilierelayout.html.twig", "PedagogiePedagogieBundle::normal/modif/modiflayout.html.twig", 63)->display($context);
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/filiere/updatefilierelayout.html.twig", "PedagogiePedagogieBundle:normal/modif:modiflayout.html.twig", 63)->display($context);
                 // line 64
                 echo "\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t";
@@ -234,7 +234,7 @@ class __TwigTemplate_d5f147c3aa51d255c119cb9fbcc728adf0b468722a8661e69ef2fc794a8
                 echo "\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
                 // line 76
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/emploi/updateemploilayout.html.twig", "PedagogiePedagogieBundle::normal/modif/modiflayout.html.twig", 76)->display($context);
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/emploi/updateemploilayout.html.twig", "PedagogiePedagogieBundle:normal/modif:modiflayout.html.twig", 76)->display($context);
                 // line 77
                 echo "\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t";
@@ -286,7 +286,7 @@ class __TwigTemplate_d5f147c3aa51d255c119cb9fbcc728adf0b468722a8661e69ef2fc794a8
                 echo "\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
                 // line 89
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/groupe/updategroupelayout.html.twig", "PedagogiePedagogieBundle::normal/modif/modiflayout.html.twig", 89)->display($context);
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/groupe/updategroupelayout.html.twig", "PedagogiePedagogieBundle:normal/modif:modiflayout.html.twig", 89)->display($context);
                 // line 90
                 echo "\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t";
@@ -338,7 +338,7 @@ class __TwigTemplate_d5f147c3aa51d255c119cb9fbcc728adf0b468722a8661e69ef2fc794a8
                 echo "\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
                 // line 102
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/discipline/updatedisciplinelayout.html.twig", "PedagogiePedagogieBundle::normal/modif/modiflayout.html.twig", 102)->display($context);
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/discipline/updatedisciplinelayout.html.twig", "PedagogiePedagogieBundle:normal/modif:modiflayout.html.twig", 102)->display($context);
                 // line 103
                 echo "\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t";
@@ -390,7 +390,7 @@ class __TwigTemplate_d5f147c3aa51d255c119cb9fbcc728adf0b468722a8661e69ef2fc794a8
                 echo "\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
                 // line 115
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/voeux/updatevoeuxlayout.html.twig", "PedagogiePedagogieBundle::normal/modif/modiflayout.html.twig", 115)->display($context);
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/voeux/updatevoeuxlayout.html.twig", "PedagogiePedagogieBundle:normal/modif:modiflayout.html.twig", 115)->display($context);
                 // line 116
                 echo "\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t";
@@ -442,7 +442,7 @@ class __TwigTemplate_d5f147c3aa51d255c119cb9fbcc728adf0b468722a8661e69ef2fc794a8
                 echo "\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t";
                 // line 128
-                $this->loadTemplate("PedagogiePedagogieBundle::admin/devoir/updatedevoirlayout.html.twig", "PedagogiePedagogieBundle::normal/modif/modiflayout.html.twig", 128)->display($context);
+                $this->loadTemplate("PedagogiePedagogieBundle::admin/devoir/updatedevoirlayout.html.twig", "PedagogiePedagogieBundle:normal/modif:modiflayout.html.twig", 128)->display($context);
                 // line 129
                 echo "\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t";
@@ -482,13 +482,13 @@ class __TwigTemplate_d5f147c3aa51d255c119cb9fbcc728adf0b468722a8661e69ef2fc794a8
 \t</div>
 </div>";
         
-        $__internal_31c407e1922d2f28297d6d067e3a536bd99a2a81021a177e117d92f16db9c14d->leave($__internal_31c407e1922d2f28297d6d067e3a536bd99a2a81021a177e117d92f16db9c14d_prof);
+        $__internal_a3553eb16b21ef1107c95ba3102765779076fc78f2048d7653551f33f94a7033->leave($__internal_a3553eb16b21ef1107c95ba3102765779076fc78f2048d7653551f33f94a7033_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle::normal/modif/modiflayout.html.twig";
+        return "PedagogiePedagogieBundle:normal/modif:modiflayout.html.twig";
     }
 
     public function isTraitable()

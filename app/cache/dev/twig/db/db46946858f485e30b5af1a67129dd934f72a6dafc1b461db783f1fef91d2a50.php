@@ -1,6 +1,6 @@
 <?php
 
-/* PedagogiePedagogieBundle::normal/groupe/addgroupelayout.html.twig */
+/* PedagogiePedagogieBundle:normal/groupe:addgroupelayout.html.twig */
 class __TwigTemplate_c26e2d6234831c8e12b50fd4d4397da1ce11e87b512fcb372b09c123ac1c85a2 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_c26e2d6234831c8e12b50fd4d4397da1ce11e87b512fcb372b09c123ac1
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_9a5777ac07cbd7950f22a61b168948f971ab32707bcdb5a365c9c04af3e70a8e = $this->env->getExtension("native_profiler");
-        $__internal_9a5777ac07cbd7950f22a61b168948f971ab32707bcdb5a365c9c04af3e70a8e->enter($__internal_9a5777ac07cbd7950f22a61b168948f971ab32707bcdb5a365c9c04af3e70a8e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle::normal/groupe/addgroupelayout.html.twig"));
+        $__internal_43875a9f6412936a3f69ee66e93cd00ca97661346c1558cfcc79e0981215f90e = $this->env->getExtension("native_profiler");
+        $__internal_43875a9f6412936a3f69ee66e93cd00ca97661346c1558cfcc79e0981215f90e->enter($__internal_43875a9f6412936a3f69ee66e93cd00ca97661346c1558cfcc79e0981215f90e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PedagogiePedagogieBundle:normal/groupe:addgroupelayout.html.twig"));
 
         // line 1
         echo "<div class=\"fade modal text-center\" id=\"addgroupe\">
@@ -80,13 +80,13 @@ class __TwigTemplate_c26e2d6234831c8e12b50fd4d4397da1ce11e87b512fcb372b09c123ac1
 \t\t\t\t  </div>
 \t\t\t\t</div>";
         
-        $__internal_9a5777ac07cbd7950f22a61b168948f971ab32707bcdb5a365c9c04af3e70a8e->leave($__internal_9a5777ac07cbd7950f22a61b168948f971ab32707bcdb5a365c9c04af3e70a8e_prof);
+        $__internal_43875a9f6412936a3f69ee66e93cd00ca97661346c1558cfcc79e0981215f90e->leave($__internal_43875a9f6412936a3f69ee66e93cd00ca97661346c1558cfcc79e0981215f90e_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "PedagogiePedagogieBundle::normal/groupe/addgroupelayout.html.twig";
+        return "PedagogiePedagogieBundle:normal/groupe:addgroupelayout.html.twig";
     }
 
     public function isTraitable()

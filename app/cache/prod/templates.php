@@ -78,6 +78,8 @@
   'SwiftmailerBundle:Collector:swiftmailer.html.twig' => 'C:\\Program Files (x86)\\Ampps\\www\\netbeanspedagofss\\vendor\\symfony\\swiftmailer-bundle/Resources/views/Collector/swiftmailer.html.twig',
   'DoctrineBundle:Collector:db.html.twig' => 'C:\\Program Files (x86)\\Ampps\\www\\netbeanspedagofss\\vendor\\doctrine\\doctrine-bundle/Resources/views/Collector/db.html.twig',
   'DoctrineBundle:Collector:explain.html.twig' => 'C:\\Program Files (x86)\\Ampps\\www\\netbeanspedagofss\\vendor\\doctrine\\doctrine-bundle/Resources/views/Collector/explain.html.twig',
+  'AppBundle:Default:index.html.twig' => 'C:\\Program Files (x86)\\Ampps\\www\\netbeanspedagofss\\src\\AppBundle/Resources/views/Default/index.html.twig',
+  'AppBundle:MyApp:index.html.twig' => 'C:\\Program Files (x86)\\Ampps\\www\\netbeanspedagofss\\src\\AppBundle/Resources/views/MyApp/index.html.twig',
   'TestBundle:Default:index.html.twig' => 'C:\\Program Files (x86)\\Ampps\\www\\netbeanspedagofss\\src\\TestBundle/Resources/views/Default/index.html.twig',
   'TestBundle:MyApp:index.html.twig' => 'C:\\Program Files (x86)\\Ampps\\www\\netbeanspedagofss\\src\\TestBundle/Resources/views/MyApp/index.html.twig',
   'PedagoFssUserBundle:Default:admin.html.twig' => 'C:\\Program Files (x86)\\Ampps\\www\\netbeanspedagofss\\src\\PedagoFss\\UserBundle/Resources/views/Default/admin.html.twig',
